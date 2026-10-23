@@ -37,5 +37,19 @@ CALL "Integration"."PopulateDateDimensionForYear"(2013);
   - Correlated `SELECT TOP(1) ... ORDER BY` key lookups become `UPDATE ... FROM` with `QUALIFY ROW_NUMBER()`.
   - `GetLastETLCutoffTime` and `GetLineageKey` return their value directly instead of a result set.
   - `MigrateStagedStockHoldingData` uses `DELETE` instead of `TRUNCATE`, to keep it inside the transaction.
+  - `PopulateDateDimensionForYear` loops day by day like the original (about 2–3 minutes per year on an X-Small warehouse). Snowflake rejects the set-based version — a lateral UDTF call combined with an existence check — with `Unsupported subquery type`.
 - **`ReseedSequenceBeyondTableValues`:** Snowflake can't `RESTART` a sequence, so the procedure draws values until the next value is greater than the column's maximum.
 - **Behavior:** ETL logic otherwise matches the Microsoft sample, including its known quirks. For example, `Configuration_PopulateLargeSaleTable` still marks every `Integration.Lineage` row as complete.
+
+## Smoke test
+
+`smoke_test.py` runs the procedures end to end against a deployed database: unknown members, date generation,
+ETL cutoff and lineage, dimension loads with SCD2 close-off, all six fact migrations, sequence reseeding and
+`Configuration_PopulateLargeSaleTable`. It resets data with `Configuration_ReseedETL` first, so only point it at a
+scratch database. It connects with key-pair auth; set `SNOWFLAKE_ACCOUNT`, `SNOWFLAKE_USER`,
+`SNOWFLAKE_PRIVATE_KEY_PATH`, `SNOWFLAKE_ROLE` and `SNOWFLAKE_WAREHOUSE`. Takes about 15 minutes on an X-Small warehouse.
+
+```bash
+pip install snowflake-connector-python
+python smoke_test.py
+```

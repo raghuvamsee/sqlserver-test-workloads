@@ -34,16 +34,22 @@ LANGUAGE SQL
 EXECUTE AS OWNER
 AS
 $$
+DECLARE
+    date_counter DATE DEFAULT DATE_FROM_PARTS(YEAR_NUMBER, 1, 1);
+    end_date DATE DEFAULT DATE_FROM_PARTS(YEAR_NUMBER, 12, 31);
 BEGIN
     BEGIN TRANSACTION;
-    INSERT INTO "Dimension"."Date"
-        ("Date", "Day Number", "Day", "Month", "Short Month", "Calendar Month Number", "Calendar Month Label", "Calendar Year", "Calendar Year Label", "Fiscal Month Number", "Fiscal Month Label", "Fiscal Year", "Fiscal Year Label", "ISO Week Number")
-    SELECT f."Date", f."Day Number", f."Day", f."Month", f."Short Month", f."Calendar Month Number", f."Calendar Month Label", f."Calendar Year", f."Calendar Year Label", f."Fiscal Month Number", f."Fiscal Month Label", f."Fiscal Year", f."Fiscal Year Label", f."ISO Week Number"
-    FROM (SELECT DATEADD(day, ROW_NUMBER() OVER (ORDER BY SEQ4()) - 1, DATE_FROM_PARTS(:year_number, 1, 1)) AS d
-          FROM TABLE(GENERATOR(ROWCOUNT => 366))) AS g,
-         TABLE("Integration"."GenerateDateDimensionColumns"(g.d)) AS f
-    WHERE YEAR(g.d) = :year_number
-      AND NOT EXISTS (SELECT 1 FROM "Dimension"."Date" AS dd WHERE dd."Date" = g.d);
+    -- Row-by-row like the original: Snowflake rejects the set-based form (lateral UDTF + existence check)
+    -- with "Unsupported subquery type".
+    WHILE (date_counter <= end_date) DO
+        INSERT INTO "Dimension"."Date"
+            ("Date", "Day Number", "Day", "Month", "Short Month", "Calendar Month Number", "Calendar Month Label", "Calendar Year", "Calendar Year Label", "Fiscal Month Number", "Fiscal Month Label", "Fiscal Year", "Fiscal Year Label", "ISO Week Number")
+        SELECT f."Date", f."Day Number", f."Day", f."Month", f."Short Month", f."Calendar Month Number", f."Calendar Month Label", f."Calendar Year", f."Calendar Year Label", f."Fiscal Month Number", f."Fiscal Month Label", f."Fiscal Year", f."Fiscal Year Label", f."ISO Week Number"
+        FROM TABLE("Integration"."GenerateDateDimensionColumns"(:date_counter)) AS f
+        WHERE NOT EXISTS (SELECT 1 FROM "Dimension"."Date" WHERE "Date" = :date_counter);
+
+        date_counter := DATEADD(day, 1, date_counter);
+    END WHILE;
     COMMIT;
     RETURN 0;
 EXCEPTION
@@ -997,9 +1003,9 @@ BEGIN
     EXECUTE IMMEDIATE :sql_text;
     SELECT $1 INTO :next_value FROM TABLE(RESULT_SCAN(LAST_QUERY_ID()));
 
-    IF (table_max >= next_value) THEN
+    IF (table_max > next_value) THEN
         sql_text := 'SELECT MAX(v) FROM (SELECT ' || quoted_sequence || '.NEXTVAL AS v FROM TABLE(GENERATOR(ROWCOUNT => '
-                    || (table_max - next_value + 1) || ')))';
+                    || (table_max - next_value) || ')))';
         EXECUTE IMMEDIATE :sql_text;
     END IF;
 END;
