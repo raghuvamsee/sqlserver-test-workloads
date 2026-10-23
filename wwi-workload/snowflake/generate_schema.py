@@ -1,0 +1,146 @@
+"""Generate 01_schema.sql (Snowflake) from the SQL Server per-object DDL in ../schema."""
+import re
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+SRC = HERE.parent / "schema"
+OUT = HERE / "01_schema.sql"
+
+SCHEMAS = ["Application", "Dimension", "Fact", "Integration", "PowerBI", "Reports", "Sequences", "Website"]
+TABLE_ORDER = ["Dimension", "Integration", "Fact"]
+
+TYPE_MAP = [
+    (r"^BIGINT$", "BIGINT"),
+    (r"^INT$", "INT"),
+    (r"^BIT$", "BOOLEAN"),
+    (r"^DATE$", "DATE"),
+    (r"^DATETIME2 \((\d)\)$", r"TIMESTAMP_NTZ(\1)"),
+    (r"^DECIMAL \((\d+), (\d+)\)$", r"NUMBER(\1, \2)"),
+    (r"^NVARCHAR \(MAX\)$", "VARCHAR"),
+    (r"^NVARCHAR \((\d+)\)$", r"VARCHAR(\1)"),
+    (r"^VARBINARY \(MAX\)$", "BINARY"),
+    (r"^\[sys\]\.\[geography\]$", "GEOGRAPHY"),
+    (r"^\[sysname\]$", "VARCHAR(128)"),
+]
+
+
+def q(name):
+    return '"' + name + '"'
+
+
+def ident(bracketed):
+    """[A].[B C] -> "A"."B C" """
+    return ".".join(q(p) for p in re.findall(r"\[([^\]]+)\]", bracketed))
+
+
+def cols(bracketed_list):
+    return ", ".join(q(c) for c in re.findall(r"\[([^\]]+)\]", bracketed_list))
+
+
+def map_type(t):
+    for pat, rep in TYPE_MAP:
+        if re.match(pat, t):
+            return re.sub(pat, rep, t)
+    raise ValueError(f"unmapped type: {t}")
+
+
+def sql_str(s):
+    return "'" + s.replace("'", "''") + "'"
+
+
+def comments(text, schema, table):
+    out = []
+    for m in re.finditer(r"sp_addextendedproperty @name = N'Description', @value = N?'((?:[^']|'')*)'(.*)", text):
+        value = m.group(1).replace("''", "'")
+        rest = m.group(2)
+        lv = dict(re.findall(r"@level(\d)type = N'(\w+)'", rest))
+        names = dict(re.findall(r"@level(\d)name = N'([^']+)'", rest))
+        if lv.get("2") == "COLUMN":
+            out.append(f"COMMENT ON COLUMN {q(schema)}.{q(table)}.{q(names['2'])} IS {sql_str(value)};")
+        elif lv.get("1") == "TABLE" and "2" not in lv:
+            out.append(f"COMMENT ON TABLE {q(schema)}.{q(table)} IS {sql_str(value)};")
+    tbl = [c for c in out if c.startswith("COMMENT ON TABLE")]
+    return tbl + sorted(c for c in out if not c.startswith("COMMENT ON TABLE"))
+
+
+def convert_table(path):
+    text = path.read_text()
+    m = re.search(r"CREATE TABLE (\[[^\]]+\]\.\[[^\]]+\]) \((.*?)\n\)(.*?);", text, re.S)
+    full, body, tail = m.group(1), m.group(2), m.group(3)
+    schema, table = re.findall(r"\[([^\]]+)\]", full)
+    lines = []
+    for raw in body.strip().split("\n"):
+        line = raw.strip().rstrip(",")
+        if line.startswith("CONSTRAINT"):
+            name = re.match(r"CONSTRAINT \[([^\]]+)\]", line).group(1)
+            pk = re.search(r"PRIMARY KEY (?:NON)?CLUSTERED \(([^)]*)\)", line)
+            fk = re.search(r"FOREIGN KEY \(([^)]*)\) REFERENCES (\[[^\]]+\]\.\[[^\]]+\]) \(([^)]*)\)", line)
+            if pk:
+                lines.append(f"CONSTRAINT {q(name)} PRIMARY KEY ({cols(re.sub(r' ASC| DESC', '', pk.group(1)))})")
+            elif fk:
+                lines.append(f"CONSTRAINT {q(name)} FOREIGN KEY ({cols(fk.group(1))}) "
+                             f"REFERENCES {ident(fk.group(2))} ({cols(fk.group(3))})")
+            else:
+                raise ValueError(line)
+            continue
+        cm = re.match(r"\[([^\]]+)\]\s+(.+?)\s+(IDENTITY \(1, 1\)\s+)?"
+                      r"(?:CONSTRAINT \[[^\]]+\] DEFAULT \(NEXT VALUE FOR (\[[^\]]+\]\.\[[^\]]+\])\)\s+)?(NOT NULL|NULL)$", line)
+        if not cm:
+            raise ValueError(line)
+        col, typ, identity, seq, null = cm.groups()
+        parts = [q(col), map_type(typ.strip())]
+        if identity:
+            parts.append("IDENTITY(1, 1) ORDER")
+        if seq:
+            parts.append(f"DEFAULT {ident(seq)}.NEXTVAL")
+        parts.append(null)
+        lines.append(" ".join(parts))
+    transient = "MEMORY_OPTIMIZED = ON" in tail
+    cluster = re.search(r"ON \[PS_Date\] \((\[[^\]]+\])\)", tail)
+    ddl = f"CREATE OR REPLACE {'TRANSIENT ' if transient else ''}TABLE {q(schema)}.{q(table)} (\n    "
+    ddl += ",\n    ".join(lines) + "\n)"
+    if cluster:
+        ddl += f"\nCLUSTER BY ({cols(cluster.group(1))})"
+    ddl += ";"
+    return "\n".join([ddl] + comments(text, schema, table))
+
+
+def convert_sequence(path):
+    text = path.read_text()
+    name = re.search(r"CREATE SEQUENCE (\[[^\]]+\]\.\[[^\]]+\])", text).group(1)
+    start = re.search(r"START WITH (\d+)", text).group(1)
+    inc = re.search(r"INCREMENT BY (\d+)", text).group(1)
+    return f"CREATE OR REPLACE SEQUENCE {ident(name)} START = {start} INCREMENT = {inc} ORDER;"
+
+
+def schema_comment(name):
+    text = (SRC / "Security" / f"{name}.sql").read_text()
+    m = re.search(r"@value = N'((?:[^']|'')*)'", text)
+    return f"COMMENT ON SCHEMA {q(name)} IS {sql_str(m.group(1).replace(chr(39) * 2, chr(39)))};" if m else None
+
+
+def main():
+    out = [
+        "-- WideWorldImportersDW schema for Snowflake. Generated by generate_schema.py from ../schema; do not edit by hand.",
+        "-- Run with a role that can create databases, e.g. via SnowSQL / Snowflake CLI or a worksheet.",
+        "",
+        "CREATE DATABASE IF NOT EXISTS WIDEWORLDIMPORTERSDW;",
+        "USE DATABASE WIDEWORLDIMPORTERSDW;",
+        "",
+    ]
+    for s in SCHEMAS:
+        out.append(f"CREATE SCHEMA IF NOT EXISTS {q(s)};")
+        c = schema_comment(s)
+        if c:
+            out.append(c)
+    out.append("")
+    for p in sorted((SRC / "Sequences" / "Sequences").glob("*.sql")):
+        out.append(convert_sequence(p))
+    for s in TABLE_ORDER:
+        for p in sorted((SRC / s / "Tables").glob("*.sql")):
+            out += ["", convert_table(p)]
+    OUT.write_text("\n".join(out) + "\n")
+
+
+if __name__ == "__main__":
+    main()
