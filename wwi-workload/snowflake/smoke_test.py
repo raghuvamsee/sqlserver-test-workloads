@@ -1,9 +1,11 @@
 """End-to-end smoke test for the Snowflake WideWorldImportersDW procedures.
 
-Deploy 01_schema.sql and 02_procedures.sql first; this test resets the data via Configuration_ReseedETL.
+Redeploys 01_schema.sql and 02_procedures.sql first (recreating every table and sequence in
+WIDEWORLDIMPORTERSDW), because the expected keys assume freshly created sequences.
 Connection settings come from SNOWFLAKE_ACCOUNT, SNOWFLAKE_USER, SNOWFLAKE_PRIVATE_KEY_PATH,
 SNOWFLAKE_ROLE and SNOWFLAKE_WAREHOUSE. Requires snowflake-connector-python.
 """
+import io
 import os
 import sys
 
@@ -19,8 +21,14 @@ def connect(**kw):
                                        private_key=der, role=os.environ.get("SNOWFLAKE_ROLE"),
                                        warehouse=os.environ.get("SNOWFLAKE_WAREHOUSE"), **kw)
 
-c = connect(database="WIDEWORLDIMPORTERSDW")
+c = connect()
+here = os.path.dirname(os.path.abspath(__file__))
+for name in ("01_schema.sql", "02_procedures.sql"):
+    with open(os.path.join(here, name)) as f:
+        n = sum(1 for _ in c.execute_stream(io.StringIO(f.read())))
+    print(f"deployed {name}: {n} statements")
 cur = c.cursor()
+cur.execute("USE DATABASE WIDEWORLDIMPORTERSDW")
 fails = 0
 def run(sql, show=False, expect_error=None):
     global fails

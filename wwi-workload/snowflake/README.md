@@ -45,8 +45,8 @@ CALL "Integration"."PopulateDateDimensionForYear"(2013);
 
 `smoke_test.py` runs the procedures end to end against a deployed database: unknown members, date generation,
 ETL cutoff and lineage, dimension loads with SCD2 close-off, all six fact migrations, sequence reseeding and
-`Configuration_PopulateLargeSaleTable`. It resets data with `Configuration_ReseedETL` first, so only point it at a
-scratch database. It connects with key-pair auth; set `SNOWFLAKE_ACCOUNT`, `SNOWFLAKE_USER`,
+`Configuration_PopulateLargeSaleTable`. It redeploys `01_schema.sql` and `02_procedures.sql` first, which recreates every
+table and sequence in `WIDEWORLDIMPORTERSDW`, so don't run it against a database holding data you need. It connects with key-pair auth; set `SNOWFLAKE_ACCOUNT`, `SNOWFLAKE_USER`,
 `SNOWFLAKE_PRIVATE_KEY_PATH`, `SNOWFLAKE_ROLE` and `SNOWFLAKE_WAREHOUSE`. Takes about 15 minutes on an X-Small warehouse.
 
 ```bash
