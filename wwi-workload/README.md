@@ -29,6 +29,8 @@ docker exec wwi-sql /opt/mssql-tools18/bin/sqlcmd -C -S localhost -U sa -P '<pas
   -b -i /tmp/WideWorldImportersDW.sql
 ```
 
+> **Warning:** the script starts by dropping any existing database named `$(DatabaseName)` (`SET SINGLE_USER WITH ROLLBACK IMMEDIATE; DROP DATABASE`). It's meant for fresh, disposable instances; change `DatabaseName` before running it on a server that already has a `WideWorldImportersDW` you want to keep.
+
 To use a different database name or data path, edit the `:setvar` lines at the top of the script.
 The per-object files reference `$(DatabaseName)` in `schema/Storage/` and are not ordered for direct execution; use the full script to deploy.
 
