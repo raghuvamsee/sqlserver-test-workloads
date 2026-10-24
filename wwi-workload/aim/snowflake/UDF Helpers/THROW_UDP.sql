@@ -1,4 +1,4 @@
-USE DATABASE AIM_DB;
+USE DATABASE <%wideworldimportersdw%>;
 
 -- <copyright file="THROW_UDP.sql" company="Snowflake Inc">
 --        Copyright (c) 2019-2025 Snowflake Inc. All rights reserved.
@@ -16,7 +16,7 @@ USE DATABASE AIM_DB;
 -- Note:            In Snowflake a custom exception must be defined with some ID which is an integer between ]-20999, -20000[. -20001 is used by default.
 -- =======================================================================================================
 
-CREATE OR REPLACE PROCEDURE <%AIM_DB%>.PUBLIC.THROW_UDP(ERROR_NUMBER INT, MESSAGE string, STATE INT)
+CREATE OR REPLACE PROCEDURE <%wideworldimportersdw%>.PUBLIC.THROW_UDP(ERROR_NUMBER INT, MESSAGE string, STATE INT)
 RETURNS VARCHAR
 LANGUAGE SQL
 COMMENT = '{ "origin": "sf_sc", "name": "snowconvert", "version": {  "major": 2,  "minor": 51,  "patch": "3" }, "attributes": {  "component": "udf",  "convertedOn": "10/24/2026",  "domain": "no-domain-provided",  "migrationid": "b2+hARmCqXWV01MqpcnF4w==" }}'

@@ -1,4 +1,14 @@
 {
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": "Error: SQL compilation error:\nsyntax error line 4 at position 0 unexpected '!'. SqlState: 42000, VendorCode: 1003, QueryId: 01c7f392-0109-3987-0012-43a20003d04e"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:36:41Z"
+    }
+  },
   "codeStatus": {
     "assessment": {
       "containsCommit": false,
@@ -23,13 +33,26 @@
       "d20973f5-32ac-4262-8c9e-24dc1f9cb864"
     ]
   },
-  "extensions": {},
+  "extensions": {
+    "isDone": true,
+    "tasks": {
+      "verify": {
+        "details": {
+          "error": null,
+          "verifiedBy": "agent"
+        },
+        "error": null,
+        "status": "completed",
+        "updatedAt": "2026-10-24T20:37:07.476983161+00:00"
+      }
+    }
+  },
   "files": {
     "artifacts": {
       "path": "artifacts/wideworldimportersdw/sequences/sequence/citykey"
     },
     "converted": {
-      "checksum": "3a2d9240be06c4b980db853787b3291b",
+      "checksum": "f4789249168c3993c7a65fc657daa085",
       "path": "snowflake/wideworldimportersdw/sequences/sequence/citykey.sql"
     },
     "source": {
@@ -78,5 +101,5 @@
     "objectType": "sequence",
     "schema": "Sequences"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-24T20:37:52Z"
 }

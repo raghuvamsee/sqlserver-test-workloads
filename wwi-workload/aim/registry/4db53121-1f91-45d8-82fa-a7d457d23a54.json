@@ -1,4 +1,14 @@
 {
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": "Error: SQL compilation error:\nsyntax error line 4 at position 0 unexpected '!'. SqlState: 42000, VendorCode: 1003, QueryId: 01c7f392-0109-4316-0012-43a20003c05e"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:36:41Z"
+    }
+  },
   "codeStatus": {
     "assessment": {
       "containsCommit": false,
@@ -23,13 +33,26 @@
       "172e8c9d-5d97-43b1-ba0d-8b2de51fa3ca"
     ]
   },
-  "extensions": {},
+  "extensions": {
+    "isDone": true,
+    "tasks": {
+      "verify": {
+        "details": {
+          "error": null,
+          "verifiedBy": "agent"
+        },
+        "error": null,
+        "status": "completed",
+        "updatedAt": "2026-10-24T20:37:07.476983161+00:00"
+      }
+    }
+  },
   "files": {
     "artifacts": {
       "path": "artifacts/wideworldimportersdw/sequences/sequence/stockitemkey"
     },
     "converted": {
-      "checksum": "1847adfe9c2e969aa0f96488e1475ac5",
+      "checksum": "b82709aa3e5caae4f2d660e8f73d0060",
       "path": "snowflake/wideworldimportersdw/sequences/sequence/stockitemkey.sql"
     },
     "source": {
@@ -78,5 +101,5 @@
     "objectType": "sequence",
     "schema": "Sequences"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-24T20:37:52Z"
 }

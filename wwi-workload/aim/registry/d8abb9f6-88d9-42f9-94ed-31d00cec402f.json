@@ -1,4 +1,15 @@
 {
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:37:07Z"
+    }
+  },
   "codeStatus": {
     "conversion": {
       "converterVersion": "2.51.3",
@@ -18,10 +29,23 @@
       "75c9ae4f-76fa-4fcf-ae0a-08acbecb8530"
     ]
   },
-  "extensions": {},
+  "extensions": {
+    "isDone": true,
+    "tasks": {
+      "verify": {
+        "details": {
+          "error": null,
+          "verifiedBy": "agent"
+        },
+        "error": null,
+        "status": "completed",
+        "updatedAt": "2026-10-24T20:37:24.723679781+00:00"
+      }
+    }
+  },
   "files": {
     "converted": {
-      "checksum": "cfce13889c294418c202d5c5003aefa9",
+      "checksum": "82ad141631fb3c005d86f7d6131947c5",
       "path": "snowflake/UDF Helpers/QUOTENAME_UDF.sql"
     }
   },
@@ -35,11 +59,11 @@
   },
   "schemaVersion": 1,
   "target": {
-    "canonicalName": "<%AIM_DB%>.PUBLIC.QUOTENAME_UDF",
-    "database": "<%AIM_DB%>",
+    "canonicalName": "<%wideworldimportersdw%>.PUBLIC.QUOTENAME_UDF",
+    "database": "<%wideworldimportersdw%>",
     "name": "QUOTENAME_UDF",
     "objectType": "function",
     "schema": "PUBLIC"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-24T20:37:52Z"
 }

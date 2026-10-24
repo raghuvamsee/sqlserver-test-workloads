@@ -1,4 +1,14 @@
 {
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": "Error: SQL compilation error:\nsyntax error line 4 at position 0 unexpected '!'. SqlState: 42000, VendorCode: 1003, QueryId: 01c7f392-0109-4316-0012-43a20003c05a"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:36:41Z"
+    }
+  },
   "codeStatus": {
     "assessment": {
       "containsCommit": false,
@@ -23,13 +33,26 @@
       "06b7ad8e-ddf7-4b9d-9064-17b60587e404"
     ]
   },
-  "extensions": {},
+  "extensions": {
+    "isDone": true,
+    "tasks": {
+      "verify": {
+        "details": {
+          "error": null,
+          "verifiedBy": "agent"
+        },
+        "error": null,
+        "status": "completed",
+        "updatedAt": "2026-10-24T20:37:07.476983161+00:00"
+      }
+    }
+  },
   "files": {
     "artifacts": {
       "path": "artifacts/wideworldimportersdw/sequences/sequence/paymentmethodkey"
     },
     "converted": {
-      "checksum": "b5e0cc981907ec3136d5e80eb9665949",
+      "checksum": "f5e8a576b1360df10f2f44cca019de2f",
       "path": "snowflake/wideworldimportersdw/sequences/sequence/paymentmethodkey.sql"
     },
     "source": {
@@ -78,5 +101,5 @@
     "objectType": "sequence",
     "schema": "Sequences"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-24T20:37:52Z"
 }

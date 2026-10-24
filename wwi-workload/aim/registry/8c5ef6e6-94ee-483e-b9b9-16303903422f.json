@@ -1,4 +1,15 @@
 {
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:37:07Z"
+    }
+  },
   "codeStatus": {
     "conversion": {
       "converterVersion": "2.51.3",
@@ -18,10 +29,23 @@
       "1c09d28e-0eba-40b5-986f-febe7ac7dfbd"
     ]
   },
-  "extensions": {},
+  "extensions": {
+    "isDone": true,
+    "tasks": {
+      "verify": {
+        "details": {
+          "error": null,
+          "verifiedBy": "agent"
+        },
+        "error": null,
+        "status": "completed",
+        "updatedAt": "2026-10-24T20:37:24.723679781+00:00"
+      }
+    }
+  },
   "files": {
     "converted": {
-      "checksum": "807b624e4588d4ab2e78ccbc6c6cd676",
+      "checksum": "1b5223f3af72b514f9c7ae034f8fd2d2",
       "path": "snowflake/UDF Helpers/THROW_UDP.sql"
     }
   },
@@ -35,11 +59,11 @@
   },
   "schemaVersion": 1,
   "target": {
-    "canonicalName": "<%AIM_DB%>.PUBLIC.THROW_UDP",
-    "database": "<%AIM_DB%>",
+    "canonicalName": "<%wideworldimportersdw%>.PUBLIC.THROW_UDP",
+    "database": "<%wideworldimportersdw%>",
     "name": "THROW_UDP",
     "objectType": "procedure",
     "schema": "PUBLIC"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-24T20:37:52Z"
 }

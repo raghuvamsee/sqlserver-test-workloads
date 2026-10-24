@@ -1,4 +1,15 @@
 {
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:33:30Z"
+    }
+  },
   "codeStatus": {
     "assessment": {
       "containsCommit": false,
@@ -21,7 +32,9 @@
     "hasTransitiveMissingDependencies": false,
     "requiredBy": []
   },
-  "extensions": {},
+  "extensions": {
+    "isDone": true
+  },
   "files": {
     "artifacts": {
       "path": "artifacts/wideworldimportersdw/schema/fact"
@@ -62,5 +75,5 @@
     "name": "Fact",
     "objectType": "schema"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-24T20:37:52Z"
 }

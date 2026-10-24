@@ -1,4 +1,4 @@
-USE DATABASE AIM_DB;
+USE DATABASE <%wideworldimportersdw%>;
 
 -- <copyright file="QUOTENAME_UDF.sql" company="Snowflake Inc">
 --        Copyright (c) 2019-2025 Snowflake Inc. All rights reserved.
@@ -12,7 +12,7 @@ USE DATABASE AIM_DB;
 -- Snowflake quoted identifier when it is spliced into dynamic SQL.
 -- =========================================================================================================
 
-CREATE OR REPLACE FUNCTION <%AIM_DB%>.PUBLIC.QUOTENAME_UDF(STR VARCHAR) 
+CREATE OR REPLACE FUNCTION <%wideworldimportersdw%>.PUBLIC.QUOTENAME_UDF(STR VARCHAR) 
 RETURNS VARCHAR 
 LANGUAGE SQL 
 IMMUTABLE
@@ -27,7 +27,7 @@ $$
       END
 $$;
 
-CREATE OR REPLACE FUNCTION <%AIM_DB%>.PUBLIC.QUOTENAME_UDF(STR VARCHAR,QUOTECHAR VARCHAR)
+CREATE OR REPLACE FUNCTION <%wideworldimportersdw%>.PUBLIC.QUOTENAME_UDF(STR VARCHAR,QUOTECHAR VARCHAR)
 RETURNS VARCHAR 
 LANGUAGE SQL 
 IMMUTABLE

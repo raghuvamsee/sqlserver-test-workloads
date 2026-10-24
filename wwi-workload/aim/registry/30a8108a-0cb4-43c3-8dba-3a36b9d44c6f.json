@@ -1,4 +1,15 @@
 {
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:37:07Z"
+    }
+  },
   "codeStatus": {
     "conversion": {
       "converterVersion": "2.51.3",
@@ -18,10 +29,23 @@
       "9b231eeb-3339-4b1d-8cd4-c6f5ebf1d321"
     ]
   },
-  "extensions": {},
+  "extensions": {
+    "isDone": true,
+    "tasks": {
+      "verify": {
+        "details": {
+          "error": null,
+          "verifiedBy": "agent"
+        },
+        "error": null,
+        "status": "completed",
+        "updatedAt": "2026-10-24T20:37:24.723679781+00:00"
+      }
+    }
+  },
   "files": {
     "converted": {
-      "checksum": "8194a45ff72a498972ca8dd2b8f4e35f",
+      "checksum": "1e800c59ac1c0977e09efb4ec2d25b12",
       "path": "snowflake/UDF Helpers/RAISERROR_UDF.sql"
     }
   },
@@ -35,11 +59,11 @@
   },
   "schemaVersion": 1,
   "target": {
-    "canonicalName": "<%AIM_DB%>.PUBLIC.RAISERROR_UDF",
-    "database": "<%AIM_DB%>",
+    "canonicalName": "<%wideworldimportersdw%>.PUBLIC.RAISERROR_UDF",
+    "database": "<%wideworldimportersdw%>",
     "name": "RAISERROR_UDF",
     "objectType": "function",
     "schema": "PUBLIC"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-24T20:37:52Z"
 }

@@ -21,7 +21,20 @@
     "hasTransitiveMissingDependencies": false,
     "requiredBy": []
   },
-  "extensions": {},
+  "extensions": {
+    "isDone": true,
+    "tasks": {
+      "verify": {
+        "details": {
+          "error": null,
+          "verifiedBy": "agent"
+        },
+        "error": null,
+        "status": "completed",
+        "updatedAt": "2026-10-24T20:37:24.723679781+00:00"
+      }
+    }
+  },
   "files": {
     "artifacts": {
       "path": "artifacts/database/wideworldimportersdw"
@@ -70,5 +83,5 @@
     "name": "<%wideworldimportersdw%>",
     "objectType": "database"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-24T20:37:52Z"
 }
