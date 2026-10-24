@@ -154,7 +154,7 @@ tables:
     schemaName: Fact
     databaseName: WideWorldImportersDW
   target:
-    tableName: Order
+    tableName: '"Order"'
     schemaName: FACT
     databaseName: WWI_AIM
   columnNamesToPartitionBy:
