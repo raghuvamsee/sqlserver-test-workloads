@@ -1,10 +1,17 @@
 assessment_name: aim
 assessment_options: none
 code_source: extract
-committed_setup_tasks: registerCode,convertCode,runAssessment,configureSandboxProfile,configureTesting
+committed_setup_tasks: registerCode,convertCode,runAssessment,configureSandboxProfile,configureTesting,dataStrategy
 continue_to_migration: 'true'
 cortex_safe_tools_acknowledged: 'true'
 dashboard_port: 0
+data_infra_intent: 'true'
+data_migration_extraction_strategy: odbc
+data_migration_target_table_type: native
+data_migration_type: full
+data_orchestrator_placement: local
+data_validation_type: full
+data_worker_placement: local
 entry_mode: fresh
 git_enabled: true
 git_housekeeping_commits: true
@@ -22,5 +29,6 @@ run_mode_confirmed: 'true'
 sandbox_profile: sandbox
 snowflake_database: WWI_AIM
 tailor_conversion_settings: 'false'
+test_seed_source: source_db_query
 testing_data_source: source_database
 wave: '1'
