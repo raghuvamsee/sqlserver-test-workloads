@@ -1,0 +1,244 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "172e8c9d-5d97-43b1-ba0d-8b2de51fa3ca",
+        "isMissing": false,
+        "relationTypes": [
+          "FOREIGN KEY"
+        ]
+      },
+      {
+        "id": "06c1a86c-68de-47cb-8638-c5a6f62ae020",
+        "isMissing": false,
+        "relationTypes": [
+          "FOREIGN KEY"
+        ]
+      },
+      {
+        "id": "2685eca3-d88d-4aee-9354-8c62b9011b32",
+        "isMissing": false,
+        "relationTypes": [
+          "FOREIGN KEY"
+        ]
+      },
+      {
+        "id": "cf34e18d-290b-4bed-bad9-15b769fe40a9",
+        "isMissing": false,
+        "relationTypes": [
+          "FOREIGN KEY"
+        ]
+      },
+      {
+        "id": "d20973f5-32ac-4262-8c9e-24dc1f9cb864",
+        "isMissing": false,
+        "relationTypes": [
+          "FOREIGN KEY"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "3bfec749-680e-49b9-a41c-9974cbc5545d",
+      "9b231eeb-3339-4b1d-8cd4-c6f5ebf1d321",
+      "a4d9e481-0fc3-4291-bc5d-cc9a9c2b6b43",
+      "bac8a142-a195-454b-84e2-068a29127591"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "e79d19cca692ad6b0c79facabd12be27",
+      "path": "source/wideworldimportersdw/fact/table/sale.sql"
+    }
+  },
+  "id": "ad0a1a25-10bb-422a-91be-929f5d2732b9",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 2
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": true,
+        "name": "\"Sale Key\"",
+        "nullable": false,
+        "type": "BIGINT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"City Key\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Customer Key\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Bill To Customer Key\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Stock Item Key\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": true,
+        "name": "\"Invoice Date Key\"",
+        "nullable": false,
+        "type": "DATE"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Delivery Date Key\"",
+        "nullable": true,
+        "type": "DATE"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Salesperson Key\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"WWI Invoice ID\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "Description",
+        "nullable": false,
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "Package",
+        "nullable": false,
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "Quantity",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Unit Price\"",
+        "nullable": false,
+        "type": "DECIMAL"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Tax Rate\"",
+        "nullable": false,
+        "type": "DECIMAL"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Total Excluding Tax\"",
+        "nullable": false,
+        "type": "DECIMAL"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Tax Amount\"",
+        "nullable": false,
+        "type": "DECIMAL"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "Profit",
+        "nullable": false,
+        "type": "DECIMAL"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Total Including Tax\"",
+        "nullable": false,
+        "type": "DECIMAL"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Total Dry Items\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Total Chiller Items\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Lineage Key\"",
+        "nullable": false,
+        "type": "INT"
+      }
+    ],
+    "parameters": {
+      "arguments": [],
+      "returns": []
+    }
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Fact.Sale",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "Sale",
+    "objectType": "table",
+    "platform": "sqlServer",
+    "schema": "Fact"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

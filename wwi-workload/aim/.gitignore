@@ -1,0 +1,22 @@
+# Local configuration (not shared with team)
+.scai/config/project.local.yml
+.scai/config/plugin.local.yml
+.scai/config/profiles.local.yaml
+
+# Local Data Exchange Worker config
+.scai/config/dew_configuration.toml
+
+# Environment files
+.env
+.env.local
+
+# Temporary files
+*.tmp
+*.bak
+
+# Generated assessment report PDF (sibling of assessment/multi_report.html)
+assessment/*.pdf
+
+# OS files
+.DS_Store
+Thumbs.db

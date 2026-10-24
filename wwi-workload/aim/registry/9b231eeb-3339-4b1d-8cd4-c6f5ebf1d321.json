@@ -1,0 +1,138 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "ad0a1a25-10bb-422a-91be-929f5d2732b9",
+        "isMissing": false,
+        "relationTypes": [
+          "INDEX",
+          "ALTER",
+          "SELECT - FROM",
+          "INSERT"
+        ]
+      },
+      {
+        "id": "d20973f5-32ac-4262-8c9e-24dc1f9cb864",
+        "isMissing": false,
+        "relationTypes": [
+          "FOREIGN KEY"
+        ]
+      },
+      {
+        "id": "cf34e18d-290b-4bed-bad9-15b769fe40a9",
+        "isMissing": false,
+        "relationTypes": [
+          "FOREIGN KEY"
+        ]
+      },
+      {
+        "id": "2685eca3-d88d-4aee-9354-8c62b9011b32",
+        "isMissing": false,
+        "relationTypes": [
+          "FOREIGN KEY"
+        ]
+      },
+      {
+        "id": "06c1a86c-68de-47cb-8638-c5a6f62ae020",
+        "isMissing": false,
+        "relationTypes": [
+          "FOREIGN KEY"
+        ]
+      },
+      {
+        "id": "172e8c9d-5d97-43b1-ba0d-8b2de51fa3ca",
+        "isMissing": false,
+        "relationTypes": [
+          "FOREIGN KEY"
+        ]
+      },
+      {
+        "id": "64fd00bf-7950-477b-ba1a-16210cd0681c",
+        "isMissing": false,
+        "relationTypes": [
+          "UPDATE",
+          "INSERT"
+        ]
+      },
+      {
+        "id": "ec6d1d59-275d-4534-ac94-d38e8400544f",
+        "isMissing": false,
+        "relationTypes": [
+          "SQL STATEMENT"
+        ]
+      },
+      {
+        "id": "bac8a142-a195-454b-84e2-068a29127591",
+        "isMissing": false,
+        "relationTypes": [
+          "EXECUTE"
+        ]
+      },
+      {
+        "id": "6c81abb0-30ce-4acb-a808-b776792d3d51",
+        "isMissing": false,
+        "relationTypes": [
+          "EXECUTE"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": []
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "5af975de7e731e4844a7564998fc6988",
+      "path": "source/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    }
+  },
+  "id": "9b231eeb-3339-4b1d-8cd4-c6f5ebf1d321",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 4
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [],
+    "parameters": {
+      "arguments": [
+        {
+          "direction": "in",
+          "isCursor": false,
+          "name": "@EstimatedRowsFor2012",
+          "required": false,
+          "type": "BIGINT"
+        }
+      ],
+      "returns": []
+    }
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Application.Configuration_PopulateLargeSaleTable(BIGINT)",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "Configuration_PopulateLargeSaleTable",
+    "objectType": "procedure",
+    "platform": "sqlServer",
+    "schema": "Application"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

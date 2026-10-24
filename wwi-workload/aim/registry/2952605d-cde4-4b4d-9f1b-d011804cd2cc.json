@@ -1,0 +1,50 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": []
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "4b9ce24818f1c67ae8c400b48c136058",
+      "path": "source/wideworldimportersdw/schema/reports.sql"
+    }
+  },
+  "id": "2952605d-cde4-4b4d-9f1b-d011804cd2cc",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": []
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Reports",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "Reports",
+    "objectType": "schema",
+    "platform": "sqlServer"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

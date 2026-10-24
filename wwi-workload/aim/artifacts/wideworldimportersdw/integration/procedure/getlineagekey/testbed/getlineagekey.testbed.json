@@ -1,0 +1,134 @@
+{
+  "object": "WideWorldImportersDW.Integration.GetLineageKey(sysname,DATETIME2)",
+  "object_type": "PROCEDURE",
+  "branches": [],
+  "predicates": [
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Data Load Started\"",
+      "operator": "=",
+      "values": [
+        "@DataLoadStartedWhen"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Data Load Started\"",
+          "text": "[Data Load Started]"
+        },
+        {
+          "kind": "parameter",
+          "parameter": "@DataLoadStartedWhen",
+          "text": "@DataLoadStartedWhen"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Table Name\"",
+      "operator": "=",
+      "values": [
+        "@TableName"
+      ],
+      "branch_linked": false,
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Table Name\"",
+          "text": "[Table Name]"
+        },
+        {
+          "kind": "parameter",
+          "parameter": "@TableName",
+          "text": "@TableName"
+        }
+      ]
+    }
+  ],
+  "edges": [],
+  "assignments": [
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Data Load Completed\"",
+      "value": "NULL"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Data Load Started\"",
+      "value": "@DataLoadStartedWhen"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Source System Cutoff Time\"",
+      "value": "@NewCutoffTime"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Table Name\"",
+      "value": "@TableName"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Was Successful\"",
+      "value": "0",
+      "value_kind": "literal"
+    }
+  ],
+  "semi_anti": [],
+  "schema_version": 1,
+  "parameters": [
+    {
+      "name": "@TableName",
+      "type": "sysname",
+      "param_kind": "business_scalar",
+      "precision": 128,
+      "is_integer": false,
+      "is_number": false,
+      "is_string": true,
+      "is_date": false,
+      "is_boolean": false,
+      "is_binary": false
+    },
+    {
+      "name": "@NewCutoffTime",
+      "type": "DATETIME2",
+      "param_kind": "business_scalar",
+      "precision": 7,
+      "is_integer": false,
+      "is_number": false,
+      "is_string": false,
+      "is_date": true,
+      "is_boolean": false,
+      "is_binary": false
+    }
+  ],
+  "parameter_bindings": [
+    {
+      "parameter": "@TableName",
+      "bindings": [
+        {
+          "table": "WideWorldImportersDW.Integration.Lineage",
+          "column": "\"Table Name\"",
+          "operator": "="
+        }
+      ],
+      "branch_linked": false
+    },
+    {
+      "parameter": "@NewCutoffTime",
+      "bindings": [
+        {
+          "table": "WideWorldImportersDW.Integration.Lineage",
+          "column": "\"Source System Cutoff Time\"",
+          "operator": "="
+        }
+      ],
+      "branch_linked": false
+    }
+  ],
+  "parameter_coverage": {
+    "total": 2,
+    "branch_linked": 0,
+    "argument_only": 2
+  }
+}

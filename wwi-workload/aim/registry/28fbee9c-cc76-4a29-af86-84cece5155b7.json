@@ -1,0 +1,53 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "06b7ad8e-ddf7-4b9d-9064-17b60587e404"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "906eeb91ec158369e7d5db91630d9db0",
+      "path": "source/wideworldimportersdw/sequences/sequence/paymentmethodkey.sql"
+    }
+  },
+  "id": "28fbee9c-cc76-4a29-af86-84cece5155b7",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": []
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Sequences.PaymentMethodKey",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "PaymentMethodKey",
+    "objectType": "sequence",
+    "platform": "sqlServer",
+    "schema": "Sequences"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

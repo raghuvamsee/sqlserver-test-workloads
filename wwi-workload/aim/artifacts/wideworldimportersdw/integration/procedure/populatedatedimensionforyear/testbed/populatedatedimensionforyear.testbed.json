@@ -1,0 +1,216 @@
+{
+  "object": "WideWorldImportersDW.Integration.PopulateDateDimensionForYear(INT)",
+  "object_type": "PROCEDURE",
+  "branches": [
+    {
+      "branch_id": 1,
+      "construct_kind": "WHILE",
+      "line": 17,
+      "predicate_text": "YEAR(@DateCounter) = @YearNumber",
+      "columns": [],
+      "diagnostics": [
+        {
+          "reason": "non_algebraic_comparison",
+          "expression": "SqlEql"
+        }
+      ]
+    },
+    {
+      "branch_id": 0,
+      "construct_kind": "IF",
+      "line": 19,
+      "predicate_text": "NOT EXISTS (SELECT 1 FROM Dimension.[Date] WHERE [Date] = @DateCounter)",
+      "columns": [],
+      "predicate": {
+        "kind": "cardinality",
+        "operator": "=",
+        "table": "Dimension.[Date]",
+        "aggregate": "count",
+        "operand": 0
+      }
+    },
+    {
+      "branch_id": 2,
+      "construct_kind": "IF",
+      "line": 38,
+      "predicate_text": "XACT_STATE() <> 0",
+      "columns": [],
+      "diagnostics": [
+        {
+          "reason": "non_algebraic_comparison",
+          "expression": "SqlDifferent"
+        }
+      ]
+    }
+  ],
+  "predicates": [],
+  "edges": [],
+  "assignments": [
+    {
+      "table": "WideWorldImportersDW.Dimension.[Date]",
+      "column": "\"Calendar Month Label\"",
+      "value": "[Calendar Month Label]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Date]",
+      "column": "\"Calendar Month Number\"",
+      "value": "[Calendar Month Number]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Date]",
+      "column": "\"Calendar Year Label\"",
+      "value": "[Calendar Year Label]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Date]",
+      "column": "\"Calendar Year\"",
+      "value": "[Calendar Year]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Date]",
+      "column": "\"Day Number\"",
+      "value": "[Day Number]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Date]",
+      "column": "\"Fiscal Month Label\"",
+      "value": "[Fiscal Month Label]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Date]",
+      "column": "\"Fiscal Month Number\"",
+      "value": "[Fiscal Month Number]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Date]",
+      "column": "\"Fiscal Year Label\"",
+      "value": "[Fiscal Year Label]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Date]",
+      "column": "\"Fiscal Year\"",
+      "value": "[Fiscal Year]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Date]",
+      "column": "\"ISO Week Number\"",
+      "value": "[ISO Week Number]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Date]",
+      "column": "\"Short Month\"",
+      "value": "[Short Month]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Date]",
+      "column": "Date",
+      "value": "[Date]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Date]",
+      "column": "Day",
+      "value": "[Day]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Date]",
+      "column": "Month",
+      "value": "[Month]"
+    }
+  ],
+  "semi_anti": [
+    {
+      "kind": "ANTI",
+      "table": "WideWorldImportersDW.Dimension.[Date]",
+      "columns": []
+    }
+  ],
+  "schema_version": 1,
+  "insert_targets": [
+    {
+      "target_table": "WideWorldImportersDW.Dimension.[Date]",
+      "columns": [
+        {
+          "target_column": "\"Day Number\"",
+          "source_table": "WideWorldImportersDW.Dimension.[Date]",
+          "source_column": "\"Day Number\""
+        },
+        {
+          "target_column": "Day",
+          "source_table": "WideWorldImportersDW.Dimension.[Date]",
+          "source_column": "Day"
+        },
+        {
+          "target_column": "Month",
+          "source_table": "WideWorldImportersDW.Dimension.[Date]",
+          "source_column": "Month"
+        },
+        {
+          "target_column": "\"Short Month\"",
+          "source_table": "WideWorldImportersDW.Dimension.[Date]",
+          "source_column": "\"Short Month\""
+        },
+        {
+          "target_column": "\"Calendar Month Number\"",
+          "source_table": "WideWorldImportersDW.Dimension.[Date]",
+          "source_column": "\"Calendar Month Number\""
+        },
+        {
+          "target_column": "\"Calendar Month Label\"",
+          "source_table": "WideWorldImportersDW.Dimension.[Date]",
+          "source_column": "\"Calendar Month Label\""
+        },
+        {
+          "target_column": "\"Calendar Year\"",
+          "source_table": "WideWorldImportersDW.Dimension.[Date]",
+          "source_column": "\"Calendar Year\""
+        },
+        {
+          "target_column": "\"Calendar Year Label\"",
+          "source_table": "WideWorldImportersDW.Dimension.[Date]",
+          "source_column": "\"Calendar Year Label\""
+        },
+        {
+          "target_column": "\"Fiscal Month Number\"",
+          "source_table": "WideWorldImportersDW.Dimension.[Date]",
+          "source_column": "\"Fiscal Month Number\""
+        },
+        {
+          "target_column": "\"Fiscal Month Label\"",
+          "source_table": "WideWorldImportersDW.Dimension.[Date]",
+          "source_column": "\"Fiscal Month Label\""
+        },
+        {
+          "target_column": "\"Fiscal Year\"",
+          "source_table": "WideWorldImportersDW.Dimension.[Date]",
+          "source_column": "\"Fiscal Year\""
+        },
+        {
+          "target_column": "\"Fiscal Year Label\"",
+          "source_table": "WideWorldImportersDW.Dimension.[Date]",
+          "source_column": "\"Fiscal Year Label\""
+        },
+        {
+          "target_column": "\"ISO Week Number\"",
+          "source_table": "WideWorldImportersDW.Dimension.[Date]",
+          "source_column": "\"ISO Week Number\""
+        }
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "name": "@YearNumber",
+      "type": "INT",
+      "param_kind": "business_scalar",
+      "is_integer": true,
+      "is_number": true,
+      "is_string": false,
+      "is_date": false,
+      "is_boolean": false,
+      "is_binary": false,
+      "observed_values": [
+        "2012"
+      ]
+    }
+  ]
+}

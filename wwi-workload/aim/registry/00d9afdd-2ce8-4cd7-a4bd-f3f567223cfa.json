@@ -1,0 +1,94 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "16f90c39-8647-4c95-b5ec-126461ecb3ef",
+      "78b4c133-b88a-46fc-82b9-b15279a27f6e"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "12c982640de2fea10431a1383ecb229a",
+      "path": "source/wideworldimportersdw/integration/table/transactiontype_staging.sql"
+    }
+  },
+  "id": "00d9afdd-2ce8-4cd7-a4bd-f3f567223cfa",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": true,
+        "name": "\"Transaction Type Staging Key\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"WWI Transaction Type ID\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Transaction Type\"",
+        "nullable": false,
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Valid From\"",
+        "nullable": false,
+        "type": "DATETIME2"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Valid To\"",
+        "nullable": false,
+        "type": "DATETIME2"
+      }
+    ],
+    "parameters": {
+      "arguments": [],
+      "returns": []
+    }
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Integration.TransactionType_Staging",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "TransactionType_Staging",
+    "objectType": "table",
+    "platform": "sqlServer",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

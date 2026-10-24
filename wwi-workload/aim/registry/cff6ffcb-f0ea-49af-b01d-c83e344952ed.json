@@ -1,0 +1,159 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "9dbea1f6-5eb8-4044-b5e4-47770fdc7ef2",
+        "isMissing": false,
+        "relationTypes": [
+          "FOREIGN KEY"
+        ]
+      },
+      {
+        "id": "172e8c9d-5d97-43b1-ba0d-8b2de51fa3ca",
+        "isMissing": false,
+        "relationTypes": [
+          "FOREIGN KEY"
+        ]
+      },
+      {
+        "id": "2685eca3-d88d-4aee-9354-8c62b9011b32",
+        "isMissing": false,
+        "relationTypes": [
+          "FOREIGN KEY"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "3bfec749-680e-49b9-a41c-9974cbc5545d",
+      "bac8a142-a195-454b-84e2-068a29127591",
+      "bc70f733-1bf3-4137-87b5-69397ebb5877"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "4f6d4e4db0c4ea075ebf3102009f776d",
+      "path": "source/wideworldimportersdw/fact/table/purchase.sql"
+    }
+  },
+  "id": "cff6ffcb-f0ea-49af-b01d-c83e344952ed",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 2
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": true,
+        "name": "\"Purchase Key\"",
+        "nullable": false,
+        "type": "BIGINT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": true,
+        "name": "\"Date Key\"",
+        "nullable": false,
+        "type": "DATE"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Supplier Key\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Stock Item Key\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"WWI Purchase Order ID\"",
+        "nullable": true,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Ordered Outers\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Ordered Quantity\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Received Outers\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "Package",
+        "nullable": false,
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Is Order Finalized\"",
+        "nullable": false,
+        "type": "BIT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Lineage Key\"",
+        "nullable": false,
+        "type": "INT"
+      }
+    ],
+    "parameters": {
+      "arguments": [],
+      "returns": []
+    }
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Fact.Purchase",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "Purchase",
+    "objectType": "table",
+    "platform": "sqlServer",
+    "schema": "Fact"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

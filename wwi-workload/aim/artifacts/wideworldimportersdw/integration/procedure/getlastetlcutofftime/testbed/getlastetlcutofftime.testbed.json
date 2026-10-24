@@ -1,0 +1,78 @@
+{
+  "object": "WideWorldImportersDW.Integration.GetLastETLCutoffTime(sysname)",
+  "object_type": "PROCEDURE",
+  "branches": [
+    {
+      "branch_id": 0,
+      "construct_kind": "IF",
+      "line": 15,
+      "predicate_text": "@@ROWCOUNT = 0",
+      "columns": [],
+      "diagnostics": [
+        {
+          "reason": "non_algebraic_comparison",
+          "expression": "SqlEql"
+        }
+      ]
+    }
+  ],
+  "predicates": [
+    {
+      "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+      "column": "\"Table Name\"",
+      "operator": "=",
+      "values": [
+        "@TableName"
+      ],
+      "branch_linked": false,
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\"",
+          "text": "[Table Name]"
+        },
+        {
+          "kind": "parameter",
+          "parameter": "@TableName",
+          "text": "@TableName"
+        }
+      ]
+    }
+  ],
+  "edges": [],
+  "assignments": [],
+  "semi_anti": [],
+  "schema_version": 1,
+  "parameters": [
+    {
+      "name": "@TableName",
+      "type": "sysname",
+      "param_kind": "business_scalar",
+      "precision": 128,
+      "is_integer": false,
+      "is_number": false,
+      "is_string": true,
+      "is_date": false,
+      "is_boolean": false,
+      "is_binary": false
+    }
+  ],
+  "parameter_bindings": [
+    {
+      "parameter": "@TableName",
+      "bindings": [
+        {
+          "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+          "column": "\"Table Name\"",
+          "operator": "="
+        }
+      ],
+      "branch_linked": false
+    }
+  ],
+  "parameter_coverage": {
+    "total": 1,
+    "branch_linked": 0,
+    "argument_only": 1
+  }
+}

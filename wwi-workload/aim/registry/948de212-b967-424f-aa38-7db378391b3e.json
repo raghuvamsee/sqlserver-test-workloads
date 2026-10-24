@@ -1,0 +1,50 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": []
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "10bc2b8004c98c8c1ea6b779333662fa",
+      "path": "source/wideworldimportersdw/schema/powerbi.sql"
+    }
+  },
+  "id": "948de212-b967-424f-aa38-7db378391b3e",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": []
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.PowerBI",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "PowerBI",
+    "objectType": "schema",
+    "platform": "sqlServer"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

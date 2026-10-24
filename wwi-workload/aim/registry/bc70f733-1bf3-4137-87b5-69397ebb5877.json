@@ -1,0 +1,106 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": true,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "1b58ff50-d8e2-484d-ab98-b5441845a8a7",
+        "isMissing": false,
+        "relationTypes": [
+          "UPDATE"
+        ]
+      },
+      {
+        "id": "64fd00bf-7950-477b-ba1a-16210cd0681c",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM",
+          "UPDATE"
+        ]
+      },
+      {
+        "id": "4a2bd823-a131-402f-b23d-6ad35283c251",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM",
+          "UPDATE"
+        ]
+      },
+      {
+        "id": "cff6ffcb-f0ea-49af-b01d-c83e344952ed",
+        "isMissing": false,
+        "relationTypes": [
+          "INSERT",
+          "DELETE"
+        ]
+      },
+      {
+        "id": "172e8c9d-5d97-43b1-ba0d-8b2de51fa3ca",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM"
+        ]
+      },
+      {
+        "id": "9dbea1f6-5eb8-4044-b5e4-47770fdc7ef2",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": []
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "c38995399707c67740243ac5cf0e04aa",
+      "path": "source/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql"
+    }
+  },
+  "id": "bc70f733-1bf3-4137-87b5-69397ebb5877",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 3
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [],
+    "parameters": {
+      "arguments": [],
+      "returns": [
+        {
+          "name": "[Lineage Key]",
+          "type": "INT"
+        }
+      ]
+    }
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Integration.MigrateStagedPurchaseData",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "MigrateStagedPurchaseData",
+    "objectType": "procedure",
+    "platform": "sqlServer",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

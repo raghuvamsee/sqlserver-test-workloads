@@ -1,0 +1,192 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "16f90c39-8647-4c95-b5ec-126461ecb3ef",
+      "94b27a11-90e9-4b1b-8f82-1112a998026c"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "e06de3b0b62b59aeb4c65a24d4254585",
+      "path": "source/wideworldimportersdw/integration/table/stockitem_staging.sql"
+    }
+  },
+  "id": "7cc0c7c0-4360-43fe-9ad4-3b5007a85875",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": true,
+        "name": "\"Stock Item Staging Key\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"WWI Stock Item ID\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Stock Item\"",
+        "nullable": false,
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "Color",
+        "nullable": false,
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Selling Package\"",
+        "nullable": false,
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Buying Package\"",
+        "nullable": false,
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "Brand",
+        "nullable": false,
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "Size",
+        "nullable": false,
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Lead Time Days\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Quantity Per Outer\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Is Chiller Stock\"",
+        "nullable": false,
+        "type": "BIT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "Barcode",
+        "nullable": true,
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Tax Rate\"",
+        "nullable": false,
+        "type": "DECIMAL"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Unit Price\"",
+        "nullable": false,
+        "type": "DECIMAL"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Recommended Retail Price\"",
+        "nullable": true,
+        "type": "DECIMAL"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Typical Weight Per Unit\"",
+        "nullable": false,
+        "type": "DECIMAL"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "Photo",
+        "nullable": true,
+        "type": "VARBINARY"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Valid From\"",
+        "nullable": false,
+        "type": "DATETIME2"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Valid To\"",
+        "nullable": false,
+        "type": "DATETIME2"
+      }
+    ],
+    "parameters": {
+      "arguments": [],
+      "returns": []
+    }
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Integration.StockItem_Staging",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "StockItem_Staging",
+    "objectType": "table",
+    "platform": "sqlServer",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

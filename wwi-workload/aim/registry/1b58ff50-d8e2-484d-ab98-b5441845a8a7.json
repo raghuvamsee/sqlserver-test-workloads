@@ -1,0 +1,86 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "15f4538f-f470-41be-82a3-af4579497ee6",
+      "1c09d28e-0eba-40b5-986f-febe7ac7dfbd",
+      "3bfec749-680e-49b9-a41c-9974cbc5545d",
+      "502f33d6-5479-42c5-93c5-c7ab49887d89",
+      "61b177e5-22ae-4122-ad6d-d6d1b3294c2f",
+      "63d73798-b097-4e6e-9bad-ca1a0c797a2d",
+      "78b4c133-b88a-46fc-82b9-b15279a27f6e",
+      "8fb602a4-f637-4c3f-b8f0-7ff368017a53",
+      "94b27a11-90e9-4b1b-8f82-1112a998026c",
+      "9a3eb4a0-ce08-41f5-bbb4-dda3060b0afb",
+      "a4d9e481-0fc3-4291-bc5d-cc9a9c2b6b43",
+      "bc70f733-1bf3-4137-87b5-69397ebb5877",
+      "c8533b70-579e-44b7-835f-1ea1a422b480",
+      "d0cef0ff-9761-4e20-9ce8-2980bb9aeabe",
+      "e246ca55-9881-4ecd-8b71-f32f3f898ece"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "78401630053241ac2cb30bbca0134333",
+      "path": "source/wideworldimportersdw/integration/table/etl cutoff.sql"
+    }
+  },
+  "id": "1b58ff50-d8e2-484d-ab98-b5441845a8a7",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": true,
+        "name": "\"Table Name\"",
+        "nullable": false,
+        "type": "SYSNAME"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Cutoff Time\"",
+        "nullable": false,
+        "type": "DATETIME2"
+      }
+    ],
+    "parameters": {
+      "arguments": [],
+      "returns": []
+    }
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "[ETL Cutoff]",
+    "objectType": "table",
+    "platform": "sqlServer",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

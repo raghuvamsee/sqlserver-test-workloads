@@ -1,0 +1,54 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "64fd00bf-7950-477b-ba1a-16210cd0681c",
+      "9b231eeb-3339-4b1d-8cd4-c6f5ebf1d321"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "d2d2e3a1382714cf8530d01131f005f7",
+      "path": "source/wideworldimportersdw/sequences/sequence/lineagekey.sql"
+    }
+  },
+  "id": "ec6d1d59-275d-4534-ac94-d38e8400544f",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": []
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Sequences.LineageKey",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "LineageKey",
+    "objectType": "sequence",
+    "platform": "sqlServer",
+    "schema": "Sequences"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

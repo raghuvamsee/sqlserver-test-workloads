@@ -1,0 +1,76 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "1b58ff50-d8e2-484d-ab98-b5441845a8a7",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": []
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "42b24465357ceb3ee13f97ac19c2f38b",
+      "path": "source/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql"
+    }
+  },
+  "id": "1c09d28e-0eba-40b5-986f-febe7ac7dfbd",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [],
+    "parameters": {
+      "arguments": [
+        {
+          "direction": "in",
+          "isCursor": false,
+          "name": "@TableName",
+          "required": true,
+          "type": "SYSNAME"
+        }
+      ],
+      "returns": [
+        {
+          "name": "CutoffTime",
+          "type": "DATETIME2"
+        }
+      ]
+    }
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Integration.GetLastETLCutoffTime(SYSNAME)",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "GetLastETLCutoffTime",
+    "objectType": "procedure",
+    "platform": "sqlServer",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

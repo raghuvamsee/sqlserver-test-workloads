@@ -1,0 +1,131 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "172e8c9d-5d97-43b1-ba0d-8b2de51fa3ca",
+        "isMissing": false,
+        "relationTypes": [
+          "FOREIGN KEY"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "3bfec749-680e-49b9-a41c-9974cbc5545d",
+      "9a3eb4a0-ce08-41f5-bbb4-dda3060b0afb",
+      "bac8a142-a195-454b-84e2-068a29127591"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "e28dd7cc0b9ea96f68b8d0a7e579e763",
+      "path": "source/wideworldimportersdw/fact/table/stock holding.sql"
+    }
+  },
+  "id": "df33c519-db68-4b3b-9f03-726dababac27",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 2
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": true,
+        "name": "\"Stock Holding Key\"",
+        "nullable": false,
+        "type": "BIGINT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Stock Item Key\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Quantity On Hand\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Bin Location\"",
+        "nullable": false,
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Last Stocktake Quantity\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Last Cost Price\"",
+        "nullable": false,
+        "type": "DECIMAL"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Reorder Level\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Target Stock Level\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Lineage Key\"",
+        "nullable": false,
+        "type": "INT"
+      }
+    ],
+    "parameters": {
+      "arguments": [],
+      "returns": []
+    }
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Fact.[Stock Holding]",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "[Stock Holding]",
+    "objectType": "table",
+    "platform": "sqlServer",
+    "schema": "Fact"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

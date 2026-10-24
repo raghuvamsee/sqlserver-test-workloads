@@ -1,0 +1,91 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": true,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "1b58ff50-d8e2-484d-ab98-b5441845a8a7",
+        "isMissing": false,
+        "relationTypes": [
+          "UPDATE"
+        ]
+      },
+      {
+        "id": "64fd00bf-7950-477b-ba1a-16210cd0681c",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM",
+          "UPDATE"
+        ]
+      },
+      {
+        "id": "00d9afdd-2ce8-4cd7-a4bd-f3f567223cfa",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM"
+        ]
+      },
+      {
+        "id": "d8b668f7-6c45-4a16-a99b-971a55353911",
+        "isMissing": false,
+        "relationTypes": [
+          "INSERT",
+          "UPDATE"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": []
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "9ca719080b428aae1ed8754f0a979d0b",
+      "path": "source/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql"
+    }
+  },
+  "id": "78b4c133-b88a-46fc-82b9-b15279a27f6e",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 2
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [],
+    "parameters": {
+      "arguments": [],
+      "returns": [
+        {
+          "name": "[Lineage Key]",
+          "type": "INT"
+        }
+      ]
+    }
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Integration.MigrateStagedTransactionTypeData",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "MigrateStagedTransactionTypeData",
+    "objectType": "procedure",
+    "platform": "sqlServer",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

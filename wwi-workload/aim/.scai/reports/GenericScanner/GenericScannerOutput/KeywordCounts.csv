@@ -1,0 +1,1757 @@
+File,Technology,Keyword,Count
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,=,18
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,and,11
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,as,9
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,begin,2
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,coalesce,5
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,commit,1
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,create procedure,1
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,data,2
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,date,4
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,declare,1
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,delete,1
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,desc,1
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,description,2
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,dimension,5
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,end,1
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,excluding,2
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,execute,1
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,fact,2
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,from,22
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,go,1
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,id,16
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,in,1
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,including,2
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,insert,1
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,int,1
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,is null,1
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,key,29
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,last,10
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,load,2
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,name,2
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,on,2
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,order by,6
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,order,8
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,owner,1
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,package,2
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,return,1
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,select,9
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,set,5
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,source,1
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,successful,1
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,sysdatetime,1
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,system,1
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,table,2
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,time,2
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,to,5
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,top,6
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,tran,1
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,unit,2
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,update,3
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,use,1
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,when,10
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,where,10
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,with,1
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,<=,5
+/wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,SQL,>,5
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,=,12
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,and,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,as,7
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,begin,2
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,category,2
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,commit,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,create procedure,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,data,2
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,datetime2,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,declare,2
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,desc,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,dimension,2
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,end,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,execute,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,from,11
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,go,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,group by,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,group,2
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,id,6
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,inner join,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,insert,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,int,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,is null,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,key,5
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,load,2
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,min,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,name,2
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,on,3
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,order by,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,owner,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,primary,2
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,return,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,select,4
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,set,5
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,source,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,successful,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,sysdatetime,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,system,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,table,2
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,time,2
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,to,6
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,top,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,tran,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,update,3
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,use,1
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,where,5
+/wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,SQL,with,2
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,=,12
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,and,5
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,as,6
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,begin,2
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,coalesce,2
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,commit,1
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,create procedure,1
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,data,2
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,date,2
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,declare,1
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,delete,1
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,desc,1
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,dimension,2
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,end,1
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,execute,1
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,fact,2
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,from,13
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,go,1
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,id,8
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,in,1
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,insert,1
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,int,1
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,is null,1
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,is,2
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,key,15
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,last,4
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,load,2
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,name,2
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,on,2
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,order by,3
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,order,6
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,ordered,4
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,owner,1
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,package,2
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,return,1
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,select,6
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,set,5
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,source,1
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,successful,1
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,sysdatetime,1
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,system,1
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,table,2
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,time,2
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,to,2
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,top,3
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,tran,1
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,update,3
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,use,1
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,when,4
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,where,7
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,with,1
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,<=,2
+/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,SQL,>,2
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,=,4
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,as,2
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,begin try,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,begin catch,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,begin,4
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,commit,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,create procedure,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,date,6
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,dateadd,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,datefromparts,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,day,5
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,declare,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,dimension,2
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,end try,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,end catch,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,end,3
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,execute,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,exists,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,from,2
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,go,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,if,2
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,insert,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,int,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,label,8
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,month,12
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,not,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,number,8
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,on,2
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,owner,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,print,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,return,2
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,rollback,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,select,2
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,set,3
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,throw,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,tran,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,use,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,week,2
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,where,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,while,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,with,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,xact_state,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,year,9
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,-,1
+/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,SQL,<>,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,=,26
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,and,9
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,as,9
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,begin,2
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,coalesce,4
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,commit,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,create procedure,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,data,2
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,date,4
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,declare,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,desc,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,dimension,4
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,end,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,execute,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,fact,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,from,16
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,go,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,id,20
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,insert,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,int,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,is null,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,key,34
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,last,8
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,load,2
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,merge,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,movement,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,name,2
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,on,3
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,order by,5
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,order,4
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,owner,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,return,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,select,6
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,set,6
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,source,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,successful,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,sysdatetime,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,system,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,table,2
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,then,2
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,time,2
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,to,4
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,top,5
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,tran,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,transaction,13
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,type,9
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,update,4
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,use,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,using,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,values,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,when not matched,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,when matched,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,when,8
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,where,8
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,with,1
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,<=,4
+/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,SQL,>,4
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,=,12
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,and,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,as,7
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,begin,2
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,commit,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,create procedure,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,data,2
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,datetime2,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,declare,2
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,desc,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,dimension,2
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,end,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,execute,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,from,11
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,go,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,group by,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,id,6
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,inner join,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,insert,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,int,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,is null,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,key,5
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,load,2
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,location,2
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,min,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,name,2
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,on,3
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,order by,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,owner,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,return,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,select,4
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,set,5
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,source,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,state,2
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,successful,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,sysdatetime,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,system,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,table,2
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,time,2
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,to,4
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,top,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,tran,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,update,3
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,use,1
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,where,5
+/wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,SQL,with,2
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,=,12
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,and,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,as,7
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,begin,2
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,category,2
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,commit,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,create procedure,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,data,2
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,datetime2,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,days,2
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,declare,2
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,desc,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,dimension,2
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,end,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,execute,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,from,11
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,go,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,group by,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,id,6
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,inner join,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,insert,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,int,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,is null,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,key,5
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,load,2
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,min,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,name,2
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,on,3
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,order by,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,owner,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,primary,2
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,reference,2
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,return,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,select,4
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,set,5
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,source,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,successful,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,sysdatetime,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,system,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,table,2
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,time,2
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,to,4
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,top,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,tran,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,update,3
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,use,1
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,where,5
+/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,SQL,with,2
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,=,12
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,and,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,as,7
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,begin,2
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,commit,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,create procedure,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,data,2
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,datetime2,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,declare,2
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,desc,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,dimension,2
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,end,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,execute,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,from,11
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,go,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,group by,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,id,6
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,inner join,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,insert,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,int,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,is null,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,is,2
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,key,5
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,load,2
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,min,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,name,4
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,on,3
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,order by,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,owner,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,return,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,select,4
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,set,5
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,source,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,successful,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,sysdatetime,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,system,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,table,2
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,time,2
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,to,4
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,top,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,tran,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,update,3
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,use,1
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,where,5
+/wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,SQL,with,2
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,=,12
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,and,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,as,7
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,begin,2
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,commit,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,create procedure,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,data,2
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,datetime2,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,days,2
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,declare,2
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,desc,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,dimension,2
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,end,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,execute,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,from,11
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,go,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,group by,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,id,6
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,inner join,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,insert,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,int,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,is null,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,is,2
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,key,5
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,lead,2
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,load,2
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,min,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,name,2
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,on,3
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,order by,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,outer,2
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,owner,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,package,4
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,per,4
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,return,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,select,4
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,set,5
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,size,2
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,source,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,successful,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,sysdatetime,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,system,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,table,2
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,time,4
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,to,4
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,top,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,tran,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,unit,4
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,update,3
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,use,1
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,where,5
+/wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,SQL,with,2
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,=,3
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,and,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,as,3
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,begin,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,create procedure,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,data,3
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,datetime2,2
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,declare,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,desc,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,end,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,execute,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,from,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,go,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,insert,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,key,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,load,3
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,name,2
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,null,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,on,2
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,order by,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,owner,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,return,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,select,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,set,2
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,source,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,successful,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,sysdatetime,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,system,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,table,2
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,time,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,top,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,use,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,values,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,where,1
+/wideworldimportersdw/integration/procedure/getlineagekey.sql,SQL,with,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,=,12
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,and,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,as,7
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,begin,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,commit,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,create procedure,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,data,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,datetime2,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,declare,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,desc,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,dimension,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,end,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,execute,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,from,11
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,go,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,group by,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,id,6
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,inner join,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,insert,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,int,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,is null,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,key,5
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,load,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,min,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,name,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,on,3
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,order by,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,owner,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,return,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,select,4
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,set,5
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,source,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,successful,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,sysdatetime,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,system,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,table,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,time,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,to,4
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,top,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,tran,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,transaction,10
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,type,10
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,update,3
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,use,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,where,5
+/wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,SQL,with,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,=,18
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,and,11
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,as,8
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,begin,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,coalesce,5
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,commit,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,create procedure,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,data,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,date,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,declare,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,desc,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,dimension,5
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,end,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,excluding,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,execute,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,fact,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,from,20
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,go,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,id,18
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,including,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,insert,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,int,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,is null,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,is,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,key,27
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,last,10
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,load,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,method,7
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,name,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,number,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,on,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,order by,6
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,order,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,owner,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,return,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,select,8
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,set,5
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,source,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,successful,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,sysdatetime,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,system,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,table,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,time,2
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,to,9
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,top,6
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,tran,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,transaction,12
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,type,7
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,update,3
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,use,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,when,10
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,where,9
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,with,1
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,<=,5
+/wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,SQL,>,5
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,=,10
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,and,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,as,4
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,begin,2
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,coalesce,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,commit,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,cost,2
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,create procedure,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,data,2
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,declare,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,desc,2
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,dimension,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,end,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,execute,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,fact,2
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,from,6
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,go,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,id,2
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,insert,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,int,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,is null,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,key,9
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,last,4
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,level,4
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,load,2
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,location,2
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,name,2
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,on,4
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,order by,2
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,owner,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,return,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,select,4
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,set,5
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,source,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,successful,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,sysdatetime,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,system,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,table,2
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,target,2
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,time,2
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,to,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,top,2
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,tran,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,truncate table,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,update,3
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,use,1
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,where,5
+/wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,SQL,with,1
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,=,2
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,@@rowcount,1
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,as,3
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,begin,2
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,create procedure,1
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,end,2
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,execute,1
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,from,1
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,go,1
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,if,1
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,name,1
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,on,2
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,owner,1
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,print,1
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,return,2
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,select,1
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,set,2
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,table,1
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,throw,1
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,time,1
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,use,1
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,where,1
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,with,1
+/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,SQL,-,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,=,12
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,and,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,as,7
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,begin,2
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,commit,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,create procedure,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,data,2
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,datetime2,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,declare,2
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,desc,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,dimension,2
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,end,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,execute,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,from,11
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,go,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,group by,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,id,6
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,inner join,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,insert,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,int,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,is null,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,key,5
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,load,2
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,method,10
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,min,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,name,2
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,on,3
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,order by,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,owner,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,return,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,select,4
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,set,5
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,source,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,successful,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,sysdatetime,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,system,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,table,2
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,time,2
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,to,4
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,top,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,tran,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,update,3
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,use,1
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,where,5
+/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,SQL,with,2
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,=,18
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,and,11
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,as,9
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,begin,2
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,coalesce,5
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,commit,1
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,create procedure,1
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,data,2
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,date,4
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,declare,1
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,delete,1
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,desc,1
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,description,2
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,dimension,5
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,end,1
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,excluding,2
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,execute,1
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,fact,2
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,from,22
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,go,1
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,id,14
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,in,1
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,including,2
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,insert,1
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,int,1
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,is null,1
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,key,29
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,last,10
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,load,2
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,name,2
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,on,2
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,order by,6
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,owner,1
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,package,2
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,return,1
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,select,9
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,set,5
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,source,1
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,successful,1
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,sysdatetime,1
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,system,1
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,table,2
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,time,2
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,to,9
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,top,6
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,tran,1
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,unit,2
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,update,3
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,use,1
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,when,10
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,where,10
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,with,1
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,<=,5
+/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,SQL,>,5
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,as,26
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,case,4
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,cast,11
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,create function,1
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,date,2
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,datename,5
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,datepart,1
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,day,4
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,else,4
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,end,4
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,go,1
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,in,4
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,label,4
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,month,17
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,number,4
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,nvarchar,11
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,return,1
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,returns,1
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,select,1
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,substring,3
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,table,1
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,then,4
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,use,1
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,week,1
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,when,4
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,year,13
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,+,12
+/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,SQL,-,1
+/wideworldimportersdw/integration/table/customer_staging.sql,SQL,asc,1
+/wideworldimportersdw/integration/table/customer_staging.sql,SQL,category,1
+/wideworldimportersdw/integration/table/customer_staging.sql,SQL,collate,6
+/wideworldimportersdw/integration/table/customer_staging.sql,SQL,constraint,1
+/wideworldimportersdw/integration/table/customer_staging.sql,SQL,create table,1
+/wideworldimportersdw/integration/table/customer_staging.sql,SQL,datetime2,2
+/wideworldimportersdw/integration/table/customer_staging.sql,SQL,go,1
+/wideworldimportersdw/integration/table/customer_staging.sql,SQL,identity,1
+/wideworldimportersdw/integration/table/customer_staging.sql,SQL,int,2
+/wideworldimportersdw/integration/table/customer_staging.sql,SQL,key,1
+/wideworldimportersdw/integration/table/customer_staging.sql,SQL,not null,10
+/wideworldimportersdw/integration/table/customer_staging.sql,SQL,nvarchar,6
+/wideworldimportersdw/integration/table/customer_staging.sql,SQL,primary key,1
+/wideworldimportersdw/integration/table/customer_staging.sql,SQL,use,1
+/wideworldimportersdw/integration/table/employee_staging.sql,SQL,asc,1
+/wideworldimportersdw/integration/table/employee_staging.sql,SQL,bit,1
+/wideworldimportersdw/integration/table/employee_staging.sql,SQL,collate,2
+/wideworldimportersdw/integration/table/employee_staging.sql,SQL,constraint,1
+/wideworldimportersdw/integration/table/employee_staging.sql,SQL,create table,1
+/wideworldimportersdw/integration/table/employee_staging.sql,SQL,datetime2,2
+/wideworldimportersdw/integration/table/employee_staging.sql,SQL,go,1
+/wideworldimportersdw/integration/table/employee_staging.sql,SQL,identity,1
+/wideworldimportersdw/integration/table/employee_staging.sql,SQL,int,2
+/wideworldimportersdw/integration/table/employee_staging.sql,SQL,key,1
+/wideworldimportersdw/integration/table/employee_staging.sql,SQL,not null,7
+/wideworldimportersdw/integration/table/employee_staging.sql,SQL,null,1
+/wideworldimportersdw/integration/table/employee_staging.sql,SQL,nvarchar,2
+/wideworldimportersdw/integration/table/employee_staging.sql,SQL,primary key,1
+/wideworldimportersdw/integration/table/employee_staging.sql,SQL,use,1
+/wideworldimportersdw/integration/table/employee_staging.sql,SQL,varbinary,1
+/wideworldimportersdw/integration/table/transactiontype_staging.sql,SQL,asc,1
+/wideworldimportersdw/integration/table/transactiontype_staging.sql,SQL,collate,1
+/wideworldimportersdw/integration/table/transactiontype_staging.sql,SQL,constraint,1
+/wideworldimportersdw/integration/table/transactiontype_staging.sql,SQL,create table,1
+/wideworldimportersdw/integration/table/transactiontype_staging.sql,SQL,datetime2,2
+/wideworldimportersdw/integration/table/transactiontype_staging.sql,SQL,go,1
+/wideworldimportersdw/integration/table/transactiontype_staging.sql,SQL,identity,1
+/wideworldimportersdw/integration/table/transactiontype_staging.sql,SQL,int,2
+/wideworldimportersdw/integration/table/transactiontype_staging.sql,SQL,key,1
+/wideworldimportersdw/integration/table/transactiontype_staging.sql,SQL,not null,5
+/wideworldimportersdw/integration/table/transactiontype_staging.sql,SQL,nvarchar,1
+/wideworldimportersdw/integration/table/transactiontype_staging.sql,SQL,primary key,1
+/wideworldimportersdw/integration/table/transactiontype_staging.sql,SQL,transaction,1
+/wideworldimportersdw/integration/table/transactiontype_staging.sql,SQL,type,1
+/wideworldimportersdw/integration/table/transactiontype_staging.sql,SQL,use,1
+/wideworldimportersdw/integration/table/order_staging.sql,SQL,asc,1
+/wideworldimportersdw/integration/table/order_staging.sql,SQL,bigint,1
+/wideworldimportersdw/integration/table/order_staging.sql,SQL,collate,2
+/wideworldimportersdw/integration/table/order_staging.sql,SQL,constraint,1
+/wideworldimportersdw/integration/table/order_staging.sql,SQL,create table,1
+/wideworldimportersdw/integration/table/order_staging.sql,SQL,date,2
+/wideworldimportersdw/integration/table/order_staging.sql,SQL,datetime2,1
+/wideworldimportersdw/integration/table/order_staging.sql,SQL,decimal,5
+/wideworldimportersdw/integration/table/order_staging.sql,SQL,description,1
+/wideworldimportersdw/integration/table/order_staging.sql,SQL,go,1
+/wideworldimportersdw/integration/table/order_staging.sql,SQL,identity,1
+/wideworldimportersdw/integration/table/order_staging.sql,SQL,int,14
+/wideworldimportersdw/integration/table/order_staging.sql,SQL,key,1
+/wideworldimportersdw/integration/table/order_staging.sql,SQL,not null,1
+/wideworldimportersdw/integration/table/order_staging.sql,SQL,null,24
+/wideworldimportersdw/integration/table/order_staging.sql,SQL,nvarchar,2
+/wideworldimportersdw/integration/table/order_staging.sql,SQL,order,1
+/wideworldimportersdw/integration/table/order_staging.sql,SQL,package,1
+/wideworldimportersdw/integration/table/order_staging.sql,SQL,primary key,1
+/wideworldimportersdw/integration/table/order_staging.sql,SQL,use,1
+/wideworldimportersdw/integration/table/stockholding_staging.sql,SQL,asc,1
+/wideworldimportersdw/integration/table/stockholding_staging.sql,SQL,bigint,1
+/wideworldimportersdw/integration/table/stockholding_staging.sql,SQL,collate,1
+/wideworldimportersdw/integration/table/stockholding_staging.sql,SQL,constraint,1
+/wideworldimportersdw/integration/table/stockholding_staging.sql,SQL,create table,1
+/wideworldimportersdw/integration/table/stockholding_staging.sql,SQL,decimal,1
+/wideworldimportersdw/integration/table/stockholding_staging.sql,SQL,go,1
+/wideworldimportersdw/integration/table/stockholding_staging.sql,SQL,identity,1
+/wideworldimportersdw/integration/table/stockholding_staging.sql,SQL,int,6
+/wideworldimportersdw/integration/table/stockholding_staging.sql,SQL,key,1
+/wideworldimportersdw/integration/table/stockholding_staging.sql,SQL,not null,1
+/wideworldimportersdw/integration/table/stockholding_staging.sql,SQL,null,8
+/wideworldimportersdw/integration/table/stockholding_staging.sql,SQL,nvarchar,1
+/wideworldimportersdw/integration/table/stockholding_staging.sql,SQL,primary key,1
+/wideworldimportersdw/integration/table/stockholding_staging.sql,SQL,use,1
+/wideworldimportersdw/integration/table/city_staging.sql,SQL,asc,1
+/wideworldimportersdw/integration/table/city_staging.sql,SQL,bigint,1
+/wideworldimportersdw/integration/table/city_staging.sql,SQL,collate,7
+/wideworldimportersdw/integration/table/city_staging.sql,SQL,constraint,1
+/wideworldimportersdw/integration/table/city_staging.sql,SQL,create table,1
+/wideworldimportersdw/integration/table/city_staging.sql,SQL,datetime2,2
+/wideworldimportersdw/integration/table/city_staging.sql,SQL,geography,1
+/wideworldimportersdw/integration/table/city_staging.sql,SQL,go,1
+/wideworldimportersdw/integration/table/city_staging.sql,SQL,identity,1
+/wideworldimportersdw/integration/table/city_staging.sql,SQL,int,2
+/wideworldimportersdw/integration/table/city_staging.sql,SQL,key,1
+/wideworldimportersdw/integration/table/city_staging.sql,SQL,location,1
+/wideworldimportersdw/integration/table/city_staging.sql,SQL,not null,12
+/wideworldimportersdw/integration/table/city_staging.sql,SQL,null,1
+/wideworldimportersdw/integration/table/city_staging.sql,SQL,nvarchar,7
+/wideworldimportersdw/integration/table/city_staging.sql,SQL,primary key,1
+/wideworldimportersdw/integration/table/city_staging.sql,SQL,use,1
+/wideworldimportersdw/integration/table/lineage.sql,SQL,asc,1
+/wideworldimportersdw/integration/table/lineage.sql,SQL,bit,1
+/wideworldimportersdw/integration/table/lineage.sql,SQL,constraint,2
+/wideworldimportersdw/integration/table/lineage.sql,SQL,create table,1
+/wideworldimportersdw/integration/table/lineage.sql,SQL,datetime2,3
+/wideworldimportersdw/integration/table/lineage.sql,SQL,default,1
+/wideworldimportersdw/integration/table/lineage.sql,SQL,go,1
+/wideworldimportersdw/integration/table/lineage.sql,SQL,int,1
+/wideworldimportersdw/integration/table/lineage.sql,SQL,key,1
+/wideworldimportersdw/integration/table/lineage.sql,SQL,next value for,1
+/wideworldimportersdw/integration/table/lineage.sql,SQL,not null,5
+/wideworldimportersdw/integration/table/lineage.sql,SQL,null,1
+/wideworldimportersdw/integration/table/lineage.sql,SQL,primary key,1
+/wideworldimportersdw/integration/table/lineage.sql,SQL,use,1
+/wideworldimportersdw/integration/table/transaction_staging.sql,SQL,asc,1
+/wideworldimportersdw/integration/table/transaction_staging.sql,SQL,bigint,1
+/wideworldimportersdw/integration/table/transaction_staging.sql,SQL,bit,1
+/wideworldimportersdw/integration/table/transaction_staging.sql,SQL,collate,1
+/wideworldimportersdw/integration/table/transaction_staging.sql,SQL,constraint,1
+/wideworldimportersdw/integration/table/transaction_staging.sql,SQL,create table,1
+/wideworldimportersdw/integration/table/transaction_staging.sql,SQL,date,1
+/wideworldimportersdw/integration/table/transaction_staging.sql,SQL,datetime2,1
+/wideworldimportersdw/integration/table/transaction_staging.sql,SQL,decimal,4
+/wideworldimportersdw/integration/table/transaction_staging.sql,SQL,go,1
+/wideworldimportersdw/integration/table/transaction_staging.sql,SQL,identity,1
+/wideworldimportersdw/integration/table/transaction_staging.sql,SQL,int,14
+/wideworldimportersdw/integration/table/transaction_staging.sql,SQL,key,1
+/wideworldimportersdw/integration/table/transaction_staging.sql,SQL,not null,1
+/wideworldimportersdw/integration/table/transaction_staging.sql,SQL,null,22
+/wideworldimportersdw/integration/table/transaction_staging.sql,SQL,nvarchar,1
+/wideworldimportersdw/integration/table/transaction_staging.sql,SQL,primary key,1
+/wideworldimportersdw/integration/table/transaction_staging.sql,SQL,transaction,1
+/wideworldimportersdw/integration/table/transaction_staging.sql,SQL,use,1
+/wideworldimportersdw/integration/table/movement_staging.sql,SQL,asc,1
+/wideworldimportersdw/integration/table/movement_staging.sql,SQL,bigint,1
+/wideworldimportersdw/integration/table/movement_staging.sql,SQL,constraint,1
+/wideworldimportersdw/integration/table/movement_staging.sql,SQL,create table,1
+/wideworldimportersdw/integration/table/movement_staging.sql,SQL,date,1
+/wideworldimportersdw/integration/table/movement_staging.sql,SQL,datetime2,1
+/wideworldimportersdw/integration/table/movement_staging.sql,SQL,go,1
+/wideworldimportersdw/integration/table/movement_staging.sql,SQL,identity,1
+/wideworldimportersdw/integration/table/movement_staging.sql,SQL,int,12
+/wideworldimportersdw/integration/table/movement_staging.sql,SQL,key,1
+/wideworldimportersdw/integration/table/movement_staging.sql,SQL,movement,1
+/wideworldimportersdw/integration/table/movement_staging.sql,SQL,not null,1
+/wideworldimportersdw/integration/table/movement_staging.sql,SQL,null,14
+/wideworldimportersdw/integration/table/movement_staging.sql,SQL,primary key,1
+/wideworldimportersdw/integration/table/movement_staging.sql,SQL,use,1
+/wideworldimportersdw/integration/table/paymentmethod_staging.sql,SQL,asc,1
+/wideworldimportersdw/integration/table/paymentmethod_staging.sql,SQL,collate,1
+/wideworldimportersdw/integration/table/paymentmethod_staging.sql,SQL,constraint,1
+/wideworldimportersdw/integration/table/paymentmethod_staging.sql,SQL,create table,1
+/wideworldimportersdw/integration/table/paymentmethod_staging.sql,SQL,datetime2,2
+/wideworldimportersdw/integration/table/paymentmethod_staging.sql,SQL,go,1
+/wideworldimportersdw/integration/table/paymentmethod_staging.sql,SQL,identity,1
+/wideworldimportersdw/integration/table/paymentmethod_staging.sql,SQL,int,2
+/wideworldimportersdw/integration/table/paymentmethod_staging.sql,SQL,key,1
+/wideworldimportersdw/integration/table/paymentmethod_staging.sql,SQL,method,1
+/wideworldimportersdw/integration/table/paymentmethod_staging.sql,SQL,not null,5
+/wideworldimportersdw/integration/table/paymentmethod_staging.sql,SQL,nvarchar,1
+/wideworldimportersdw/integration/table/paymentmethod_staging.sql,SQL,primary key,1
+/wideworldimportersdw/integration/table/paymentmethod_staging.sql,SQL,use,1
+/wideworldimportersdw/integration/table/sale_staging.sql,SQL,asc,1
+/wideworldimportersdw/integration/table/sale_staging.sql,SQL,bigint,1
+/wideworldimportersdw/integration/table/sale_staging.sql,SQL,collate,2
+/wideworldimportersdw/integration/table/sale_staging.sql,SQL,constraint,1
+/wideworldimportersdw/integration/table/sale_staging.sql,SQL,create table,1
+/wideworldimportersdw/integration/table/sale_staging.sql,SQL,date,2
+/wideworldimportersdw/integration/table/sale_staging.sql,SQL,datetime2,1
+/wideworldimportersdw/integration/table/sale_staging.sql,SQL,decimal,6
+/wideworldimportersdw/integration/table/sale_staging.sql,SQL,description,1
+/wideworldimportersdw/integration/table/sale_staging.sql,SQL,go,1
+/wideworldimportersdw/integration/table/sale_staging.sql,SQL,identity,1
+/wideworldimportersdw/integration/table/sale_staging.sql,SQL,int,14
+/wideworldimportersdw/integration/table/sale_staging.sql,SQL,key,1
+/wideworldimportersdw/integration/table/sale_staging.sql,SQL,not null,1
+/wideworldimportersdw/integration/table/sale_staging.sql,SQL,null,25
+/wideworldimportersdw/integration/table/sale_staging.sql,SQL,nvarchar,2
+/wideworldimportersdw/integration/table/sale_staging.sql,SQL,package,1
+/wideworldimportersdw/integration/table/sale_staging.sql,SQL,primary key,1
+/wideworldimportersdw/integration/table/sale_staging.sql,SQL,use,1
+/wideworldimportersdw/integration/table/purchase_staging.sql,SQL,asc,1
+/wideworldimportersdw/integration/table/purchase_staging.sql,SQL,bigint,1
+/wideworldimportersdw/integration/table/purchase_staging.sql,SQL,bit,1
+/wideworldimportersdw/integration/table/purchase_staging.sql,SQL,collate,1
+/wideworldimportersdw/integration/table/purchase_staging.sql,SQL,constraint,1
+/wideworldimportersdw/integration/table/purchase_staging.sql,SQL,create table,1
+/wideworldimportersdw/integration/table/purchase_staging.sql,SQL,date,1
+/wideworldimportersdw/integration/table/purchase_staging.sql,SQL,datetime2,1
+/wideworldimportersdw/integration/table/purchase_staging.sql,SQL,go,1
+/wideworldimportersdw/integration/table/purchase_staging.sql,SQL,identity,1
+/wideworldimportersdw/integration/table/purchase_staging.sql,SQL,int,8
+/wideworldimportersdw/integration/table/purchase_staging.sql,SQL,key,1
+/wideworldimportersdw/integration/table/purchase_staging.sql,SQL,not null,1
+/wideworldimportersdw/integration/table/purchase_staging.sql,SQL,null,12
+/wideworldimportersdw/integration/table/purchase_staging.sql,SQL,nvarchar,1
+/wideworldimportersdw/integration/table/purchase_staging.sql,SQL,package,1
+/wideworldimportersdw/integration/table/purchase_staging.sql,SQL,primary key,1
+/wideworldimportersdw/integration/table/purchase_staging.sql,SQL,use,1
+/wideworldimportersdw/integration/table/supplier_staging.sql,SQL,asc,1
+/wideworldimportersdw/integration/table/supplier_staging.sql,SQL,category,1
+/wideworldimportersdw/integration/table/supplier_staging.sql,SQL,collate,5
+/wideworldimportersdw/integration/table/supplier_staging.sql,SQL,constraint,1
+/wideworldimportersdw/integration/table/supplier_staging.sql,SQL,create table,1
+/wideworldimportersdw/integration/table/supplier_staging.sql,SQL,datetime2,2
+/wideworldimportersdw/integration/table/supplier_staging.sql,SQL,go,1
+/wideworldimportersdw/integration/table/supplier_staging.sql,SQL,identity,1
+/wideworldimportersdw/integration/table/supplier_staging.sql,SQL,int,3
+/wideworldimportersdw/integration/table/supplier_staging.sql,SQL,key,1
+/wideworldimportersdw/integration/table/supplier_staging.sql,SQL,not null,9
+/wideworldimportersdw/integration/table/supplier_staging.sql,SQL,null,1
+/wideworldimportersdw/integration/table/supplier_staging.sql,SQL,nvarchar,5
+/wideworldimportersdw/integration/table/supplier_staging.sql,SQL,primary key,1
+/wideworldimportersdw/integration/table/supplier_staging.sql,SQL,use,1
+/wideworldimportersdw/integration/table/etl cutoff.sql,SQL,asc,1
+/wideworldimportersdw/integration/table/etl cutoff.sql,SQL,constraint,1
+/wideworldimportersdw/integration/table/etl cutoff.sql,SQL,create table,1
+/wideworldimportersdw/integration/table/etl cutoff.sql,SQL,datetime2,1
+/wideworldimportersdw/integration/table/etl cutoff.sql,SQL,go,1
+/wideworldimportersdw/integration/table/etl cutoff.sql,SQL,name,1
+/wideworldimportersdw/integration/table/etl cutoff.sql,SQL,not null,2
+/wideworldimportersdw/integration/table/etl cutoff.sql,SQL,primary key,1
+/wideworldimportersdw/integration/table/etl cutoff.sql,SQL,table,1
+/wideworldimportersdw/integration/table/etl cutoff.sql,SQL,use,1
+/wideworldimportersdw/integration/table/stockitem_staging.sql,SQL,asc,1
+/wideworldimportersdw/integration/table/stockitem_staging.sql,SQL,bit,1
+/wideworldimportersdw/integration/table/stockitem_staging.sql,SQL,collate,7
+/wideworldimportersdw/integration/table/stockitem_staging.sql,SQL,constraint,1
+/wideworldimportersdw/integration/table/stockitem_staging.sql,SQL,create table,1
+/wideworldimportersdw/integration/table/stockitem_staging.sql,SQL,datetime2,2
+/wideworldimportersdw/integration/table/stockitem_staging.sql,SQL,decimal,4
+/wideworldimportersdw/integration/table/stockitem_staging.sql,SQL,go,1
+/wideworldimportersdw/integration/table/stockitem_staging.sql,SQL,identity,1
+/wideworldimportersdw/integration/table/stockitem_staging.sql,SQL,int,4
+/wideworldimportersdw/integration/table/stockitem_staging.sql,SQL,key,1
+/wideworldimportersdw/integration/table/stockitem_staging.sql,SQL,not null,16
+/wideworldimportersdw/integration/table/stockitem_staging.sql,SQL,null,3
+/wideworldimportersdw/integration/table/stockitem_staging.sql,SQL,nvarchar,7
+/wideworldimportersdw/integration/table/stockitem_staging.sql,SQL,primary key,1
+/wideworldimportersdw/integration/table/stockitem_staging.sql,SQL,size,1
+/wideworldimportersdw/integration/table/stockitem_staging.sql,SQL,use,1
+/wideworldimportersdw/integration/table/stockitem_staging.sql,SQL,varbinary,1
+/wideworldimportersdw/fact/table/order.sql,SQL,add,7
+/wideworldimportersdw/fact/table/order.sql,SQL,alter table,7
+/wideworldimportersdw/fact/table/order.sql,SQL,asc,2
+/wideworldimportersdw/fact/table/order.sql,SQL,bigint,1
+/wideworldimportersdw/fact/table/order.sql,SQL,collate,2
+/wideworldimportersdw/fact/table/order.sql,SQL,constraint,8
+/wideworldimportersdw/fact/table/order.sql,SQL,create table,1
+/wideworldimportersdw/fact/table/order.sql,SQL,date,9
+/wideworldimportersdw/fact/table/order.sql,SQL,decimal,5
+/wideworldimportersdw/fact/table/order.sql,SQL,description,1
+/wideworldimportersdw/fact/table/order.sql,SQL,dimension,7
+/wideworldimportersdw/fact/table/order.sql,SQL,fact,8
+/wideworldimportersdw/fact/table/order.sql,SQL,foreign,7
+/wideworldimportersdw/fact/table/order.sql,SQL,go,1
+/wideworldimportersdw/fact/table/order.sql,SQL,identity,1
+/wideworldimportersdw/fact/table/order.sql,SQL,int,9
+/wideworldimportersdw/fact/table/order.sql,SQL,key,21
+/wideworldimportersdw/fact/table/order.sql,SQL,not null,16
+/wideworldimportersdw/fact/table/order.sql,SQL,null,3
+/wideworldimportersdw/fact/table/order.sql,SQL,nvarchar,2
+/wideworldimportersdw/fact/table/order.sql,SQL,order,11
+/wideworldimportersdw/fact/table/order.sql,SQL,package,1
+/wideworldimportersdw/fact/table/order.sql,SQL,primary key,1
+/wideworldimportersdw/fact/table/order.sql,SQL,references,7
+/wideworldimportersdw/fact/table/order.sql,SQL,use,1
+/wideworldimportersdw/fact/table/purchase.sql,SQL,add,3
+/wideworldimportersdw/fact/table/purchase.sql,SQL,alter table,3
+/wideworldimportersdw/fact/table/purchase.sql,SQL,asc,2
+/wideworldimportersdw/fact/table/purchase.sql,SQL,bigint,1
+/wideworldimportersdw/fact/table/purchase.sql,SQL,bit,1
+/wideworldimportersdw/fact/table/purchase.sql,SQL,collate,1
+/wideworldimportersdw/fact/table/purchase.sql,SQL,constraint,4
+/wideworldimportersdw/fact/table/purchase.sql,SQL,create table,1
+/wideworldimportersdw/fact/table/purchase.sql,SQL,date,5
+/wideworldimportersdw/fact/table/purchase.sql,SQL,dimension,3
+/wideworldimportersdw/fact/table/purchase.sql,SQL,fact,4
+/wideworldimportersdw/fact/table/purchase.sql,SQL,foreign,3
+/wideworldimportersdw/fact/table/purchase.sql,SQL,go,1
+/wideworldimportersdw/fact/table/purchase.sql,SQL,identity,1
+/wideworldimportersdw/fact/table/purchase.sql,SQL,int,7
+/wideworldimportersdw/fact/table/purchase.sql,SQL,key,10
+/wideworldimportersdw/fact/table/purchase.sql,SQL,not null,10
+/wideworldimportersdw/fact/table/purchase.sql,SQL,null,1
+/wideworldimportersdw/fact/table/purchase.sql,SQL,nvarchar,1
+/wideworldimportersdw/fact/table/purchase.sql,SQL,package,1
+/wideworldimportersdw/fact/table/purchase.sql,SQL,primary key,1
+/wideworldimportersdw/fact/table/purchase.sql,SQL,references,3
+/wideworldimportersdw/fact/table/purchase.sql,SQL,use,1
+/wideworldimportersdw/fact/table/movement.sql,SQL,add,5
+/wideworldimportersdw/fact/table/movement.sql,SQL,alter table,5
+/wideworldimportersdw/fact/table/movement.sql,SQL,asc,2
+/wideworldimportersdw/fact/table/movement.sql,SQL,bigint,1
+/wideworldimportersdw/fact/table/movement.sql,SQL,constraint,6
+/wideworldimportersdw/fact/table/movement.sql,SQL,create table,1
+/wideworldimportersdw/fact/table/movement.sql,SQL,date,5
+/wideworldimportersdw/fact/table/movement.sql,SQL,dimension,5
+/wideworldimportersdw/fact/table/movement.sql,SQL,fact,6
+/wideworldimportersdw/fact/table/movement.sql,SQL,foreign,5
+/wideworldimportersdw/fact/table/movement.sql,SQL,go,1
+/wideworldimportersdw/fact/table/movement.sql,SQL,identity,1
+/wideworldimportersdw/fact/table/movement.sql,SQL,int,9
+/wideworldimportersdw/fact/table/movement.sql,SQL,key,16
+/wideworldimportersdw/fact/table/movement.sql,SQL,movement,7
+/wideworldimportersdw/fact/table/movement.sql,SQL,not null,7
+/wideworldimportersdw/fact/table/movement.sql,SQL,null,4
+/wideworldimportersdw/fact/table/movement.sql,SQL,primary key,1
+/wideworldimportersdw/fact/table/movement.sql,SQL,references,5
+/wideworldimportersdw/fact/table/movement.sql,SQL,transaction,3
+/wideworldimportersdw/fact/table/movement.sql,SQL,type,4
+/wideworldimportersdw/fact/table/movement.sql,SQL,use,1
+/wideworldimportersdw/fact/table/stock holding.sql,SQL,add,1
+/wideworldimportersdw/fact/table/stock holding.sql,SQL,alter table,1
+/wideworldimportersdw/fact/table/stock holding.sql,SQL,asc,1
+/wideworldimportersdw/fact/table/stock holding.sql,SQL,bigint,1
+/wideworldimportersdw/fact/table/stock holding.sql,SQL,collate,1
+/wideworldimportersdw/fact/table/stock holding.sql,SQL,constraint,2
+/wideworldimportersdw/fact/table/stock holding.sql,SQL,create table,1
+/wideworldimportersdw/fact/table/stock holding.sql,SQL,decimal,1
+/wideworldimportersdw/fact/table/stock holding.sql,SQL,dimension,1
+/wideworldimportersdw/fact/table/stock holding.sql,SQL,fact,2
+/wideworldimportersdw/fact/table/stock holding.sql,SQL,foreign,1
+/wideworldimportersdw/fact/table/stock holding.sql,SQL,go,1
+/wideworldimportersdw/fact/table/stock holding.sql,SQL,identity,1
+/wideworldimportersdw/fact/table/stock holding.sql,SQL,int,6
+/wideworldimportersdw/fact/table/stock holding.sql,SQL,key,4
+/wideworldimportersdw/fact/table/stock holding.sql,SQL,not null,9
+/wideworldimportersdw/fact/table/stock holding.sql,SQL,nvarchar,1
+/wideworldimportersdw/fact/table/stock holding.sql,SQL,primary key,1
+/wideworldimportersdw/fact/table/stock holding.sql,SQL,references,1
+/wideworldimportersdw/fact/table/stock holding.sql,SQL,use,1
+/wideworldimportersdw/fact/table/transaction.sql,SQL,add,6
+/wideworldimportersdw/fact/table/transaction.sql,SQL,alter table,6
+/wideworldimportersdw/fact/table/transaction.sql,SQL,asc,2
+/wideworldimportersdw/fact/table/transaction.sql,SQL,bigint,1
+/wideworldimportersdw/fact/table/transaction.sql,SQL,bit,1
+/wideworldimportersdw/fact/table/transaction.sql,SQL,collate,1
+/wideworldimportersdw/fact/table/transaction.sql,SQL,constraint,7
+/wideworldimportersdw/fact/table/transaction.sql,SQL,create table,1
+/wideworldimportersdw/fact/table/transaction.sql,SQL,date,5
+/wideworldimportersdw/fact/table/transaction.sql,SQL,decimal,4
+/wideworldimportersdw/fact/table/transaction.sql,SQL,dimension,6
+/wideworldimportersdw/fact/table/transaction.sql,SQL,fact,7
+/wideworldimportersdw/fact/table/transaction.sql,SQL,foreign,6
+/wideworldimportersdw/fact/table/transaction.sql,SQL,go,1
+/wideworldimportersdw/fact/table/transaction.sql,SQL,identity,1
+/wideworldimportersdw/fact/table/transaction.sql,SQL,int,10
+/wideworldimportersdw/fact/table/transaction.sql,SQL,key,19
+/wideworldimportersdw/fact/table/transaction.sql,SQL,method,4
+/wideworldimportersdw/fact/table/transaction.sql,SQL,not null,9
+/wideworldimportersdw/fact/table/transaction.sql,SQL,null,9
+/wideworldimportersdw/fact/table/transaction.sql,SQL,nvarchar,1
+/wideworldimportersdw/fact/table/transaction.sql,SQL,primary key,1
+/wideworldimportersdw/fact/table/transaction.sql,SQL,references,6
+/wideworldimportersdw/fact/table/transaction.sql,SQL,to,1
+/wideworldimportersdw/fact/table/transaction.sql,SQL,transaction,11
+/wideworldimportersdw/fact/table/transaction.sql,SQL,type,4
+/wideworldimportersdw/fact/table/transaction.sql,SQL,use,1
+/wideworldimportersdw/fact/table/sale.sql,SQL,add,7
+/wideworldimportersdw/fact/table/sale.sql,SQL,alter table,7
+/wideworldimportersdw/fact/table/sale.sql,SQL,asc,2
+/wideworldimportersdw/fact/table/sale.sql,SQL,bigint,1
+/wideworldimportersdw/fact/table/sale.sql,SQL,collate,2
+/wideworldimportersdw/fact/table/sale.sql,SQL,constraint,8
+/wideworldimportersdw/fact/table/sale.sql,SQL,create table,1
+/wideworldimportersdw/fact/table/sale.sql,SQL,date,9
+/wideworldimportersdw/fact/table/sale.sql,SQL,decimal,6
+/wideworldimportersdw/fact/table/sale.sql,SQL,description,1
+/wideworldimportersdw/fact/table/sale.sql,SQL,dimension,7
+/wideworldimportersdw/fact/table/sale.sql,SQL,fact,8
+/wideworldimportersdw/fact/table/sale.sql,SQL,foreign,7
+/wideworldimportersdw/fact/table/sale.sql,SQL,go,1
+/wideworldimportersdw/fact/table/sale.sql,SQL,identity,1
+/wideworldimportersdw/fact/table/sale.sql,SQL,int,10
+/wideworldimportersdw/fact/table/sale.sql,SQL,key,21
+/wideworldimportersdw/fact/table/sale.sql,SQL,not null,20
+/wideworldimportersdw/fact/table/sale.sql,SQL,null,1
+/wideworldimportersdw/fact/table/sale.sql,SQL,nvarchar,2
+/wideworldimportersdw/fact/table/sale.sql,SQL,package,1
+/wideworldimportersdw/fact/table/sale.sql,SQL,primary key,1
+/wideworldimportersdw/fact/table/sale.sql,SQL,references,7
+/wideworldimportersdw/fact/table/sale.sql,SQL,to,1
+/wideworldimportersdw/fact/table/sale.sql,SQL,use,1
+/wideworldimportersdw/schema/reports.sql,SQL,authorization,1
+/wideworldimportersdw/schema/reports.sql,SQL,create schema,1
+/wideworldimportersdw/schema/reports.sql,SQL,go,1
+/wideworldimportersdw/schema/reports.sql,SQL,use,1
+/wideworldimportersdw/schema/application.sql,SQL,application,1
+/wideworldimportersdw/schema/application.sql,SQL,authorization,1
+/wideworldimportersdw/schema/application.sql,SQL,create schema,1
+/wideworldimportersdw/schema/application.sql,SQL,go,1
+/wideworldimportersdw/schema/application.sql,SQL,use,1
+/wideworldimportersdw/schema/powerbi.sql,SQL,authorization,1
+/wideworldimportersdw/schema/powerbi.sql,SQL,create schema,1
+/wideworldimportersdw/schema/powerbi.sql,SQL,go,1
+/wideworldimportersdw/schema/powerbi.sql,SQL,use,1
+/wideworldimportersdw/schema/sequences.sql,SQL,authorization,1
+/wideworldimportersdw/schema/sequences.sql,SQL,create schema,1
+/wideworldimportersdw/schema/sequences.sql,SQL,go,1
+/wideworldimportersdw/schema/sequences.sql,SQL,use,1
+/wideworldimportersdw/schema/website.sql,SQL,authorization,1
+/wideworldimportersdw/schema/website.sql,SQL,create schema,1
+/wideworldimportersdw/schema/website.sql,SQL,go,1
+/wideworldimportersdw/schema/website.sql,SQL,use,1
+/wideworldimportersdw/schema/dimension.sql,SQL,authorization,1
+/wideworldimportersdw/schema/dimension.sql,SQL,create schema,1
+/wideworldimportersdw/schema/dimension.sql,SQL,dimension,1
+/wideworldimportersdw/schema/dimension.sql,SQL,go,1
+/wideworldimportersdw/schema/dimension.sql,SQL,use,1
+/wideworldimportersdw/schema/fact.sql,SQL,authorization,1
+/wideworldimportersdw/schema/fact.sql,SQL,create schema,1
+/wideworldimportersdw/schema/fact.sql,SQL,fact,1
+/wideworldimportersdw/schema/fact.sql,SQL,go,1
+/wideworldimportersdw/schema/fact.sql,SQL,use,1
+/wideworldimportersdw/schema/dbo.sql,SQL,authorization,1
+/wideworldimportersdw/schema/dbo.sql,SQL,create schema,1
+/wideworldimportersdw/schema/dbo.sql,SQL,go,1
+/wideworldimportersdw/schema/dbo.sql,SQL,use,1
+/wideworldimportersdw/schema/integration.sql,SQL,authorization,1
+/wideworldimportersdw/schema/integration.sql,SQL,create schema,1
+/wideworldimportersdw/schema/integration.sql,SQL,go,1
+/wideworldimportersdw/schema/integration.sql,SQL,use,1
+/wideworldimportersdw/dimension/table/supplier.sql,SQL,asc,1
+/wideworldimportersdw/dimension/table/supplier.sql,SQL,category,1
+/wideworldimportersdw/dimension/table/supplier.sql,SQL,collate,5
+/wideworldimportersdw/dimension/table/supplier.sql,SQL,constraint,2
+/wideworldimportersdw/dimension/table/supplier.sql,SQL,create table,1
+/wideworldimportersdw/dimension/table/supplier.sql,SQL,datetime2,2
+/wideworldimportersdw/dimension/table/supplier.sql,SQL,default,1
+/wideworldimportersdw/dimension/table/supplier.sql,SQL,dimension,1
+/wideworldimportersdw/dimension/table/supplier.sql,SQL,go,1
+/wideworldimportersdw/dimension/table/supplier.sql,SQL,int,4
+/wideworldimportersdw/dimension/table/supplier.sql,SQL,key,1
+/wideworldimportersdw/dimension/table/supplier.sql,SQL,next value for,1
+/wideworldimportersdw/dimension/table/supplier.sql,SQL,not null,10
+/wideworldimportersdw/dimension/table/supplier.sql,SQL,null,1
+/wideworldimportersdw/dimension/table/supplier.sql,SQL,nvarchar,5
+/wideworldimportersdw/dimension/table/supplier.sql,SQL,primary key,1
+/wideworldimportersdw/dimension/table/supplier.sql,SQL,use,1
+/wideworldimportersdw/dimension/table/payment method.sql,SQL,asc,1
+/wideworldimportersdw/dimension/table/payment method.sql,SQL,collate,1
+/wideworldimportersdw/dimension/table/payment method.sql,SQL,constraint,2
+/wideworldimportersdw/dimension/table/payment method.sql,SQL,create table,1
+/wideworldimportersdw/dimension/table/payment method.sql,SQL,datetime2,2
+/wideworldimportersdw/dimension/table/payment method.sql,SQL,default,1
+/wideworldimportersdw/dimension/table/payment method.sql,SQL,dimension,1
+/wideworldimportersdw/dimension/table/payment method.sql,SQL,go,1
+/wideworldimportersdw/dimension/table/payment method.sql,SQL,int,3
+/wideworldimportersdw/dimension/table/payment method.sql,SQL,key,1
+/wideworldimportersdw/dimension/table/payment method.sql,SQL,method,2
+/wideworldimportersdw/dimension/table/payment method.sql,SQL,next value for,1
+/wideworldimportersdw/dimension/table/payment method.sql,SQL,not null,6
+/wideworldimportersdw/dimension/table/payment method.sql,SQL,nvarchar,1
+/wideworldimportersdw/dimension/table/payment method.sql,SQL,primary key,1
+/wideworldimportersdw/dimension/table/payment method.sql,SQL,use,1
+/wideworldimportersdw/dimension/table/employee.sql,SQL,asc,1
+/wideworldimportersdw/dimension/table/employee.sql,SQL,bit,1
+/wideworldimportersdw/dimension/table/employee.sql,SQL,collate,2
+/wideworldimportersdw/dimension/table/employee.sql,SQL,constraint,2
+/wideworldimportersdw/dimension/table/employee.sql,SQL,create table,1
+/wideworldimportersdw/dimension/table/employee.sql,SQL,datetime2,2
+/wideworldimportersdw/dimension/table/employee.sql,SQL,default,1
+/wideworldimportersdw/dimension/table/employee.sql,SQL,dimension,1
+/wideworldimportersdw/dimension/table/employee.sql,SQL,go,1
+/wideworldimportersdw/dimension/table/employee.sql,SQL,int,3
+/wideworldimportersdw/dimension/table/employee.sql,SQL,key,1
+/wideworldimportersdw/dimension/table/employee.sql,SQL,next value for,1
+/wideworldimportersdw/dimension/table/employee.sql,SQL,not null,8
+/wideworldimportersdw/dimension/table/employee.sql,SQL,null,1
+/wideworldimportersdw/dimension/table/employee.sql,SQL,nvarchar,2
+/wideworldimportersdw/dimension/table/employee.sql,SQL,primary key,1
+/wideworldimportersdw/dimension/table/employee.sql,SQL,use,1
+/wideworldimportersdw/dimension/table/employee.sql,SQL,varbinary,1
+/wideworldimportersdw/dimension/table/city.sql,SQL,asc,1
+/wideworldimportersdw/dimension/table/city.sql,SQL,bigint,1
+/wideworldimportersdw/dimension/table/city.sql,SQL,collate,7
+/wideworldimportersdw/dimension/table/city.sql,SQL,constraint,2
+/wideworldimportersdw/dimension/table/city.sql,SQL,create table,1
+/wideworldimportersdw/dimension/table/city.sql,SQL,datetime2,2
+/wideworldimportersdw/dimension/table/city.sql,SQL,default,1
+/wideworldimportersdw/dimension/table/city.sql,SQL,dimension,1
+/wideworldimportersdw/dimension/table/city.sql,SQL,geography,1
+/wideworldimportersdw/dimension/table/city.sql,SQL,go,1
+/wideworldimportersdw/dimension/table/city.sql,SQL,int,3
+/wideworldimportersdw/dimension/table/city.sql,SQL,key,1
+/wideworldimportersdw/dimension/table/city.sql,SQL,location,1
+/wideworldimportersdw/dimension/table/city.sql,SQL,next value for,1
+/wideworldimportersdw/dimension/table/city.sql,SQL,not null,13
+/wideworldimportersdw/dimension/table/city.sql,SQL,null,1
+/wideworldimportersdw/dimension/table/city.sql,SQL,nvarchar,7
+/wideworldimportersdw/dimension/table/city.sql,SQL,primary key,1
+/wideworldimportersdw/dimension/table/city.sql,SQL,use,1
+/wideworldimportersdw/dimension/table/customer.sql,SQL,asc,1
+/wideworldimportersdw/dimension/table/customer.sql,SQL,category,1
+/wideworldimportersdw/dimension/table/customer.sql,SQL,collate,6
+/wideworldimportersdw/dimension/table/customer.sql,SQL,constraint,2
+/wideworldimportersdw/dimension/table/customer.sql,SQL,create table,1
+/wideworldimportersdw/dimension/table/customer.sql,SQL,datetime2,2
+/wideworldimportersdw/dimension/table/customer.sql,SQL,default,1
+/wideworldimportersdw/dimension/table/customer.sql,SQL,dimension,1
+/wideworldimportersdw/dimension/table/customer.sql,SQL,go,1
+/wideworldimportersdw/dimension/table/customer.sql,SQL,int,3
+/wideworldimportersdw/dimension/table/customer.sql,SQL,key,1
+/wideworldimportersdw/dimension/table/customer.sql,SQL,next value for,1
+/wideworldimportersdw/dimension/table/customer.sql,SQL,not null,11
+/wideworldimportersdw/dimension/table/customer.sql,SQL,nvarchar,6
+/wideworldimportersdw/dimension/table/customer.sql,SQL,primary key,1
+/wideworldimportersdw/dimension/table/customer.sql,SQL,use,1
+/wideworldimportersdw/dimension/table/transaction type.sql,SQL,asc,1
+/wideworldimportersdw/dimension/table/transaction type.sql,SQL,collate,1
+/wideworldimportersdw/dimension/table/transaction type.sql,SQL,constraint,2
+/wideworldimportersdw/dimension/table/transaction type.sql,SQL,create table,1
+/wideworldimportersdw/dimension/table/transaction type.sql,SQL,datetime2,2
+/wideworldimportersdw/dimension/table/transaction type.sql,SQL,default,1
+/wideworldimportersdw/dimension/table/transaction type.sql,SQL,dimension,1
+/wideworldimportersdw/dimension/table/transaction type.sql,SQL,go,1
+/wideworldimportersdw/dimension/table/transaction type.sql,SQL,int,3
+/wideworldimportersdw/dimension/table/transaction type.sql,SQL,key,1
+/wideworldimportersdw/dimension/table/transaction type.sql,SQL,next value for,1
+/wideworldimportersdw/dimension/table/transaction type.sql,SQL,not null,6
+/wideworldimportersdw/dimension/table/transaction type.sql,SQL,nvarchar,1
+/wideworldimportersdw/dimension/table/transaction type.sql,SQL,primary key,1
+/wideworldimportersdw/dimension/table/transaction type.sql,SQL,transaction,2
+/wideworldimportersdw/dimension/table/transaction type.sql,SQL,type,2
+/wideworldimportersdw/dimension/table/transaction type.sql,SQL,use,1
+/wideworldimportersdw/dimension/table/date.sql,SQL,asc,1
+/wideworldimportersdw/dimension/table/date.sql,SQL,collate,7
+/wideworldimportersdw/dimension/table/date.sql,SQL,constraint,1
+/wideworldimportersdw/dimension/table/date.sql,SQL,create table,1
+/wideworldimportersdw/dimension/table/date.sql,SQL,date,4
+/wideworldimportersdw/dimension/table/date.sql,SQL,day,1
+/wideworldimportersdw/dimension/table/date.sql,SQL,dimension,1
+/wideworldimportersdw/dimension/table/date.sql,SQL,go,1
+/wideworldimportersdw/dimension/table/date.sql,SQL,int,6
+/wideworldimportersdw/dimension/table/date.sql,SQL,month,1
+/wideworldimportersdw/dimension/table/date.sql,SQL,not null,14
+/wideworldimportersdw/dimension/table/date.sql,SQL,nvarchar,7
+/wideworldimportersdw/dimension/table/date.sql,SQL,primary key,1
+/wideworldimportersdw/dimension/table/date.sql,SQL,use,1
+/wideworldimportersdw/dimension/table/stock item.sql,SQL,asc,1
+/wideworldimportersdw/dimension/table/stock item.sql,SQL,bit,1
+/wideworldimportersdw/dimension/table/stock item.sql,SQL,collate,7
+/wideworldimportersdw/dimension/table/stock item.sql,SQL,constraint,2
+/wideworldimportersdw/dimension/table/stock item.sql,SQL,create table,1
+/wideworldimportersdw/dimension/table/stock item.sql,SQL,datetime2,2
+/wideworldimportersdw/dimension/table/stock item.sql,SQL,decimal,4
+/wideworldimportersdw/dimension/table/stock item.sql,SQL,default,1
+/wideworldimportersdw/dimension/table/stock item.sql,SQL,dimension,1
+/wideworldimportersdw/dimension/table/stock item.sql,SQL,go,1
+/wideworldimportersdw/dimension/table/stock item.sql,SQL,int,5
+/wideworldimportersdw/dimension/table/stock item.sql,SQL,key,1
+/wideworldimportersdw/dimension/table/stock item.sql,SQL,next value for,1
+/wideworldimportersdw/dimension/table/stock item.sql,SQL,not null,17
+/wideworldimportersdw/dimension/table/stock item.sql,SQL,null,3
+/wideworldimportersdw/dimension/table/stock item.sql,SQL,nvarchar,7
+/wideworldimportersdw/dimension/table/stock item.sql,SQL,primary key,1
+/wideworldimportersdw/dimension/table/stock item.sql,SQL,size,1
+/wideworldimportersdw/dimension/table/stock item.sql,SQL,use,1
+/wideworldimportersdw/dimension/table/stock item.sql,SQL,varbinary,1
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,=,7
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,and,1
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,as,3
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,begin,2
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,bigint,5
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,cast,2
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,create table,1
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,create procedure,1
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,declare,4
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,drop table,1
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,end,2
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,execute,2
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,from,2
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,go,1
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,if,1
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,max,1
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,name,1
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,nvarchar,2
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,on,1
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,quotename,4
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,schema_id,1
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,schema_name,1
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,select,2
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,set,5
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,use,1
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,where,1
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,+,11
+/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,SQL,>=,1
+/wideworldimportersdw/sequences/procedure/reseedallsequences.sql,SQL,=,32
+/wideworldimportersdw/sequences/procedure/reseedallsequences.sql,SQL,as,1
+/wideworldimportersdw/sequences/procedure/reseedallsequences.sql,SQL,begin,1
+/wideworldimportersdw/sequences/procedure/reseedallsequences.sql,SQL,create procedure,1
+/wideworldimportersdw/sequences/procedure/reseedallsequences.sql,SQL,end,1
+/wideworldimportersdw/sequences/procedure/reseedallsequences.sql,SQL,exec,8
+/wideworldimportersdw/sequences/procedure/reseedallsequences.sql,SQL,go,1
+/wideworldimportersdw/sequences/procedure/reseedallsequences.sql,SQL,on,1
+/wideworldimportersdw/sequences/procedure/reseedallsequences.sql,SQL,set,1
+/wideworldimportersdw/sequences/procedure/reseedallsequences.sql,SQL,use,1
+/wideworldimportersdw/sequences/sequence/customerkey.sql,SQL,alter sequence,1
+/wideworldimportersdw/sequences/sequence/customerkey.sql,SQL,as,1
+/wideworldimportersdw/sequences/sequence/customerkey.sql,SQL,by,1
+/wideworldimportersdw/sequences/sequence/customerkey.sql,SQL,cache,1
+/wideworldimportersdw/sequences/sequence/customerkey.sql,SQL,create sequence,1
+/wideworldimportersdw/sequences/sequence/customerkey.sql,SQL,cycle,1
+/wideworldimportersdw/sequences/sequence/customerkey.sql,SQL,go,1
+/wideworldimportersdw/sequences/sequence/customerkey.sql,SQL,increment,1
+/wideworldimportersdw/sequences/sequence/customerkey.sql,SQL,int,1
+/wideworldimportersdw/sequences/sequence/customerkey.sql,SQL,maxvalue,1
+/wideworldimportersdw/sequences/sequence/customerkey.sql,SQL,minvalue,1
+/wideworldimportersdw/sequences/sequence/customerkey.sql,SQL,no,1
+/wideworldimportersdw/sequences/sequence/customerkey.sql,SQL,restart,1
+/wideworldimportersdw/sequences/sequence/customerkey.sql,SQL,start,1
+/wideworldimportersdw/sequences/sequence/customerkey.sql,SQL,use,1
+/wideworldimportersdw/sequences/sequence/customerkey.sql,SQL,with,2
+/wideworldimportersdw/sequences/sequence/customerkey.sql,SQL,-,1
+/wideworldimportersdw/sequences/sequence/citykey.sql,SQL,alter sequence,1
+/wideworldimportersdw/sequences/sequence/citykey.sql,SQL,as,1
+/wideworldimportersdw/sequences/sequence/citykey.sql,SQL,by,1
+/wideworldimportersdw/sequences/sequence/citykey.sql,SQL,cache,1
+/wideworldimportersdw/sequences/sequence/citykey.sql,SQL,create sequence,1
+/wideworldimportersdw/sequences/sequence/citykey.sql,SQL,cycle,1
+/wideworldimportersdw/sequences/sequence/citykey.sql,SQL,go,1
+/wideworldimportersdw/sequences/sequence/citykey.sql,SQL,increment,1
+/wideworldimportersdw/sequences/sequence/citykey.sql,SQL,int,1
+/wideworldimportersdw/sequences/sequence/citykey.sql,SQL,maxvalue,1
+/wideworldimportersdw/sequences/sequence/citykey.sql,SQL,minvalue,1
+/wideworldimportersdw/sequences/sequence/citykey.sql,SQL,no,1
+/wideworldimportersdw/sequences/sequence/citykey.sql,SQL,restart,1
+/wideworldimportersdw/sequences/sequence/citykey.sql,SQL,start,1
+/wideworldimportersdw/sequences/sequence/citykey.sql,SQL,use,1
+/wideworldimportersdw/sequences/sequence/citykey.sql,SQL,with,2
+/wideworldimportersdw/sequences/sequence/citykey.sql,SQL,-,1
+/wideworldimportersdw/sequences/sequence/paymentmethodkey.sql,SQL,alter sequence,1
+/wideworldimportersdw/sequences/sequence/paymentmethodkey.sql,SQL,as,1
+/wideworldimportersdw/sequences/sequence/paymentmethodkey.sql,SQL,by,1
+/wideworldimportersdw/sequences/sequence/paymentmethodkey.sql,SQL,cache,1
+/wideworldimportersdw/sequences/sequence/paymentmethodkey.sql,SQL,create sequence,1
+/wideworldimportersdw/sequences/sequence/paymentmethodkey.sql,SQL,cycle,1
+/wideworldimportersdw/sequences/sequence/paymentmethodkey.sql,SQL,go,1
+/wideworldimportersdw/sequences/sequence/paymentmethodkey.sql,SQL,increment,1
+/wideworldimportersdw/sequences/sequence/paymentmethodkey.sql,SQL,int,1
+/wideworldimportersdw/sequences/sequence/paymentmethodkey.sql,SQL,maxvalue,1
+/wideworldimportersdw/sequences/sequence/paymentmethodkey.sql,SQL,minvalue,1
+/wideworldimportersdw/sequences/sequence/paymentmethodkey.sql,SQL,no,1
+/wideworldimportersdw/sequences/sequence/paymentmethodkey.sql,SQL,restart,1
+/wideworldimportersdw/sequences/sequence/paymentmethodkey.sql,SQL,start,1
+/wideworldimportersdw/sequences/sequence/paymentmethodkey.sql,SQL,use,1
+/wideworldimportersdw/sequences/sequence/paymentmethodkey.sql,SQL,with,2
+/wideworldimportersdw/sequences/sequence/paymentmethodkey.sql,SQL,-,1
+/wideworldimportersdw/sequences/sequence/supplierkey.sql,SQL,alter sequence,1
+/wideworldimportersdw/sequences/sequence/supplierkey.sql,SQL,as,1
+/wideworldimportersdw/sequences/sequence/supplierkey.sql,SQL,by,1
+/wideworldimportersdw/sequences/sequence/supplierkey.sql,SQL,cache,1
+/wideworldimportersdw/sequences/sequence/supplierkey.sql,SQL,create sequence,1
+/wideworldimportersdw/sequences/sequence/supplierkey.sql,SQL,cycle,1
+/wideworldimportersdw/sequences/sequence/supplierkey.sql,SQL,go,1
+/wideworldimportersdw/sequences/sequence/supplierkey.sql,SQL,increment,1
+/wideworldimportersdw/sequences/sequence/supplierkey.sql,SQL,int,1
+/wideworldimportersdw/sequences/sequence/supplierkey.sql,SQL,maxvalue,1
+/wideworldimportersdw/sequences/sequence/supplierkey.sql,SQL,minvalue,1
+/wideworldimportersdw/sequences/sequence/supplierkey.sql,SQL,no,1
+/wideworldimportersdw/sequences/sequence/supplierkey.sql,SQL,restart,1
+/wideworldimportersdw/sequences/sequence/supplierkey.sql,SQL,start,1
+/wideworldimportersdw/sequences/sequence/supplierkey.sql,SQL,use,1
+/wideworldimportersdw/sequences/sequence/supplierkey.sql,SQL,with,2
+/wideworldimportersdw/sequences/sequence/supplierkey.sql,SQL,-,1
+/wideworldimportersdw/sequences/sequence/employeekey.sql,SQL,alter sequence,1
+/wideworldimportersdw/sequences/sequence/employeekey.sql,SQL,as,1
+/wideworldimportersdw/sequences/sequence/employeekey.sql,SQL,by,1
+/wideworldimportersdw/sequences/sequence/employeekey.sql,SQL,cache,1
+/wideworldimportersdw/sequences/sequence/employeekey.sql,SQL,create sequence,1
+/wideworldimportersdw/sequences/sequence/employeekey.sql,SQL,cycle,1
+/wideworldimportersdw/sequences/sequence/employeekey.sql,SQL,go,1
+/wideworldimportersdw/sequences/sequence/employeekey.sql,SQL,increment,1
+/wideworldimportersdw/sequences/sequence/employeekey.sql,SQL,int,1
+/wideworldimportersdw/sequences/sequence/employeekey.sql,SQL,maxvalue,1
+/wideworldimportersdw/sequences/sequence/employeekey.sql,SQL,minvalue,1
+/wideworldimportersdw/sequences/sequence/employeekey.sql,SQL,no,1
+/wideworldimportersdw/sequences/sequence/employeekey.sql,SQL,restart,1
+/wideworldimportersdw/sequences/sequence/employeekey.sql,SQL,start,1
+/wideworldimportersdw/sequences/sequence/employeekey.sql,SQL,use,1
+/wideworldimportersdw/sequences/sequence/employeekey.sql,SQL,with,2
+/wideworldimportersdw/sequences/sequence/employeekey.sql,SQL,-,1
+/wideworldimportersdw/sequences/sequence/lineagekey.sql,SQL,alter sequence,1
+/wideworldimportersdw/sequences/sequence/lineagekey.sql,SQL,as,1
+/wideworldimportersdw/sequences/sequence/lineagekey.sql,SQL,by,1
+/wideworldimportersdw/sequences/sequence/lineagekey.sql,SQL,cache,1
+/wideworldimportersdw/sequences/sequence/lineagekey.sql,SQL,create sequence,1
+/wideworldimportersdw/sequences/sequence/lineagekey.sql,SQL,cycle,1
+/wideworldimportersdw/sequences/sequence/lineagekey.sql,SQL,go,1
+/wideworldimportersdw/sequences/sequence/lineagekey.sql,SQL,increment,1
+/wideworldimportersdw/sequences/sequence/lineagekey.sql,SQL,int,1
+/wideworldimportersdw/sequences/sequence/lineagekey.sql,SQL,maxvalue,1
+/wideworldimportersdw/sequences/sequence/lineagekey.sql,SQL,minvalue,1
+/wideworldimportersdw/sequences/sequence/lineagekey.sql,SQL,no,1
+/wideworldimportersdw/sequences/sequence/lineagekey.sql,SQL,restart,1
+/wideworldimportersdw/sequences/sequence/lineagekey.sql,SQL,start,1
+/wideworldimportersdw/sequences/sequence/lineagekey.sql,SQL,use,1
+/wideworldimportersdw/sequences/sequence/lineagekey.sql,SQL,with,2
+/wideworldimportersdw/sequences/sequence/lineagekey.sql,SQL,-,1
+/wideworldimportersdw/sequences/sequence/stockitemkey.sql,SQL,alter sequence,1
+/wideworldimportersdw/sequences/sequence/stockitemkey.sql,SQL,as,1
+/wideworldimportersdw/sequences/sequence/stockitemkey.sql,SQL,by,1
+/wideworldimportersdw/sequences/sequence/stockitemkey.sql,SQL,cache,1
+/wideworldimportersdw/sequences/sequence/stockitemkey.sql,SQL,create sequence,1
+/wideworldimportersdw/sequences/sequence/stockitemkey.sql,SQL,cycle,1
+/wideworldimportersdw/sequences/sequence/stockitemkey.sql,SQL,go,1
+/wideworldimportersdw/sequences/sequence/stockitemkey.sql,SQL,increment,1
+/wideworldimportersdw/sequences/sequence/stockitemkey.sql,SQL,int,1
+/wideworldimportersdw/sequences/sequence/stockitemkey.sql,SQL,maxvalue,1
+/wideworldimportersdw/sequences/sequence/stockitemkey.sql,SQL,minvalue,1
+/wideworldimportersdw/sequences/sequence/stockitemkey.sql,SQL,no,1
+/wideworldimportersdw/sequences/sequence/stockitemkey.sql,SQL,restart,1
+/wideworldimportersdw/sequences/sequence/stockitemkey.sql,SQL,start,1
+/wideworldimportersdw/sequences/sequence/stockitemkey.sql,SQL,use,1
+/wideworldimportersdw/sequences/sequence/stockitemkey.sql,SQL,with,2
+/wideworldimportersdw/sequences/sequence/stockitemkey.sql,SQL,-,1
+/wideworldimportersdw/sequences/sequence/transactiontypekey.sql,SQL,alter sequence,1
+/wideworldimportersdw/sequences/sequence/transactiontypekey.sql,SQL,as,1
+/wideworldimportersdw/sequences/sequence/transactiontypekey.sql,SQL,by,1
+/wideworldimportersdw/sequences/sequence/transactiontypekey.sql,SQL,cache,1
+/wideworldimportersdw/sequences/sequence/transactiontypekey.sql,SQL,create sequence,1
+/wideworldimportersdw/sequences/sequence/transactiontypekey.sql,SQL,cycle,1
+/wideworldimportersdw/sequences/sequence/transactiontypekey.sql,SQL,go,1
+/wideworldimportersdw/sequences/sequence/transactiontypekey.sql,SQL,increment,1
+/wideworldimportersdw/sequences/sequence/transactiontypekey.sql,SQL,int,1
+/wideworldimportersdw/sequences/sequence/transactiontypekey.sql,SQL,maxvalue,1
+/wideworldimportersdw/sequences/sequence/transactiontypekey.sql,SQL,minvalue,1
+/wideworldimportersdw/sequences/sequence/transactiontypekey.sql,SQL,no,1
+/wideworldimportersdw/sequences/sequence/transactiontypekey.sql,SQL,restart,1
+/wideworldimportersdw/sequences/sequence/transactiontypekey.sql,SQL,start,1
+/wideworldimportersdw/sequences/sequence/transactiontypekey.sql,SQL,use,1
+/wideworldimportersdw/sequences/sequence/transactiontypekey.sql,SQL,with,2
+/wideworldimportersdw/sequences/sequence/transactiontypekey.sql,SQL,-,1
+/wideworldimportersdw/application/procedure/configuration_configureforenterpriseedition.sql,SQL,application,4
+/wideworldimportersdw/application/procedure/configuration_configureforenterpriseedition.sql,SQL,as,1
+/wideworldimportersdw/application/procedure/configuration_configureforenterpriseedition.sql,SQL,begin,1
+/wideworldimportersdw/application/procedure/configuration_configureforenterpriseedition.sql,SQL,create procedure,1
+/wideworldimportersdw/application/procedure/configuration_configureforenterpriseedition.sql,SQL,end,1
+/wideworldimportersdw/application/procedure/configuration_configureforenterpriseedition.sql,SQL,exec,3
+/wideworldimportersdw/application/procedure/configuration_configureforenterpriseedition.sql,SQL,go,1
+/wideworldimportersdw/application/procedure/configuration_configureforenterpriseedition.sql,SQL,use,1
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,=,10
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,application,1
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,as,2
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,begin try,1
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,begin catch,1
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,begin,7
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,commit,1
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,create procedure,1
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,declare,1
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,else,1
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,end try,1
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,end catch,1
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,end,6
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,execute,4
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,exists,3
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,from,3
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,go,1
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,if,6
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,indexes,1
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,max,1
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,name,3
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,not,3
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,nvarchar,1
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,on,2
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,owner,1
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,print,5
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,select,3
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,serverproperty,3
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,set,6
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,throw,1
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,tran,1
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,use,1
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,where,3
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,with,1
+/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,SQL,!=,1
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,=,6
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,application,1
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,as,1
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,begin try,1
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,begin catch,1
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,begin,5
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,create procedure,1
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,declare,1
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,else,2
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,end try,1
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,end catch,1
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,end,5
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,execute,3
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,from,1
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,go,1
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,if,2
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,max,1
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,name,1
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,not in,1
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,nvarchar,1
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,on,2
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,print,3
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,select,1
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,serverproperty,1
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,set,5
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,throw,1
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,use,1
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,value,1
+/wideworldimportersdw/application/procedure/configuration_applypolybase.sql,SQL,where,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,=,15
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,add,8
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,alter table,23
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,alter index,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,and,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,application,2
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,as,3
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,asc,8
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,begin,3
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,bigint,5
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,cast,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,check,14
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,constraint,15
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,convert,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,create procedure,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,create,6
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,data,3
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,date,13
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,dateadd,2
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,day,2
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,declare,8
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,description,2
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,dimension,7
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,drop index if exists,7
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,drop constraint,8
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,end,3
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,excluding,2
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,exec,2
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,execute,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,fact,40
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,floor,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,foreign,7
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,from,2
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,go,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,id,2
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,if,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,including,2
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,index,6
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,insert,2
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,int,2
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,key,45
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,load,3
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,max,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,name,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,next value for,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,nowait,4
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,null,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,on,17
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,order by,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,owner,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,package,2
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,primary key,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,print,2
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,rand,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,references,7
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,return,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,select,2
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,set,8
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,source,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,successful,2
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,sysdatetime,2
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,system,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,table,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,time,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,to,4
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,top,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,unit,2
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,update,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,use,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,values,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,varchar,3
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,where,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,while,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,with,14
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,*,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,+,2
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,-,2
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,/,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,<,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,>=,1
+/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,SQL,>,2
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,=,45
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,and,12
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,application,1
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,as,3
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,begin try,1
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,begin catch,1
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,begin,17
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,cast,1
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,charindex,1
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,create procedure,1
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,declare,3
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,else,1
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,end try,1
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,end catch,1
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,end,17
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,execute,27
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,exists,13
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,file_id,1
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,from,14
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,go,1
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,if,15
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,int,1
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,max,3
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,name,13
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,not,13
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,nvarchar,3
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,on,2
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,print,2
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,select,14
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,serverproperty,2
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,set,29
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,substring,1
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,tables,12
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,throw,1
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,use,1
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,where,14
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,+,3
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,-,1
+/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,SQL,<>,13
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,=,4
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,application,1
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,as,2
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,begin,1
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,category,2
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,create procedure,1
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,datetime2,3
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,days,2
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,declare,3
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,delete,7
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,dimension,14
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,end,1
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,execute,1
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,fact,6
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,from,7
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,go,1
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,group,1
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,id,7
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,insert,7
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,is,2
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,key,14
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,lead,1
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,location,1
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,method,5
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,movement,1
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,name,1
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,null,3
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,on,1
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,order,1
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,outer,1
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,owner,1
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,package,2
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,per,2
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,primary,2
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,reference,1
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,set,2
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,size,1
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,state,1
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,time,2
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,to,8
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,transaction,6
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,truncate table,6
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,type,5
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,unit,2
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,update,1
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,use,1
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,values,7
+/wideworldimportersdw/application/procedure/configuration_reseedetl.sql,SQL,with,1
+/database/wideworldimportersdw.sql,SQL,collate,1
+/database/wideworldimportersdw.sql,SQL,create database,1

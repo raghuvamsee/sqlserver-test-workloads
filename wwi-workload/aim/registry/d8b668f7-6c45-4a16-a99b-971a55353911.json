@@ -1,0 +1,113 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "f5fefad8-5093-4611-aaa1-85e8d79ad30a",
+        "isMissing": false,
+        "relationTypes": [
+          "TABLE COLUMN"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "3bfec749-680e-49b9-a41c-9974cbc5545d",
+      "61b177e5-22ae-4122-ad6d-d6d1b3294c2f",
+      "78b4c133-b88a-46fc-82b9-b15279a27f6e",
+      "bb317ec9-b0b9-4fa2-8b15-b176ff64f7ea",
+      "d59fc930-9c64-4c66-91a3-823de6f37279",
+      "e246ca55-9881-4ecd-8b71-f32f3f898ece"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "6ef71c1d9cfc6afc52d339329713eef4",
+      "path": "source/wideworldimportersdw/dimension/table/transaction type.sql"
+    }
+  },
+  "id": "d8b668f7-6c45-4a16-a99b-971a55353911",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": true,
+        "name": "\"Transaction Type Key\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"WWI Transaction Type ID\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Transaction Type\"",
+        "nullable": false,
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Valid From\"",
+        "nullable": false,
+        "type": "DATETIME2"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Valid To\"",
+        "nullable": false,
+        "type": "DATETIME2"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Lineage Key\"",
+        "nullable": false,
+        "type": "INT"
+      }
+    ],
+    "parameters": {
+      "arguments": [],
+      "returns": []
+    }
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Dimension.[Transaction Type]",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "[Transaction Type]",
+    "objectType": "table",
+    "platform": "sqlServer",
+    "schema": "Dimension"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

@@ -1,0 +1,91 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": true,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "1b58ff50-d8e2-484d-ab98-b5441845a8a7",
+        "isMissing": false,
+        "relationTypes": [
+          "UPDATE"
+        ]
+      },
+      {
+        "id": "64fd00bf-7950-477b-ba1a-16210cd0681c",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM",
+          "UPDATE"
+        ]
+      },
+      {
+        "id": "d5d6eb2b-82de-40a0-94fa-1ef90af73639",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM"
+        ]
+      },
+      {
+        "id": "06b7ad8e-ddf7-4b9d-9064-17b60587e404",
+        "isMissing": false,
+        "relationTypes": [
+          "INSERT",
+          "UPDATE"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": []
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "4ca2c1fe45d5db08f9f13bab0716e9a9",
+      "path": "source/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql"
+    }
+  },
+  "id": "8fb602a4-f637-4c3f-b8f0-7ff368017a53",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 2
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [],
+    "parameters": {
+      "arguments": [],
+      "returns": [
+        {
+          "name": "[Lineage Key]",
+          "type": "INT"
+        }
+      ]
+    }
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Integration.MigrateStagedPaymentMethodData",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "MigrateStagedPaymentMethodData",
+    "objectType": "procedure",
+    "platform": "sqlServer",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

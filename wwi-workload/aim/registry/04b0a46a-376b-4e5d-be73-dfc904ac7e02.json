@@ -1,0 +1,61 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "1149b4a9-3513-4cfd-b0f1-f6cbd6547470"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "0ac7ef35be6da7025e0e40d293d67a90",
+      "path": "source/wideworldimportersdw/application/procedure/configuration_applypolybase.sql"
+    }
+  },
+  "id": "04b0a46a-376b-4e5d-be73-dfc904ac7e02",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [],
+    "parameters": {
+      "arguments": [],
+      "returns": [
+        {
+          "name": "value"
+        }
+      ]
+    }
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Application.Configuration_ApplyPolybase",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "Configuration_ApplyPolybase",
+    "objectType": "procedure",
+    "platform": "sqlServer",
+    "schema": "Application"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

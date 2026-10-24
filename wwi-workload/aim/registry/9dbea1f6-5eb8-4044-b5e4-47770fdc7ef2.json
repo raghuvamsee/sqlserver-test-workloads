@@ -1,0 +1,150 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "58f3be9d-37bd-4913-822b-7a64d841fd85",
+        "isMissing": false,
+        "relationTypes": [
+          "TABLE COLUMN"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "15f4538f-f470-41be-82a3-af4579497ee6",
+      "3bfec749-680e-49b9-a41c-9974cbc5545d",
+      "61b177e5-22ae-4122-ad6d-d6d1b3294c2f",
+      "bb317ec9-b0b9-4fa2-8b15-b176ff64f7ea",
+      "bc70f733-1bf3-4137-87b5-69397ebb5877",
+      "cff6ffcb-f0ea-49af-b01d-c83e344952ed",
+      "d59fc930-9c64-4c66-91a3-823de6f37279",
+      "e246ca55-9881-4ecd-8b71-f32f3f898ece"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "e1c3051893885d3028b9d0c97e64221f",
+      "path": "source/wideworldimportersdw/dimension/table/supplier.sql"
+    }
+  },
+  "id": "9dbea1f6-5eb8-4044-b5e4-47770fdc7ef2",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": true,
+        "name": "\"Supplier Key\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"WWI Supplier ID\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "Supplier",
+        "nullable": false,
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "Category",
+        "nullable": false,
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Primary Contact\"",
+        "nullable": false,
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Supplier Reference\"",
+        "nullable": true,
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Payment Days\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Postal Code\"",
+        "nullable": false,
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Valid From\"",
+        "nullable": false,
+        "type": "DATETIME2"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Valid To\"",
+        "nullable": false,
+        "type": "DATETIME2"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Lineage Key\"",
+        "nullable": false,
+        "type": "INT"
+      }
+    ],
+    "parameters": {
+      "arguments": [],
+      "returns": []
+    }
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Dimension.Supplier",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "Supplier",
+    "objectType": "table",
+    "platform": "sqlServer",
+    "schema": "Dimension"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

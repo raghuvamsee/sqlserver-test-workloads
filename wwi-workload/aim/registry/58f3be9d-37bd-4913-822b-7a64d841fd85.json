@@ -1,0 +1,53 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "9dbea1f6-5eb8-4044-b5e4-47770fdc7ef2"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "1331bcc49211d1557fadfbc0a4a98fdd",
+      "path": "source/wideworldimportersdw/sequences/sequence/supplierkey.sql"
+    }
+  },
+  "id": "58f3be9d-37bd-4913-822b-7a64d841fd85",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": []
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Sequences.SupplierKey",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "SupplierKey",
+    "objectType": "sequence",
+    "platform": "sqlServer",
+    "schema": "Sequences"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

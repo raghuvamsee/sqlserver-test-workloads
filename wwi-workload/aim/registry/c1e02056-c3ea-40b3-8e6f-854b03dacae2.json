@@ -1,0 +1,53 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "cf34e18d-290b-4bed-bad9-15b769fe40a9"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "ff53397bb94b31619b8cf165eabcb59b",
+      "path": "source/wideworldimportersdw/sequences/sequence/customerkey.sql"
+    }
+  },
+  "id": "c1e02056-c3ea-40b3-8e6f-854b03dacae2",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": []
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Sequences.CustomerKey",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "CustomerKey",
+    "objectType": "sequence",
+    "platform": "sqlServer",
+    "schema": "Sequences"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

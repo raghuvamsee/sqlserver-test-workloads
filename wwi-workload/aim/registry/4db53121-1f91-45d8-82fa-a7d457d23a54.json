@@ -1,0 +1,53 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "172e8c9d-5d97-43b1-ba0d-8b2de51fa3ca"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "b3952dc33168a60aac962258b5151f40",
+      "path": "source/wideworldimportersdw/sequences/sequence/stockitemkey.sql"
+    }
+  },
+  "id": "4db53121-1f91-45d8-82fa-a7d457d23a54",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": []
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Sequences.StockItemKey",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "StockItemKey",
+    "objectType": "sequence",
+    "platform": "sqlServer",
+    "schema": "Sequences"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

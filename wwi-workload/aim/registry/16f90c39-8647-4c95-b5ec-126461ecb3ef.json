@@ -1,0 +1,138 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "00d9afdd-2ce8-4cd7-a4bd-f3f567223cfa",
+        "isMissing": false,
+        "relationTypes": [
+          "DROP"
+        ]
+      },
+      {
+        "id": "90a25581-4885-46da-b69c-89459cae6eb6",
+        "isMissing": false,
+        "relationTypes": [
+          "DROP"
+        ]
+      },
+      {
+        "id": "b14c3ce9-5ab2-4722-a296-ad040b1c379a",
+        "isMissing": false,
+        "relationTypes": [
+          "DROP"
+        ]
+      },
+      {
+        "id": "7cc0c7c0-4360-43fe-9ad4-3b5007a85875",
+        "isMissing": false,
+        "relationTypes": [
+          "DROP"
+        ]
+      },
+      {
+        "id": "649d7396-fbbb-46c7-99a8-40f42fcdfa80",
+        "isMissing": false,
+        "relationTypes": [
+          "DROP"
+        ]
+      },
+      {
+        "id": "68fc6c2c-d00a-4317-9ba2-66feb2a1bdea",
+        "isMissing": false,
+        "relationTypes": [
+          "DROP"
+        ]
+      },
+      {
+        "id": "4a2bd823-a131-402f-b23d-6ad35283c251",
+        "isMissing": false,
+        "relationTypes": [
+          "DROP"
+        ]
+      },
+      {
+        "id": "d5d6eb2b-82de-40a0-94fa-1ef90af73639",
+        "isMissing": false,
+        "relationTypes": [
+          "DROP"
+        ]
+      },
+      {
+        "id": "1c8f7c3e-6990-415a-83bf-780eb48904fa",
+        "isMissing": false,
+        "relationTypes": [
+          "DROP"
+        ]
+      },
+      {
+        "id": "1eb656c0-0351-4ad2-a718-c095fc3e3137",
+        "isMissing": false,
+        "relationTypes": [
+          "DROP"
+        ]
+      },
+      {
+        "id": "f192ce08-ede1-4d4b-9db5-2408d5d1acf7",
+        "isMissing": false,
+        "relationTypes": [
+          "DROP"
+        ]
+      },
+      {
+        "id": "dc1593bf-13e6-4e4e-9db6-8acc220dcb27",
+        "isMissing": false,
+        "relationTypes": [
+          "DROP"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "1149b4a9-3513-4cfd-b0f1-f6cbd6547470"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "3dc29f16d4d7c4500b43b4ef57279ab8",
+      "path": "source/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql"
+    }
+  },
+  "id": "16f90c39-8647-4c95-b5ec-126461ecb3ef",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": []
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Application.Configuration_EnableInMemory",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "Configuration_EnableInMemory",
+    "objectType": "procedure",
+    "platform": "sqlServer",
+    "schema": "Application"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

@@ -1,0 +1,17 @@
+code_source: extract
+committed_setup_tasks: registerCode
+cortex_safe_tools_acknowledged: 'true'
+dashboard_port: 0
+entry_mode: fresh
+git_enabled: true
+git_housekeeping_commits: true
+git_main_branch: devin/1792870798-wwi-aim
+git_remote_name: origin
+git_remote_url: https://git-manager.devin.ai/proxy/github.com/raghuvamsee/sqlserver-test-workloads.git
+git_use_enclosing_repo: true
+has_etl_code: 'false'
+has_power_bi: 'false'
+has_tableau: 'false'
+migration_extras: none
+project_dir_confirmed: 'true'
+tailor_conversion_settings: 'false'

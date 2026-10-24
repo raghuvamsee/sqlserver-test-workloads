@@ -1,0 +1,135 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "bd729766-2d35-4f64-b5d6-1ce60050b781",
+        "isMissing": false,
+        "relationTypes": [
+          "TABLE COLUMN"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "3bfec749-680e-49b9-a41c-9974cbc5545d",
+      "63d73798-b097-4e6e-9bad-ca1a0c797a2d",
+      "9b231eeb-3339-4b1d-8cd4-c6f5ebf1d321",
+      "a4d9e481-0fc3-4291-bc5d-cc9a9c2b6b43",
+      "ad0a1a25-10bb-422a-91be-929f5d2732b9",
+      "ad69d741-caa8-4743-ab27-da074f87b678",
+      "d0cef0ff-9761-4e20-9ce8-2980bb9aeabe"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "f3ba860bd3cd13cfd910e0cc004193bf",
+      "path": "source/wideworldimportersdw/dimension/table/employee.sql"
+    }
+  },
+  "id": "06c1a86c-68de-47cb-8638-c5a6f62ae020",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": true,
+        "name": "\"Employee Key\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"WWI Employee ID\"",
+        "nullable": false,
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "Employee",
+        "nullable": false,
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Preferred Name\"",
+        "nullable": false,
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Is Salesperson\"",
+        "nullable": false,
+        "type": "BIT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "Photo",
+        "nullable": true,
+        "type": "VARBINARY"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Valid From\"",
+        "nullable": false,
+        "type": "DATETIME2"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Valid To\"",
+        "nullable": false,
+        "type": "DATETIME2"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Lineage Key\"",
+        "nullable": false,
+        "type": "INT"
+      }
+    ],
+    "parameters": {
+      "arguments": [],
+      "returns": []
+    }
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Dimension.Employee",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "Employee",
+    "objectType": "table",
+    "platform": "sqlServer",
+    "schema": "Dimension"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

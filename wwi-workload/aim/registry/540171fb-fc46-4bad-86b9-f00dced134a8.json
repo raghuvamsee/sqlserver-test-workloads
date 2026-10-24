@@ -1,0 +1,53 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "d20973f5-32ac-4262-8c9e-24dc1f9cb864"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "e1c922c02790c49bc96557c0efa853c7",
+      "path": "source/wideworldimportersdw/sequences/sequence/citykey.sql"
+    }
+  },
+  "id": "540171fb-fc46-4bad-86b9-f00dced134a8",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": []
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Sequences.CityKey",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "CityKey",
+    "objectType": "sequence",
+    "platform": "sqlServer",
+    "schema": "Sequences"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

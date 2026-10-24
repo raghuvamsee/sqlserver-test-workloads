@@ -1,0 +1,3 @@
+USE WideWorldImportersDW;
+GO
+CREATE SCHEMA PowerBI AUTHORIZATION dbo;

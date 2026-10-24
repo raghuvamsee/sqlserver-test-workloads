@@ -1,0 +1,122 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "6c81abb0-30ce-4acb-a808-b776792d3d51"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "760efc32d573dc8b7a6f9e894380d5de",
+      "path": "source/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql"
+    }
+  },
+  "id": "168e8cdf-2d3c-4665-ae1b-b0110293494c",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [],
+    "parameters": {
+      "arguments": [
+        {
+          "direction": "in",
+          "isCursor": false,
+          "name": "@Date",
+          "required": true,
+          "type": "DATE"
+        }
+      ],
+      "returns": [
+        {
+          "name": "[Date]",
+          "type": "DATE"
+        },
+        {
+          "name": "[Day Number]",
+          "type": "INTEGER"
+        },
+        {
+          "name": "[Day]",
+          "type": "NVARCHAR"
+        },
+        {
+          "name": "[Month]",
+          "type": "NVARCHAR"
+        },
+        {
+          "name": "[Short Month]",
+          "type": "NVARCHAR"
+        },
+        {
+          "name": "[Calendar Month Number]",
+          "type": "INTEGER"
+        },
+        {
+          "name": "[Calendar Month Label]",
+          "type": "NVARCHAR"
+        },
+        {
+          "name": "[Calendar Year]",
+          "type": "INTEGER"
+        },
+        {
+          "name": "[Calendar Year Label]",
+          "type": "NVARCHAR"
+        },
+        {
+          "name": "[Fiscal Month Number]",
+          "type": "INTEGER"
+        },
+        {
+          "name": "[Fiscal Month Label]",
+          "type": "NVARCHAR"
+        },
+        {
+          "name": "[Fiscal Year]",
+          "type": "INTEGER"
+        },
+        {
+          "name": "[Fiscal Year Label]",
+          "type": "NVARCHAR"
+        },
+        {
+          "name": "[ISO Week Number]",
+          "type": "INTEGER"
+        }
+      ]
+    }
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Integration.GenerateDateDimensionColumns(DATE)",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "GenerateDateDimensionColumns",
+    "objectType": "function",
+    "platform": "sqlServer",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

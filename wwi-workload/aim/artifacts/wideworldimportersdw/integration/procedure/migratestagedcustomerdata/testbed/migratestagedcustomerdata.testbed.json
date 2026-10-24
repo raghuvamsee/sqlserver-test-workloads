@@ -1,0 +1,369 @@
+{
+  "object": "WideWorldImportersDW.Integration.MigrateStagedCustomerData()",
+  "object_type": "PROCEDURE",
+  "branches": [
+    {
+      "branch_id": 0,
+      "construct_kind": "WHERE_FILTER",
+      "line": 16,
+      "predicate_text": "[Table Name] = N'Customer'\n                               AND [Data Load Completed] IS NULL",
+      "columns": [
+        {
+          "column": "\"Table Name\"",
+          "table": "WideWorldImportersDW.Integration.Lineage",
+          "type": "sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "\"Data Load Completed\"",
+          "table": "WideWorldImportersDW.Integration.Lineage",
+          "type": "DATETIME2",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": true,
+          "is_datetime": true,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "and",
+        "children": [
+          {
+            "kind": "atom",
+            "columns": [
+              "WideWorldImportersDW.Integration.Lineage.\"Table Name\""
+            ],
+            "operator": "=",
+            "values": [
+              "Customer"
+            ],
+            "operands": [
+              {
+                "kind": "column",
+                "column": "WideWorldImportersDW.Integration.Lineage.\"Table Name\"",
+                "text": "[Table Name]"
+              },
+              {
+                "kind": "literal",
+                "literal": "Customer",
+                "text": "N'Customer'"
+              }
+            ]
+          },
+          {
+            "kind": "atom",
+            "columns": [
+              "WideWorldImportersDW.Integration.Lineage.\"Data Load Completed\""
+            ],
+            "operator": "IS NULL",
+            "values": [],
+            "operands": [
+              {
+                "kind": "column",
+                "column": "WideWorldImportersDW.Integration.Lineage.\"Data Load Completed\"",
+                "text": "[Data Load Completed]"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "branch_id": 1,
+      "construct_kind": "WHERE_FILTER",
+      "line": 53,
+      "predicate_text": "[Table Name] = N'Customer'",
+      "columns": [
+        {
+          "column": "\"Table Name\"",
+          "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+          "type": "sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "atom",
+        "columns": [
+          "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\""
+        ],
+        "operator": "=",
+        "values": [
+          "Customer"
+        ],
+        "operands": [
+          {
+            "kind": "column",
+            "column": "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\"",
+            "text": "[Table Name]"
+          },
+          {
+            "kind": "literal",
+            "literal": "Customer",
+            "text": "N'Customer'"
+          }
+        ]
+      }
+    }
+  ],
+  "predicates": [
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"Valid To\"",
+      "operator": "=",
+      "values": [
+        "@EndOfTime"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Dimension.Customer.\"Valid To\"",
+          "text": "c.[Valid To]"
+        },
+        {
+          "kind": "parameter",
+          "parameter": "@EndOfTime",
+          "text": "@EndOfTime"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Data Load Completed\"",
+      "operator": "IS NULL",
+      "values": [],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Data Load Completed\"",
+          "text": "[Data Load Completed]"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Lineage Key\"",
+      "operator": "=",
+      "values": [
+        "@LineageKey"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Lineage Key\"",
+          "text": "[Lineage Key]"
+        },
+        {
+          "kind": "parameter",
+          "parameter": "@LineageKey",
+          "text": "@LineageKey"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Table Name\"",
+      "operator": "=",
+      "values": [
+        "Customer"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Table Name\"",
+          "text": "[Table Name]"
+        },
+        {
+          "kind": "literal",
+          "literal": "Customer",
+          "text": "N'Customer'"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+      "column": "\"Table Name\"",
+      "operator": "=",
+      "values": [
+        "Customer"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\"",
+          "text": "[Table Name]"
+        },
+        {
+          "kind": "literal",
+          "literal": "Customer",
+          "text": "N'Customer'"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "left_table": "RowsToCloseOff",
+      "left_columns": [
+        "[WWI Customer ID]"
+      ],
+      "right_table": "WideWorldImportersDW.Dimension.Customer",
+      "right_columns": [
+        "\"WWI Customer ID\""
+      ],
+      "join_type": "inner",
+      "is_anti": false
+    }
+  ],
+  "assignments": [
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"Bill To Customer\"",
+      "value": "[Bill To Customer]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"Buying Group\"",
+      "value": "[Buying Group]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"Lineage Key\"",
+      "value": "@LineageKey"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"Postal Code\"",
+      "value": "[Postal Code]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"Primary Contact\"",
+      "value": "[Primary Contact]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"Valid From\"",
+      "value": "[Valid From]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"Valid To\"",
+      "value": "[Valid To]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"Valid To\"",
+      "value": "rtco.[Valid From]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"WWI Customer ID\"",
+      "value": "[WWI Customer ID]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "Category",
+      "value": "Category"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "Customer",
+      "value": "Customer"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Data Load Completed\"",
+      "value": "SYSDATETIME()",
+      "value_kind": "nondeterministic",
+      "value_expression": {
+        "kind": "fn",
+        "fn": "SYSDATETIME",
+        "args": []
+      }
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Lineage Key\"",
+      "value": "@LineageKey"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Was Successful\"",
+      "value": "1",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+      "column": "\"Cutoff Time\"",
+      "value": "(SELECT [Source System Cutoff Time]\n                             FROM Integration.Lineage\n                             WHERE [Lineage Key] = @LineageKey)"
+    }
+  ],
+  "semi_anti": [],
+  "schema_version": 1,
+  "insert_targets": [
+    {
+      "target_table": "WideWorldImportersDW.Dimension.Customer",
+      "columns": [
+        {
+          "target_column": "\"WWI Customer ID\"",
+          "source_table": "WideWorldImportersDW.Integration.Customer_Staging",
+          "source_column": "\"WWI Customer ID\""
+        },
+        {
+          "target_column": "Customer",
+          "source_table": "WideWorldImportersDW.Integration.Customer_Staging",
+          "source_column": "Customer"
+        },
+        {
+          "target_column": "\"Bill To Customer\"",
+          "source_table": "WideWorldImportersDW.Integration.Customer_Staging",
+          "source_column": "\"Bill To Customer\""
+        },
+        {
+          "target_column": "Category",
+          "source_table": "WideWorldImportersDW.Integration.Customer_Staging",
+          "source_column": "Category"
+        },
+        {
+          "target_column": "\"Buying Group\"",
+          "source_table": "WideWorldImportersDW.Integration.Customer_Staging",
+          "source_column": "\"Buying Group\""
+        },
+        {
+          "target_column": "\"Primary Contact\"",
+          "source_table": "WideWorldImportersDW.Integration.Customer_Staging",
+          "source_column": "\"Primary Contact\""
+        },
+        {
+          "target_column": "\"Postal Code\"",
+          "source_table": "WideWorldImportersDW.Integration.Customer_Staging",
+          "source_column": "\"Postal Code\""
+        },
+        {
+          "target_column": "\"Valid From\"",
+          "source_table": "WideWorldImportersDW.Integration.Customer_Staging",
+          "source_column": "\"Valid From\""
+        },
+        {
+          "target_column": "\"Valid To\"",
+          "source_table": "WideWorldImportersDW.Integration.Customer_Staging",
+          "source_column": "\"Valid To\""
+        }
+      ]
+    }
+  ]
+}

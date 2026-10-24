@@ -1,0 +1,459 @@
+{
+  "object": "WideWorldImportersDW.Integration.MigrateStagedStockItemData()",
+  "object_type": "PROCEDURE",
+  "branches": [
+    {
+      "branch_id": 0,
+      "construct_kind": "WHERE_FILTER",
+      "line": 16,
+      "predicate_text": "[Table Name] = N'Stock Item'\n                               AND [Data Load Completed] IS NULL",
+      "columns": [
+        {
+          "column": "\"Table Name\"",
+          "table": "WideWorldImportersDW.Integration.Lineage",
+          "type": "sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "\"Data Load Completed\"",
+          "table": "WideWorldImportersDW.Integration.Lineage",
+          "type": "DATETIME2",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": true,
+          "is_datetime": true,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "and",
+        "children": [
+          {
+            "kind": "atom",
+            "columns": [
+              "WideWorldImportersDW.Integration.Lineage.\"Table Name\""
+            ],
+            "operator": "=",
+            "values": [
+              "Stock Item"
+            ],
+            "operands": [
+              {
+                "kind": "column",
+                "column": "WideWorldImportersDW.Integration.Lineage.\"Table Name\"",
+                "text": "[Table Name]"
+              },
+              {
+                "kind": "literal",
+                "literal": "Stock Item",
+                "text": "N'Stock Item'"
+              }
+            ]
+          },
+          {
+            "kind": "atom",
+            "columns": [
+              "WideWorldImportersDW.Integration.Lineage.\"Data Load Completed\""
+            ],
+            "operator": "IS NULL",
+            "values": [],
+            "operands": [
+              {
+                "kind": "column",
+                "column": "WideWorldImportersDW.Integration.Lineage.\"Data Load Completed\"",
+                "text": "[Data Load Completed]"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "branch_id": 1,
+      "construct_kind": "WHERE_FILTER",
+      "line": 56,
+      "predicate_text": "[Table Name] = N'Stock Item'",
+      "columns": [
+        {
+          "column": "\"Table Name\"",
+          "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+          "type": "sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "atom",
+        "columns": [
+          "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\""
+        ],
+        "operator": "=",
+        "values": [
+          "Stock Item"
+        ],
+        "operands": [
+          {
+            "kind": "column",
+            "column": "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\"",
+            "text": "[Table Name]"
+          },
+          {
+            "kind": "literal",
+            "literal": "Stock Item",
+            "text": "N'Stock Item'"
+          }
+        ]
+      }
+    }
+  ],
+  "predicates": [
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Valid To\"",
+      "operator": "=",
+      "values": [
+        "@EndOfTime"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Dimension.[Stock Item].\"Valid To\"",
+          "text": "s.[Valid To]"
+        },
+        {
+          "kind": "parameter",
+          "parameter": "@EndOfTime",
+          "text": "@EndOfTime"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Data Load Completed\"",
+      "operator": "IS NULL",
+      "values": [],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Data Load Completed\"",
+          "text": "[Data Load Completed]"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Lineage Key\"",
+      "operator": "=",
+      "values": [
+        "@LineageKey"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Lineage Key\"",
+          "text": "[Lineage Key]"
+        },
+        {
+          "kind": "parameter",
+          "parameter": "@LineageKey",
+          "text": "@LineageKey"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Table Name\"",
+      "operator": "=",
+      "values": [
+        "Stock Item"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Table Name\"",
+          "text": "[Table Name]"
+        },
+        {
+          "kind": "literal",
+          "literal": "Stock Item",
+          "text": "N'Stock Item'"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+      "column": "\"Table Name\"",
+      "operator": "=",
+      "values": [
+        "Stock Item"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\"",
+          "text": "[Table Name]"
+        },
+        {
+          "kind": "literal",
+          "literal": "Stock Item",
+          "text": "N'Stock Item'"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "left_table": "RowsToCloseOff",
+      "left_columns": [
+        "[WWI Stock Item ID]"
+      ],
+      "right_table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "right_columns": [
+        "\"WWI Stock Item ID\""
+      ],
+      "join_type": "inner",
+      "is_anti": false
+    }
+  ],
+  "assignments": [
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Buying Package\"",
+      "value": "[Buying Package]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Is Chiller Stock\"",
+      "value": "[Is Chiller Stock]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Lead Time Days\"",
+      "value": "[Lead Time Days]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Lineage Key\"",
+      "value": "@LineageKey"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Quantity Per Outer\"",
+      "value": "[Quantity Per Outer]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Recommended Retail Price\"",
+      "value": "[Recommended Retail Price]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Selling Package\"",
+      "value": "[Selling Package]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Stock Item\"",
+      "value": "[Stock Item]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Tax Rate\"",
+      "value": "[Tax Rate]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Typical Weight Per Unit\"",
+      "value": "[Typical Weight Per Unit]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Unit Price\"",
+      "value": "[Unit Price]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Valid From\"",
+      "value": "[Valid From]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Valid To\"",
+      "value": "[Valid To]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Valid To\"",
+      "value": "rtco.[Valid From]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"WWI Stock Item ID\"",
+      "value": "[WWI Stock Item ID]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "Barcode",
+      "value": "Barcode"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "Brand",
+      "value": "Brand"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "Color",
+      "value": "Color"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "Photo",
+      "value": "Photo"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "Size",
+      "value": "Size"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Data Load Completed\"",
+      "value": "SYSDATETIME()",
+      "value_kind": "nondeterministic",
+      "value_expression": {
+        "kind": "fn",
+        "fn": "SYSDATETIME",
+        "args": []
+      }
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Lineage Key\"",
+      "value": "@LineageKey"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Was Successful\"",
+      "value": "1",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+      "column": "\"Cutoff Time\"",
+      "value": "(SELECT [Source System Cutoff Time]\n                             FROM Integration.Lineage\n                             WHERE [Lineage Key] = @LineageKey)"
+    }
+  ],
+  "semi_anti": [],
+  "schema_version": 1,
+  "insert_targets": [
+    {
+      "target_table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "columns": [
+        {
+          "target_column": "\"WWI Stock Item ID\"",
+          "source_table": "WideWorldImportersDW.Integration.StockItem_Staging",
+          "source_column": "\"WWI Stock Item ID\""
+        },
+        {
+          "target_column": "\"Stock Item\"",
+          "source_table": "WideWorldImportersDW.Integration.StockItem_Staging",
+          "source_column": "\"Stock Item\""
+        },
+        {
+          "target_column": "Color",
+          "source_table": "WideWorldImportersDW.Integration.StockItem_Staging",
+          "source_column": "Color"
+        },
+        {
+          "target_column": "\"Selling Package\"",
+          "source_table": "WideWorldImportersDW.Integration.StockItem_Staging",
+          "source_column": "\"Selling Package\""
+        },
+        {
+          "target_column": "\"Buying Package\"",
+          "source_table": "WideWorldImportersDW.Integration.StockItem_Staging",
+          "source_column": "\"Buying Package\""
+        },
+        {
+          "target_column": "Brand",
+          "source_table": "WideWorldImportersDW.Integration.StockItem_Staging",
+          "source_column": "Brand"
+        },
+        {
+          "target_column": "Size",
+          "source_table": "WideWorldImportersDW.Integration.StockItem_Staging",
+          "source_column": "Size"
+        },
+        {
+          "target_column": "\"Lead Time Days\"",
+          "source_table": "WideWorldImportersDW.Integration.StockItem_Staging",
+          "source_column": "\"Lead Time Days\""
+        },
+        {
+          "target_column": "\"Quantity Per Outer\"",
+          "source_table": "WideWorldImportersDW.Integration.StockItem_Staging",
+          "source_column": "\"Quantity Per Outer\""
+        },
+        {
+          "target_column": "\"Is Chiller Stock\"",
+          "source_table": "WideWorldImportersDW.Integration.StockItem_Staging",
+          "source_column": "\"Is Chiller Stock\""
+        },
+        {
+          "target_column": "Barcode",
+          "source_table": "WideWorldImportersDW.Integration.StockItem_Staging",
+          "source_column": "Barcode"
+        },
+        {
+          "target_column": "\"Tax Rate\"",
+          "source_table": "WideWorldImportersDW.Integration.StockItem_Staging",
+          "source_column": "\"Tax Rate\""
+        },
+        {
+          "target_column": "\"Unit Price\"",
+          "source_table": "WideWorldImportersDW.Integration.StockItem_Staging",
+          "source_column": "\"Unit Price\""
+        },
+        {
+          "target_column": "\"Recommended Retail Price\"",
+          "source_table": "WideWorldImportersDW.Integration.StockItem_Staging",
+          "source_column": "\"Recommended Retail Price\""
+        },
+        {
+          "target_column": "\"Typical Weight Per Unit\"",
+          "source_table": "WideWorldImportersDW.Integration.StockItem_Staging",
+          "source_column": "\"Typical Weight Per Unit\""
+        },
+        {
+          "target_column": "Photo",
+          "source_table": "WideWorldImportersDW.Integration.StockItem_Staging",
+          "source_column": "Photo"
+        },
+        {
+          "target_column": "\"Valid From\"",
+          "source_table": "WideWorldImportersDW.Integration.StockItem_Staging",
+          "source_column": "\"Valid From\""
+        },
+        {
+          "target_column": "\"Valid To\"",
+          "source_table": "WideWorldImportersDW.Integration.StockItem_Staging",
+          "source_column": "\"Valid To\""
+        }
+      ]
+    }
+  ]
+}

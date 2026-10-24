@@ -1,0 +1,53 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "06c1a86c-68de-47cb-8638-c5a6f62ae020"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "c1b62565b94cf7242df5aacfcf99d0e4",
+      "path": "source/wideworldimportersdw/sequences/sequence/employeekey.sql"
+    }
+  },
+  "id": "bd729766-2d35-4f64-b5d6-1ce60050b781",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": []
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Sequences.EmployeeKey",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "EmployeeKey",
+    "objectType": "sequence",
+    "platform": "sqlServer",
+    "schema": "Sequences"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

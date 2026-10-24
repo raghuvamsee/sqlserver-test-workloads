@@ -1,0 +1,53 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "d8b668f7-6c45-4a16-a99b-971a55353911"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "e49c609f0eec6b0af17cd98f1d7af86d",
+      "path": "source/wideworldimportersdw/sequences/sequence/transactiontypekey.sql"
+    }
+  },
+  "id": "f5fefad8-5093-4611-aaa1-85e8d79ad30a",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": []
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Sequences.TransactionTypeKey",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "TransactionTypeKey",
+    "objectType": "sequence",
+    "platform": "sqlServer",
+    "schema": "Sequences"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

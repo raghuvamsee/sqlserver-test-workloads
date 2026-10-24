@@ -1,0 +1,91 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "bdc7a365-0d66-41be-a470-685a9984ec6d"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "09ad8b4e882f7217746232594538c8d1",
+      "path": "source/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql"
+    }
+  },
+  "id": "75c9ae4f-76fa-4fcf-ae0a-08acbecb8530",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [],
+    "parameters": {
+      "arguments": [
+        {
+          "direction": "in",
+          "isCursor": false,
+          "name": "@SequenceName",
+          "required": true,
+          "type": "SYSNAME"
+        },
+        {
+          "direction": "in",
+          "isCursor": false,
+          "name": "@SchemaName",
+          "required": true,
+          "type": "SYSNAME"
+        },
+        {
+          "direction": "in",
+          "isCursor": false,
+          "name": "@TableName",
+          "required": true,
+          "type": "SYSNAME"
+        },
+        {
+          "direction": "in",
+          "isCursor": false,
+          "name": "@ColumnName",
+          "required": true,
+          "type": "SYSNAME"
+        }
+      ],
+      "returns": [
+        {
+          "name": "CurrentValue",
+          "type": "BIGINT"
+        }
+      ]
+    }
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Sequences.ReseedSequenceBeyondTableValues(SYSNAME,SYSNAME,SYSNAME,SYSNAME)",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "ReseedSequenceBeyondTableValues",
+    "objectType": "procedure",
+    "platform": "sqlServer",
+    "schema": "Sequences"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

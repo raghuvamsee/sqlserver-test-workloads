@@ -1,0 +1,81 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": true,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "168e8cdf-2d3c-4665-ae1b-b0110293494c",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM"
+        ]
+      },
+      {
+        "id": "2685eca3-d88d-4aee-9354-8c62b9011b32",
+        "isMissing": false,
+        "relationTypes": [
+          "INSERT",
+          "SELECT - FROM"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "9b231eeb-3339-4b1d-8cd4-c6f5ebf1d321"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "7a112e4c49f469cc342b44e732249258",
+      "path": "source/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    }
+  },
+  "id": "6c81abb0-30ce-4acb-a808-b776792d3d51",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [],
+    "parameters": {
+      "arguments": [
+        {
+          "direction": "in",
+          "isCursor": false,
+          "name": "@YearNumber",
+          "required": true,
+          "type": "INT"
+        }
+      ],
+      "returns": []
+    }
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Integration.PopulateDateDimensionForYear(INT)",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "PopulateDateDimensionForYear",
+    "objectType": "procedure",
+    "platform": "sqlServer",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}

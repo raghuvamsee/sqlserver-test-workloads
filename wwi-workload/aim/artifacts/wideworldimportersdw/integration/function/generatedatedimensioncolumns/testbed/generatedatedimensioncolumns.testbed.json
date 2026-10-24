@@ -1,0 +1,56 @@
+{
+  "object": "WideWorldImportersDW.Integration.GenerateDateDimensionColumns(DATE)",
+  "object_type": "FUNCTION",
+  "branches": [],
+  "predicates": [
+    {
+      "table": "",
+      "column": "[Month]",
+      "operator": "IN",
+      "values": [
+        "11",
+        "12"
+      ],
+      "operands": [
+        {
+          "kind": "fn",
+          "fn": "MONTH",
+          "args": [
+            {
+              "kind": "parameter",
+              "parameter": "@Date"
+            }
+          ],
+          "text": "MONTH(@Date)"
+        },
+        {
+          "kind": "literal",
+          "literal": "11",
+          "text": "11"
+        },
+        {
+          "kind": "literal",
+          "literal": "12",
+          "text": "12"
+        }
+      ]
+    }
+  ],
+  "edges": [],
+  "assignments": [],
+  "semi_anti": [],
+  "schema_version": 1,
+  "parameters": [
+    {
+      "name": "@Date",
+      "type": "DATE",
+      "param_kind": "business_scalar",
+      "is_integer": false,
+      "is_number": false,
+      "is_string": false,
+      "is_date": true,
+      "is_boolean": false,
+      "is_binary": false
+    }
+  ]
+}

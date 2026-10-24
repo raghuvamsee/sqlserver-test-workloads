@@ -1,0 +1,319 @@
+{
+  "object": "WideWorldImportersDW.Integration.MigrateStagedPaymentMethodData()",
+  "object_type": "PROCEDURE",
+  "branches": [
+    {
+      "branch_id": 0,
+      "construct_kind": "WHERE_FILTER",
+      "line": 16,
+      "predicate_text": "[Table Name] = N'Payment Method'\n                               AND [Data Load Completed] IS NULL",
+      "columns": [
+        {
+          "column": "\"Table Name\"",
+          "table": "WideWorldImportersDW.Integration.Lineage",
+          "type": "sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "\"Data Load Completed\"",
+          "table": "WideWorldImportersDW.Integration.Lineage",
+          "type": "DATETIME2",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": true,
+          "is_datetime": true,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "and",
+        "children": [
+          {
+            "kind": "atom",
+            "columns": [
+              "WideWorldImportersDW.Integration.Lineage.\"Table Name\""
+            ],
+            "operator": "=",
+            "values": [
+              "Payment Method"
+            ],
+            "operands": [
+              {
+                "kind": "column",
+                "column": "WideWorldImportersDW.Integration.Lineage.\"Table Name\"",
+                "text": "[Table Name]"
+              },
+              {
+                "kind": "literal",
+                "literal": "Payment Method",
+                "text": "N'Payment Method'"
+              }
+            ]
+          },
+          {
+            "kind": "atom",
+            "columns": [
+              "WideWorldImportersDW.Integration.Lineage.\"Data Load Completed\""
+            ],
+            "operator": "IS NULL",
+            "values": [],
+            "operands": [
+              {
+                "kind": "column",
+                "column": "WideWorldImportersDW.Integration.Lineage.\"Data Load Completed\"",
+                "text": "[Data Load Completed]"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "branch_id": 1,
+      "construct_kind": "WHERE_FILTER",
+      "line": 50,
+      "predicate_text": "[Table Name] = N'Payment Method'",
+      "columns": [
+        {
+          "column": "\"Table Name\"",
+          "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+          "type": "sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "atom",
+        "columns": [
+          "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\""
+        ],
+        "operator": "=",
+        "values": [
+          "Payment Method"
+        ],
+        "operands": [
+          {
+            "kind": "column",
+            "column": "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\"",
+            "text": "[Table Name]"
+          },
+          {
+            "kind": "literal",
+            "literal": "Payment Method",
+            "text": "N'Payment Method'"
+          }
+        ]
+      }
+    }
+  ],
+  "predicates": [
+    {
+      "table": "WideWorldImportersDW.Dimension.[Payment Method]",
+      "column": "\"Valid To\"",
+      "operator": "=",
+      "values": [
+        "@EndOfTime"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Dimension.[Payment Method].\"Valid To\"",
+          "text": "pm.[Valid To]"
+        },
+        {
+          "kind": "parameter",
+          "parameter": "@EndOfTime",
+          "text": "@EndOfTime"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Data Load Completed\"",
+      "operator": "IS NULL",
+      "values": [],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Data Load Completed\"",
+          "text": "[Data Load Completed]"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Lineage Key\"",
+      "operator": "=",
+      "values": [
+        "@LineageKey"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Lineage Key\"",
+          "text": "[Lineage Key]"
+        },
+        {
+          "kind": "parameter",
+          "parameter": "@LineageKey",
+          "text": "@LineageKey"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Table Name\"",
+      "operator": "=",
+      "values": [
+        "Payment Method"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Table Name\"",
+          "text": "[Table Name]"
+        },
+        {
+          "kind": "literal",
+          "literal": "Payment Method",
+          "text": "N'Payment Method'"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+      "column": "\"Table Name\"",
+      "operator": "=",
+      "values": [
+        "Payment Method"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\"",
+          "text": "[Table Name]"
+        },
+        {
+          "kind": "literal",
+          "literal": "Payment Method",
+          "text": "N'Payment Method'"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "left_table": "RowsToCloseOff",
+      "left_columns": [
+        "[WWI Payment Method ID]"
+      ],
+      "right_table": "WideWorldImportersDW.Dimension.[Payment Method]",
+      "right_columns": [
+        "\"WWI Payment Method ID\""
+      ],
+      "join_type": "inner",
+      "is_anti": false
+    }
+  ],
+  "assignments": [
+    {
+      "table": "WideWorldImportersDW.Dimension.[Payment Method]",
+      "column": "\"Lineage Key\"",
+      "value": "@LineageKey"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Payment Method]",
+      "column": "\"Payment Method\"",
+      "value": "[Payment Method]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Payment Method]",
+      "column": "\"Valid From\"",
+      "value": "[Valid From]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Payment Method]",
+      "column": "\"Valid To\"",
+      "value": "[Valid To]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Payment Method]",
+      "column": "\"Valid To\"",
+      "value": "rtco.[Valid From]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Payment Method]",
+      "column": "\"WWI Payment Method ID\"",
+      "value": "[WWI Payment Method ID]"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Data Load Completed\"",
+      "value": "SYSDATETIME()",
+      "value_kind": "nondeterministic",
+      "value_expression": {
+        "kind": "fn",
+        "fn": "SYSDATETIME",
+        "args": []
+      }
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Lineage Key\"",
+      "value": "@LineageKey"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Was Successful\"",
+      "value": "1",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+      "column": "\"Cutoff Time\"",
+      "value": "(SELECT [Source System Cutoff Time]\n                             FROM Integration.Lineage\n                             WHERE [Lineage Key] = @LineageKey)"
+    }
+  ],
+  "semi_anti": [],
+  "schema_version": 1,
+  "insert_targets": [
+    {
+      "target_table": "WideWorldImportersDW.Dimension.[Payment Method]",
+      "columns": [
+        {
+          "target_column": "\"WWI Payment Method ID\"",
+          "source_table": "WideWorldImportersDW.Integration.PaymentMethod_Staging",
+          "source_column": "\"WWI Payment Method ID\""
+        },
+        {
+          "target_column": "\"Payment Method\"",
+          "source_table": "WideWorldImportersDW.Integration.PaymentMethod_Staging",
+          "source_column": "\"Payment Method\""
+        },
+        {
+          "target_column": "\"Valid From\"",
+          "source_table": "WideWorldImportersDW.Integration.PaymentMethod_Staging",
+          "source_column": "\"Valid From\""
+        },
+        {
+          "target_column": "\"Valid To\"",
+          "source_table": "WideWorldImportersDW.Integration.PaymentMethod_Staging",
+          "source_column": "\"Valid To\""
+        }
+      ]
+    }
+  ]
+}

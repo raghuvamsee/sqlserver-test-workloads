@@ -1,0 +1,73 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "status": "pending",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    },
+    "registration": {
+      "sourceId": "localhost",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:41:50Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "04b0a46a-376b-4e5d-be73-dfc904ac7e02",
+        "isMissing": false,
+        "relationTypes": [
+          "EXECUTE"
+        ]
+      },
+      {
+        "id": "16f90c39-8647-4c95-b5ec-126461ecb3ef",
+        "isMissing": false,
+        "relationTypes": [
+          "EXECUTE"
+        ]
+      },
+      {
+        "id": "bac8a142-a195-454b-84e2-068a29127591",
+        "isMissing": false,
+        "relationTypes": [
+          "EXECUTE"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": []
+  },
+  "extensions": {},
+  "files": {
+    "source": {
+      "checksum": "0a25fae42ad4be5f6c3d0598f34e4d2d",
+      "path": "source/wideworldimportersdw/application/procedure/configuration_configureforenterpriseedition.sql"
+    }
+  },
+  "id": "1149b4a9-3513-4cfd-b0f1-f6cbd6547470",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 4
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": []
+  },
+  "source": {
+    "canonicalName": "WideWorldImportersDW.Application.Configuration_ConfigureForEnterpriseEdition",
+    "database": "WideWorldImportersDW",
+    "format": "sql",
+    "name": "Configuration_ConfigureForEnterpriseEdition",
+    "objectType": "procedure",
+    "platform": "sqlServer",
+    "schema": "Application"
+  },
+  "updatedAt": "2026-10-24T19:41:50Z"
+}
