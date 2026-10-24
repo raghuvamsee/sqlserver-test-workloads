@@ -1,0 +1,297 @@
+tables:
+- source:
+    tableName: StockItem_Staging
+    schemaName: Integration
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: STOCKITEM_STAGING
+    schemaName: INTEGRATION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Stock Item Staging Key
+- source:
+    tableName: ETL Cutoff
+    schemaName: Integration
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: ETL Cutoff
+    schemaName: INTEGRATION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Table Name
+- source:
+    tableName: Movement_Staging
+    schemaName: Integration
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: MOVEMENT_STAGING
+    schemaName: INTEGRATION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Movement Staging Key
+- source:
+    tableName: StockHolding_Staging
+    schemaName: Integration
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: STOCKHOLDING_STAGING
+    schemaName: INTEGRATION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Stock Holding Staging Key
+- source:
+    tableName: Transaction Type
+    schemaName: Dimension
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: Transaction Type
+    schemaName: DIMENSION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Transaction Type Key
+- source:
+    tableName: Payment Method
+    schemaName: Dimension
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: Payment Method
+    schemaName: DIMENSION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Payment Method Key
+- source:
+    tableName: Sale_Staging
+    schemaName: Integration
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: SALE_STAGING
+    schemaName: INTEGRATION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Sale Staging Key
+- source:
+    tableName: Lineage
+    schemaName: Integration
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: LINEAGE
+    schemaName: INTEGRATION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Lineage Key
+- source:
+    tableName: TransactionType_Staging
+    schemaName: Integration
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: TRANSACTIONTYPE_STAGING
+    schemaName: INTEGRATION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Transaction Type Staging Key
+- source:
+    tableName: Customer
+    schemaName: Dimension
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: CUSTOMER
+    schemaName: DIMENSION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Customer Key
+- source:
+    tableName: Employee_Staging
+    schemaName: Integration
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: EMPLOYEE_STAGING
+    schemaName: INTEGRATION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Employee Staging Key
+- source:
+    tableName: Customer_Staging
+    schemaName: Integration
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: CUSTOMER_STAGING
+    schemaName: INTEGRATION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Customer Staging Key
+- source:
+    tableName: Order_Staging
+    schemaName: Integration
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: ORDER_STAGING
+    schemaName: INTEGRATION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Order Staging Key
+- source:
+    tableName: Date
+    schemaName: Dimension
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: DATE
+    schemaName: DIMENSION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Date
+- source:
+    tableName: Sale
+    schemaName: Fact
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: SALE
+    schemaName: FACT
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Sale Key
+- source:
+    tableName: Order
+    schemaName: Fact
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: Order
+    schemaName: FACT
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Order Key
+- source:
+    tableName: Purchase
+    schemaName: Fact
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: PURCHASE
+    schemaName: FACT
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Purchase Key
+- source:
+    tableName: Supplier_Staging
+    schemaName: Integration
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: SUPPLIER_STAGING
+    schemaName: INTEGRATION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Supplier Staging Key
+- source:
+    tableName: Transaction_Staging
+    schemaName: Integration
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: TRANSACTION_STAGING
+    schemaName: INTEGRATION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Transaction Staging Key
+- source:
+    tableName: Employee
+    schemaName: Dimension
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: EMPLOYEE
+    schemaName: DIMENSION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Employee Key
+- source:
+    tableName: Stock Holding
+    schemaName: Fact
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: Stock Holding
+    schemaName: FACT
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Stock Holding Key
+- source:
+    tableName: PaymentMethod_Staging
+    schemaName: Integration
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: PAYMENTMETHOD_STAGING
+    schemaName: INTEGRATION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Payment Method Staging Key
+- source:
+    tableName: Supplier
+    schemaName: Dimension
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: SUPPLIER
+    schemaName: DIMENSION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Supplier Key
+- source:
+    tableName: Movement
+    schemaName: Fact
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: MOVEMENT
+    schemaName: FACT
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Movement Key
+- source:
+    tableName: Purchase_Staging
+    schemaName: Integration
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: PURCHASE_STAGING
+    schemaName: INTEGRATION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Purchase Staging Key
+- source:
+    tableName: City_Staging
+    schemaName: Integration
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: CITY_STAGING
+    schemaName: INTEGRATION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - City Staging Key
+- source:
+    tableName: City
+    schemaName: Dimension
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: CITY
+    schemaName: DIMENSION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - City Key
+- source:
+    tableName: Transaction
+    schemaName: Fact
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: TRANSACTION
+    schemaName: FACT
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Transaction Key
+- source:
+    tableName: Stock Item
+    schemaName: Dimension
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: Stock Item
+    schemaName: DIMENSION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Stock Item Key
+defaultTableConfiguration:
+  synchronization:
+    strategy: none
+  extraction:
+    strategy: regular
+affinity: aim-25bfec2a
