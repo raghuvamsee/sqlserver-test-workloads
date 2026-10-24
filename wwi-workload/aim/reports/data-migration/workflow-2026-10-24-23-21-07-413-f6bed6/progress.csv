@@ -1,8 +1,8 @@
 TableName,HasBeenPreprocessed,TotalPartitions,PartitionsInExtractionPhase,PartitionsInLoadingPhase,LoadedPartitions,FailedPartitions,ExampleErrorMessage,ExampleWarningMessage
-"WIDEWORLDIMPORTERSDW.DIMENSION.""Payment Method""",True,1,0,0,1,0,,
-WIDEWORLDIMPORTERSDW.DIMENSION.DATE,True,1,0,0,1,0,,
-"WIDEWORLDIMPORTERSDW.DIMENSION.""Transaction Type""",True,1,0,0,1,0,,
 "WIDEWORLDIMPORTERSDW.INTEGRATION.""ETL Cutoff""",True,1,0,0,1,0,,
+"WIDEWORLDIMPORTERSDW.DIMENSION.""Payment Method""",True,1,0,0,1,0,,
 "WIDEWORLDIMPORTERSDW.FACT.""Stock Holding""",True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.DIMENSION.DATE,True,1,0,0,1,0,,
 WIDEWORLDIMPORTERSDW.FACT.ORDER,True,1,0,0,1,0,,
+"WIDEWORLDIMPORTERSDW.DIMENSION.""Transaction Type""",True,1,0,0,1,0,,
 WIDEWORLDIMPORTERSDW.FACT.TRANSACTION,True,1,0,0,1,0,,
