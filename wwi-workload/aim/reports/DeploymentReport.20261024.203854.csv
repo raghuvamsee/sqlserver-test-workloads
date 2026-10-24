@@ -1,0 +1,7 @@
+OBJECT_NAME,OBJECT_TYPE,STATUS,ERROR_MESSAGE,DATABASE,SCHEMA,FQN,SNOWSIGHT_URL
+"<%wideworldimportersdw%>.Fact.""Stock Holding""",Table,Deployed,,WWI_AIM,PUBLIC,"WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Fact.""Stock Holding""",https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Fact.Purchase,Table,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Fact.Purchase,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Fact.Movement,Table,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Fact.Movement,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Fact.Transaction,Table,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Fact.Transaction,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+"<%wideworldimportersdw%>.Fact.""Order""",Table,Deployed,,WWI_AIM,PUBLIC,"WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Fact.""Order""",https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Fact.Sale,Table,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Fact.Sale,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
