@@ -1,4 +1,15 @@
 {
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:38:29Z"
+    }
+  },
   "codeStatus": {
     "assessment": {
       "containsCommit": false,
@@ -34,7 +45,9 @@
       "e246ca55-9881-4ecd-8b71-f32f3f898ece"
     ]
   },
-  "extensions": {},
+  "extensions": {
+    "isDone": true
+  },
   "files": {
     "artifacts": {
       "path": "artifacts/wideworldimportersdw/dimension/table/payment method"
@@ -76,7 +89,7 @@
       {
         "isCaseSpecific": false,
         "isPrimaryKey": true,
-        "name": "\"Payment Method Key\"",
+        "name": "Payment Method Key",
         "nullable": false,
         "targetName": "\"Payment Method Key\"",
         "targetType": "INT",
@@ -150,5 +163,5 @@
     "objectType": "table",
     "schema": "Dimension"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-24T23:46:03Z"
 }
