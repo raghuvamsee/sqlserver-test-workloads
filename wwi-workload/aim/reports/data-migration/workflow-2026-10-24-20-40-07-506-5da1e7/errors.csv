@@ -1,0 +1,9 @@
+TableName,PartitionNumber,PartitionMinValue,PartitionMaxValue,PartitionRows,TaskName,TaskStartTime,TaskEndTime,LastErrorMessage
+"WIDEWORLDIMPORTERSDW.DIMENSION.""Stock Item""",0,,,672,Execute COPY INTO: Stock Item,10/24/2026 20:42:10,10/24/2026 20:42:15,"100197: Cannot cast Parquet logical type: NIL, physical type: INT32 of node Photo to Snowflake type BINARY[LOB](67108864){nullable}
+  File 'task_results/workflows/1/tables/29/data/full_table/task_63_result_001.parquet'
+  Row 0 starts at line 0, column 
+  If you would like to continue loading when an error is encountered, use other values such as 'SKIP_FILE' or 'CONTINUE' for the ON_ERROR option. For more information on loading options, please run 'info loading_data' in a SQL client."
+WIDEWORLDIMPORTERSDW.DIMENSION.EMPLOYEE,0,,,213,Execute COPY INTO: EMPLOYEE,10/24/2026 20:42:35,10/24/2026 20:42:42,"100197: Cannot cast Parquet logical type: NIL, physical type: INT32 of node Photo to Snowflake type BINARY[LOB](67108864){nullable}
+  File 'task_results/workflows/1/tables/20/data/full_table/task_188_result_001.parquet'
+  Row 0 starts at line 0, column 
+  If you would like to continue loading when an error is encountered, use other values such as 'SKIP_FILE' or 'CONTINUE' for the ON_ERROR option. For more information on loading options, please run 'info loading_data' in a SQL client."
