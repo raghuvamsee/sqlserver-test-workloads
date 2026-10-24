@@ -10,6 +10,9 @@ data_migration_extraction_strategy: odbc
 data_migration_target_table_type: native
 data_migration_type: full
 data_orchestrator_placement: local
+data_validation_metrics_validation: 'true'
+data_validation_row_validation: 'true'
+data_validation_schema_validation: 'true'
 data_validation_type: full
 data_worker_placement: local
 entry_mode: fresh

@@ -172,3 +172,9 @@ orchestrator-task-pull - INFO - PULL_TASKS returned 0 row(s) (limit=128)
 orchestrator-task-pull - INFO - PULL_TASKS returned 0 row(s) (limit=128)
 2026-10-24 20:24:04,235 - cloud_orchestrator.idle_shutdown - MainThread - INFO -
 Idle shutdown: quiet streak started (need 60 min)
+2026-10-24 20:24:07,363 - cloud_orchestrator.tasks.queues.table_task_queue - 
+orchestrator-task-pull - INFO - PULL_TASKS returned 0 row(s) (limit=128)
+2026-10-24 20:24:11,510 - cloud_orchestrator.tasks.queues.table_task_queue - 
+orchestrator-task-pull - INFO - PULL_TASKS returned 0 row(s) (limit=128)
+2026-10-24 20:24:15,672 - cloud_orchestrator.tasks.queues.table_task_queue - 
+orchestrator-task-pull - INFO - PULL_TASKS returned 0 row(s) (limit=128)
