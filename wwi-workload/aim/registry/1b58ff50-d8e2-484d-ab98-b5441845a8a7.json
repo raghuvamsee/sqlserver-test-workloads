@@ -1,4 +1,15 @@
 {
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:31:33Z"
+    }
+  },
   "codeStatus": {
     "assessment": {
       "containsCommit": false,
@@ -37,7 +48,14 @@
       "e246ca55-9881-4ecd-8b71-f32f3f898ece"
     ]
   },
-  "extensions": {},
+  "extensions": {
+    "isDone": true,
+    "preconditionBypass": {
+      "migrateData": true,
+      "migrateData_at": "2026-10-24T23:45:05.205253839+00:00",
+      "migrateData_reason": "User-directed: relay misreported job j-beff32f7677d; WORKFLOW 201 finished, no errors, 7/7 partitions loaded, row count 14 = source."
+    }
+  },
   "files": {
     "artifacts": {
       "path": "artifacts/wideworldimportersdw/integration/table/etl cutoff"
@@ -65,7 +83,7 @@
       {
         "isCaseSpecific": false,
         "isPrimaryKey": true,
-        "name": "\"Table Name\"",
+        "name": "Table Name",
         "nullable": false,
         "targetName": "\"Table Name\"",
         "targetType": "VARCHAR",
@@ -103,5 +121,5 @@
     "objectType": "table",
     "schema": "Integration"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-24T23:45:47Z"
 }
