@@ -133,7 +133,7 @@ tables:
 - fullyQualifiedName: WideWorldImportersDW.Fact.Order
   targetDatabase: WWI_AIM
   targetSchema: FACT
-  targetName: Order
+  targetName: '"Order"'
   indexColumnList:
   - Order Key
   - Order Date Key
