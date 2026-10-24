@@ -1,7 +1,8 @@
 assessment_name: aim
 assessment_options: none
 code_source: extract
-committed_setup_tasks: registerCode,convertCode,runAssessment
+committed_setup_tasks: registerCode,convertCode,runAssessment,configureSandboxProfile
+continue_to_migration: 'true'
 cortex_safe_tools_acknowledged: 'true'
 dashboard_port: 0
 entry_mode: fresh
@@ -16,4 +17,9 @@ has_power_bi: 'false'
 has_tableau: 'false'
 migration_extras: none
 project_dir_confirmed: 'true'
+run_mode: manual
+run_mode_confirmed: 'true'
+sandbox_profile: sandbox
+snowflake_database: WWI_AIM
 tailor_conversion_settings: 'false'
+wave: '1'

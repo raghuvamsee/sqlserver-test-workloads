@@ -1,6 +1,4 @@
 source:
-  AIM_DB: AIM_DB
   wideworldimportersdw: WideWorldImportersDW
 snow:
-  AIM_DB: AIM_DB
-  wideworldimportersdw: wideworldimportersdw
+  wideworldimportersdw: WWI_AIM
