@@ -1,4 +1,14 @@
 {
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": "sql"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:45:40Z"
+    }
+  },
   "codeStatus": {
     "assessment": {
       "containsCommit": false,
@@ -23,13 +33,26 @@
       "6c81abb0-30ce-4acb-a808-b776792d3d51"
     ]
   },
-  "extensions": {},
+  "extensions": {
+    "isDone": true,
+    "tasks": {
+      "captureBaseline": {
+        "details": {
+          "error": null,
+          "verifiedBy": "status"
+        },
+        "error": null,
+        "status": "completed",
+        "updatedAt": "2026-10-24T20:44:41.376982789+00:00"
+      }
+    }
+  },
   "files": {
     "artifacts": {
       "path": "artifacts/wideworldimportersdw/integration/function/generatedatedimensioncolumns"
     },
     "converted": {
-      "checksum": "9ff0d11cf57c785e6de715cd0aa86f61",
+      "checksum": "f049ef5eaba32e085508cd37d7c80b5c",
       "path": "snowflake/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql"
     },
     "source": {
@@ -144,5 +167,5 @@
     "objectType": "function",
     "schema": "Integration"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-24T21:20:44Z"
 }

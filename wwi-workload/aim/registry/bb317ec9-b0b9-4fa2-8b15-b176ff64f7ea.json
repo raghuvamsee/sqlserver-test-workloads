@@ -1,4 +1,15 @@
 {
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:38:59Z"
+    }
+  },
   "codeStatus": {
     "assessment": {
       "containsCommit": false,
@@ -61,7 +72,9 @@
       "bac8a142-a195-454b-84e2-068a29127591"
     ]
   },
-  "extensions": {},
+  "extensions": {
+    "isDone": true
+  },
   "files": {
     "artifacts": {
       "path": "artifacts/wideworldimportersdw/fact/table/movement"
@@ -208,5 +221,5 @@
     "objectType": "table",
     "schema": "Fact"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-24T21:20:44Z"
 }
