@@ -1,4 +1,15 @@
 {
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:38:29Z"
+    }
+  },
   "codeStatus": {
     "assessment": {
       "containsCommit": false,
@@ -37,7 +48,9 @@
       "d0cef0ff-9761-4e20-9ce8-2980bb9aeabe"
     ]
   },
-  "extensions": {},
+  "extensions": {
+    "isDone": true
+  },
   "files": {
     "artifacts": {
       "path": "artifacts/wideworldimportersdw/dimension/table/city"
@@ -79,7 +92,7 @@
       {
         "isCaseSpecific": false,
         "isPrimaryKey": true,
-        "name": "\"City Key\"",
+        "name": "City Key",
         "nullable": false,
         "targetName": "\"City Key\"",
         "targetType": "INT",
@@ -225,5 +238,5 @@
     "objectType": "table",
     "schema": "Dimension"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-24T23:46:57Z"
 }
