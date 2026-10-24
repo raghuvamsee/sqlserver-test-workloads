@@ -1,0 +1,10 @@
+TableName,Status,SchemaValidated,MetricsValidated,RowsValidated,ErrorMessage
+WideWorldImportersDW.Fact.Order,Valid,True,True,True,
+WideWorldImportersDW.Fact.Transaction,Valid,True,True,True,
+WideWorldImportersDW.Dimension.Payment Method,Valid,True,True,True,
+WideWorldImportersDW.Dimension.Stock Item,Valid,True,True,True,
+WideWorldImportersDW.Fact.Stock Holding,Valid,True,True,True,
+WideWorldImportersDW.Dimension.Date,Valid,True,True,True,
+WideWorldImportersDW.Dimension.Transaction Type,Valid,True,True,True,
+WideWorldImportersDW.Integration.ETL Cutoff,Valid,True,True,True,
+WideWorldImportersDW.Dimension.Employee,Valid,True,True,True,

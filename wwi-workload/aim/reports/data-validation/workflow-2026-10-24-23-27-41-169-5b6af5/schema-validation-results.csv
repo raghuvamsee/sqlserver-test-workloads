@@ -1,0 +1,740 @@
+ValidationType,TableName,ColumnValidated,EvaluationCriteria,SourceValue,SnowflakeValue,Status,Comments,CreatedAt
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,(table),ROW_COUNT,99585,99585,SUCCESS,"Values match: source(99585), Snowflake(99585)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Bill To Customer Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Bill To Customer Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Bill To Customer Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Bill To Customer Key,ORDINAL_POSITION,4,4,SUCCESS,"Values match: source(4), Snowflake(4)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Bill To Customer Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Bill To Customer Key,IS_NULLABLE,YES,YES,SUCCESS,"Values match: source(YES), Snowflake(YES)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Bill To Customer Key,COLUMN_VALIDATED,Bill To Customer Key,Bill To Customer Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Customer Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Customer Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Customer Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Customer Key,ORDINAL_POSITION,3,3,SUCCESS,"Values match: source(3), Snowflake(3)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Customer Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Customer Key,IS_NULLABLE,YES,YES,SUCCESS,"Values match: source(YES), Snowflake(YES)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Customer Key,COLUMN_VALIDATED,Customer Key,Customer Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Date Key,DATA_TYPE,date,DATE,SUCCESS,Values match: source(date).has a mapping to Snowflake(DATE),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Date Key,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Date Key,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Date Key,ORDINAL_POSITION,2,2,SUCCESS,"Values match: source(2), Snowflake(2)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Date Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Date Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Date Key,COLUMN_VALIDATED,Date Key,Date Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Is Finalized,DATA_TYPE,bit,BOOLEAN,SUCCESS,Values match: source(bit).has a mapping to Snowflake(BOOLEAN),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Is Finalized,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Is Finalized,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Is Finalized,ORDINAL_POSITION,17,17,SUCCESS,"Values match: source(17), Snowflake(17)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Is Finalized,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Is Finalized,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Is Finalized,COLUMN_VALIDATED,Is Finalized,Is Finalized,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Lineage Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Lineage Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Lineage Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Lineage Key,ORDINAL_POSITION,18,18,SUCCESS,"Values match: source(18), Snowflake(18)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Lineage Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Lineage Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Lineage Key,COLUMN_VALIDATED,Lineage Key,Lineage Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Outstanding Balance,DATA_TYPE,decimal,NUMBER,SUCCESS,Values match: source(decimal).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Outstanding Balance,NUMERIC_SCALE,2.0,2.0,SUCCESS,"Values match: source(2.0), Snowflake(2.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Outstanding Balance,NUMERIC_PRECISION,18.0,18.0,SUCCESS,"Values match: source(18.0), Snowflake(18.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Outstanding Balance,ORDINAL_POSITION,16,16,SUCCESS,"Values match: source(16), Snowflake(16)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Outstanding Balance,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Outstanding Balance,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Outstanding Balance,COLUMN_VALIDATED,Outstanding Balance,Outstanding Balance,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Payment Method Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Payment Method Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Payment Method Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Payment Method Key,ORDINAL_POSITION,7,7,SUCCESS,"Values match: source(7), Snowflake(7)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Payment Method Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Payment Method Key,IS_NULLABLE,YES,YES,SUCCESS,"Values match: source(YES), Snowflake(YES)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Payment Method Key,COLUMN_VALIDATED,Payment Method Key,Payment Method Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Supplier Invoice Number,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Supplier Invoice Number,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Supplier Invoice Number,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Supplier Invoice Number,ORDINAL_POSITION,12,12,SUCCESS,"Values match: source(12), Snowflake(12)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Supplier Invoice Number,CHARACTER_MAXIMUM_LENGTH,20.0,20.0,SUCCESS,"Values match: source(20.0), Snowflake(20.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Supplier Invoice Number,IS_NULLABLE,YES,YES,SUCCESS,"Values match: source(YES), Snowflake(YES)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Supplier Invoice Number,COLUMN_VALIDATED,Supplier Invoice Number,Supplier Invoice Number,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Supplier Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Supplier Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Supplier Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Supplier Key,ORDINAL_POSITION,5,5,SUCCESS,"Values match: source(5), Snowflake(5)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Supplier Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Supplier Key,IS_NULLABLE,YES,YES,SUCCESS,"Values match: source(YES), Snowflake(YES)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Supplier Key,COLUMN_VALIDATED,Supplier Key,Supplier Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Tax Amount,DATA_TYPE,decimal,NUMBER,SUCCESS,Values match: source(decimal).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Tax Amount,NUMERIC_SCALE,2.0,2.0,SUCCESS,"Values match: source(2.0), Snowflake(2.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Tax Amount,NUMERIC_PRECISION,18.0,18.0,SUCCESS,"Values match: source(18.0), Snowflake(18.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Tax Amount,ORDINAL_POSITION,14,14,SUCCESS,"Values match: source(14), Snowflake(14)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Tax Amount,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Tax Amount,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Tax Amount,COLUMN_VALIDATED,Tax Amount,Tax Amount,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Total Excluding Tax,DATA_TYPE,decimal,NUMBER,SUCCESS,Values match: source(decimal).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Total Excluding Tax,NUMERIC_SCALE,2.0,2.0,SUCCESS,"Values match: source(2.0), Snowflake(2.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Total Excluding Tax,NUMERIC_PRECISION,18.0,18.0,SUCCESS,"Values match: source(18.0), Snowflake(18.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Total Excluding Tax,ORDINAL_POSITION,13,13,SUCCESS,"Values match: source(13), Snowflake(13)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Total Excluding Tax,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Total Excluding Tax,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Total Excluding Tax,COLUMN_VALIDATED,Total Excluding Tax,Total Excluding Tax,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Total Including Tax,DATA_TYPE,decimal,NUMBER,SUCCESS,Values match: source(decimal).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Total Including Tax,NUMERIC_SCALE,2.0,2.0,SUCCESS,"Values match: source(2.0), Snowflake(2.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Total Including Tax,NUMERIC_PRECISION,18.0,18.0,SUCCESS,"Values match: source(18.0), Snowflake(18.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Total Including Tax,ORDINAL_POSITION,15,15,SUCCESS,"Values match: source(15), Snowflake(15)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Total Including Tax,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Total Including Tax,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Total Including Tax,COLUMN_VALIDATED,Total Including Tax,Total Including Tax,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Transaction Key,DATA_TYPE,bigint,NUMBER,SUCCESS,Values match: source(bigint).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Transaction Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Transaction Key,NUMERIC_PRECISION,19.0,38.0,WARNING,"Source value is lower than target value: source(19.0), target(38.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Transaction Key,ORDINAL_POSITION,1,1,SUCCESS,"Values match: source(1), Snowflake(1)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Transaction Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Transaction Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Transaction Key,COLUMN_VALIDATED,Transaction Key,Transaction Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Transaction Type Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Transaction Type Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Transaction Type Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Transaction Type Key,ORDINAL_POSITION,6,6,SUCCESS,"Values match: source(6), Snowflake(6)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Transaction Type Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Transaction Type Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,Transaction Type Key,COLUMN_VALIDATED,Transaction Type Key,Transaction Type Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Customer Transaction ID,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Customer Transaction ID,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Customer Transaction ID,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Customer Transaction ID,ORDINAL_POSITION,8,8,SUCCESS,"Values match: source(8), Snowflake(8)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Customer Transaction ID,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Customer Transaction ID,IS_NULLABLE,YES,YES,SUCCESS,"Values match: source(YES), Snowflake(YES)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Customer Transaction ID,COLUMN_VALIDATED,WWI Customer Transaction ID,WWI Customer Transaction ID,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Invoice ID,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Invoice ID,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Invoice ID,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Invoice ID,ORDINAL_POSITION,10,10,SUCCESS,"Values match: source(10), Snowflake(10)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Invoice ID,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Invoice ID,IS_NULLABLE,YES,YES,SUCCESS,"Values match: source(YES), Snowflake(YES)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Invoice ID,COLUMN_VALIDATED,WWI Invoice ID,WWI Invoice ID,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Purchase Order ID,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Purchase Order ID,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Purchase Order ID,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Purchase Order ID,ORDINAL_POSITION,11,11,SUCCESS,"Values match: source(11), Snowflake(11)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Purchase Order ID,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Purchase Order ID,IS_NULLABLE,YES,YES,SUCCESS,"Values match: source(YES), Snowflake(YES)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Purchase Order ID,COLUMN_VALIDATED,WWI Purchase Order ID,WWI Purchase Order ID,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Supplier Transaction ID,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Supplier Transaction ID,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Supplier Transaction ID,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Supplier Transaction ID,ORDINAL_POSITION,9,9,SUCCESS,"Values match: source(9), Snowflake(9)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Supplier Transaction ID,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Supplier Transaction ID,IS_NULLABLE,YES,YES,SUCCESS,"Values match: source(YES), Snowflake(YES)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,WWI Supplier Transaction ID,COLUMN_VALIDATED,WWI Supplier Transaction ID,WWI Supplier Transaction ID,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Transaction,(object type),OBJECT_TYPE,TABLE,TABLE,SUCCESS,Source and target object types match.,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,(table),ROW_COUNT,231412,231412,SUCCESS,"Values match: source(231412), Snowflake(231412)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,City Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,City Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,City Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,City Key,ORDINAL_POSITION,2,2,SUCCESS,"Values match: source(2), Snowflake(2)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,City Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,City Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,City Key,COLUMN_VALIDATED,City Key,City Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Customer Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Customer Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Customer Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Customer Key,ORDINAL_POSITION,3,3,SUCCESS,"Values match: source(3), Snowflake(3)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Customer Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Customer Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Customer Key,COLUMN_VALIDATED,Customer Key,Customer Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Description,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Description,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Description,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Description,ORDINAL_POSITION,11,11,SUCCESS,"Values match: source(11), Snowflake(11)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Description,CHARACTER_MAXIMUM_LENGTH,100.0,100.0,SUCCESS,"Values match: source(100.0), Snowflake(100.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Description,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Description,COLUMN_VALIDATED,Description,Description,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Lineage Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Lineage Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Lineage Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Lineage Key,ORDINAL_POSITION,19,19,SUCCESS,"Values match: source(19), Snowflake(19)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Lineage Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Lineage Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Lineage Key,COLUMN_VALIDATED,Lineage Key,Lineage Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Order Date Key,DATA_TYPE,date,DATE,SUCCESS,Values match: source(date).has a mapping to Snowflake(DATE),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Order Date Key,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Order Date Key,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Order Date Key,ORDINAL_POSITION,5,5,SUCCESS,"Values match: source(5), Snowflake(5)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Order Date Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Order Date Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Order Date Key,COLUMN_VALIDATED,Order Date Key,Order Date Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Order Key,DATA_TYPE,bigint,NUMBER,SUCCESS,Values match: source(bigint).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Order Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Order Key,NUMERIC_PRECISION,19.0,38.0,WARNING,"Source value is lower than target value: source(19.0), target(38.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Order Key,ORDINAL_POSITION,1,1,SUCCESS,"Values match: source(1), Snowflake(1)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Order Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Order Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Order Key,COLUMN_VALIDATED,Order Key,Order Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Package,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Package,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Package,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Package,ORDINAL_POSITION,12,12,SUCCESS,"Values match: source(12), Snowflake(12)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Package,CHARACTER_MAXIMUM_LENGTH,50.0,50.0,SUCCESS,"Values match: source(50.0), Snowflake(50.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Package,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Package,COLUMN_VALIDATED,Package,Package,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Picked Date Key,DATA_TYPE,date,DATE,SUCCESS,Values match: source(date).has a mapping to Snowflake(DATE),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Picked Date Key,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Picked Date Key,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Picked Date Key,ORDINAL_POSITION,6,6,SUCCESS,"Values match: source(6), Snowflake(6)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Picked Date Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Picked Date Key,IS_NULLABLE,YES,YES,SUCCESS,"Values match: source(YES), Snowflake(YES)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Picked Date Key,COLUMN_VALIDATED,Picked Date Key,Picked Date Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Picker Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Picker Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Picker Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Picker Key,ORDINAL_POSITION,8,8,SUCCESS,"Values match: source(8), Snowflake(8)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Picker Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Picker Key,IS_NULLABLE,YES,YES,SUCCESS,"Values match: source(YES), Snowflake(YES)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Picker Key,COLUMN_VALIDATED,Picker Key,Picker Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Quantity,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Quantity,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Quantity,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Quantity,ORDINAL_POSITION,13,13,SUCCESS,"Values match: source(13), Snowflake(13)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Quantity,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Quantity,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Quantity,COLUMN_VALIDATED,Quantity,Quantity,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Salesperson Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Salesperson Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Salesperson Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Salesperson Key,ORDINAL_POSITION,7,7,SUCCESS,"Values match: source(7), Snowflake(7)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Salesperson Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Salesperson Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Salesperson Key,COLUMN_VALIDATED,Salesperson Key,Salesperson Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Stock Item Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Stock Item Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Stock Item Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Stock Item Key,ORDINAL_POSITION,4,4,SUCCESS,"Values match: source(4), Snowflake(4)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Stock Item Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Stock Item Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Stock Item Key,COLUMN_VALIDATED,Stock Item Key,Stock Item Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Tax Amount,DATA_TYPE,decimal,NUMBER,SUCCESS,Values match: source(decimal).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Tax Amount,NUMERIC_SCALE,2.0,2.0,SUCCESS,"Values match: source(2.0), Snowflake(2.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Tax Amount,NUMERIC_PRECISION,18.0,18.0,SUCCESS,"Values match: source(18.0), Snowflake(18.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Tax Amount,ORDINAL_POSITION,17,17,SUCCESS,"Values match: source(17), Snowflake(17)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Tax Amount,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Tax Amount,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Tax Amount,COLUMN_VALIDATED,Tax Amount,Tax Amount,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Tax Rate,DATA_TYPE,decimal,NUMBER,SUCCESS,Values match: source(decimal).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Tax Rate,NUMERIC_SCALE,3.0,3.0,SUCCESS,"Values match: source(3.0), Snowflake(3.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Tax Rate,NUMERIC_PRECISION,18.0,18.0,SUCCESS,"Values match: source(18.0), Snowflake(18.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Tax Rate,ORDINAL_POSITION,15,15,SUCCESS,"Values match: source(15), Snowflake(15)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Tax Rate,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Tax Rate,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Tax Rate,COLUMN_VALIDATED,Tax Rate,Tax Rate,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Total Excluding Tax,DATA_TYPE,decimal,NUMBER,SUCCESS,Values match: source(decimal).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Total Excluding Tax,NUMERIC_SCALE,2.0,2.0,SUCCESS,"Values match: source(2.0), Snowflake(2.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Total Excluding Tax,NUMERIC_PRECISION,18.0,18.0,SUCCESS,"Values match: source(18.0), Snowflake(18.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Total Excluding Tax,ORDINAL_POSITION,16,16,SUCCESS,"Values match: source(16), Snowflake(16)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Total Excluding Tax,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Total Excluding Tax,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Total Excluding Tax,COLUMN_VALIDATED,Total Excluding Tax,Total Excluding Tax,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Total Including Tax,DATA_TYPE,decimal,NUMBER,SUCCESS,Values match: source(decimal).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Total Including Tax,NUMERIC_SCALE,2.0,2.0,SUCCESS,"Values match: source(2.0), Snowflake(2.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Total Including Tax,NUMERIC_PRECISION,18.0,18.0,SUCCESS,"Values match: source(18.0), Snowflake(18.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Total Including Tax,ORDINAL_POSITION,18,18,SUCCESS,"Values match: source(18), Snowflake(18)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Total Including Tax,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Total Including Tax,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Total Including Tax,COLUMN_VALIDATED,Total Including Tax,Total Including Tax,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Unit Price,DATA_TYPE,decimal,NUMBER,SUCCESS,Values match: source(decimal).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Unit Price,NUMERIC_SCALE,2.0,2.0,SUCCESS,"Values match: source(2.0), Snowflake(2.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Unit Price,NUMERIC_PRECISION,18.0,18.0,SUCCESS,"Values match: source(18.0), Snowflake(18.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Unit Price,ORDINAL_POSITION,14,14,SUCCESS,"Values match: source(14), Snowflake(14)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Unit Price,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Unit Price,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,Unit Price,COLUMN_VALIDATED,Unit Price,Unit Price,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,WWI Backorder ID,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,WWI Backorder ID,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,WWI Backorder ID,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,WWI Backorder ID,ORDINAL_POSITION,10,10,SUCCESS,"Values match: source(10), Snowflake(10)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,WWI Backorder ID,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,WWI Backorder ID,IS_NULLABLE,YES,YES,SUCCESS,"Values match: source(YES), Snowflake(YES)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,WWI Backorder ID,COLUMN_VALIDATED,WWI Backorder ID,WWI Backorder ID,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,WWI Order ID,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,WWI Order ID,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,WWI Order ID,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,WWI Order ID,ORDINAL_POSITION,9,9,SUCCESS,"Values match: source(9), Snowflake(9)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,WWI Order ID,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,WWI Order ID,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,WWI Order ID,COLUMN_VALIDATED,WWI Order ID,WWI Order ID,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Order,(object type),OBJECT_TYPE,TABLE,TABLE,SUCCESS,Source and target object types match.,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,(table),ROW_COUNT,672,672,SUCCESS,"Values match: source(672), Snowflake(672)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Barcode,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Barcode,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Barcode,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Barcode,ORDINAL_POSITION,12,12,SUCCESS,"Values match: source(12), Snowflake(12)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Barcode,CHARACTER_MAXIMUM_LENGTH,50.0,50.0,SUCCESS,"Values match: source(50.0), Snowflake(50.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Barcode,IS_NULLABLE,YES,YES,SUCCESS,"Values match: source(YES), Snowflake(YES)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Barcode,COLUMN_VALIDATED,Barcode,Barcode,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Brand,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Brand,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Brand,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Brand,ORDINAL_POSITION,7,7,SUCCESS,"Values match: source(7), Snowflake(7)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Brand,CHARACTER_MAXIMUM_LENGTH,50.0,50.0,SUCCESS,"Values match: source(50.0), Snowflake(50.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Brand,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Brand,COLUMN_VALIDATED,Brand,Brand,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Buying Package,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Buying Package,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Buying Package,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Buying Package,ORDINAL_POSITION,6,6,SUCCESS,"Values match: source(6), Snowflake(6)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Buying Package,CHARACTER_MAXIMUM_LENGTH,50.0,50.0,SUCCESS,"Values match: source(50.0), Snowflake(50.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Buying Package,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Buying Package,COLUMN_VALIDATED,Buying Package,Buying Package,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Color,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Color,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Color,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Color,ORDINAL_POSITION,4,4,SUCCESS,"Values match: source(4), Snowflake(4)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Color,CHARACTER_MAXIMUM_LENGTH,20.0,20.0,SUCCESS,"Values match: source(20.0), Snowflake(20.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Color,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Color,COLUMN_VALIDATED,Color,Color,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Is Chiller Stock,DATA_TYPE,bit,BOOLEAN,SUCCESS,Values match: source(bit).has a mapping to Snowflake(BOOLEAN),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Is Chiller Stock,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Is Chiller Stock,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Is Chiller Stock,ORDINAL_POSITION,11,11,SUCCESS,"Values match: source(11), Snowflake(11)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Is Chiller Stock,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Is Chiller Stock,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Is Chiller Stock,COLUMN_VALIDATED,Is Chiller Stock,Is Chiller Stock,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Lead Time Days,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Lead Time Days,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Lead Time Days,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Lead Time Days,ORDINAL_POSITION,9,9,SUCCESS,"Values match: source(9), Snowflake(9)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Lead Time Days,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Lead Time Days,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Lead Time Days,COLUMN_VALIDATED,Lead Time Days,Lead Time Days,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Lineage Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Lineage Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Lineage Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Lineage Key,ORDINAL_POSITION,20,20,SUCCESS,"Values match: source(20), Snowflake(20)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Lineage Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Lineage Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Lineage Key,COLUMN_VALIDATED,Lineage Key,Lineage Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Photo,DATA_TYPE,varbinary,BINARY,SUCCESS,Values match: source(varbinary).has a mapping to Snowflake(BINARY),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Photo,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Photo,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Photo,ORDINAL_POSITION,17,17,SUCCESS,"Values match: source(17), Snowflake(17)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Photo,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Photo,IS_NULLABLE,YES,YES,SUCCESS,"Values match: source(YES), Snowflake(YES)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Photo,COLUMN_VALIDATED,Photo,Photo,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Quantity Per Outer,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Quantity Per Outer,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Quantity Per Outer,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Quantity Per Outer,ORDINAL_POSITION,10,10,SUCCESS,"Values match: source(10), Snowflake(10)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Quantity Per Outer,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Quantity Per Outer,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Quantity Per Outer,COLUMN_VALIDATED,Quantity Per Outer,Quantity Per Outer,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Recommended Retail Price,DATA_TYPE,decimal,NUMBER,SUCCESS,Values match: source(decimal).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Recommended Retail Price,NUMERIC_SCALE,2.0,2.0,SUCCESS,"Values match: source(2.0), Snowflake(2.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Recommended Retail Price,NUMERIC_PRECISION,18.0,18.0,SUCCESS,"Values match: source(18.0), Snowflake(18.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Recommended Retail Price,ORDINAL_POSITION,15,15,SUCCESS,"Values match: source(15), Snowflake(15)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Recommended Retail Price,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Recommended Retail Price,IS_NULLABLE,YES,YES,SUCCESS,"Values match: source(YES), Snowflake(YES)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Recommended Retail Price,COLUMN_VALIDATED,Recommended Retail Price,Recommended Retail Price,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Selling Package,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Selling Package,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Selling Package,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Selling Package,ORDINAL_POSITION,5,5,SUCCESS,"Values match: source(5), Snowflake(5)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Selling Package,CHARACTER_MAXIMUM_LENGTH,50.0,50.0,SUCCESS,"Values match: source(50.0), Snowflake(50.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Selling Package,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Selling Package,COLUMN_VALIDATED,Selling Package,Selling Package,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Size,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Size,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Size,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Size,ORDINAL_POSITION,8,8,SUCCESS,"Values match: source(8), Snowflake(8)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Size,CHARACTER_MAXIMUM_LENGTH,20.0,20.0,SUCCESS,"Values match: source(20.0), Snowflake(20.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Size,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Size,COLUMN_VALIDATED,Size,Size,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Stock Item,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Stock Item,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Stock Item,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Stock Item,ORDINAL_POSITION,3,3,SUCCESS,"Values match: source(3), Snowflake(3)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Stock Item,CHARACTER_MAXIMUM_LENGTH,100.0,100.0,SUCCESS,"Values match: source(100.0), Snowflake(100.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Stock Item,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Stock Item,COLUMN_VALIDATED,Stock Item,Stock Item,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Stock Item Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Stock Item Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Stock Item Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Stock Item Key,ORDINAL_POSITION,1,1,SUCCESS,"Values match: source(1), Snowflake(1)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Stock Item Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Stock Item Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Stock Item Key,COLUMN_VALIDATED,Stock Item Key,Stock Item Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Tax Rate,DATA_TYPE,decimal,NUMBER,SUCCESS,Values match: source(decimal).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Tax Rate,NUMERIC_SCALE,3.0,3.0,SUCCESS,"Values match: source(3.0), Snowflake(3.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Tax Rate,NUMERIC_PRECISION,18.0,18.0,SUCCESS,"Values match: source(18.0), Snowflake(18.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Tax Rate,ORDINAL_POSITION,13,13,SUCCESS,"Values match: source(13), Snowflake(13)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Tax Rate,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Tax Rate,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Tax Rate,COLUMN_VALIDATED,Tax Rate,Tax Rate,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Typical Weight Per Unit,DATA_TYPE,decimal,NUMBER,SUCCESS,Values match: source(decimal).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Typical Weight Per Unit,NUMERIC_SCALE,3.0,3.0,SUCCESS,"Values match: source(3.0), Snowflake(3.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Typical Weight Per Unit,NUMERIC_PRECISION,18.0,18.0,SUCCESS,"Values match: source(18.0), Snowflake(18.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Typical Weight Per Unit,ORDINAL_POSITION,16,16,SUCCESS,"Values match: source(16), Snowflake(16)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Typical Weight Per Unit,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Typical Weight Per Unit,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Typical Weight Per Unit,COLUMN_VALIDATED,Typical Weight Per Unit,Typical Weight Per Unit,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Unit Price,DATA_TYPE,decimal,NUMBER,SUCCESS,Values match: source(decimal).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Unit Price,NUMERIC_SCALE,2.0,2.0,SUCCESS,"Values match: source(2.0), Snowflake(2.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Unit Price,NUMERIC_PRECISION,18.0,18.0,SUCCESS,"Values match: source(18.0), Snowflake(18.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Unit Price,ORDINAL_POSITION,14,14,SUCCESS,"Values match: source(14), Snowflake(14)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Unit Price,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Unit Price,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Unit Price,COLUMN_VALIDATED,Unit Price,Unit Price,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Valid From,DATA_TYPE,datetime2,TIMESTAMP_NTZ,SUCCESS,Values match: source(datetime2).has a mapping to Snowflake(TIMESTAMP_NTZ),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Valid From,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Valid From,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Valid From,ORDINAL_POSITION,18,18,SUCCESS,"Values match: source(18), Snowflake(18)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Valid From,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Valid From,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Valid From,COLUMN_VALIDATED,Valid From,Valid From,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Valid To,DATA_TYPE,datetime2,TIMESTAMP_NTZ,SUCCESS,Values match: source(datetime2).has a mapping to Snowflake(TIMESTAMP_NTZ),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Valid To,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Valid To,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Valid To,ORDINAL_POSITION,19,19,SUCCESS,"Values match: source(19), Snowflake(19)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Valid To,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Valid To,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,Valid To,COLUMN_VALIDATED,Valid To,Valid To,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,WWI Stock Item ID,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,WWI Stock Item ID,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,WWI Stock Item ID,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,WWI Stock Item ID,ORDINAL_POSITION,2,2,SUCCESS,"Values match: source(2), Snowflake(2)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,WWI Stock Item ID,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,WWI Stock Item ID,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,WWI Stock Item ID,COLUMN_VALIDATED,WWI Stock Item ID,WWI Stock Item ID,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Stock Item,(object type),OBJECT_TYPE,TABLE,TABLE,SUCCESS,Source and target object types match.,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,(table),ROW_COUNT,227,227,SUCCESS,"Values match: source(227), Snowflake(227)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Bin Location,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Bin Location,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Bin Location,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Bin Location,ORDINAL_POSITION,4,4,SUCCESS,"Values match: source(4), Snowflake(4)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Bin Location,CHARACTER_MAXIMUM_LENGTH,20.0,20.0,SUCCESS,"Values match: source(20.0), Snowflake(20.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Bin Location,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Bin Location,COLUMN_VALIDATED,Bin Location,Bin Location,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Last Cost Price,DATA_TYPE,decimal,NUMBER,SUCCESS,Values match: source(decimal).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Last Cost Price,NUMERIC_SCALE,2.0,2.0,SUCCESS,"Values match: source(2.0), Snowflake(2.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Last Cost Price,NUMERIC_PRECISION,18.0,18.0,SUCCESS,"Values match: source(18.0), Snowflake(18.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Last Cost Price,ORDINAL_POSITION,6,6,SUCCESS,"Values match: source(6), Snowflake(6)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Last Cost Price,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Last Cost Price,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Last Cost Price,COLUMN_VALIDATED,Last Cost Price,Last Cost Price,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Last Stocktake Quantity,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Last Stocktake Quantity,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Last Stocktake Quantity,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Last Stocktake Quantity,ORDINAL_POSITION,5,5,SUCCESS,"Values match: source(5), Snowflake(5)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Last Stocktake Quantity,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Last Stocktake Quantity,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Last Stocktake Quantity,COLUMN_VALIDATED,Last Stocktake Quantity,Last Stocktake Quantity,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Lineage Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Lineage Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Lineage Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Lineage Key,ORDINAL_POSITION,9,9,SUCCESS,"Values match: source(9), Snowflake(9)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Lineage Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Lineage Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Lineage Key,COLUMN_VALIDATED,Lineage Key,Lineage Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Quantity On Hand,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Quantity On Hand,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Quantity On Hand,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Quantity On Hand,ORDINAL_POSITION,3,3,SUCCESS,"Values match: source(3), Snowflake(3)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Quantity On Hand,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Quantity On Hand,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Quantity On Hand,COLUMN_VALIDATED,Quantity On Hand,Quantity On Hand,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Reorder Level,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Reorder Level,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Reorder Level,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Reorder Level,ORDINAL_POSITION,7,7,SUCCESS,"Values match: source(7), Snowflake(7)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Reorder Level,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Reorder Level,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Reorder Level,COLUMN_VALIDATED,Reorder Level,Reorder Level,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Stock Holding Key,DATA_TYPE,bigint,NUMBER,SUCCESS,Values match: source(bigint).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Stock Holding Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Stock Holding Key,NUMERIC_PRECISION,19.0,38.0,WARNING,"Source value is lower than target value: source(19.0), target(38.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Stock Holding Key,ORDINAL_POSITION,1,1,SUCCESS,"Values match: source(1), Snowflake(1)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Stock Holding Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Stock Holding Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Stock Holding Key,COLUMN_VALIDATED,Stock Holding Key,Stock Holding Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Stock Item Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Stock Item Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Stock Item Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Stock Item Key,ORDINAL_POSITION,2,2,SUCCESS,"Values match: source(2), Snowflake(2)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Stock Item Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Stock Item Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Stock Item Key,COLUMN_VALIDATED,Stock Item Key,Stock Item Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Target Stock Level,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Target Stock Level,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Target Stock Level,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Target Stock Level,ORDINAL_POSITION,8,8,SUCCESS,"Values match: source(8), Snowflake(8)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Target Stock Level,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Target Stock Level,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,Target Stock Level,COLUMN_VALIDATED,Target Stock Level,Target Stock Level,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Fact.Stock Holding,(object type),OBJECT_TYPE,TABLE,TABLE,SUCCESS,Source and target object types match.,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,(table),ROW_COUNT,1461,1461,SUCCESS,"Values match: source(1461), Snowflake(1461)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Month Label,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Month Label,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Month Label,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Month Label,ORDINAL_POSITION,7,7,SUCCESS,"Values match: source(7), Snowflake(7)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Month Label,CHARACTER_MAXIMUM_LENGTH,20.0,20.0,SUCCESS,"Values match: source(20.0), Snowflake(20.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Month Label,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Month Label,COLUMN_VALIDATED,Calendar Month Label,Calendar Month Label,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Month Number,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Month Number,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Month Number,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Month Number,ORDINAL_POSITION,6,6,SUCCESS,"Values match: source(6), Snowflake(6)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Month Number,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Month Number,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Month Number,COLUMN_VALIDATED,Calendar Month Number,Calendar Month Number,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Year,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Year,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Year,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Year,ORDINAL_POSITION,8,8,SUCCESS,"Values match: source(8), Snowflake(8)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Year,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Year,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Year,COLUMN_VALIDATED,Calendar Year,Calendar Year,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Year Label,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Year Label,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Year Label,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Year Label,ORDINAL_POSITION,9,9,SUCCESS,"Values match: source(9), Snowflake(9)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Year Label,CHARACTER_MAXIMUM_LENGTH,10.0,10.0,SUCCESS,"Values match: source(10.0), Snowflake(10.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Year Label,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Calendar Year Label,COLUMN_VALIDATED,Calendar Year Label,Calendar Year Label,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Date,DATA_TYPE,date,DATE,SUCCESS,Values match: source(date).has a mapping to Snowflake(DATE),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Date,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Date,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Date,ORDINAL_POSITION,1,1,SUCCESS,"Values match: source(1), Snowflake(1)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Date,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Date,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Date,COLUMN_VALIDATED,Date,Date,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Day,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Day,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Day,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Day,ORDINAL_POSITION,3,3,SUCCESS,"Values match: source(3), Snowflake(3)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Day,CHARACTER_MAXIMUM_LENGTH,10.0,10.0,SUCCESS,"Values match: source(10.0), Snowflake(10.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Day,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Day,COLUMN_VALIDATED,Day,Day,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Day Number,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Day Number,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Day Number,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Day Number,ORDINAL_POSITION,2,2,SUCCESS,"Values match: source(2), Snowflake(2)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Day Number,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Day Number,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Day Number,COLUMN_VALIDATED,Day Number,Day Number,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Month Label,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Month Label,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Month Label,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Month Label,ORDINAL_POSITION,11,11,SUCCESS,"Values match: source(11), Snowflake(11)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Month Label,CHARACTER_MAXIMUM_LENGTH,20.0,20.0,SUCCESS,"Values match: source(20.0), Snowflake(20.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Month Label,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Month Label,COLUMN_VALIDATED,Fiscal Month Label,Fiscal Month Label,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Month Number,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Month Number,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Month Number,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Month Number,ORDINAL_POSITION,10,10,SUCCESS,"Values match: source(10), Snowflake(10)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Month Number,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Month Number,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Month Number,COLUMN_VALIDATED,Fiscal Month Number,Fiscal Month Number,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Year,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Year,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Year,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Year,ORDINAL_POSITION,12,12,SUCCESS,"Values match: source(12), Snowflake(12)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Year,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Year,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Year,COLUMN_VALIDATED,Fiscal Year,Fiscal Year,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Year Label,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Year Label,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Year Label,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Year Label,ORDINAL_POSITION,13,13,SUCCESS,"Values match: source(13), Snowflake(13)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Year Label,CHARACTER_MAXIMUM_LENGTH,10.0,10.0,SUCCESS,"Values match: source(10.0), Snowflake(10.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Year Label,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Fiscal Year Label,COLUMN_VALIDATED,Fiscal Year Label,Fiscal Year Label,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,ISO Week Number,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,ISO Week Number,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,ISO Week Number,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,ISO Week Number,ORDINAL_POSITION,14,14,SUCCESS,"Values match: source(14), Snowflake(14)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,ISO Week Number,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,ISO Week Number,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,ISO Week Number,COLUMN_VALIDATED,ISO Week Number,ISO Week Number,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Month,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Month,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Month,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Month,ORDINAL_POSITION,4,4,SUCCESS,"Values match: source(4), Snowflake(4)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Month,CHARACTER_MAXIMUM_LENGTH,10.0,10.0,SUCCESS,"Values match: source(10.0), Snowflake(10.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Month,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Month,COLUMN_VALIDATED,Month,Month,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Short Month,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Short Month,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Short Month,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Short Month,ORDINAL_POSITION,5,5,SUCCESS,"Values match: source(5), Snowflake(5)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Short Month,CHARACTER_MAXIMUM_LENGTH,3.0,3.0,SUCCESS,"Values match: source(3.0), Snowflake(3.0)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Short Month,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,Short Month,COLUMN_VALIDATED,Short Month,Short Month,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Date,(object type),OBJECT_TYPE,TABLE,TABLE,SUCCESS,Source and target object types match.,10/24/2026 23:28:03
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,(table),ROW_COUNT,15,15,SUCCESS,"Values match: source(15), Snowflake(15)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Lineage Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Lineage Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Lineage Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Lineage Key,ORDINAL_POSITION,6,6,SUCCESS,"Values match: source(6), Snowflake(6)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Lineage Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Lineage Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Lineage Key,COLUMN_VALIDATED,Lineage Key,Lineage Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Transaction Type,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Transaction Type,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Transaction Type,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Transaction Type,ORDINAL_POSITION,3,3,SUCCESS,"Values match: source(3), Snowflake(3)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Transaction Type,CHARACTER_MAXIMUM_LENGTH,50.0,50.0,SUCCESS,"Values match: source(50.0), Snowflake(50.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Transaction Type,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Transaction Type,COLUMN_VALIDATED,Transaction Type,Transaction Type,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Transaction Type Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Transaction Type Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Transaction Type Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Transaction Type Key,ORDINAL_POSITION,1,1,SUCCESS,"Values match: source(1), Snowflake(1)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Transaction Type Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Transaction Type Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Transaction Type Key,COLUMN_VALIDATED,Transaction Type Key,Transaction Type Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Valid From,DATA_TYPE,datetime2,TIMESTAMP_NTZ,SUCCESS,Values match: source(datetime2).has a mapping to Snowflake(TIMESTAMP_NTZ),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Valid From,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Valid From,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Valid From,ORDINAL_POSITION,4,4,SUCCESS,"Values match: source(4), Snowflake(4)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Valid From,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Valid From,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Valid From,COLUMN_VALIDATED,Valid From,Valid From,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Valid To,DATA_TYPE,datetime2,TIMESTAMP_NTZ,SUCCESS,Values match: source(datetime2).has a mapping to Snowflake(TIMESTAMP_NTZ),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Valid To,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Valid To,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Valid To,ORDINAL_POSITION,5,5,SUCCESS,"Values match: source(5), Snowflake(5)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Valid To,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Valid To,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,Valid To,COLUMN_VALIDATED,Valid To,Valid To,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,WWI Transaction Type ID,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,WWI Transaction Type ID,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,WWI Transaction Type ID,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,WWI Transaction Type ID,ORDINAL_POSITION,2,2,SUCCESS,"Values match: source(2), Snowflake(2)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,WWI Transaction Type ID,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,WWI Transaction Type ID,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,WWI Transaction Type ID,COLUMN_VALIDATED,WWI Transaction Type ID,WWI Transaction Type ID,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Transaction Type,(object type),OBJECT_TYPE,TABLE,TABLE,SUCCESS,Source and target object types match.,10/24/2026 23:28:08
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,(table),ROW_COUNT,213,213,SUCCESS,"Values match: source(213), Snowflake(213)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Employee,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Employee,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Employee,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Employee,ORDINAL_POSITION,3,3,SUCCESS,"Values match: source(3), Snowflake(3)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Employee,CHARACTER_MAXIMUM_LENGTH,50.0,50.0,SUCCESS,"Values match: source(50.0), Snowflake(50.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Employee,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Employee,COLUMN_VALIDATED,Employee,Employee,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Employee Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Employee Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Employee Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Employee Key,ORDINAL_POSITION,1,1,SUCCESS,"Values match: source(1), Snowflake(1)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Employee Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Employee Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Employee Key,COLUMN_VALIDATED,Employee Key,Employee Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Is Salesperson,DATA_TYPE,bit,BOOLEAN,SUCCESS,Values match: source(bit).has a mapping to Snowflake(BOOLEAN),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Is Salesperson,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Is Salesperson,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Is Salesperson,ORDINAL_POSITION,5,5,SUCCESS,"Values match: source(5), Snowflake(5)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Is Salesperson,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Is Salesperson,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Is Salesperson,COLUMN_VALIDATED,Is Salesperson,Is Salesperson,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Lineage Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Lineage Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Lineage Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Lineage Key,ORDINAL_POSITION,9,9,SUCCESS,"Values match: source(9), Snowflake(9)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Lineage Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Lineage Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Lineage Key,COLUMN_VALIDATED,Lineage Key,Lineage Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Photo,DATA_TYPE,varbinary,BINARY,SUCCESS,Values match: source(varbinary).has a mapping to Snowflake(BINARY),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Photo,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Photo,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Photo,ORDINAL_POSITION,6,6,SUCCESS,"Values match: source(6), Snowflake(6)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Photo,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Photo,IS_NULLABLE,YES,YES,SUCCESS,"Values match: source(YES), Snowflake(YES)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Photo,COLUMN_VALIDATED,Photo,Photo,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Preferred Name,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Preferred Name,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Preferred Name,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Preferred Name,ORDINAL_POSITION,4,4,SUCCESS,"Values match: source(4), Snowflake(4)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Preferred Name,CHARACTER_MAXIMUM_LENGTH,50.0,50.0,SUCCESS,"Values match: source(50.0), Snowflake(50.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Preferred Name,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Preferred Name,COLUMN_VALIDATED,Preferred Name,Preferred Name,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Valid From,DATA_TYPE,datetime2,TIMESTAMP_NTZ,SUCCESS,Values match: source(datetime2).has a mapping to Snowflake(TIMESTAMP_NTZ),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Valid From,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Valid From,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Valid From,ORDINAL_POSITION,7,7,SUCCESS,"Values match: source(7), Snowflake(7)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Valid From,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Valid From,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Valid From,COLUMN_VALIDATED,Valid From,Valid From,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Valid To,DATA_TYPE,datetime2,TIMESTAMP_NTZ,SUCCESS,Values match: source(datetime2).has a mapping to Snowflake(TIMESTAMP_NTZ),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Valid To,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Valid To,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Valid To,ORDINAL_POSITION,8,8,SUCCESS,"Values match: source(8), Snowflake(8)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Valid To,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Valid To,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,Valid To,COLUMN_VALIDATED,Valid To,Valid To,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,WWI Employee ID,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,WWI Employee ID,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,WWI Employee ID,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,WWI Employee ID,ORDINAL_POSITION,2,2,SUCCESS,"Values match: source(2), Snowflake(2)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,WWI Employee ID,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,WWI Employee ID,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,WWI Employee ID,COLUMN_VALIDATED,WWI Employee ID,WWI Employee ID,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Employee,(object type),OBJECT_TYPE,TABLE,TABLE,SUCCESS,Source and target object types match.,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Integration.ETL Cutoff,(table),ROW_COUNT,14,14,SUCCESS,"Values match: source(14), Snowflake(14)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Integration.ETL Cutoff,Cutoff Time,DATA_TYPE,datetime2,TIMESTAMP_NTZ,SUCCESS,Values match: source(datetime2).has a mapping to Snowflake(TIMESTAMP_NTZ),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Integration.ETL Cutoff,Cutoff Time,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Integration.ETL Cutoff,Cutoff Time,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Integration.ETL Cutoff,Cutoff Time,ORDINAL_POSITION,2,2,SUCCESS,"Values match: source(2), Snowflake(2)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Integration.ETL Cutoff,Cutoff Time,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Integration.ETL Cutoff,Cutoff Time,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Integration.ETL Cutoff,Cutoff Time,COLUMN_VALIDATED,Cutoff Time,Cutoff Time,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Integration.ETL Cutoff,Table Name,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Integration.ETL Cutoff,Table Name,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Integration.ETL Cutoff,Table Name,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Integration.ETL Cutoff,Table Name,ORDINAL_POSITION,1,1,SUCCESS,"Values match: source(1), Snowflake(1)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Integration.ETL Cutoff,Table Name,CHARACTER_MAXIMUM_LENGTH,128.0,128.0,SUCCESS,"Values match: source(128.0), Snowflake(128.0)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Integration.ETL Cutoff,Table Name,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Integration.ETL Cutoff,Table Name,COLUMN_VALIDATED,Table Name,Table Name,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Integration.ETL Cutoff,(object type),OBJECT_TYPE,TABLE,TABLE,SUCCESS,Source and target object types match.,10/24/2026 23:28:14
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,(table),ROW_COUNT,6,6,SUCCESS,"Values match: source(6), Snowflake(6)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Lineage Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Lineage Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Lineage Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Lineage Key,ORDINAL_POSITION,6,6,SUCCESS,"Values match: source(6), Snowflake(6)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Lineage Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Lineage Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Lineage Key,COLUMN_VALIDATED,Lineage Key,Lineage Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Payment Method,DATA_TYPE,nvarchar,TEXT,SUCCESS,Values match: source(nvarchar).has a mapping to Snowflake(TEXT),10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Payment Method,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Payment Method,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Payment Method,ORDINAL_POSITION,3,3,SUCCESS,"Values match: source(3), Snowflake(3)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Payment Method,CHARACTER_MAXIMUM_LENGTH,50.0,50.0,SUCCESS,"Values match: source(50.0), Snowflake(50.0)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Payment Method,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Payment Method,COLUMN_VALIDATED,Payment Method,Payment Method,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Payment Method Key,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Payment Method Key,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Payment Method Key,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Payment Method Key,ORDINAL_POSITION,1,1,SUCCESS,"Values match: source(1), Snowflake(1)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Payment Method Key,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Payment Method Key,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Payment Method Key,COLUMN_VALIDATED,Payment Method Key,Payment Method Key,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Valid From,DATA_TYPE,datetime2,TIMESTAMP_NTZ,SUCCESS,Values match: source(datetime2).has a mapping to Snowflake(TIMESTAMP_NTZ),10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Valid From,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Valid From,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Valid From,ORDINAL_POSITION,4,4,SUCCESS,"Values match: source(4), Snowflake(4)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Valid From,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Valid From,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Valid From,COLUMN_VALIDATED,Valid From,Valid From,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Valid To,DATA_TYPE,datetime2,TIMESTAMP_NTZ,SUCCESS,Values match: source(datetime2).has a mapping to Snowflake(TIMESTAMP_NTZ),10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Valid To,NUMERIC_SCALE,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Valid To,NUMERIC_PRECISION,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Valid To,ORDINAL_POSITION,5,5,SUCCESS,"Values match: source(5), Snowflake(5)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Valid To,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Valid To,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,Valid To,COLUMN_VALIDATED,Valid To,Valid To,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,WWI Payment Method ID,DATA_TYPE,int,NUMBER,SUCCESS,Values match: source(int).has a mapping to Snowflake(NUMBER),10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,WWI Payment Method ID,NUMERIC_SCALE,0.0,0.0,SUCCESS,"Values match: source(0.0), Snowflake(0.0)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,WWI Payment Method ID,NUMERIC_PRECISION,10.0,38.0,WARNING,"Source value is lower than target value: source(10.0), target(38.0)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,WWI Payment Method ID,ORDINAL_POSITION,2,2,SUCCESS,"Values match: source(2), Snowflake(2)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,WWI Payment Method ID,CHARACTER_MAXIMUM_LENGTH,N/A,N/A,SUCCESS,"Values match: source(N/A), Snowflake(N/A)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,WWI Payment Method ID,IS_NULLABLE,NO,NO,SUCCESS,"Values match: source(NO), Snowflake(NO)",10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,WWI Payment Method ID,COLUMN_VALIDATED,WWI Payment Method ID,WWI Payment Method ID,SUCCESS,Values match: Column exists in target table and all metadata matches,10/24/2026 23:28:18
+SCHEMA VALIDATION,WideWorldImportersDW.Dimension.Payment Method,(object type),OBJECT_TYPE,TABLE,TABLE,SUCCESS,Source and target object types match.,10/24/2026 23:28:18
