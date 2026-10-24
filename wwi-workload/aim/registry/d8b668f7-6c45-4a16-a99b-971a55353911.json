@@ -1,4 +1,15 @@
 {
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:38:29Z"
+    }
+  },
   "codeStatus": {
     "assessment": {
       "containsCommit": false,
@@ -36,7 +47,9 @@
       "e246ca55-9881-4ecd-8b71-f32f3f898ece"
     ]
   },
-  "extensions": {},
+  "extensions": {
+    "isDone": true
+  },
   "files": {
     "artifacts": {
       "path": "artifacts/wideworldimportersdw/dimension/table/transaction type"
@@ -78,7 +91,7 @@
       {
         "isCaseSpecific": false,
         "isPrimaryKey": true,
-        "name": "\"Transaction Type Key\"",
+        "name": "Transaction Type Key",
         "nullable": false,
         "targetName": "\"Transaction Type Key\"",
         "targetType": "INT",
@@ -152,5 +165,5 @@
     "objectType": "table",
     "schema": "Dimension"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-24T23:45:55Z"
 }
