@@ -20,3 +20,13 @@ assessment/*.pdf
 # OS files
 .DS_Store
 Thumbs.db
+# scai migration plugin: background relay state
+/.scai/monitor/
+
+# Machine-local setup state — not shared with teammates
+.scai/setup-checkpoint.json
+.scai/setup-idempotency.json
+
+# Local scai run logs
+/logs/
+/.scai/tmp/
