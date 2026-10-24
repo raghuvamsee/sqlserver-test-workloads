@@ -55,7 +55,8 @@
   ],
   "kind": "databaseObject",
   "planning": {
-    "topologicalRank": 0
+    "topologicalRank": 0,
+    "wave": 1
   },
   "schemaVersion": 1,
   "signature": {
@@ -78,5 +79,5 @@
     "objectType": "sequence",
     "schema": "Sequences"
   },
-  "updatedAt": "2026-10-24T19:42:27Z"
+  "updatedAt": "2026-10-24T19:43:23Z"
 }

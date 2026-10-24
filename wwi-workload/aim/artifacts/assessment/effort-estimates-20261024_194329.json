@@ -1,0 +1,602 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-10-24T19:43:29.098084Z",
+  "project_name": "aim",
+  "source_dialect": "sql_server",
+  "effort_model": "severity-weighted-v3",
+  "repetition": {
+    "discount_factor": 0.25,
+    "first_full_price_count": 1,
+    "non_repetitive_codes": [
+      "SSC-EWI-0030"
+    ]
+  },
+  "summary": {
+    "total_estimated_hours": 8.94,
+    "code_estimated_hours": 8.94,
+    "conversion_estimated_hours": 8.94,
+    "testing_estimated_hours": 0,
+    "fixed_budget_hours": 0,
+    "manual_rewrite_hours": 274,
+    "hours_saved_by_automation": 265.06,
+    "automation_savings_pct": 0.9674,
+    "fixed_budget_items": {
+      "Data migration (DM/DV)": null,
+      "Data refresh and validation": null,
+      "Optimization \u2014 Refactoring \u0026 Optimization": null,
+      "Integration Testing \u2014 Integration Testing (Create And Execute Test Cases)": null,
+      "Integration Testing Bug Fix \u2014 Stabilization \u0026 Bug Fixing": null,
+      "UAT \u2014 UAT": null,
+      "Delivery \u2014 Stabilization \u0026 Bug Fixing": null
+    },
+    "workload_size_tier": "small",
+    "workload_object_count": 75,
+    "workload_small_max": 500,
+    "workload_medium_max": 1500,
+    "ddl_objects": 75,
+    "ddl_auto_pct": 1,
+    "bands": {
+      "critical": 9,
+      "high": 0,
+      "medium": 4,
+      "low": 62,
+      "redesign": 0,
+      "total": 75
+    },
+    "ddl_summary": {
+      "Sequence": {
+        "total": 8,
+        "success": 8,
+        "partial": 0,
+        "unsupported": 0,
+        "lines_of_code": 0,
+        "bands": {
+          "critical": 8,
+          "high": 0,
+          "medium": 0,
+          "low": 0,
+          "redesign": 0,
+          "total": 8
+        },
+        "issues_none_info": 0,
+        "issues_low": 8,
+        "issues_medium": 0,
+        "issues_high": 0,
+        "issues_critical": 8,
+        "estimated_hours": null,
+        "pct_auto": 1,
+        "notes": "Not priced per object; covered by a flat budget"
+      },
+      "Procedure": {
+        "total": 25,
+        "success": 25,
+        "partial": 0,
+        "unsupported": 0,
+        "lines_of_code": 0,
+        "bands": {
+          "critical": 1,
+          "high": 0,
+          "medium": 4,
+          "low": 20,
+          "redesign": 0,
+          "total": 25
+        },
+        "issues_none_info": 169,
+        "issues_low": 5,
+        "issues_medium": 114,
+        "issues_high": 0,
+        "issues_critical": 1,
+        "estimated_hours": 4.49,
+        "pct_auto": 1,
+        "notes": "Per object by complexity, then a repetition discount of 0.25 after the first 1 object of each EWI: 1.25h critical, 1h high, 0.5h medium, 0.25h low"
+      },
+      "Table": {
+        "total": 29,
+        "success": 29,
+        "partial": 0,
+        "unsupported": 0,
+        "lines_of_code": 0,
+        "bands": {
+          "critical": 0,
+          "high": 0,
+          "medium": 0,
+          "low": 29,
+          "redesign": 0,
+          "total": 29
+        },
+        "issues_none_info": 166,
+        "issues_low": 0,
+        "issues_medium": 0,
+        "issues_high": 0,
+        "issues_critical": 0,
+        "estimated_hours": 4,
+        "pct_auto": 1,
+        "notes": "4 hours for all objects of this type"
+      },
+      "Function": {
+        "total": 3,
+        "success": 3,
+        "partial": 0,
+        "unsupported": 0,
+        "lines_of_code": 0,
+        "bands": {
+          "critical": 0,
+          "high": 0,
+          "medium": 0,
+          "low": 3,
+          "redesign": 0,
+          "total": 3
+        },
+        "issues_none_info": 14,
+        "issues_low": 0,
+        "issues_medium": 0,
+        "issues_high": 0,
+        "issues_critical": 0,
+        "estimated_hours": 0.45,
+        "pct_auto": 1,
+        "notes": "Per object by complexity, then a repetition discount of 0.25 after the first 1 object of each EWI: 1h critical, 0.5h high, 0.3h medium, 0.15h low"
+      },
+      "Schema": {
+        "total": 9,
+        "success": 9,
+        "partial": 0,
+        "unsupported": 0,
+        "lines_of_code": 0,
+        "bands": {
+          "critical": 0,
+          "high": 0,
+          "medium": 0,
+          "low": 9,
+          "redesign": 0,
+          "total": 9
+        },
+        "issues_none_info": 0,
+        "issues_low": 0,
+        "issues_medium": 0,
+        "issues_high": 0,
+        "issues_critical": 0,
+        "estimated_hours": null,
+        "pct_auto": 1,
+        "notes": "Not priced per object; covered by a flat budget"
+      },
+      "Database": {
+        "total": 1,
+        "success": 1,
+        "partial": 0,
+        "unsupported": 0,
+        "lines_of_code": 0,
+        "bands": {
+          "critical": 0,
+          "high": 0,
+          "medium": 0,
+          "low": 1,
+          "redesign": 0,
+          "total": 1
+        },
+        "issues_none_info": 2,
+        "issues_low": 0,
+        "issues_medium": 0,
+        "issues_high": 0,
+        "issues_critical": 0,
+        "estimated_hours": null,
+        "pct_auto": 1,
+        "notes": "Not priced per object; covered by a flat budget"
+      }
+    }
+  },
+  "top_issues": [
+    {
+      "code": "SSC-EWI-0001",
+      "name": "",
+      "severity": "Critical",
+      "occurrences": 9
+    },
+    {
+      "code": "SSC-EWI-0073",
+      "name": "",
+      "severity": "Medium",
+      "occurrences": 98
+    },
+    {
+      "code": "SSC-EWI-0003",
+      "name": "",
+      "severity": "Medium",
+      "occurrences": 13
+    },
+    {
+      "code": "SSC-FDM-0021",
+      "name": "",
+      "severity": "\u2014",
+      "occurrences": 87
+    },
+    {
+      "code": "SSC-FDM-TS0002",
+      "name": "",
+      "severity": "\u2014",
+      "occurrences": 80
+    },
+    {
+      "code": "SSC-PRF-0002",
+      "name": "",
+      "severity": "\u2014",
+      "occurrences": 79
+    },
+    {
+      "code": "SSC-FDM-TS0029",
+      "name": "",
+      "severity": "\u2014",
+      "occurrences": 23
+    },
+    {
+      "code": "SSC-FDM-TS0037",
+      "name": "",
+      "severity": "\u2014",
+      "occurrences": 16
+    },
+    {
+      "code": "SSC-FDM-TS0012",
+      "name": "",
+      "severity": "\u2014",
+      "occurrences": 14
+    },
+    {
+      "code": "SSC-FDM-0019",
+      "name": "",
+      "severity": "\u2014",
+      "occurrences": 12
+    }
+  ],
+  "calculator_rows": [
+    {
+      "key": "data_migration_dmva",
+      "bucket": "data_migration",
+      "ddl_type": null,
+      "component": "Data Migration",
+      "object_type": "Data Migration and Validation using DM/DV",
+      "quantity": "Constant",
+      "band_counts": null,
+      "band_rates": null,
+      "flat_hours": null,
+      "estimated_hours": null,
+      "manual_rewrite_hours": null,
+      "automation_pct": null,
+      "comments": "Includes setup and not actual data movement time",
+      "pricing": "flat",
+      "unit_hours": null
+    },
+    {
+      "key": "data_migration_refresh",
+      "bucket": "data_migration",
+      "ddl_type": null,
+      "component": "Data Migration",
+      "object_type": "Data Refresh and Validation",
+      "quantity": "Constant",
+      "band_counts": null,
+      "band_rates": null,
+      "flat_hours": null,
+      "estimated_hours": null,
+      "manual_rewrite_hours": null,
+      "automation_pct": null,
+      "comments": "Includes setup and not actual data movement time",
+      "pricing": "flat",
+      "unit_hours": null
+    },
+    {
+      "key": "code_tables",
+      "bucket": "conversion",
+      "ddl_type": "Table",
+      "component": "Code Conversion",
+      "object_type": "Tables",
+      "quantity": 29,
+      "band_counts": null,
+      "band_rates": null,
+      "flat_hours": 4,
+      "estimated_hours": 4,
+      "manual_rewrite_hours": null,
+      "automation_pct": 1,
+      "comments": "flat total; 4 hours covers every table",
+      "pricing": "flat_total",
+      "unit_hours": null
+    },
+    {
+      "key": "code_external_tables",
+      "bucket": "conversion",
+      "ddl_type": "External Table",
+      "component": "Code Conversion",
+      "object_type": "External Tables",
+      "quantity": 0,
+      "band_counts": null,
+      "band_rates": null,
+      "flat_hours": 4,
+      "estimated_hours": 0,
+      "manual_rewrite_hours": null,
+      "automation_pct": null,
+      "comments": "flat total; 4 hours covers every external table",
+      "pricing": "flat_total",
+      "unit_hours": null
+    },
+    {
+      "key": "code_views",
+      "bucket": "conversion",
+      "ddl_type": "View",
+      "component": "Code Conversion",
+      "object_type": "Views",
+      "quantity": 0,
+      "band_counts": null,
+      "band_rates": null,
+      "flat_hours": 4,
+      "estimated_hours": 0,
+      "manual_rewrite_hours": null,
+      "automation_pct": null,
+      "comments": "flat total; 4 hours covers every view",
+      "pricing": "flat_total",
+      "unit_hours": null
+    },
+    {
+      "key": "code_materialized_views",
+      "bucket": "conversion",
+      "ddl_type": "Materialized View",
+      "component": "Code Conversion",
+      "object_type": "Materialized Views",
+      "quantity": 0,
+      "band_counts": null,
+      "band_rates": null,
+      "flat_hours": 4,
+      "estimated_hours": 0,
+      "manual_rewrite_hours": null,
+      "automation_pct": null,
+      "comments": "flat total; 4 hours covers every materialized view",
+      "pricing": "flat_total",
+      "unit_hours": null
+    },
+    {
+      "key": "code_functions",
+      "bucket": "conversion",
+      "ddl_type": "Function",
+      "component": "Code Conversion",
+      "object_type": "Functions",
+      "quantity": 3,
+      "band_counts": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 3,
+        "redesign": 0,
+        "total": 3
+      },
+      "band_rates": {
+        "critical": 1,
+        "high": 0.5,
+        "medium": 0.3,
+        "low": 0.15,
+        "redesign": 8
+      },
+      "flat_hours": null,
+      "estimated_hours": 0.45,
+      "manual_rewrite_hours": 24,
+      "automation_pct": 1,
+      "comments": "Hours per function by complexity",
+      "pricing": "banded",
+      "unit_hours": null,
+      "repetition": {
+        "discount_factor": 0.25,
+        "first_full_price_count": 1,
+        "groups": [
+          {
+            "code": "SSC-FDM-TS0012",
+            "band": "low",
+            "count": 1,
+            "full_price": false,
+            "hours": 0.15
+          },
+          {
+            "code": null,
+            "band": "low",
+            "count": 2,
+            "full_price": true,
+            "hours": 0.3
+          }
+        ]
+      }
+    },
+    {
+      "key": "code_procedures",
+      "bucket": "conversion",
+      "ddl_type": "Procedure",
+      "component": "Code Conversion",
+      "object_type": "Stored Procedures",
+      "quantity": 25,
+      "band_counts": {
+        "critical": 1,
+        "high": 0,
+        "medium": 4,
+        "low": 20,
+        "redesign": 0,
+        "total": 25
+      },
+      "band_rates": {
+        "critical": 1.25,
+        "high": 1,
+        "medium": 0.5,
+        "low": 0.25,
+        "redesign": 10
+      },
+      "flat_hours": null,
+      "estimated_hours": 4.49,
+      "manual_rewrite_hours": 250,
+      "automation_pct": 1,
+      "comments": "Hours per stored procedure by complexity",
+      "pricing": "banded",
+      "unit_hours": null,
+      "repetition": {
+        "discount_factor": 0.25,
+        "first_full_price_count": 1,
+        "groups": [
+          {
+            "code": "SSC-EWI-0001",
+            "band": "critical",
+            "count": 1,
+            "full_price": false,
+            "hours": 1.25
+          },
+          {
+            "code": "SSC-EWI-0003",
+            "band": "medium",
+            "count": 2,
+            "full_price": false,
+            "hours": 0.62
+          },
+          {
+            "code": "SSC-EWI-0073",
+            "band": "medium",
+            "count": 2,
+            "full_price": false,
+            "hours": 0.62
+          },
+          {
+            "code": "SSC-EWI-TS0089",
+            "band": "low",
+            "count": 1,
+            "full_price": false,
+            "hours": 0.25
+          },
+          {
+            "code": "SSC-FDM-TS0029",
+            "band": "low",
+            "count": 17,
+            "full_price": false,
+            "hours": 1.25
+          },
+          {
+            "code": null,
+            "band": "low",
+            "count": 2,
+            "full_price": true,
+            "hours": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "key": "code_ssis_packages",
+      "bucket": "conversion",
+      "ddl_type": "SSIS Package",
+      "component": "Code Conversion",
+      "object_type": "SSIS Packages",
+      "quantity": 0,
+      "band_counts": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "redesign": 0,
+        "total": 0
+      },
+      "band_rates": {
+        "critical": 1.25,
+        "high": 1,
+        "medium": 0.5,
+        "low": 0.25,
+        "redesign": 6
+      },
+      "flat_hours": null,
+      "estimated_hours": 0,
+      "manual_rewrite_hours": 0,
+      "automation_pct": null,
+      "comments": "Hours per SSIS package by complexity; FDE LOE Calculator Tab 1 SSIS Packages (.dtsx)",
+      "pricing": "banded",
+      "unit_hours": null,
+      "repetition": {
+        "discount_factor": 0.25,
+        "first_full_price_count": 1,
+        "groups": []
+      }
+    },
+    {
+      "key": "optimization",
+      "bucket": "fixed_budget",
+      "ddl_type": null,
+      "component": "Optimization",
+      "object_type": "Refactoring \u0026 Optimization",
+      "quantity": "Flat budget",
+      "band_counts": null,
+      "band_rates": null,
+      "flat_hours": null,
+      "estimated_hours": null,
+      "manual_rewrite_hours": null,
+      "automation_pct": null,
+      "comments": "Small (up to 500 objects) flat budget",
+      "pricing": "flat",
+      "unit_hours": null
+    },
+    {
+      "key": "integration_testing",
+      "bucket": "fixed_budget",
+      "ddl_type": null,
+      "component": "Integration Testing",
+      "object_type": "Integration Testing (Create And Execute Test Cases)",
+      "quantity": "Flat budget",
+      "band_counts": null,
+      "band_rates": null,
+      "flat_hours": null,
+      "estimated_hours": null,
+      "manual_rewrite_hours": null,
+      "automation_pct": null,
+      "comments": "Small (up to 500 objects) flat budget",
+      "pricing": "flat",
+      "unit_hours": null
+    },
+    {
+      "key": "integration_testing_bug_fix",
+      "bucket": "fixed_budget",
+      "ddl_type": null,
+      "component": "Integration Testing Bug Fix",
+      "object_type": "Stabilization \u0026 Bug Fixing",
+      "quantity": "Flat budget",
+      "band_counts": null,
+      "band_rates": null,
+      "flat_hours": null,
+      "estimated_hours": null,
+      "manual_rewrite_hours": null,
+      "automation_pct": null,
+      "comments": "Small (up to 500 objects) flat budget",
+      "pricing": "flat",
+      "unit_hours": null
+    },
+    {
+      "key": "uat",
+      "bucket": "fixed_budget",
+      "ddl_type": null,
+      "component": "UAT",
+      "object_type": "UAT",
+      "quantity": "Flat budget",
+      "band_counts": null,
+      "band_rates": null,
+      "flat_hours": null,
+      "estimated_hours": null,
+      "manual_rewrite_hours": null,
+      "automation_pct": null,
+      "comments": "Small (up to 500 objects) flat budget",
+      "pricing": "flat",
+      "unit_hours": null
+    },
+    {
+      "key": "delivery",
+      "bucket": "fixed_budget",
+      "ddl_type": null,
+      "component": "Delivery",
+      "object_type": "Stabilization \u0026 Bug Fixing",
+      "quantity": "Flat budget",
+      "band_counts": null,
+      "band_rates": null,
+      "flat_hours": null,
+      "estimated_hours": null,
+      "manual_rewrite_hours": null,
+      "automation_pct": null,
+      "comments": "Small (up to 500 objects) flat budget",
+      "pricing": "flat",
+      "unit_hours": null
+    }
+  ],
+  "total_estimated_hours": 8.94
+}

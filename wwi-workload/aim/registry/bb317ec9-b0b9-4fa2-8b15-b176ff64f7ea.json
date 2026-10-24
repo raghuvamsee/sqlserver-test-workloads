@@ -80,7 +80,8 @@
   "isMissing": false,
   "kind": "databaseObject",
   "planning": {
-    "topologicalRank": 2
+    "topologicalRank": 2,
+    "wave": 1
   },
   "schemaVersion": 1,
   "signature": {
@@ -207,5 +208,5 @@
     "objectType": "table",
     "schema": "Fact"
   },
-  "updatedAt": "2026-10-24T19:42:27Z"
+  "updatedAt": "2026-10-24T19:43:23Z"
 }

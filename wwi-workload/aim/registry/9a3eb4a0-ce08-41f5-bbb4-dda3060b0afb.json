@@ -89,7 +89,8 @@
   ],
   "kind": "databaseObject",
   "planning": {
-    "topologicalRank": 3
+    "topologicalRank": 3,
+    "wave": 1
   },
   "schemaVersion": 1,
   "signature": {
@@ -123,5 +124,5 @@
     "objectType": "procedure",
     "schema": "Integration"
   },
-  "updatedAt": "2026-10-24T19:42:27Z"
+  "updatedAt": "2026-10-24T19:43:23Z"
 }

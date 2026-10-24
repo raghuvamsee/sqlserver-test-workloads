@@ -1,5 +1,7 @@
+assessment_name: aim
+assessment_options: none
 code_source: extract
-committed_setup_tasks: registerCode,convertCode
+committed_setup_tasks: registerCode,convertCode,runAssessment
 cortex_safe_tools_acknowledged: 'true'
 dashboard_port: 0
 entry_mode: fresh

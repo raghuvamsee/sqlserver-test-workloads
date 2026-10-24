@@ -2,7 +2,14 @@
   "codeStatus": {
     "assessment": {
       "containsCommit": false,
-      "exclusion": [],
+      "exclusion": [
+        {
+          "category": "temp_staging",
+          "matchedPatterns": [
+            "_staging$"
+          ]
+        }
+      ],
       "status": "inProgress"
     },
     "conversion": {
@@ -52,7 +59,8 @@
   ],
   "kind": "databaseObject",
   "planning": {
-    "topologicalRank": 0
+    "topologicalRank": 0,
+    "wave": 1
   },
   "schemaVersion": 1,
   "signature": {
@@ -197,5 +205,5 @@
     "objectType": "table",
     "schema": "Integration"
   },
-  "updatedAt": "2026-10-24T19:42:27Z"
+  "updatedAt": "2026-10-24T19:43:26Z"
 }

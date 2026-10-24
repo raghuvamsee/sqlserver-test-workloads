@@ -1,0 +1,531 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-24T19:43:31.757524Z",
+  "project_name": "aim",
+  "source_dialect": "sql_server",
+  "summary": {
+    "total_code_units_scanned": 75,
+    "code_units_with_findings": 25,
+    "total_flags_detected": 1,
+    "total_occurrences": 79,
+    "by_bucket": [
+      {
+        "bucket": "performance_risks",
+        "label": "Performance Risks",
+        "code_units_affected": 25,
+        "total_occurrences": 79,
+        "distinct_flags": 1
+      },
+      {
+        "bucket": "architecture_security",
+        "label": "Architecture \u0026 Security Blockers",
+        "code_units_affected": 0,
+        "total_occurrences": 0,
+        "distinct_flags": 0
+      },
+      {
+        "bucket": "behavior_semantic",
+        "label": "Behavior \u0026 Semantic Risks",
+        "code_units_affected": 0,
+        "total_occurrences": 0,
+        "distinct_flags": 0
+      }
+    ],
+    "by_priority": [
+      {
+        "priority": "critical",
+        "label": "Critical",
+        "code_units_affected": 0,
+        "total_occurrences": 0,
+        "distinct_flags": 0
+      },
+      {
+        "priority": "high",
+        "label": "High",
+        "code_units_affected": 0,
+        "total_occurrences": 0,
+        "distinct_flags": 0
+      },
+      {
+        "priority": "medium",
+        "label": "Medium",
+        "code_units_affected": 25,
+        "total_occurrences": 79,
+        "distinct_flags": 1
+      },
+      {
+        "priority": "low",
+        "label": "Low",
+        "code_units_affected": 0,
+        "total_occurrences": 0,
+        "distinct_flags": 0
+      }
+    ]
+  },
+  "flags": [
+    {
+      "code": "SSC-PRF-0002",
+      "title": "Case-insensitive columns slow queries",
+      "bucket": "performance_risks",
+      "priority": "medium",
+      "what_it_is": "A column is defined with a case-insensitive collation, so string comparisons ignore letter case.",
+      "why_flagged": "Case-insensitive collation forces Snowflake to normalize text on every comparison, which can slow filters, joins and grouping on high-volume columns.",
+      "snowflake_recommendation": "Confirm case-insensitive behavior is actually required. Where it is not, use the default collation; where it is, apply it narrowly (per column, or per comparison via UPPER()/LOWER()) rather than broadly.",
+      "doc_url": "https://docs.snowflake.com/en/migrations/snowconvert-docs/general/technical-documentation/issues-and-troubleshooting/performance-review/generalPRF#ssc-prf-0002",
+      "code_units_affected": 25,
+      "total_occurrences": 79
+    }
+  ],
+  "code_units": [
+    {
+      "id": "d20973f5-32ac-4262-8c9e-24dc1f9cb864",
+      "name": "City",
+      "schema": "Dimension",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 7,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 7,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "516fd90f-7b47-4358-ba5b-f4d17eeb3c1c",
+      "name": "City_Staging",
+      "schema": "Integration",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 7,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 7,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "7cc0c7c0-4360-43fe-9ad4-3b5007a85875",
+      "name": "StockItem_Staging",
+      "schema": "Integration",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 7,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 7,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "2685eca3-d88d-4aee-9354-8c62b9011b32",
+      "name": "[Date]",
+      "schema": "Dimension",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 7,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 7,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "172e8c9d-5d97-43b1-ba0d-8b2de51fa3ca",
+      "name": "[Stock Item]",
+      "schema": "Dimension",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 7,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 7,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "cf34e18d-290b-4bed-bad9-15b769fe40a9",
+      "name": "Customer",
+      "schema": "Dimension",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 6,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 6,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "dc1593bf-13e6-4e4e-9db6-8acc220dcb27",
+      "name": "Customer_Staging",
+      "schema": "Integration",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 6,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 6,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "9dbea1f6-5eb8-4044-b5e4-47770fdc7ef2",
+      "name": "Supplier",
+      "schema": "Dimension",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 5,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 5,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "b14c3ce9-5ab2-4722-a296-ad040b1c379a",
+      "name": "Supplier_Staging",
+      "schema": "Integration",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 5,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 5,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "06c1a86c-68de-47cb-8638-c5a6f62ae020",
+      "name": "Employee",
+      "schema": "Dimension",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 2,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 2,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "f192ce08-ede1-4d4b-9db5-2408d5d1acf7",
+      "name": "Employee_Staging",
+      "schema": "Integration",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 2,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 2,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "1c8f7c3e-6990-415a-83bf-780eb48904fa",
+      "name": "Order_Staging",
+      "schema": "Integration",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 2,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 2,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "ad0a1a25-10bb-422a-91be-929f5d2732b9",
+      "name": "Sale",
+      "schema": "Fact",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 2,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 2,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "68fc6c2c-d00a-4317-9ba2-66feb2a1bdea",
+      "name": "Sale_Staging",
+      "schema": "Integration",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 2,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 2,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "ad69d741-caa8-4743-ab27-da074f87b678",
+      "name": "[Order]",
+      "schema": "Fact",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 2,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 2,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "d5d6eb2b-82de-40a0-94fa-1ef90af73639",
+      "name": "PaymentMethod_Staging",
+      "schema": "Integration",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 1,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 1,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "cff6ffcb-f0ea-49af-b01d-c83e344952ed",
+      "name": "Purchase",
+      "schema": "Fact",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 1,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 1,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "4a2bd823-a131-402f-b23d-6ad35283c251",
+      "name": "Purchase_Staging",
+      "schema": "Integration",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 1,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 1,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "649d7396-fbbb-46c7-99a8-40f42fcdfa80",
+      "name": "StockHolding_Staging",
+      "schema": "Integration",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 1,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 1,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "00d9afdd-2ce8-4cd7-a4bd-f3f567223cfa",
+      "name": "TransactionType_Staging",
+      "schema": "Integration",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 1,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 1,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "90a25581-4885-46da-b69c-89459cae6eb6",
+      "name": "Transaction_Staging",
+      "schema": "Integration",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 1,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 1,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "06b7ad8e-ddf7-4b9d-9064-17b60587e404",
+      "name": "[Payment Method]",
+      "schema": "Dimension",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 1,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 1,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "df33c519-db68-4b3b-9f03-726dababac27",
+      "name": "[Stock Holding]",
+      "schema": "Fact",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 1,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 1,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "d8b668f7-6c45-4a16-a99b-971a55353911",
+      "name": "[Transaction Type]",
+      "schema": "Dimension",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 1,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 1,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "d59fc930-9c64-4c66-91a3-823de6f37279",
+      "name": "[Transaction]",
+      "schema": "Fact",
+      "object_type": "Table",
+      "kind": "DatabaseObject",
+      "wave": 1,
+      "total_occurrences": 1,
+      "distinct_flags": 1,
+      "flags": [
+        {
+          "code": "SSC-PRF-0002",
+          "count": 1,
+          "bucket": "performance_risks",
+          "priority": "medium"
+        }
+      ]
+    }
+  ]
+}
