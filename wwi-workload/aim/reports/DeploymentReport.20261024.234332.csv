@@ -1,0 +1,7 @@
+OBJECT_NAME,OBJECT_TYPE,STATUS,ERROR_MESSAGE,DATABASE,SCHEMA,FQN,SNOWSIGHT_URL
+<%wideworldimportersdw%>.Integration.PopulateDateDimensionForYear,Procedure,Failed,"Error: JavaScript execution error: Uncaught Execution of multiple statements failed on statement ""CREATE OR REPLACE PROCEDURE In..."" (at line 4, position 0).
+SQL compilation error:
+syntax error line 7 at position 8 unexpected '!'.
+syntax error line 7 at position 19 unexpected 'EWI'. in SYSTEM$MULTISTMT at '    throw `Execution of multiple statements failed on statement {0} (at line {1}, position {2}).`.replace('{1}', LINES[i])' position 4
+stackstrace: 
+SYSTEM$MULTISTMT line: 10 SqlState: P0000, VendorCode: 100132, QueryId: 01c7f44f-0109-47d7-0012-43a20007a4ba",WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Integration.PopulateDateDimensionForYear,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
