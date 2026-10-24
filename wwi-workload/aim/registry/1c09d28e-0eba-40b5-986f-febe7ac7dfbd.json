@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -23,6 +24,11 @@
         "relationTypes": [
           "SELECT - FROM"
         ]
+      },
+      {
+        "id": "8c5ef6e6-94ee-483e-b9b9-16303903422f",
+        "isMissing": false,
+        "relationTypes": []
       }
     ],
     "hasTransitiveMissingDependencies": false,
@@ -30,6 +36,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/integration/procedure/getlastetlcutofftime"
+    },
+    "converted": {
+      "checksum": "021aa333620c81edd8330e8d4432f1d5",
+      "path": "snowflake/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql"
+    },
     "source": {
       "checksum": "42b24465357ceb3ee13f97ac19c2f38b",
       "path": "source/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql"
@@ -38,6 +51,20 @@
   "id": "1c09d28e-0eba-40b5-986f-febe7ac7dfbd",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0029",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0037",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0144",
+      "count": 2
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 1
@@ -52,25 +79,37 @@
           "isCursor": false,
           "name": "@TableName",
           "required": true,
+          "targetName": "TABLENAME",
+          "targetType": "VARCHAR",
           "type": "SYSNAME"
         }
       ],
       "returns": [
         {
           "name": "CutoffTime",
+          "targetName": "CutoffTime",
+          "targetType": "",
           "type": "DATETIME2"
         }
       ]
     }
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Integration.GetLastETLCutoffTime(SYSNAME)",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Integration.GetLastETLCutoffTime(SYSNAME)",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "GetLastETLCutoffTime",
     "objectType": "procedure",
     "platform": "sqlServer",
     "schema": "Integration"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Integration.GetLastETLCutoffTime(VARCHAR)",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "GetLastETLCutoffTime",
+    "objectType": "procedure",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -30,6 +31,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/dimension/table/date"
+    },
+    "converted": {
+      "checksum": "3166c0ff6c6c82b56f81f4f7a2287c83",
+      "path": "snowflake/wideworldimportersdw/dimension/table/date.sql"
+    },
     "source": {
       "checksum": "812037fdcdc484bdc8cfe0471d80cda5",
       "path": "source/wideworldimportersdw/dimension/table/date.sql"
@@ -38,6 +46,16 @@
   "id": "2685eca3-d88d-4aee-9354-8c62b9011b32",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0002",
+      "count": 7
+    },
+    {
+      "code": "SSC-PRF-0002",
+      "count": 7
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 0
@@ -50,6 +68,8 @@
         "isPrimaryKey": true,
         "name": "Date",
         "nullable": false,
+        "targetName": "Date",
+        "targetType": "DATE",
         "type": "DATE"
       },
       {
@@ -57,6 +77,8 @@
         "isPrimaryKey": false,
         "name": "\"Day Number\"",
         "nullable": false,
+        "targetName": "\"Day Number\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -64,6 +86,8 @@
         "isPrimaryKey": false,
         "name": "Day",
         "nullable": false,
+        "targetName": "Day",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -71,6 +95,8 @@
         "isPrimaryKey": false,
         "name": "Month",
         "nullable": false,
+        "targetName": "Month",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -78,6 +104,8 @@
         "isPrimaryKey": false,
         "name": "\"Short Month\"",
         "nullable": false,
+        "targetName": "\"Short Month\"",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -85,6 +113,8 @@
         "isPrimaryKey": false,
         "name": "\"Calendar Month Number\"",
         "nullable": false,
+        "targetName": "\"Calendar Month Number\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -92,6 +122,8 @@
         "isPrimaryKey": false,
         "name": "\"Calendar Month Label\"",
         "nullable": false,
+        "targetName": "\"Calendar Month Label\"",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -99,6 +131,8 @@
         "isPrimaryKey": false,
         "name": "\"Calendar Year\"",
         "nullable": false,
+        "targetName": "\"Calendar Year\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -106,6 +140,8 @@
         "isPrimaryKey": false,
         "name": "\"Calendar Year Label\"",
         "nullable": false,
+        "targetName": "\"Calendar Year Label\"",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -113,6 +149,8 @@
         "isPrimaryKey": false,
         "name": "\"Fiscal Month Number\"",
         "nullable": false,
+        "targetName": "\"Fiscal Month Number\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -120,6 +158,8 @@
         "isPrimaryKey": false,
         "name": "\"Fiscal Month Label\"",
         "nullable": false,
+        "targetName": "\"Fiscal Month Label\"",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -127,6 +167,8 @@
         "isPrimaryKey": false,
         "name": "\"Fiscal Year\"",
         "nullable": false,
+        "targetName": "\"Fiscal Year\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -134,6 +176,8 @@
         "isPrimaryKey": false,
         "name": "\"Fiscal Year Label\"",
         "nullable": false,
+        "targetName": "\"Fiscal Year Label\"",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -141,6 +185,8 @@
         "isPrimaryKey": false,
         "name": "\"ISO Week Number\"",
         "nullable": false,
+        "targetName": "\"ISO Week Number\"",
+        "targetType": "INT",
         "type": "INT"
       }
     ],
@@ -150,13 +196,21 @@
     }
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Dimension.[Date]",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Dimension.[Date]",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "[Date]",
     "objectType": "table",
     "platform": "sqlServer",
     "schema": "Dimension"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Dimension.Date",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Date",
+    "objectType": "table",
+    "schema": "Dimension"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

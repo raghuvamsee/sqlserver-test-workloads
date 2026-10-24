@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -35,6 +36,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/dimension/table/payment method"
+    },
+    "converted": {
+      "checksum": "ac40499f784da1bfb6daa03aadcea05c",
+      "path": "snowflake/wideworldimportersdw/dimension/table/payment method.sql"
+    },
     "source": {
       "checksum": "2d16fd8262ec94e59f36a4702470f627",
       "path": "source/wideworldimportersdw/dimension/table/payment method.sql"
@@ -43,6 +51,20 @@
   "id": "06b7ad8e-ddf7-4b9d-9064-17b60587e404",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-0012",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0002",
+      "count": 1
+    },
+    {
+      "code": "SSC-PRF-0002",
+      "count": 1
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 1
@@ -55,6 +77,8 @@
         "isPrimaryKey": true,
         "name": "\"Payment Method Key\"",
         "nullable": false,
+        "targetName": "\"Payment Method Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -62,6 +86,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Payment Method ID\"",
         "nullable": false,
+        "targetName": "\"WWI Payment Method ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -69,6 +95,8 @@
         "isPrimaryKey": false,
         "name": "\"Payment Method\"",
         "nullable": false,
+        "targetName": "\"Payment Method\"",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -76,6 +104,8 @@
         "isPrimaryKey": false,
         "name": "\"Valid From\"",
         "nullable": false,
+        "targetName": "\"Valid From\"",
+        "targetType": "",
         "type": "DATETIME2"
       },
       {
@@ -83,6 +113,8 @@
         "isPrimaryKey": false,
         "name": "\"Valid To\"",
         "nullable": false,
+        "targetName": "\"Valid To\"",
+        "targetType": "",
         "type": "DATETIME2"
       },
       {
@@ -90,6 +122,8 @@
         "isPrimaryKey": false,
         "name": "\"Lineage Key\"",
         "nullable": false,
+        "targetName": "\"Lineage Key\"",
+        "targetType": "INT",
         "type": "INT"
       }
     ],
@@ -99,13 +133,21 @@
     }
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Dimension.[Payment Method]",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Dimension.[Payment Method]",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "[Payment Method]",
     "objectType": "table",
     "platform": "sqlServer",
     "schema": "Dimension"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Dimension.\"Payment Method\"",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "\"Payment Method\"",
+    "objectType": "table",
+    "schema": "Dimension"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

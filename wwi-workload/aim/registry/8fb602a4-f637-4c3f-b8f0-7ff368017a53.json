@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -53,6 +54,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata"
+    },
+    "converted": {
+      "checksum": "cc49517043f8d68de92847da95b4a8de",
+      "path": "snowflake/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql"
+    },
     "source": {
       "checksum": "4ca2c1fe45d5db08f9f13bab0716e9a9",
       "path": "source/wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql"
@@ -61,6 +69,16 @@
   "id": "8fb602a4-f637-4c3f-b8f0-7ff368017a53",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0029",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0037",
+      "count": 1
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 2
@@ -73,19 +91,29 @@
       "returns": [
         {
           "name": "[Lineage Key]",
+          "targetName": "\"Lineage Key\"",
+          "targetType": "INT",
           "type": "INT"
         }
       ]
     }
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Integration.MigrateStagedPaymentMethodData",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Integration.MigrateStagedPaymentMethodData",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "MigrateStagedPaymentMethodData",
     "objectType": "procedure",
     "platform": "sqlServer",
     "schema": "Integration"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Integration.MigrateStagedPaymentMethodData",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "MigrateStagedPaymentMethodData",
+    "objectType": "procedure",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

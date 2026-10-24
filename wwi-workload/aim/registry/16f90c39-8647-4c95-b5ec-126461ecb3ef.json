@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -109,6 +110,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/application/procedure/configuration_enableinmemory"
+    },
+    "converted": {
+      "checksum": "2a5c8aba4d333bfd52b1b88b5df90b05",
+      "path": "snowflake/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql"
+    },
     "source": {
       "checksum": "3dc29f16d4d7c4500b43b4ef57279ab8",
       "path": "source/wideworldimportersdw/application/procedure/configuration_enableinmemory.sql"
@@ -117,6 +125,45 @@
   "id": "16f90c39-8647-4c95-b5ec-126461ecb3ef",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-EWI-TS0089",
+      "count": 1,
+      "severity": "low"
+    },
+    {
+      "code": "SSC-EWI-0073",
+      "count": 26,
+      "severity": "medium"
+    },
+    {
+      "code": "SSC-EWI-TS0135",
+      "count": 1,
+      "severity": "medium"
+    },
+    {
+      "code": "SSC-EWI-TS0141",
+      "count": 1,
+      "severity": "medium"
+    },
+    {
+      "code": "SSC-EWI-0003",
+      "count": 12,
+      "severity": "medium"
+    },
+    {
+      "code": "SSC-FDM-TS0029",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-0131",
+      "count": 3
+    },
+    {
+      "code": "SSC-FDM-0019",
+      "count": 12
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 1
@@ -126,13 +173,21 @@
     "columns": []
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Application.Configuration_EnableInMemory",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Application.Configuration_EnableInMemory",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "Configuration_EnableInMemory",
     "objectType": "procedure",
     "platform": "sqlServer",
     "schema": "Application"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Application.Configuration_EnableInMemory",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Configuration_EnableInMemory",
+    "objectType": "procedure",
+    "schema": "Application"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

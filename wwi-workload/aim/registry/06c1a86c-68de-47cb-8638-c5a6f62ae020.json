@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -38,6 +39,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/dimension/table/employee"
+    },
+    "converted": {
+      "checksum": "33f5fc6a171ab424ce74ace9e031b980",
+      "path": "snowflake/wideworldimportersdw/dimension/table/employee.sql"
+    },
     "source": {
       "checksum": "f3ba860bd3cd13cfd910e0cc004193bf",
       "path": "source/wideworldimportersdw/dimension/table/employee.sql"
@@ -46,6 +54,20 @@
   "id": "06c1a86c-68de-47cb-8638-c5a6f62ae020",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-0012",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0002",
+      "count": 2
+    },
+    {
+      "code": "SSC-PRF-0002",
+      "count": 2
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 1
@@ -58,6 +80,8 @@
         "isPrimaryKey": true,
         "name": "\"Employee Key\"",
         "nullable": false,
+        "targetName": "\"Employee Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -65,6 +89,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Employee ID\"",
         "nullable": false,
+        "targetName": "\"WWI Employee ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -72,6 +98,8 @@
         "isPrimaryKey": false,
         "name": "Employee",
         "nullable": false,
+        "targetName": "Employee",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -79,6 +107,8 @@
         "isPrimaryKey": false,
         "name": "\"Preferred Name\"",
         "nullable": false,
+        "targetName": "\"Preferred Name\"",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -86,6 +116,8 @@
         "isPrimaryKey": false,
         "name": "\"Is Salesperson\"",
         "nullable": false,
+        "targetName": "\"Is Salesperson\"",
+        "targetType": "BOOLEAN",
         "type": "BIT"
       },
       {
@@ -93,6 +125,8 @@
         "isPrimaryKey": false,
         "name": "Photo",
         "nullable": true,
+        "targetName": "Photo",
+        "targetType": "VARBINARY",
         "type": "VARBINARY"
       },
       {
@@ -100,6 +134,8 @@
         "isPrimaryKey": false,
         "name": "\"Valid From\"",
         "nullable": false,
+        "targetName": "\"Valid From\"",
+        "targetType": "",
         "type": "DATETIME2"
       },
       {
@@ -107,6 +143,8 @@
         "isPrimaryKey": false,
         "name": "\"Valid To\"",
         "nullable": false,
+        "targetName": "\"Valid To\"",
+        "targetType": "",
         "type": "DATETIME2"
       },
       {
@@ -114,6 +152,8 @@
         "isPrimaryKey": false,
         "name": "\"Lineage Key\"",
         "nullable": false,
+        "targetName": "\"Lineage Key\"",
+        "targetType": "INT",
         "type": "INT"
       }
     ],
@@ -123,13 +163,21 @@
     }
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Dimension.Employee",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Dimension.Employee",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "Employee",
     "objectType": "table",
     "platform": "sqlServer",
     "schema": "Dimension"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Dimension.Employee",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Employee",
+    "objectType": "table",
+    "schema": "Dimension"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

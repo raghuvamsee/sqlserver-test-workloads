@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -22,6 +23,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/schema/reports"
+    },
+    "converted": {
+      "checksum": "a57e2f64d6028f39b37aaa95b2fc272d",
+      "path": "snowflake/wideworldimportersdw/schema/reports.sql"
+    },
     "source": {
       "checksum": "4b9ce24818f1c67ae8c400b48c136058",
       "path": "source/wideworldimportersdw/schema/reports.sql"
@@ -39,12 +47,19 @@
     "columns": []
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Reports",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Reports",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "Reports",
     "objectType": "schema",
     "platform": "sqlServer"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Reports",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Reports",
+    "objectType": "schema"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

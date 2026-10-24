@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -34,6 +35,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/fact/table/stock holding"
+    },
+    "converted": {
+      "checksum": "7354235cb1235832a94ed2bd12c2dbdd",
+      "path": "snowflake/wideworldimportersdw/fact/table/stock holding.sql"
+    },
     "source": {
       "checksum": "e28dd7cc0b9ea96f68b8d0a7e579e763",
       "path": "source/wideworldimportersdw/fact/table/stock holding.sql"
@@ -42,6 +50,16 @@
   "id": "df33c519-db68-4b3b-9f03-726dababac27",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0002",
+      "count": 1
+    },
+    {
+      "code": "SSC-PRF-0002",
+      "count": 1
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 2
@@ -54,6 +72,8 @@
         "isPrimaryKey": true,
         "name": "\"Stock Holding Key\"",
         "nullable": false,
+        "targetName": "\"Stock Holding Key\"",
+        "targetType": "BIGINT",
         "type": "BIGINT"
       },
       {
@@ -61,6 +81,8 @@
         "isPrimaryKey": false,
         "name": "\"Stock Item Key\"",
         "nullable": false,
+        "targetName": "\"Stock Item Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -68,6 +90,8 @@
         "isPrimaryKey": false,
         "name": "\"Quantity On Hand\"",
         "nullable": false,
+        "targetName": "\"Quantity On Hand\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -75,6 +99,8 @@
         "isPrimaryKey": false,
         "name": "\"Bin Location\"",
         "nullable": false,
+        "targetName": "\"Bin Location\"",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -82,6 +108,8 @@
         "isPrimaryKey": false,
         "name": "\"Last Stocktake Quantity\"",
         "nullable": false,
+        "targetName": "\"Last Stocktake Quantity\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -89,6 +117,8 @@
         "isPrimaryKey": false,
         "name": "\"Last Cost Price\"",
         "nullable": false,
+        "targetName": "\"Last Cost Price\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -96,6 +126,8 @@
         "isPrimaryKey": false,
         "name": "\"Reorder Level\"",
         "nullable": false,
+        "targetName": "\"Reorder Level\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -103,6 +135,8 @@
         "isPrimaryKey": false,
         "name": "\"Target Stock Level\"",
         "nullable": false,
+        "targetName": "\"Target Stock Level\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -110,6 +144,8 @@
         "isPrimaryKey": false,
         "name": "\"Lineage Key\"",
         "nullable": false,
+        "targetName": "\"Lineage Key\"",
+        "targetType": "INT",
         "type": "INT"
       }
     ],
@@ -119,13 +155,21 @@
     }
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Fact.[Stock Holding]",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Fact.[Stock Holding]",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "[Stock Holding]",
     "objectType": "table",
     "platform": "sqlServer",
     "schema": "Fact"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Fact.\"Stock Holding\"",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "\"Stock Holding\"",
+    "objectType": "table",
+    "schema": "Fact"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

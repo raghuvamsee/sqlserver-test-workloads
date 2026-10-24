@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -44,6 +45,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/application/procedure/configuration_configureforenterpriseedition"
+    },
+    "converted": {
+      "checksum": "c174c6383f884f2e5c0290cd67e38982",
+      "path": "snowflake/wideworldimportersdw/application/procedure/configuration_configureforenterpriseedition.sql"
+    },
     "source": {
       "checksum": "0a25fae42ad4be5f6c3d0598f34e4d2d",
       "path": "source/wideworldimportersdw/application/procedure/configuration_configureforenterpriseedition.sql"
@@ -61,13 +69,21 @@
     "columns": []
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Application.Configuration_ConfigureForEnterpriseEdition",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Application.Configuration_ConfigureForEnterpriseEdition",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "Configuration_ConfigureForEnterpriseEdition",
     "objectType": "procedure",
     "platform": "sqlServer",
     "schema": "Application"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Application.Configuration_ConfigureForEnterpriseEdition",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Configuration_ConfigureForEnterpriseEdition",
+    "objectType": "procedure",
+    "schema": "Application"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

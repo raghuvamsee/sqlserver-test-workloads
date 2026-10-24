@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -24,6 +25,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/integration/function/generatedatedimensioncolumns"
+    },
+    "converted": {
+      "checksum": "9ff0d11cf57c785e6de715cd0aa86f61",
+      "path": "snowflake/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql"
+    },
     "source": {
       "checksum": "760efc32d573dc8b7a6f9e894380d5de",
       "path": "source/wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql"
@@ -32,6 +40,12 @@
   "id": "168e8cdf-2d3c-4665-ae1b-b0110293494c",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0012",
+      "count": 14
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 0
@@ -46,12 +60,15 @@
           "isCursor": false,
           "name": "@Date",
           "required": true,
+          "targetName": "DATE",
+          "targetType": "DATE",
           "type": "DATE"
         }
       ],
       "returns": [
         {
           "name": "[Date]",
+          "targetType": "UNKNOWN",
           "type": "DATE"
         },
         {
@@ -110,13 +127,21 @@
     }
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Integration.GenerateDateDimensionColumns(DATE)",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Integration.GenerateDateDimensionColumns(DATE)",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "GenerateDateDimensionColumns",
     "objectType": "function",
     "platform": "sqlServer",
     "schema": "Integration"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Integration.GenerateDateDimensionColumns(DATE)",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "GenerateDateDimensionColumns",
+    "objectType": "function",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

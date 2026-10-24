@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -25,6 +26,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/sequences/sequence/lineagekey"
+    },
+    "converted": {
+      "checksum": "b10b35ede04125630fcfbac68cd7f6f7",
+      "path": "snowflake/wideworldimportersdw/sequences/sequence/lineagekey.sql"
+    },
     "source": {
       "checksum": "d2d2e3a1382714cf8530d01131f005f7",
       "path": "source/wideworldimportersdw/sequences/sequence/lineagekey.sql"
@@ -33,6 +41,18 @@
   "id": "ec6d1d59-275d-4534-ac94-d38e8400544f",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-EWI-0001",
+      "count": 1,
+      "severity": "critical"
+    },
+    {
+      "code": "SSC-EWI-0120",
+      "count": 1,
+      "severity": "low"
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 0
@@ -42,13 +62,21 @@
     "columns": []
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Sequences.LineageKey",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Sequences.LineageKey",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "LineageKey",
     "objectType": "sequence",
     "platform": "sqlServer",
     "schema": "Sequences"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Sequences.LineageKey",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "LineageKey",
+    "objectType": "sequence",
+    "schema": "Sequences"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

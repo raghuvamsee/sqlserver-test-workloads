@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -44,6 +45,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/dimension/table/stock item"
+    },
+    "converted": {
+      "checksum": "ee771dcca9a490fc30ceb321f42e1847",
+      "path": "snowflake/wideworldimportersdw/dimension/table/stock item.sql"
+    },
     "source": {
       "checksum": "654bd83665632e495ce5d9c80bd10c8c",
       "path": "source/wideworldimportersdw/dimension/table/stock item.sql"
@@ -52,6 +60,20 @@
   "id": "172e8c9d-5d97-43b1-ba0d-8b2de51fa3ca",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-0012",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0002",
+      "count": 7
+    },
+    {
+      "code": "SSC-PRF-0002",
+      "count": 7
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 1
@@ -64,6 +86,8 @@
         "isPrimaryKey": true,
         "name": "\"Stock Item Key\"",
         "nullable": false,
+        "targetName": "\"Stock Item Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -71,6 +95,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Stock Item ID\"",
         "nullable": false,
+        "targetName": "\"WWI Stock Item ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -78,6 +104,8 @@
         "isPrimaryKey": false,
         "name": "\"Stock Item\"",
         "nullable": false,
+        "targetName": "\"Stock Item\"",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -85,6 +113,8 @@
         "isPrimaryKey": false,
         "name": "Color",
         "nullable": false,
+        "targetName": "Color",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -92,6 +122,8 @@
         "isPrimaryKey": false,
         "name": "\"Selling Package\"",
         "nullable": false,
+        "targetName": "\"Selling Package\"",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -99,6 +131,8 @@
         "isPrimaryKey": false,
         "name": "\"Buying Package\"",
         "nullable": false,
+        "targetName": "\"Buying Package\"",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -106,6 +140,8 @@
         "isPrimaryKey": false,
         "name": "Brand",
         "nullable": false,
+        "targetName": "Brand",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -113,6 +149,8 @@
         "isPrimaryKey": false,
         "name": "Size",
         "nullable": false,
+        "targetName": "Size",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -120,6 +158,8 @@
         "isPrimaryKey": false,
         "name": "\"Lead Time Days\"",
         "nullable": false,
+        "targetName": "\"Lead Time Days\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -127,6 +167,8 @@
         "isPrimaryKey": false,
         "name": "\"Quantity Per Outer\"",
         "nullable": false,
+        "targetName": "\"Quantity Per Outer\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -134,6 +176,8 @@
         "isPrimaryKey": false,
         "name": "\"Is Chiller Stock\"",
         "nullable": false,
+        "targetName": "\"Is Chiller Stock\"",
+        "targetType": "BOOLEAN",
         "type": "BIT"
       },
       {
@@ -141,6 +185,8 @@
         "isPrimaryKey": false,
         "name": "Barcode",
         "nullable": true,
+        "targetName": "Barcode",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -148,6 +194,8 @@
         "isPrimaryKey": false,
         "name": "\"Tax Rate\"",
         "nullable": false,
+        "targetName": "\"Tax Rate\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -155,6 +203,8 @@
         "isPrimaryKey": false,
         "name": "\"Unit Price\"",
         "nullable": false,
+        "targetName": "\"Unit Price\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -162,6 +212,8 @@
         "isPrimaryKey": false,
         "name": "\"Recommended Retail Price\"",
         "nullable": true,
+        "targetName": "\"Recommended Retail Price\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -169,6 +221,8 @@
         "isPrimaryKey": false,
         "name": "\"Typical Weight Per Unit\"",
         "nullable": false,
+        "targetName": "\"Typical Weight Per Unit\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -176,6 +230,8 @@
         "isPrimaryKey": false,
         "name": "Photo",
         "nullable": true,
+        "targetName": "Photo",
+        "targetType": "VARBINARY",
         "type": "VARBINARY"
       },
       {
@@ -183,6 +239,8 @@
         "isPrimaryKey": false,
         "name": "\"Valid From\"",
         "nullable": false,
+        "targetName": "\"Valid From\"",
+        "targetType": "",
         "type": "DATETIME2"
       },
       {
@@ -190,6 +248,8 @@
         "isPrimaryKey": false,
         "name": "\"Valid To\"",
         "nullable": false,
+        "targetName": "\"Valid To\"",
+        "targetType": "",
         "type": "DATETIME2"
       },
       {
@@ -197,6 +257,8 @@
         "isPrimaryKey": false,
         "name": "\"Lineage Key\"",
         "nullable": false,
+        "targetName": "\"Lineage Key\"",
+        "targetType": "INT",
         "type": "INT"
       }
     ],
@@ -206,13 +268,21 @@
     }
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Dimension.[Stock Item]",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Dimension.[Stock Item]",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "[Stock Item]",
     "objectType": "table",
     "platform": "sqlServer",
     "schema": "Dimension"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Dimension.\"Stock Item\"",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "\"Stock Item\"",
+    "objectType": "table",
+    "schema": "Dimension"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

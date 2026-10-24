@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -82,6 +83,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/integration/procedure/migratestagedsaledata"
+    },
+    "converted": {
+      "checksum": "4e54643c3bb2e6a4287f904064dfba48",
+      "path": "snowflake/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    },
     "source": {
       "checksum": "f3f31c7a66af13c35a00bc6dbed8680a",
       "path": "source/wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
@@ -90,6 +98,16 @@
   "id": "a4d9e481-0fc3-4291-bc5d-cc9a9c2b6b43",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0029",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0037",
+      "count": 1
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 3
@@ -102,19 +120,29 @@
       "returns": [
         {
           "name": "[Lineage Key]",
+          "targetName": "\"Lineage Key\"",
+          "targetType": "INT",
           "type": "INT"
         }
       ]
     }
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Integration.MigrateStagedSaleData",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Integration.MigrateStagedSaleData",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "MigrateStagedSaleData",
     "objectType": "procedure",
     "platform": "sqlServer",
     "schema": "Integration"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Integration.MigrateStagedSaleData",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "MigrateStagedSaleData",
+    "objectType": "procedure",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

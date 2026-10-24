@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0",
+  "source_system": "sql",
+  "engine_version": "2.51.3",
+  "source_file": "wideworldimportersdw/sequences/procedure/reseedallsequences.sql",
+  "source_checksum": "be179f2a7ecae2eb7383b0dbbdec496ada9bcb20c64f5722af4293b2cb470f6c",
+  "pairs": [
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlUseStatement",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "source_text": "USE WideWorldImportersDW",
+      "targets": [
+        "USE DATABASE <%wideworldimportersdw%>"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedallsequences.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 4,
+      "source_line_end": 16,
+      "source_text": "BEGIN\n--    -- Ensures that the next sequence values are above the maximum value of the related table columns\n--    SET NOCOUNT ON;\n\n    EXEC Sequences.ReseedSequenceBeyondTableValues @SequenceName = 'CityKey', @SchemaName = 'Dimension', @TableName = 'City', @ColumnName = 'City Key';\n    EXEC Sequences.ReseedSequenceBeyondTableValues @SequenceName = 'CustomerKey', @SchemaName = 'Dimension', @TableName = 'Customer', @ColumnName = 'Customer Key';\n    EXEC Sequences.ReseedSequenceBeyondTableValues @SequenceName = 'EmployeeKey', @SchemaName = 'Dimension', @TableName = 'Employee', @ColumnName = 'Employee Key';\n    EXEC Sequences.ReseedSequenceBeyondTableValues @SequenceName = 'LineageKey', @SchemaName = 'Integration', @TableName = 'Lineage', @ColumnName = 'Lineage Key';\n    EXEC Sequences.ReseedSequenceBeyondTableValues @SequenceName = 'PaymentMethodKey', @SchemaName = 'Dimension', @TableName = 'Payment Method', @ColumnName = 'Payment Method Key';\n    EXEC Sequences.ReseedSequenceBeyondTableValues @SequenceName = 'StockItemKey', @SchemaName = 'Dimension', @TableName = 'Stock Item', @ColumnName = 'Stock Item Key';\n    EXEC Sequences.ReseedSequenceBeyondTableValues @SequenceName = 'SupplierKey', @SchemaName = 'Dimension', @TableName = 'Supplier', @ColumnName = 'Supplier Key';\n    EXEC Sequences.ReseedSequenceBeyondTableValues @SequenceName = 'TransactionTypeKey', @SchemaName = 'Dimension', @TableName = 'Transaction Type', @ColumnName = 'Transaction Type Key';\nEND;",
+      "targets": [],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedallsequences.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 6,
+      "source_line_end": 6,
+      "source_text": "--    -- Ensures that the next sequence values are above the maximum value of the related table columns\n--    SET NOCOUNT ON;",
+      "targets": [
+        "--    -- Ensures that the next sequence values are above the maximum value of the related table columns\n--    SET NOCOUNT ON;"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedallsequences.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 8,
+      "source_line_end": 8,
+      "source_text": "\n    EXEC Sequences.ReseedSequenceBeyondTableValues @SequenceName = 'CityKey', @SchemaName = 'Dimension', @TableName = 'City', @ColumnName = 'City Key';",
+      "targets": [
+        "CALL Sequences.ReseedSequenceBeyondTableValues('CityKey', 'Dimension', 'City', 'City Key');"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedallsequences.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 9,
+      "source_line_end": 9,
+      "source_text": "    EXEC Sequences.ReseedSequenceBeyondTableValues @SequenceName = 'CustomerKey', @SchemaName = 'Dimension', @TableName = 'Customer', @ColumnName = 'Customer Key';",
+      "targets": [
+        "CALL Sequences.ReseedSequenceBeyondTableValues('CustomerKey', 'Dimension', 'Customer', 'Customer Key');"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedallsequences.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 10,
+      "source_line_end": 10,
+      "source_text": "    EXEC Sequences.ReseedSequenceBeyondTableValues @SequenceName = 'EmployeeKey', @SchemaName = 'Dimension', @TableName = 'Employee', @ColumnName = 'Employee Key';",
+      "targets": [
+        "CALL Sequences.ReseedSequenceBeyondTableValues('EmployeeKey', 'Dimension', 'Employee', 'Employee Key');"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedallsequences.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 11,
+      "source_line_end": 11,
+      "source_text": "    EXEC Sequences.ReseedSequenceBeyondTableValues @SequenceName = 'LineageKey', @SchemaName = 'Integration', @TableName = 'Lineage', @ColumnName = 'Lineage Key';",
+      "targets": [
+        "CALL Sequences.ReseedSequenceBeyondTableValues('LineageKey', 'Integration', 'Lineage', 'Lineage Key');"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedallsequences.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 12,
+      "source_line_end": 12,
+      "source_text": "    EXEC Sequences.ReseedSequenceBeyondTableValues @SequenceName = 'PaymentMethodKey', @SchemaName = 'Dimension', @TableName = 'Payment Method', @ColumnName = 'Payment Method Key';",
+      "targets": [
+        "CALL Sequences.ReseedSequenceBeyondTableValues('PaymentMethodKey', 'Dimension', 'Payment Method', 'Payment Method Key');"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedallsequences.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 13,
+      "source_line_end": 13,
+      "source_text": "    EXEC Sequences.ReseedSequenceBeyondTableValues @SequenceName = 'StockItemKey', @SchemaName = 'Dimension', @TableName = 'Stock Item', @ColumnName = 'Stock Item Key';",
+      "targets": [
+        "CALL Sequences.ReseedSequenceBeyondTableValues('StockItemKey', 'Dimension', 'Stock Item', 'Stock Item Key');"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedallsequences.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 14,
+      "source_line_end": 14,
+      "source_text": "    EXEC Sequences.ReseedSequenceBeyondTableValues @SequenceName = 'SupplierKey', @SchemaName = 'Dimension', @TableName = 'Supplier', @ColumnName = 'Supplier Key';",
+      "targets": [
+        "CALL Sequences.ReseedSequenceBeyondTableValues('SupplierKey', 'Dimension', 'Supplier', 'Supplier Key');"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedallsequences.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 15,
+      "source_line_end": 15,
+      "source_text": "    EXEC Sequences.ReseedSequenceBeyondTableValues @SequenceName = 'TransactionTypeKey', @SchemaName = 'Dimension', @TableName = 'Transaction Type', @ColumnName = 'Transaction Type Key';",
+      "targets": [
+        "CALL Sequences.ReseedSequenceBeyondTableValues('TransactionTypeKey', 'Dimension', 'Transaction Type', 'Transaction Type Key');"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedallsequences.sql"
+    }
+  ]
+}

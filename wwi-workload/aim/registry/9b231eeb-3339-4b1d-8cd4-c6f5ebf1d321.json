@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -90,6 +91,11 @@
         "relationTypes": [
           "EXECUTE"
         ]
+      },
+      {
+        "id": "30a8108a-0cb4-43c3-8dba-3a36b9d44c6f",
+        "isMissing": false,
+        "relationTypes": []
       }
     ],
     "hasTransitiveMissingDependencies": false,
@@ -97,6 +103,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/application/procedure/configuration_populatelargesaletable"
+    },
+    "converted": {
+      "checksum": "a25db00b546cd9ad19ea328afa89e2a3",
+      "path": "snowflake/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
     "source": {
       "checksum": "5af975de7e731e4844a7564998fc6988",
       "path": "source/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
@@ -105,6 +118,42 @@
   "id": "9b231eeb-3339-4b1d-8cd4-c6f5ebf1d321",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-EWI-0001",
+      "count": 1,
+      "severity": "critical"
+    },
+    {
+      "code": "SSC-EWI-0040",
+      "count": 1,
+      "severity": "low"
+    },
+    {
+      "code": "SSC-FDM-TS0029",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0037",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0019",
+      "count": 4
+    },
+    {
+      "code": "SSC-FDM-0055",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0054",
+      "count": 7
+    },
+    {
+      "code": "SSC-FDM-0021",
+      "count": 6
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 4
@@ -119,6 +168,8 @@
           "isCursor": false,
           "name": "@EstimatedRowsFor2012",
           "required": false,
+          "targetName": "ESTIMATEDROWSFOR2012",
+          "targetType": "BIGINT",
           "type": "BIGINT"
         }
       ],
@@ -126,13 +177,21 @@
     }
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Application.Configuration_PopulateLargeSaleTable(BIGINT)",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Application.Configuration_PopulateLargeSaleTable(BIGINT)",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "Configuration_PopulateLargeSaleTable",
     "objectType": "procedure",
     "platform": "sqlServer",
     "schema": "Application"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Application.Configuration_PopulateLargeSaleTable(BIGINT)",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Configuration_PopulateLargeSaleTable",
+    "objectType": "procedure",
+    "schema": "Application"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

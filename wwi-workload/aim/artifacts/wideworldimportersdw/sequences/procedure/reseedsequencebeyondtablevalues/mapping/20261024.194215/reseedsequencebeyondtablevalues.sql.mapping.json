@@ -1,0 +1,199 @@
+{
+  "schema_version": "1.0",
+  "source_system": "sql",
+  "engine_version": "2.51.3",
+  "source_file": "wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql",
+  "source_checksum": "6d1d13d657758830665c5620bcd268b85dda17ad44b48d1267173eec4cf05b55",
+  "pairs": [
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlUseStatement",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "source_text": "USE WideWorldImportersDW",
+      "targets": [
+        "USE DATABASE <%wideworldimportersdw%>"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 8,
+      "source_line_end": 35,
+      "source_text": "BEGIN\n--    -- Ensures that the next sequence value is above the maximum value of the supplied table column\n--    SET NOCOUNT ON;\n\n    DECLARE @SQL nvarchar(max);\n    DECLARE @CurrentTableMaximumValue bigint;\n    DECLARE @NewSequenceValue bigint;\n    DECLARE @CurrentSequenceMaximumValue bigint\n        = (SELECT CAST(current_value AS bigint) FROM sys.sequences\n                                                WHERE name = @SequenceName\n                                                AND SCHEMA_NAME(schema_id) = N'Sequences');\n    CREATE TABLE #CurrentValue\n    (\n        CurrentValue bigint\n    )\n\n    SET @SQL = N'INSERT #CurrentValue (CurrentValue) SELECT COALESCE(MAX(' + QUOTENAME(@ColumnName) + N'), 0) FROM ' + QUOTENAME(@SchemaName) + N'.' + QUOTENAME(@TableName) + N';';\n    EXECUTE (\n--             /*<<BARE:@SQL#5243762~src=Lyo8PFVOUkVTT0xWRUQ6QFNRTCM1MjQzNzYyfndzPTAsMH5zcmM9UUZOUlRBPT0qL0BTUUwvKj4+VU5SRVNPTFZFRDpAU1FMKi8=*/ /*<<UNRESOLVED:@SQL#5243762~ws=0,0~src=QFNRTA==*/  @SQL /*>>UNRESOLVED:@SQL*/ /*>>BARE:@SQL*/\n    );\n    SET @CurrentTableMaximumValue = (SELECT CurrentValue FROM #CurrentValue);\n    DROP TABLE #CurrentValue;\n\n    IF @CurrentTableMaximumValue >= @CurrentSequenceMaximumValue\n    BEGIN\n        SET @NewSequenceValue = @CurrentTableMaximumValue + 1;\n        SET @SQL = N'ALTER SEQUENCE Sequences.' + QUOTENAME(@SequenceName) + N' RESTART WITH ' + CAST(@NewSequenceValue AS nvarchar(20)) + N';';\n        EXECUTE (\n--                 /*<<BARE:@SQL#11494622~src=Lyo8PFVOUkVTT0xWRUQ6QFNRTCMxMTQ5NDYyMn53cz0wLDB+c3JjPVFGTlJUQT09Ki9AU1FMLyo+PlVOUkVTT0xWRUQ6QFNRTCov*/ /*<<UNRESOLVED:@SQL#11494622~ws=0,0~src=QFNRTA==*/  @SQL /*>>UNRESOLVED:@SQL*/ /*>>BARE:@SQL*/\n        );\n    END;\nEND;",
+      "targets": [],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 10,
+      "source_line_end": 10,
+      "source_text": "--    -- Ensures that the next sequence value is above the maximum value of the supplied table column\n--    SET NOCOUNT ON;",
+      "targets": [
+        "--    -- Ensures that the next sequence value is above the maximum value of the supplied table column\n--    SET NOCOUNT ON;"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 12,
+      "source_line_end": 12,
+      "source_text": "\n    DECLARE @SQL nvarchar(max);",
+      "targets": [],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 13,
+      "source_line_end": 13,
+      "source_text": "    DECLARE @CurrentTableMaximumValue bigint;",
+      "targets": [],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 14,
+      "source_line_end": 14,
+      "source_text": "    DECLARE @NewSequenceValue bigint;",
+      "targets": [],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 15,
+      "source_line_end": 18,
+      "source_text": "    DECLARE @CurrentSequenceMaximumValue bigint\n        = (SELECT CAST(current_value AS bigint) FROM sys.sequences\n                                                WHERE name = @SequenceName\n                                                AND SCHEMA_NAME(schema_id) = N'Sequences');",
+      "targets": [
+        "CURRENTSEQUENCEMAXIMUMVALUE := (SELECT CAST(current_value AS BIGINT) FROM\n      INFORMATION_SCHEMA.SEQUENCES\n                                                  WHERE\n      SEQUENCE_NAME = :SEQUENCENAME\n                                                  AND SCHEMA_NAME(schema_id) = 'Sequences'\n);"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 16,
+      "source_line_end": 18,
+      "source_text": "SELECT CAST(current_value AS bigint) FROM sys.sequences\n                                                WHERE name = @SequenceName\n                                                AND SCHEMA_NAME(schema_id) = N'Sequences'",
+      "targets": [
+        "SELECT CAST(current_value AS BIGINT) FROM\n   INFORMATION_SCHEMA.SEQUENCES\n                                                WHERE\n   SEQUENCE_NAME = :SEQUENCENAME\n                                                AND SCHEMA_NAME(schema_id) = 'Sequences'"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 19,
+      "source_line_end": 22,
+      "source_text": "    CREATE TABLE #CurrentValue\n    (\n        CurrentValue bigint\n    )",
+      "targets": [
+        "CREATE OR REPLACE TEMPORARY TABLE PUBLIC.T_CurrentValue\n(\n   CurrentValue BIGINT\n);"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 24,
+      "source_line_end": 24,
+      "source_text": "\n    SET @SQL = N'INSERT #CurrentValue (CurrentValue) SELECT COALESCE(MAX(' + QUOTENAME(@ColumnName) + N'), 0) FROM ' + QUOTENAME(@SchemaName) + N'.' + QUOTENAME(@TableName) + N';';",
+      "targets": [
+        "SQL := 'INSERT INTO PUBLIC.T_CurrentValue (CurrentValue) SELECT\n   COALESCE(MAX(' || <%AIM_DB%>.PUBLIC.QUOTENAME_UDF(:COLUMNNAME) || '), 0) FROM\n   ' || <%AIM_DB%>.PUBLIC.QUOTENAME_UDF(:SCHEMANAME) || '.' || <%AIM_DB%>.PUBLIC.QUOTENAME_UDF(:TABLENAME) || ';';"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 25,
+      "source_line_end": 25,
+      "source_text": "    EXECUTE (\n--             /*<<BARE:@SQL#5243762~src=Lyo8PFVOUkVTT0xWRUQ6QFNRTCM1MjQzNzYyfndzPTAsMH5zcmM9UUZOUlRBPT0qL0BTUUwvKj4+VU5SRVNPTFZFRDpAU1FMKi8=*/ /*<<UNRESOLVED:@SQL#5243762~ws=0,0~src=QFNRTA==*/  @SQL /*>>UNRESOLVED:@SQL*/ /*>>BARE:@SQL*/\n    );",
+      "targets": [
+        "EXECUTE IMMEDIATE :SQL;"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 26,
+      "source_line_end": 26,
+      "source_text": "    SET @CurrentTableMaximumValue = (SELECT CurrentValue FROM #CurrentValue);",
+      "targets": [
+        "CURRENTTABLEMAXIMUMVALUE := (SELECT\n      CurrentValue\n   FROM\n      PUBLIC.T_CurrentValue\n);"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 27,
+      "source_line_end": 27,
+      "source_text": "    DROP TABLE #CurrentValue;",
+      "targets": [
+        "DROP TABLE IF EXISTS PUBLIC.T_CurrentValue;"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 29,
+      "source_line_end": 34,
+      "source_text": "\n    IF @CurrentTableMaximumValue >= @CurrentSequenceMaximumValue\n    BEGIN\n        SET @NewSequenceValue = @CurrentTableMaximumValue + 1;\n        SET @SQL = N'ALTER SEQUENCE Sequences.' + QUOTENAME(@SequenceName) + N' RESTART WITH ' + CAST(@NewSequenceValue AS nvarchar(20)) + N';';\n        EXECUTE (\n--                 /*<<BARE:@SQL#11494622~src=Lyo8PFVOUkVTT0xWRUQ6QFNRTCMxMTQ5NDYyMn53cz0wLDB+c3JjPVFGTlJUQT09Ki9AU1FMLyo+PlVOUkVTT0xWRUQ6QFNRTCov*/ /*<<UNRESOLVED:@SQL#11494622~ws=0,0~src=QFNRTA==*/  @SQL /*>>UNRESOLVED:@SQL*/ /*>>BARE:@SQL*/\n        );\n    END;",
+      "targets": [
+        "IF (:CURRENTTABLEMAXIMUMVALUE >= :CURRENTSEQUENCEMAXIMUMVALUE) THEN\n   BEGIN\n      NEWSEQUENCEVALUE := :CURRENTTABLEMAXIMUMVALUE + 1;\n      SQL := 'ALTER SEQUENCE Sequences.' || <%AIM_DB%>.PUBLIC.QUOTENAME_UDF(:SEQUENCENAME) || ' RESTART WITH ' || CAST(:NEWSEQUENCEVALUE AS NVARCHAR(20)) || ';';\n      EXECUTE IMMEDIATE :SQL;\n   END;\nEND IF;"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 30,
+      "source_line_end": 34,
+      "source_text": "    BEGIN\n        SET @NewSequenceValue = @CurrentTableMaximumValue + 1;\n        SET @SQL = N'ALTER SEQUENCE Sequences.' + QUOTENAME(@SequenceName) + N' RESTART WITH ' + CAST(@NewSequenceValue AS nvarchar(20)) + N';';\n        EXECUTE (\n--                 /*<<BARE:@SQL#11494622~src=Lyo8PFVOUkVTT0xWRUQ6QFNRTCMxMTQ5NDYyMn53cz0wLDB+c3JjPVFGTlJUQT09Ki9AU1FMLyo+PlVOUkVTT0xWRUQ6QFNRTCov*/ /*<<UNRESOLVED:@SQL#11494622~ws=0,0~src=QFNRTA==*/  @SQL /*>>UNRESOLVED:@SQL*/ /*>>BARE:@SQL*/\n        );\n    END;",
+      "targets": [
+        "    BEGIN\n       NEWSEQUENCEVALUE := :CURRENTTABLEMAXIMUMVALUE + 1;\n       SQL := 'ALTER SEQUENCE Sequences.' || <%AIM_DB%>.PUBLIC.QUOTENAME_UDF(:SEQUENCENAME) || ' RESTART WITH ' || CAST(:NEWSEQUENCEVALUE AS NVARCHAR(20)) || ';';\n       EXECUTE IMMEDIATE :SQL;\n    END;"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 31,
+      "source_line_end": 31,
+      "source_text": "        SET @NewSequenceValue = @CurrentTableMaximumValue + 1;",
+      "targets": [
+        "NEWSEQUENCEVALUE := :CURRENTTABLEMAXIMUMVALUE + 1;"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 32,
+      "source_line_end": 32,
+      "source_text": "        SET @SQL = N'ALTER SEQUENCE Sequences.' + QUOTENAME(@SequenceName) + N' RESTART WITH ' + CAST(@NewSequenceValue AS nvarchar(20)) + N';';",
+      "targets": [
+        "SQL := 'ALTER SEQUENCE Sequences.' || <%AIM_DB%>.PUBLIC.QUOTENAME_UDF(:SEQUENCENAME) || ' RESTART WITH ' || CAST(:NEWSEQUENCEVALUE AS NVARCHAR(20)) || ';';"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 33,
+      "source_line_end": 33,
+      "source_text": "        EXECUTE (\n--                 /*<<BARE:@SQL#11494622~src=Lyo8PFVOUkVTT0xWRUQ6QFNRTCMxMTQ5NDYyMn53cz0wLDB+c3JjPVFGTlJUQT09Ki9AU1FMLyo+PlVOUkVTT0xWRUQ6QFNRTCov*/ /*<<UNRESOLVED:@SQL#11494622~ws=0,0~src=QFNRTA==*/  @SQL /*>>UNRESOLVED:@SQL*/ /*>>BARE:@SQL*/\n        );",
+      "targets": [
+        "EXECUTE IMMEDIATE :SQL;"
+      ],
+      "target_file": "wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql"
+    }
+  ]
+}

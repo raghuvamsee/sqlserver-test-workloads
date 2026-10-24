@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -38,6 +39,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/dimension/table/city"
+    },
+    "converted": {
+      "checksum": "3588b277d69f6c7c7695113cf6e4d52a",
+      "path": "snowflake/wideworldimportersdw/dimension/table/city.sql"
+    },
     "source": {
       "checksum": "31f66cce3a70be77d53947afc688340f",
       "path": "source/wideworldimportersdw/dimension/table/city.sql"
@@ -46,6 +54,20 @@
   "id": "d20973f5-32ac-4262-8c9e-24dc1f9cb864",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-0012",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0002",
+      "count": 7
+    },
+    {
+      "code": "SSC-PRF-0002",
+      "count": 7
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 1
@@ -58,6 +80,8 @@
         "isPrimaryKey": true,
         "name": "\"City Key\"",
         "nullable": false,
+        "targetName": "\"City Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -65,6 +89,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI City ID\"",
         "nullable": false,
+        "targetName": "\"WWI City ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -72,6 +98,8 @@
         "isPrimaryKey": false,
         "name": "City",
         "nullable": false,
+        "targetName": "City",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -79,6 +107,8 @@
         "isPrimaryKey": false,
         "name": "\"State Province\"",
         "nullable": false,
+        "targetName": "\"State Province\"",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -86,6 +116,8 @@
         "isPrimaryKey": false,
         "name": "Country",
         "nullable": false,
+        "targetName": "Country",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -93,6 +125,8 @@
         "isPrimaryKey": false,
         "name": "Continent",
         "nullable": false,
+        "targetName": "Continent",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -100,6 +134,8 @@
         "isPrimaryKey": false,
         "name": "\"Sales Territory\"",
         "nullable": false,
+        "targetName": "\"Sales Territory\"",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -107,6 +143,8 @@
         "isPrimaryKey": false,
         "name": "Region",
         "nullable": false,
+        "targetName": "Region",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -114,6 +152,8 @@
         "isPrimaryKey": false,
         "name": "Subregion",
         "nullable": false,
+        "targetName": "Subregion",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -121,6 +161,8 @@
         "isPrimaryKey": false,
         "name": "Location",
         "nullable": true,
+        "targetName": "Location",
+        "targetType": "GEOGRAPHY",
         "type": "GEOGRAPHY"
       },
       {
@@ -128,6 +170,8 @@
         "isPrimaryKey": false,
         "name": "\"Latest Recorded Population\"",
         "nullable": false,
+        "targetName": "\"Latest Recorded Population\"",
+        "targetType": "BIGINT",
         "type": "BIGINT"
       },
       {
@@ -135,6 +179,8 @@
         "isPrimaryKey": false,
         "name": "\"Valid From\"",
         "nullable": false,
+        "targetName": "\"Valid From\"",
+        "targetType": "",
         "type": "DATETIME2"
       },
       {
@@ -142,6 +188,8 @@
         "isPrimaryKey": false,
         "name": "\"Valid To\"",
         "nullable": false,
+        "targetName": "\"Valid To\"",
+        "targetType": "",
         "type": "DATETIME2"
       },
       {
@@ -149,6 +197,8 @@
         "isPrimaryKey": false,
         "name": "\"Lineage Key\"",
         "nullable": false,
+        "targetName": "\"Lineage Key\"",
+        "targetType": "INT",
         "type": "INT"
       }
     ],
@@ -158,13 +208,21 @@
     }
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Dimension.City",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Dimension.City",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "City",
     "objectType": "table",
     "platform": "sqlServer",
     "schema": "Dimension"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Dimension.City",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "City",
+    "objectType": "table",
+    "schema": "Dimension"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

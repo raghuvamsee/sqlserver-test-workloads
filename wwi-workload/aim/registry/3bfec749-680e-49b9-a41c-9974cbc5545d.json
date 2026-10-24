@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -128,6 +129,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/application/procedure/configuration_reseedetl"
+    },
+    "converted": {
+      "checksum": "fc18a5539aead5aff9ac510b04956b19",
+      "path": "snowflake/wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
     "source": {
       "checksum": "0d9112e1cbaf356d0dd17a1ce3481abd",
       "path": "source/wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
@@ -136,6 +144,12 @@
   "id": "3bfec749-680e-49b9-a41c-9974cbc5545d",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0029",
+      "count": 1
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 3
@@ -145,13 +159,21 @@
     "columns": []
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Application.Configuration_ReseedETL",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Application.Configuration_ReseedETL",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "Configuration_ReseedETL",
     "objectType": "procedure",
     "platform": "sqlServer",
     "schema": "Application"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Application.Configuration_ReseedETL",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Configuration_ReseedETL",
+    "objectType": "procedure",
+    "schema": "Application"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

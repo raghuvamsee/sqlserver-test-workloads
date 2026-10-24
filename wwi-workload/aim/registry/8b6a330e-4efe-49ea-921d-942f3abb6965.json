@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -22,6 +23,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/schema/sequences"
+    },
+    "converted": {
+      "checksum": "999fd5ef60266cc2a16763e1460ced18",
+      "path": "snowflake/wideworldimportersdw/schema/sequences.sql"
+    },
     "source": {
       "checksum": "01c3ca077a418ff2eb5db90d9bed5fd8",
       "path": "source/wideworldimportersdw/schema/sequences.sql"
@@ -39,12 +47,19 @@
     "columns": []
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Sequences",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Sequences",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "Sequences",
     "objectType": "schema",
     "platform": "sqlServer"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Sequences",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Sequences",
+    "objectType": "schema"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

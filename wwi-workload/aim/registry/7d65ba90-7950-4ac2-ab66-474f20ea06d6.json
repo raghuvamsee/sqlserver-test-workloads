@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -22,6 +23,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/schema/dimension"
+    },
+    "converted": {
+      "checksum": "7b97b90e9d03c649272adf3746b8e424",
+      "path": "snowflake/wideworldimportersdw/schema/dimension.sql"
+    },
     "source": {
       "checksum": "d4cc8561244d2504766c69894575d384",
       "path": "source/wideworldimportersdw/schema/dimension.sql"
@@ -39,12 +47,19 @@
     "columns": []
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Dimension",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Dimension",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "Dimension",
     "objectType": "schema",
     "platform": "sqlServer"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Dimension",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Dimension",
+    "objectType": "schema"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -46,6 +47,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/integration/table/lineage"
+    },
+    "converted": {
+      "checksum": "8a162c6d6d04db6da861f9c6bb41ea0d",
+      "path": "snowflake/wideworldimportersdw/integration/table/lineage.sql"
+    },
     "source": {
       "checksum": "3c8c220d157021a04cc2c224ee8490e2",
       "path": "source/wideworldimportersdw/integration/table/lineage.sql"
@@ -54,6 +62,12 @@
   "id": "64fd00bf-7950-477b-ba1a-16210cd0681c",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-0012",
+      "count": 1
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 1
@@ -66,6 +80,8 @@
         "isPrimaryKey": true,
         "name": "\"Lineage Key\"",
         "nullable": false,
+        "targetName": "\"Lineage Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -73,6 +89,8 @@
         "isPrimaryKey": false,
         "name": "\"Data Load Started\"",
         "nullable": false,
+        "targetName": "\"Data Load Started\"",
+        "targetType": "",
         "type": "DATETIME2"
       },
       {
@@ -80,6 +98,8 @@
         "isPrimaryKey": false,
         "name": "\"Table Name\"",
         "nullable": false,
+        "targetName": "\"Table Name\"",
+        "targetType": "VARCHAR",
         "type": "SYSNAME"
       },
       {
@@ -87,6 +107,8 @@
         "isPrimaryKey": false,
         "name": "\"Data Load Completed\"",
         "nullable": true,
+        "targetName": "\"Data Load Completed\"",
+        "targetType": "",
         "type": "DATETIME2"
       },
       {
@@ -94,6 +116,8 @@
         "isPrimaryKey": false,
         "name": "\"Was Successful\"",
         "nullable": false,
+        "targetName": "\"Was Successful\"",
+        "targetType": "BOOLEAN",
         "type": "BIT"
       },
       {
@@ -101,6 +125,8 @@
         "isPrimaryKey": false,
         "name": "\"Source System Cutoff Time\"",
         "nullable": false,
+        "targetName": "\"Source System Cutoff Time\"",
+        "targetType": "",
         "type": "DATETIME2"
       }
     ],
@@ -110,13 +136,21 @@
     }
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Integration.Lineage",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Integration.Lineage",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "Lineage",
     "objectType": "table",
     "platform": "sqlServer",
     "schema": "Integration"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Integration.Lineage",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Lineage",
+    "objectType": "table",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

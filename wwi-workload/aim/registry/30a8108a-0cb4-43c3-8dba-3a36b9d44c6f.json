@@ -1,0 +1,44 @@
+{
+  "codeStatus": {
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "9b231eeb-3339-4b1d-8cd4-c6f5ebf1d321"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "converted": {
+      "checksum": "8194a45ff72a498972ca8dd2b8f4e35f",
+      "path": "snowflake/UDF Helpers/RAISERROR_UDF.sql"
+    }
+  },
+  "id": "30a8108a-0cb4-43c3-8dba-3a36b9d44c6f",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0
+  },
+  "schemaVersion": 1,
+  "target": {
+    "canonicalName": "<%AIM_DB%>.PUBLIC.RAISERROR_UDF",
+    "database": "<%AIM_DB%>",
+    "name": "RAISERROR_UDF",
+    "objectType": "function",
+    "schema": "PUBLIC"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
+}

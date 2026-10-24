@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -24,6 +25,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/sequences/sequence/citykey"
+    },
+    "converted": {
+      "checksum": "3a2d9240be06c4b980db853787b3291b",
+      "path": "snowflake/wideworldimportersdw/sequences/sequence/citykey.sql"
+    },
     "source": {
       "checksum": "e1c922c02790c49bc96557c0efa853c7",
       "path": "source/wideworldimportersdw/sequences/sequence/citykey.sql"
@@ -32,6 +40,18 @@
   "id": "540171fb-fc46-4bad-86b9-f00dced134a8",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-EWI-0001",
+      "count": 1,
+      "severity": "critical"
+    },
+    {
+      "code": "SSC-EWI-0120",
+      "count": 1,
+      "severity": "low"
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 0
@@ -41,13 +61,21 @@
     "columns": []
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Sequences.CityKey",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Sequences.CityKey",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "CityKey",
     "objectType": "sequence",
     "platform": "sqlServer",
     "schema": "Sequences"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Sequences.CityKey",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "CityKey",
+    "objectType": "sequence",
+    "schema": "Sequences"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

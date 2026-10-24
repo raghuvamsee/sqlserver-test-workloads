@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -48,6 +49,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/fact/table/purchase"
+    },
+    "converted": {
+      "checksum": "dd2f11993202ca19d6227a1d1059d032",
+      "path": "snowflake/wideworldimportersdw/fact/table/purchase.sql"
+    },
     "source": {
       "checksum": "4f6d4e4db0c4ea075ebf3102009f776d",
       "path": "source/wideworldimportersdw/fact/table/purchase.sql"
@@ -56,6 +64,16 @@
   "id": "cff6ffcb-f0ea-49af-b01d-c83e344952ed",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0002",
+      "count": 1
+    },
+    {
+      "code": "SSC-PRF-0002",
+      "count": 1
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 2
@@ -68,6 +86,8 @@
         "isPrimaryKey": true,
         "name": "\"Purchase Key\"",
         "nullable": false,
+        "targetName": "\"Purchase Key\"",
+        "targetType": "BIGINT",
         "type": "BIGINT"
       },
       {
@@ -75,6 +95,8 @@
         "isPrimaryKey": true,
         "name": "\"Date Key\"",
         "nullable": false,
+        "targetName": "\"Date Key\"",
+        "targetType": "DATE",
         "type": "DATE"
       },
       {
@@ -82,6 +104,8 @@
         "isPrimaryKey": false,
         "name": "\"Supplier Key\"",
         "nullable": false,
+        "targetName": "\"Supplier Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -89,6 +113,8 @@
         "isPrimaryKey": false,
         "name": "\"Stock Item Key\"",
         "nullable": false,
+        "targetName": "\"Stock Item Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -96,6 +122,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Purchase Order ID\"",
         "nullable": true,
+        "targetName": "\"WWI Purchase Order ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -103,6 +131,8 @@
         "isPrimaryKey": false,
         "name": "\"Ordered Outers\"",
         "nullable": false,
+        "targetName": "\"Ordered Outers\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -110,6 +140,8 @@
         "isPrimaryKey": false,
         "name": "\"Ordered Quantity\"",
         "nullable": false,
+        "targetName": "\"Ordered Quantity\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -117,6 +149,8 @@
         "isPrimaryKey": false,
         "name": "\"Received Outers\"",
         "nullable": false,
+        "targetName": "\"Received Outers\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -124,6 +158,8 @@
         "isPrimaryKey": false,
         "name": "Package",
         "nullable": false,
+        "targetName": "Package",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -131,6 +167,8 @@
         "isPrimaryKey": false,
         "name": "\"Is Order Finalized\"",
         "nullable": false,
+        "targetName": "\"Is Order Finalized\"",
+        "targetType": "BOOLEAN",
         "type": "BIT"
       },
       {
@@ -138,6 +176,8 @@
         "isPrimaryKey": false,
         "name": "\"Lineage Key\"",
         "nullable": false,
+        "targetName": "\"Lineage Key\"",
+        "targetType": "INT",
         "type": "INT"
       }
     ],
@@ -147,13 +187,21 @@
     }
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Fact.Purchase",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Fact.Purchase",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "Purchase",
     "objectType": "table",
     "platform": "sqlServer",
     "schema": "Fact"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Fact.Purchase",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Purchase",
+    "objectType": "table",
+    "schema": "Fact"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

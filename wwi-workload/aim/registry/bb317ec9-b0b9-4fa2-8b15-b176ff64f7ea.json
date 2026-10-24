@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -62,6 +63,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/fact/table/movement"
+    },
+    "converted": {
+      "checksum": "813cdc56afc44835c8bf5bca191fd70b",
+      "path": "snowflake/wideworldimportersdw/fact/table/movement.sql"
+    },
     "source": {
       "checksum": "c0030bc52f6a5149ca94d9d283e73ac1",
       "path": "source/wideworldimportersdw/fact/table/movement.sql"
@@ -82,6 +90,8 @@
         "isPrimaryKey": true,
         "name": "\"Movement Key\"",
         "nullable": false,
+        "targetName": "\"Movement Key\"",
+        "targetType": "BIGINT",
         "type": "BIGINT"
       },
       {
@@ -89,6 +99,8 @@
         "isPrimaryKey": true,
         "name": "\"Date Key\"",
         "nullable": false,
+        "targetName": "\"Date Key\"",
+        "targetType": "DATE",
         "type": "DATE"
       },
       {
@@ -96,6 +108,8 @@
         "isPrimaryKey": false,
         "name": "\"Stock Item Key\"",
         "nullable": false,
+        "targetName": "\"Stock Item Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -103,6 +117,8 @@
         "isPrimaryKey": false,
         "name": "\"Customer Key\"",
         "nullable": true,
+        "targetName": "\"Customer Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -110,6 +126,8 @@
         "isPrimaryKey": false,
         "name": "\"Supplier Key\"",
         "nullable": true,
+        "targetName": "\"Supplier Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -117,6 +135,8 @@
         "isPrimaryKey": false,
         "name": "\"Transaction Type Key\"",
         "nullable": false,
+        "targetName": "\"Transaction Type Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -124,6 +144,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Stock Item Transaction ID\"",
         "nullable": false,
+        "targetName": "\"WWI Stock Item Transaction ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -131,6 +153,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Invoice ID\"",
         "nullable": true,
+        "targetName": "\"WWI Invoice ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -138,6 +162,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Purchase Order ID\"",
         "nullable": true,
+        "targetName": "\"WWI Purchase Order ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -145,6 +171,8 @@
         "isPrimaryKey": false,
         "name": "Quantity",
         "nullable": false,
+        "targetName": "Quantity",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -152,6 +180,8 @@
         "isPrimaryKey": false,
         "name": "\"Lineage Key\"",
         "nullable": false,
+        "targetName": "\"Lineage Key\"",
+        "targetType": "INT",
         "type": "INT"
       }
     ],
@@ -161,13 +191,21 @@
     }
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Fact.Movement",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Fact.Movement",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "Movement",
     "objectType": "table",
     "platform": "sqlServer",
     "schema": "Fact"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Fact.Movement",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Movement",
+    "objectType": "table",
+    "schema": "Fact"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

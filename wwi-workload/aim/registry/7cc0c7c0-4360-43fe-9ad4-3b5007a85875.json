@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -25,6 +26,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/integration/table/stockitem_staging"
+    },
+    "converted": {
+      "checksum": "af535cf8ed07d423cb34d99aad64779a",
+      "path": "snowflake/wideworldimportersdw/integration/table/stockitem_staging.sql"
+    },
     "source": {
       "checksum": "e06de3b0b62b59aeb4c65a24d4254585",
       "path": "source/wideworldimportersdw/integration/table/stockitem_staging.sql"
@@ -33,6 +41,16 @@
   "id": "7cc0c7c0-4360-43fe-9ad4-3b5007a85875",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0002",
+      "count": 7
+    },
+    {
+      "code": "SSC-PRF-0002",
+      "count": 7
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 0
@@ -45,6 +63,8 @@
         "isPrimaryKey": true,
         "name": "\"Stock Item Staging Key\"",
         "nullable": false,
+        "targetName": "\"Stock Item Staging Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -52,6 +72,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Stock Item ID\"",
         "nullable": false,
+        "targetName": "\"WWI Stock Item ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -59,6 +81,8 @@
         "isPrimaryKey": false,
         "name": "\"Stock Item\"",
         "nullable": false,
+        "targetName": "\"Stock Item\"",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -66,6 +90,8 @@
         "isPrimaryKey": false,
         "name": "Color",
         "nullable": false,
+        "targetName": "Color",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -73,6 +99,8 @@
         "isPrimaryKey": false,
         "name": "\"Selling Package\"",
         "nullable": false,
+        "targetName": "\"Selling Package\"",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -80,6 +108,8 @@
         "isPrimaryKey": false,
         "name": "\"Buying Package\"",
         "nullable": false,
+        "targetName": "\"Buying Package\"",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -87,6 +117,8 @@
         "isPrimaryKey": false,
         "name": "Brand",
         "nullable": false,
+        "targetName": "Brand",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -94,6 +126,8 @@
         "isPrimaryKey": false,
         "name": "Size",
         "nullable": false,
+        "targetName": "Size",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -101,6 +135,8 @@
         "isPrimaryKey": false,
         "name": "\"Lead Time Days\"",
         "nullable": false,
+        "targetName": "\"Lead Time Days\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -108,6 +144,8 @@
         "isPrimaryKey": false,
         "name": "\"Quantity Per Outer\"",
         "nullable": false,
+        "targetName": "\"Quantity Per Outer\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -115,6 +153,8 @@
         "isPrimaryKey": false,
         "name": "\"Is Chiller Stock\"",
         "nullable": false,
+        "targetName": "\"Is Chiller Stock\"",
+        "targetType": "BOOLEAN",
         "type": "BIT"
       },
       {
@@ -122,6 +162,8 @@
         "isPrimaryKey": false,
         "name": "Barcode",
         "nullable": true,
+        "targetName": "Barcode",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -129,6 +171,8 @@
         "isPrimaryKey": false,
         "name": "\"Tax Rate\"",
         "nullable": false,
+        "targetName": "\"Tax Rate\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -136,6 +180,8 @@
         "isPrimaryKey": false,
         "name": "\"Unit Price\"",
         "nullable": false,
+        "targetName": "\"Unit Price\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -143,6 +189,8 @@
         "isPrimaryKey": false,
         "name": "\"Recommended Retail Price\"",
         "nullable": true,
+        "targetName": "\"Recommended Retail Price\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -150,6 +198,8 @@
         "isPrimaryKey": false,
         "name": "\"Typical Weight Per Unit\"",
         "nullable": false,
+        "targetName": "\"Typical Weight Per Unit\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -157,6 +207,8 @@
         "isPrimaryKey": false,
         "name": "Photo",
         "nullable": true,
+        "targetName": "Photo",
+        "targetType": "VARBINARY",
         "type": "VARBINARY"
       },
       {
@@ -164,6 +216,8 @@
         "isPrimaryKey": false,
         "name": "\"Valid From\"",
         "nullable": false,
+        "targetName": "\"Valid From\"",
+        "targetType": "",
         "type": "DATETIME2"
       },
       {
@@ -171,6 +225,8 @@
         "isPrimaryKey": false,
         "name": "\"Valid To\"",
         "nullable": false,
+        "targetName": "\"Valid To\"",
+        "targetType": "",
         "type": "DATETIME2"
       }
     ],
@@ -180,13 +236,21 @@
     }
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Integration.StockItem_Staging",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Integration.StockItem_Staging",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "StockItem_Staging",
     "objectType": "table",
     "platform": "sqlServer",
     "schema": "Integration"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Integration.StockItem_Staging",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "StockItem_Staging",
+    "objectType": "table",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

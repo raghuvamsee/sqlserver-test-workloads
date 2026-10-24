@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "source_system": "sql",
+  "engine_version": "2.51.3",
+  "source_file": "wideworldimportersdw/fact/table/purchase.sql",
+  "source_checksum": "c5728ca7a49ac6006e6baa3c1d145f7bb6fa513f5057b5a9b53abe7235ad6fb0",
+  "pairs": [
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlUseStatement",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "source_text": "USE WideWorldImportersDW",
+      "targets": [
+        "USE DATABASE <%wideworldimportersdw%>"
+      ],
+      "target_file": "wideworldimportersdw/fact/table/purchase.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlAlterTableStatement",
+      "source_line_start": 19,
+      "source_line_end": 20,
+      "source_text": "\nALTER TABLE [Fact].[Purchase]\n    ADD CONSTRAINT [FK_Fact_Purchase_Date_Key_Dimension_Date] FOREIGN KEY ([Date Key]) REFERENCES [Dimension].[Date] ([Date])",
+      "targets": [],
+      "target_file": "wideworldimportersdw/fact/table/purchase.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlAlterTableStatement",
+      "source_line_start": 21,
+      "source_line_end": 22,
+      "source_text": "ALTER TABLE [Fact].[Purchase]\n    ADD CONSTRAINT [FK_Fact_Purchase_Stock_Item_Key_Dimension_Stock Item] FOREIGN KEY ([Stock Item Key]) REFERENCES [Dimension].[Stock Item] ([Stock Item Key])",
+      "targets": [],
+      "target_file": "wideworldimportersdw/fact/table/purchase.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlAlterTableStatement",
+      "source_line_start": 23,
+      "source_line_end": 24,
+      "source_text": "ALTER TABLE [Fact].[Purchase]\n    ADD CONSTRAINT [FK_Fact_Purchase_Supplier_Key_Dimension_Supplier] FOREIGN KEY ([Supplier Key]) REFERENCES [Dimension].[Supplier] ([Supplier Key])",
+      "targets": [],
+      "target_file": "wideworldimportersdw/fact/table/purchase.sql"
+    }
+  ]
+}

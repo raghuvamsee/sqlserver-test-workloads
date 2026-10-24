@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -22,6 +23,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/schema/application"
+    },
+    "converted": {
+      "checksum": "7931bf110e735f24c4d25a9da3c517f2",
+      "path": "snowflake/wideworldimportersdw/schema/application.sql"
+    },
     "source": {
       "checksum": "8f803410afaa5c197324505a31075f4a",
       "path": "source/wideworldimportersdw/schema/application.sql"
@@ -39,12 +47,19 @@
     "columns": []
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Application",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Application",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "Application",
     "objectType": "schema",
     "platform": "sqlServer"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Application",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Application",
+    "objectType": "schema"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

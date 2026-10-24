@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -74,6 +75,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing"
+    },
+    "converted": {
+      "checksum": "a9c8ce5563137f40d51b6494583c4849",
+      "path": "snowflake/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql"
+    },
     "source": {
       "checksum": "6c4bc2d141b1e0fecf81c29f06c34991",
       "path": "source/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql"
@@ -82,6 +90,34 @@
   "id": "bac8a142-a195-454b-84e2-068a29127591",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-EWI-TS0089",
+      "count": 1,
+      "severity": "low"
+    },
+    {
+      "code": "SSC-EWI-0073",
+      "count": 62,
+      "severity": "medium"
+    },
+    {
+      "code": "SSC-FDM-TS0029",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-0131",
+      "count": 4
+    },
+    {
+      "code": "SSC-FDM-TS0079",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-0021",
+      "count": 81
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 3
@@ -91,13 +127,21 @@
     "columns": []
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Application.Configuration_ApplyPartitionedColumnstoreIndexing",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Application.Configuration_ApplyPartitionedColumnstoreIndexing",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "Configuration_ApplyPartitionedColumnstoreIndexing",
     "objectType": "procedure",
     "platform": "sqlServer",
     "schema": "Application"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Application.Configuration_ApplyPartitionedColumnstoreIndexing",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Configuration_ApplyPartitionedColumnstoreIndexing",
+    "objectType": "procedure",
+    "schema": "Application"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -25,6 +26,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/integration/table/sale_staging"
+    },
+    "converted": {
+      "checksum": "29c95274fe0d5d6a0ec7dbbb0805cefe",
+      "path": "snowflake/wideworldimportersdw/integration/table/sale_staging.sql"
+    },
     "source": {
       "checksum": "8ddb4bec4e802c738789baa7c85b6d8e",
       "path": "source/wideworldimportersdw/integration/table/sale_staging.sql"
@@ -33,6 +41,16 @@
   "id": "68fc6c2c-d00a-4317-9ba2-66feb2a1bdea",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0002",
+      "count": 2
+    },
+    {
+      "code": "SSC-PRF-0002",
+      "count": 2
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 0
@@ -45,6 +63,8 @@
         "isPrimaryKey": true,
         "name": "\"Sale Staging Key\"",
         "nullable": false,
+        "targetName": "\"Sale Staging Key\"",
+        "targetType": "BIGINT",
         "type": "BIGINT"
       },
       {
@@ -52,6 +72,8 @@
         "isPrimaryKey": false,
         "name": "\"City Key\"",
         "nullable": true,
+        "targetName": "\"City Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -59,6 +81,8 @@
         "isPrimaryKey": false,
         "name": "\"Customer Key\"",
         "nullable": true,
+        "targetName": "\"Customer Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -66,6 +90,8 @@
         "isPrimaryKey": false,
         "name": "\"Bill To Customer Key\"",
         "nullable": true,
+        "targetName": "\"Bill To Customer Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -73,6 +99,8 @@
         "isPrimaryKey": false,
         "name": "\"Stock Item Key\"",
         "nullable": true,
+        "targetName": "\"Stock Item Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -80,6 +108,8 @@
         "isPrimaryKey": false,
         "name": "\"Invoice Date Key\"",
         "nullable": true,
+        "targetName": "\"Invoice Date Key\"",
+        "targetType": "DATE",
         "type": "DATE"
       },
       {
@@ -87,6 +117,8 @@
         "isPrimaryKey": false,
         "name": "\"Delivery Date Key\"",
         "nullable": true,
+        "targetName": "\"Delivery Date Key\"",
+        "targetType": "DATE",
         "type": "DATE"
       },
       {
@@ -94,6 +126,8 @@
         "isPrimaryKey": false,
         "name": "\"Salesperson Key\"",
         "nullable": true,
+        "targetName": "\"Salesperson Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -101,6 +135,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Invoice ID\"",
         "nullable": true,
+        "targetName": "\"WWI Invoice ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -108,6 +144,8 @@
         "isPrimaryKey": false,
         "name": "Description",
         "nullable": true,
+        "targetName": "Description",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -115,6 +153,8 @@
         "isPrimaryKey": false,
         "name": "Package",
         "nullable": true,
+        "targetName": "Package",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -122,6 +162,8 @@
         "isPrimaryKey": false,
         "name": "Quantity",
         "nullable": true,
+        "targetName": "Quantity",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -129,6 +171,8 @@
         "isPrimaryKey": false,
         "name": "\"Unit Price\"",
         "nullable": true,
+        "targetName": "\"Unit Price\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -136,6 +180,8 @@
         "isPrimaryKey": false,
         "name": "\"Tax Rate\"",
         "nullable": true,
+        "targetName": "\"Tax Rate\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -143,6 +189,8 @@
         "isPrimaryKey": false,
         "name": "\"Total Excluding Tax\"",
         "nullable": true,
+        "targetName": "\"Total Excluding Tax\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -150,6 +198,8 @@
         "isPrimaryKey": false,
         "name": "\"Tax Amount\"",
         "nullable": true,
+        "targetName": "\"Tax Amount\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -157,6 +207,8 @@
         "isPrimaryKey": false,
         "name": "Profit",
         "nullable": true,
+        "targetName": "Profit",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -164,6 +216,8 @@
         "isPrimaryKey": false,
         "name": "\"Total Including Tax\"",
         "nullable": true,
+        "targetName": "\"Total Including Tax\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -171,6 +225,8 @@
         "isPrimaryKey": false,
         "name": "\"Total Dry Items\"",
         "nullable": true,
+        "targetName": "\"Total Dry Items\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -178,6 +234,8 @@
         "isPrimaryKey": false,
         "name": "\"Total Chiller Items\"",
         "nullable": true,
+        "targetName": "\"Total Chiller Items\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -185,6 +243,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI City ID\"",
         "nullable": true,
+        "targetName": "\"WWI City ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -192,6 +252,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Customer ID\"",
         "nullable": true,
+        "targetName": "\"WWI Customer ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -199,6 +261,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Bill To Customer ID\"",
         "nullable": true,
+        "targetName": "\"WWI Bill To Customer ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -206,6 +270,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Stock Item ID\"",
         "nullable": true,
+        "targetName": "\"WWI Stock Item ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -213,6 +279,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Salesperson ID\"",
         "nullable": true,
+        "targetName": "\"WWI Salesperson ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -220,6 +288,8 @@
         "isPrimaryKey": false,
         "name": "\"Last Modified When\"",
         "nullable": true,
+        "targetName": "\"Last Modified When\"",
+        "targetType": "",
         "type": "DATETIME2"
       }
     ],
@@ -229,13 +299,21 @@
     }
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Integration.Sale_Staging",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Integration.Sale_Staging",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "Sale_Staging",
     "objectType": "table",
     "platform": "sqlServer",
     "schema": "Integration"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Integration.Sale_Staging",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Sale_Staging",
+    "objectType": "table",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

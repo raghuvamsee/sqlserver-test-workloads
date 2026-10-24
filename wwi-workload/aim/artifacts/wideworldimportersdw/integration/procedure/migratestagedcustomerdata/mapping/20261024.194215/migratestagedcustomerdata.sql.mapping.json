@@ -1,0 +1,190 @@
+{
+  "schema_version": "1.0",
+  "source_system": "sql",
+  "engine_version": "2.51.3",
+  "source_file": "wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql",
+  "source_checksum": "96b7378d3ef63901eae60d6f1d1253a4fd74e1a6b794a5a2b5934a3d6970e28b",
+  "pairs": [
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlUseStatement",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "source_text": "USE WideWorldImportersDW",
+      "targets": [
+        "USE DATABASE <%wideworldimportersdw%>"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 6,
+      "source_line_end": 58,
+      "source_text": "BEGIN\n--    SET NOCOUNT ON;\n--    SET XACT_ABORT ON;\n\n    DECLARE @EndOfTime datetime2(7) =  '99991231 23:59:59.9999999';\n\n    BEGIN TRAN;\n\n    DECLARE @LineageKey int = (SELECT TOP(1) [Lineage Key]\n                               FROM Integration.Lineage\n                               WHERE [Table Name] = N'Customer'\n                               AND [Data Load Completed] IS NULL\n                               ORDER BY [Lineage Key] DESC);\n\n    WITH RowsToCloseOff\n    AS\n    (\n        SELECT c.[WWI Customer ID], MIN(c.[Valid From]) AS [Valid From]\n        FROM Integration.Customer_Staging AS c\n        GROUP BY c.[WWI Customer ID]\n    )\n    UPDATE c\n        SET c.[Valid To] = rtco.[Valid From]\n    FROM Dimension.Customer AS c\n    INNER JOIN RowsToCloseOff AS rtco\n    ON c.[WWI Customer ID] = rtco.[WWI Customer ID]\n    WHERE c.[Valid To] = @EndOfTime;\n\n    INSERT Dimension.Customer\n        ([WWI Customer ID], Customer, [Bill To Customer], Category,\n         [Buying Group], [Primary Contact], [Postal Code], [Valid From], [Valid To],\n         [Lineage Key])\n    SELECT [WWI Customer ID], Customer, [Bill To Customer], Category,\n           [Buying Group], [Primary Contact], [Postal Code], [Valid From], [Valid To],\n           @LineageKey\n    FROM Integration.Customer_Staging;\n\n    UPDATE Integration.Lineage\n        SET [Data Load Completed] = SYSDATETIME(),\n            [Was Successful] = 1\n    WHERE [Lineage Key] = @LineageKey;\n\n    UPDATE Integration.[ETL Cutoff]\n        SET [Cutoff Time] = (SELECT [Source System Cutoff Time]\n                             FROM Integration.Lineage\n                             WHERE [Lineage Key] = @LineageKey)\n    FROM Integration.[ETL Cutoff]\n    WHERE [Table Name] = N'Customer';\n\n    COMMIT;\n\n    RETURN 0;\nEND;",
+      "targets": [],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 7,
+      "source_line_end": 7,
+      "source_text": "--    SET NOCOUNT ON;",
+      "targets": [
+        "--    SET NOCOUNT ON;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 8,
+      "source_line_end": 8,
+      "source_text": "--    SET XACT_ABORT ON;",
+      "targets": [
+        "--    SET XACT_ABORT ON;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 10,
+      "source_line_end": 10,
+      "source_text": "\n    DECLARE @EndOfTime datetime2(7) =  '99991231 23:59:59.9999999';",
+      "targets": [],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 12,
+      "source_line_end": 12,
+      "source_text": "\n    BEGIN TRAN;",
+      "targets": [
+        "\n    BEGIN TRANSACTION;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 14,
+      "source_line_end": 18,
+      "source_text": "\n    DECLARE @LineageKey int = (SELECT TOP(1) [Lineage Key]\n                               FROM Integration.Lineage\n                               WHERE [Table Name] = N'Customer'\n                               AND [Data Load Completed] IS NULL\n                               ORDER BY [Lineage Key] DESC);",
+      "targets": [
+        "LINEAGEKEY := (SELECT\n   TOP 1\n      \"Lineage Key\"\n                                 FROM\n      Integration.Lineage\n                                 WHERE\n      \"Table Name\" = 'Customer'\n                                 AND \"Data Load Completed\" IS NULL\n                                 ORDER BY \"Lineage Key\" DESC);"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 20,
+      "source_line_end": 32,
+      "source_text": "\n    WITH RowsToCloseOff\n    AS\n    (\n        SELECT c.[WWI Customer ID], MIN(c.[Valid From]) AS [Valid From]\n        FROM Integration.Customer_Staging AS c\n        GROUP BY c.[WWI Customer ID]\n    )\n    UPDATE c\n        SET c.[Valid To] = rtco.[Valid From]\n    FROM Dimension.Customer AS c\n    INNER JOIN RowsToCloseOff AS rtco\n    ON c.[WWI Customer ID] = rtco.[WWI Customer ID]\n    WHERE c.[Valid To] = @EndOfTime;",
+      "targets": [
+        "UPDATE Dimension.Customer c\n   SET\n      c.\"Valid To\" = rtco.\"Valid From\"\n   FROM\n      (\n         WITH RowsToCloseOff\n         AS\n         (\n             SELECT\n                c.\"WWI Customer ID\",\n                MIN(c.\"Valid From\") AS \"Valid From\"\n             FROM\n                Integration.Customer_Staging AS c\n             GROUP BY\n                c.\"WWI Customer ID\"\n         )\n         SELECT\n             *\n         FROM\n             RowsToCloseOff\n      ) AS rtco\n   WHERE\n      c.\"WWI Customer ID\" = rtco.\"WWI Customer ID\"\n      AND (c.\"Valid To\" = :ENDOFTIME);"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 23,
+      "source_line_end": 25,
+      "source_text": "        SELECT c.[WWI Customer ID], MIN(c.[Valid From]) AS [Valid From]\n        FROM Integration.Customer_Staging AS c\n        GROUP BY c.[WWI Customer ID]",
+      "targets": [
+        "        SELECT\n           c.\"WWI Customer ID\",\n           MIN(c.\"Valid From\") AS \"Valid From\"\n        FROM\n           Integration.Customer_Staging AS c\n        GROUP BY\n           c.\"WWI Customer ID\""
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlUpdateStatement",
+      "source_line_start": 27,
+      "source_line_end": 32,
+      "source_text": "    UPDATE c\n        SET c.[Valid To] = rtco.[Valid From]\n    FROM Dimension.Customer AS c\n    INNER JOIN RowsToCloseOff AS rtco\n    ON c.[WWI Customer ID] = rtco.[WWI Customer ID]\n    WHERE c.[Valid To] = @EndOfTime",
+      "targets": [],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 34,
+      "source_line_end": 41,
+      "source_text": "\n    INSERT Dimension.Customer\n        ([WWI Customer ID], Customer, [Bill To Customer], Category,\n         [Buying Group], [Primary Contact], [Postal Code], [Valid From], [Valid To],\n         [Lineage Key])\n    SELECT [WWI Customer ID], Customer, [Bill To Customer], Category,\n           [Buying Group], [Primary Contact], [Postal Code], [Valid From], [Valid To],\n           @LineageKey\n    FROM Integration.Customer_Staging;",
+      "targets": [
+        "\n    INSERT INTO Dimension.Customer\n    (\"WWI Customer ID\", Customer, \"Bill To Customer\", Category, \"Buying Group\", \"Primary Contact\", \"Postal Code\", \"Valid From\", \"Valid To\", \"Lineage Key\")\n    SELECT\n       \"WWI Customer ID\",\n       Customer,\n       \"Bill To Customer\",\n       Category,\n       \"Buying Group\",\n       \"Primary Contact\",\n       \"Postal Code\",\n       \"Valid From\",\n       \"Valid To\",\n       :LINEAGEKEY\n    FROM\n       Integration.Customer_Staging;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 38,
+      "source_line_end": 41,
+      "source_text": "    SELECT [WWI Customer ID], Customer, [Bill To Customer], Category,\n           [Buying Group], [Primary Contact], [Postal Code], [Valid From], [Valid To],\n           @LineageKey\n    FROM Integration.Customer_Staging",
+      "targets": [
+        "    SELECT\n       \"WWI Customer ID\",\n       Customer,\n       \"Bill To Customer\",\n       Category,\n       \"Buying Group\",\n       \"Primary Contact\",\n       \"Postal Code\",\n       \"Valid From\",\n       \"Valid To\",\n       :LINEAGEKEY\n    FROM\n       Integration.Customer_Staging"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 43,
+      "source_line_end": 46,
+      "source_text": "\n    UPDATE Integration.Lineage\n        SET [Data Load Completed] = SYSDATETIME(),\n            [Was Successful] = 1\n    WHERE [Lineage Key] = @LineageKey;",
+      "targets": [
+        "\n    UPDATE Integration.Lineage\n       SET\n          \"Data Load Completed\" = CURRENT_TIMESTAMP(),\n          \"Was Successful\" = 1\n    WHERE\n          \"Lineage Key\" = :LINEAGEKEY;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 48,
+      "source_line_end": 53,
+      "source_text": "\n    UPDATE Integration.[ETL Cutoff]\n        SET [Cutoff Time] = (SELECT [Source System Cutoff Time]\n                             FROM Integration.Lineage\n                             WHERE [Lineage Key] = @LineageKey)\n    FROM Integration.[ETL Cutoff]\n    WHERE [Table Name] = N'Customer';",
+      "targets": [
+        "\n    UPDATE Integration.\"ETL Cutoff\"\n       SET\n          \"Cutoff Time\" = (SELECT\n                \"Source System Cutoff Time\"\n             FROM\n                Integration.Lineage\n             WHERE\n                \"Lineage Key\" = :LINEAGEKEY\n          )\n    FROM\n          Integration.\"ETL Cutoff\"\n    WHERE\n          \"Table Name\" = 'Customer';"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 49,
+      "source_line_end": 51,
+      "source_text": "SELECT [Source System Cutoff Time]\n                             FROM Integration.Lineage\n                             WHERE [Lineage Key] = @LineageKey",
+      "targets": [
+        "SELECT\n   \"Source System Cutoff Time\"\nFROM\n   Integration.Lineage\nWHERE\n   \"Lineage Key\" = :LINEAGEKEY"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 55,
+      "source_line_end": 55,
+      "source_text": "\n    COMMIT;",
+      "targets": [
+        "COMMIT;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 57,
+      "source_line_end": 57,
+      "source_text": "\n    RETURN 0;",
+      "targets": [
+        "RETURN 0;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql"
+    }
+  ]
+}

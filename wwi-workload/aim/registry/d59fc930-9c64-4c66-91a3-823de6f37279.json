@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -62,6 +63,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/fact/table/transaction"
+    },
+    "converted": {
+      "checksum": "cf0ee7cd907b9c4268249d2897630777",
+      "path": "snowflake/wideworldimportersdw/fact/table/transaction.sql"
+    },
     "source": {
       "checksum": "3722a2477aadc1179f42f83afbaa7a4d",
       "path": "source/wideworldimportersdw/fact/table/transaction.sql"
@@ -70,6 +78,16 @@
   "id": "d59fc930-9c64-4c66-91a3-823de6f37279",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0002",
+      "count": 1
+    },
+    {
+      "code": "SSC-PRF-0002",
+      "count": 1
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 2
@@ -82,6 +100,8 @@
         "isPrimaryKey": true,
         "name": "\"Transaction Key\"",
         "nullable": false,
+        "targetName": "\"Transaction Key\"",
+        "targetType": "BIGINT",
         "type": "BIGINT"
       },
       {
@@ -89,6 +109,8 @@
         "isPrimaryKey": true,
         "name": "\"Date Key\"",
         "nullable": false,
+        "targetName": "\"Date Key\"",
+        "targetType": "DATE",
         "type": "DATE"
       },
       {
@@ -96,6 +118,8 @@
         "isPrimaryKey": false,
         "name": "\"Customer Key\"",
         "nullable": true,
+        "targetName": "\"Customer Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -103,6 +127,8 @@
         "isPrimaryKey": false,
         "name": "\"Bill To Customer Key\"",
         "nullable": true,
+        "targetName": "\"Bill To Customer Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -110,6 +136,8 @@
         "isPrimaryKey": false,
         "name": "\"Supplier Key\"",
         "nullable": true,
+        "targetName": "\"Supplier Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -117,6 +145,8 @@
         "isPrimaryKey": false,
         "name": "\"Transaction Type Key\"",
         "nullable": false,
+        "targetName": "\"Transaction Type Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -124,6 +154,8 @@
         "isPrimaryKey": false,
         "name": "\"Payment Method Key\"",
         "nullable": true,
+        "targetName": "\"Payment Method Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -131,6 +163,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Customer Transaction ID\"",
         "nullable": true,
+        "targetName": "\"WWI Customer Transaction ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -138,6 +172,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Supplier Transaction ID\"",
         "nullable": true,
+        "targetName": "\"WWI Supplier Transaction ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -145,6 +181,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Invoice ID\"",
         "nullable": true,
+        "targetName": "\"WWI Invoice ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -152,6 +190,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Purchase Order ID\"",
         "nullable": true,
+        "targetName": "\"WWI Purchase Order ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -159,6 +199,8 @@
         "isPrimaryKey": false,
         "name": "\"Supplier Invoice Number\"",
         "nullable": true,
+        "targetName": "\"Supplier Invoice Number\"",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -166,6 +208,8 @@
         "isPrimaryKey": false,
         "name": "\"Total Excluding Tax\"",
         "nullable": false,
+        "targetName": "\"Total Excluding Tax\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -173,6 +217,8 @@
         "isPrimaryKey": false,
         "name": "\"Tax Amount\"",
         "nullable": false,
+        "targetName": "\"Tax Amount\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -180,6 +226,8 @@
         "isPrimaryKey": false,
         "name": "\"Total Including Tax\"",
         "nullable": false,
+        "targetName": "\"Total Including Tax\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -187,6 +235,8 @@
         "isPrimaryKey": false,
         "name": "\"Outstanding Balance\"",
         "nullable": false,
+        "targetName": "\"Outstanding Balance\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -194,6 +244,8 @@
         "isPrimaryKey": false,
         "name": "\"Is Finalized\"",
         "nullable": false,
+        "targetName": "\"Is Finalized\"",
+        "targetType": "BOOLEAN",
         "type": "BIT"
       },
       {
@@ -201,6 +253,8 @@
         "isPrimaryKey": false,
         "name": "\"Lineage Key\"",
         "nullable": false,
+        "targetName": "\"Lineage Key\"",
+        "targetType": "INT",
         "type": "INT"
       }
     ],
@@ -210,13 +264,21 @@
     }
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Fact.[Transaction]",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Fact.[Transaction]",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "[Transaction]",
     "objectType": "table",
     "platform": "sqlServer",
     "schema": "Fact"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Fact.Transaction",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Transaction",
+    "objectType": "table",
+    "schema": "Fact"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

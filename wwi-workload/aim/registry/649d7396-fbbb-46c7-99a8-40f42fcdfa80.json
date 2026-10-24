@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -25,6 +26,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/integration/table/stockholding_staging"
+    },
+    "converted": {
+      "checksum": "238d6299ea4ae2be9a5184aaaa35e92d",
+      "path": "snowflake/wideworldimportersdw/integration/table/stockholding_staging.sql"
+    },
     "source": {
       "checksum": "39e1869de940a3a26c35e94f96c634e0",
       "path": "source/wideworldimportersdw/integration/table/stockholding_staging.sql"
@@ -33,6 +41,16 @@
   "id": "649d7396-fbbb-46c7-99a8-40f42fcdfa80",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0002",
+      "count": 1
+    },
+    {
+      "code": "SSC-PRF-0002",
+      "count": 1
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 0
@@ -45,6 +63,8 @@
         "isPrimaryKey": true,
         "name": "\"Stock Holding Staging Key\"",
         "nullable": false,
+        "targetName": "\"Stock Holding Staging Key\"",
+        "targetType": "BIGINT",
         "type": "BIGINT"
       },
       {
@@ -52,6 +72,8 @@
         "isPrimaryKey": false,
         "name": "\"Stock Item Key\"",
         "nullable": true,
+        "targetName": "\"Stock Item Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -59,6 +81,8 @@
         "isPrimaryKey": false,
         "name": "\"Quantity On Hand\"",
         "nullable": true,
+        "targetName": "\"Quantity On Hand\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -66,6 +90,8 @@
         "isPrimaryKey": false,
         "name": "\"Bin Location\"",
         "nullable": true,
+        "targetName": "\"Bin Location\"",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -73,6 +99,8 @@
         "isPrimaryKey": false,
         "name": "\"Last Stocktake Quantity\"",
         "nullable": true,
+        "targetName": "\"Last Stocktake Quantity\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -80,6 +108,8 @@
         "isPrimaryKey": false,
         "name": "\"Last Cost Price\"",
         "nullable": true,
+        "targetName": "\"Last Cost Price\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -87,6 +117,8 @@
         "isPrimaryKey": false,
         "name": "\"Reorder Level\"",
         "nullable": true,
+        "targetName": "\"Reorder Level\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -94,6 +126,8 @@
         "isPrimaryKey": false,
         "name": "\"Target Stock Level\"",
         "nullable": true,
+        "targetName": "\"Target Stock Level\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -101,6 +135,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Stock Item ID\"",
         "nullable": true,
+        "targetName": "\"WWI Stock Item ID\"",
+        "targetType": "INT",
         "type": "INT"
       }
     ],
@@ -110,13 +146,21 @@
     }
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Integration.StockHolding_Staging",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Integration.StockHolding_Staging",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "StockHolding_Staging",
     "objectType": "table",
     "platform": "sqlServer",
     "schema": "Integration"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Integration.StockHolding_Staging",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "StockHolding_Staging",
+    "objectType": "table",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

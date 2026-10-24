@@ -1,0 +1,205 @@
+{
+  "schema_version": "1.0",
+  "source_system": "sql",
+  "engine_version": "2.51.3",
+  "source_file": "wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql",
+  "source_checksum": "b7685ae38277eb0e924050746360b8900a1b001dbf9820ff825d9af7339293c7",
+  "pairs": [
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlUseStatement",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "source_text": "USE WideWorldImportersDW",
+      "targets": [
+        "USE DATABASE <%wideworldimportersdw%>"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 6,
+      "source_line_end": 65,
+      "source_text": "BEGIN\n--    SET NOCOUNT ON;\n--    SET XACT_ABORT ON;\n\n    BEGIN TRAN;\n\n    DECLARE @LineageKey int = (SELECT TOP(1) [Lineage Key]\n                               FROM Integration.Lineage\n                               WHERE [Table Name] = N'Purchase'\n                               AND [Data Load Completed] IS NULL\n                               ORDER BY [Lineage Key] DESC);\n\n    -- Find the dimension keys required\n\n    UPDATE p\n        SET p.[Supplier Key] = COALESCE((SELECT TOP(1) s.[Supplier Key]\n                                     FROM Dimension.Supplier AS s\n                                     WHERE s.[WWI Supplier ID] = p.[WWI Supplier ID]\n                                     AND p.[Last Modified When] > s.[Valid From]\n                                     AND p.[Last Modified When] <= s.[Valid To]\n\t\t\t\t\t\t\t\t\t ORDER BY s.[Valid From]), 0),\n            p.[Stock Item Key] = COALESCE((SELECT TOP(1) si.[Stock Item Key]\n                                           FROM Dimension.[Stock Item] AS si\n                                           WHERE si.[WWI Stock Item ID] = p.[WWI Stock Item ID]\n                                           AND p.[Last Modified When] > si.[Valid From]\n                                           AND p.[Last Modified When] <= si.[Valid To]\n\t\t\t\t\t\t\t\t\t       ORDER BY si.[Valid From]), 0)\n    FROM Integration.Purchase_Staging AS p;\n\n    -- Remove any existing entries for any of these purchase orders\n\n    DELETE p\n    FROM Fact.Purchase AS p\n    WHERE p.[WWI Purchase Order ID] IN (SELECT [WWI Purchase Order ID] FROM Integration.Purchase_Staging);\n\n    -- Insert all current details for these purchase orders\n\n    INSERT Fact.Purchase\n        ([Date Key], [Supplier Key], [Stock Item Key], [WWI Purchase Order ID], [Ordered Outers], [Ordered Quantity],\n         [Received Outers], Package, [Is Order Finalized], [Lineage Key])\n    SELECT [Date Key], [Supplier Key], [Stock Item Key], [WWI Purchase Order ID], [Ordered Outers], [Ordered Quantity],\n           [Received Outers], Package, [Is Order Finalized], @LineageKey\n    FROM Integration.Purchase_Staging;\n\n    UPDATE Integration.Lineage\n        SET [Data Load Completed] = SYSDATETIME(),\n            [Was Successful] = 1\n    WHERE [Lineage Key] = @LineageKey;\n\n    UPDATE Integration.[ETL Cutoff]\n        SET [Cutoff Time] = (SELECT [Source System Cutoff Time]\n                             FROM Integration.Lineage\n                             WHERE [Lineage Key] = @LineageKey)\n    FROM Integration.[ETL Cutoff]\n    WHERE [Table Name] = N'Purchase';\n\n    COMMIT;\n\n    RETURN 0;\nEND;",
+      "targets": [],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 7,
+      "source_line_end": 7,
+      "source_text": "--    SET NOCOUNT ON;",
+      "targets": [
+        "--    SET NOCOUNT ON;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 8,
+      "source_line_end": 8,
+      "source_text": "--    SET XACT_ABORT ON;",
+      "targets": [
+        "--    SET XACT_ABORT ON;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 10,
+      "source_line_end": 10,
+      "source_text": "\n    BEGIN TRAN;",
+      "targets": [
+        "\n    BEGIN TRANSACTION;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 12,
+      "source_line_end": 16,
+      "source_text": "\n    DECLARE @LineageKey int = (SELECT TOP(1) [Lineage Key]\n                               FROM Integration.Lineage\n                               WHERE [Table Name] = N'Purchase'\n                               AND [Data Load Completed] IS NULL\n                               ORDER BY [Lineage Key] DESC);",
+      "targets": [
+        "LINEAGEKEY := (SELECT\n   TOP 1\n      \"Lineage Key\"\n                                 FROM\n      Integration.Lineage\n                                 WHERE\n      \"Table Name\" = 'Purchase'\n                                 AND \"Data Load Completed\" IS NULL\n                                 ORDER BY \"Lineage Key\" DESC);"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 20,
+      "source_line_end": 33,
+      "source_text": "\n    -- Find the dimension keys required\n\n    UPDATE p\n        SET p.[Supplier Key] = COALESCE((SELECT TOP(1) s.[Supplier Key]\n                                     FROM Dimension.Supplier AS s\n                                     WHERE s.[WWI Supplier ID] = p.[WWI Supplier ID]\n                                     AND p.[Last Modified When] > s.[Valid From]\n                                     AND p.[Last Modified When] <= s.[Valid To]\n\t\t\t\t\t\t\t\t\t ORDER BY s.[Valid From]), 0),\n            p.[Stock Item Key] = COALESCE((SELECT TOP(1) si.[Stock Item Key]\n                                           FROM Dimension.[Stock Item] AS si\n                                           WHERE si.[WWI Stock Item ID] = p.[WWI Stock Item ID]\n                                           AND p.[Last Modified When] > si.[Valid From]\n                                           AND p.[Last Modified When] <= si.[Valid To]\n\t\t\t\t\t\t\t\t\t       ORDER BY si.[Valid From]), 0)\n    FROM Integration.Purchase_Staging AS p;",
+      "targets": [
+        "\n    -- Find the dimension keys required\n\n    UPDATE Integration.Purchase_Staging p\n       SET\n          p.\"Supplier Key\" = COALESCE((SELECT\n             TOP 1\n                s.\"Supplier Key\"\n             FROM\n                Dimension.Supplier AS s\n             WHERE\n                s.\"WWI Supplier ID\" = p.\"WWI Supplier ID\"\n                AND p.\"Last Modified When\" > s.\"Valid From\"\n                AND p.\"Last Modified When\" <= s.\"Valid To\"\n             ORDER BY s.\"Valid From\"\n          ), 0),\n          p.\"Stock Item Key\" = COALESCE((SELECT\n             TOP 1\n                si.\"Stock Item Key\"\n             FROM\n                Dimension.\"Stock Item\" AS si\n             WHERE\n                si.\"WWI Stock Item ID\" = p.\"WWI Stock Item ID\"\n                AND p.\"Last Modified When\" > si.\"Valid From\"\n                AND p.\"Last Modified When\" <= si.\"Valid To\"\n             ORDER BY si.\"Valid From\"\n          ), 0);"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 21,
+      "source_line_end": 26,
+      "source_text": "SELECT TOP(1) s.[Supplier Key]\n                                     FROM Dimension.Supplier AS s\n                                     WHERE s.[WWI Supplier ID] = p.[WWI Supplier ID]\n                                     AND p.[Last Modified When] > s.[Valid From]\n                                     AND p.[Last Modified When] <= s.[Valid To]\n\t\t\t\t\t\t\t\t\t ORDER BY s.[Valid From]",
+      "targets": [
+        "SELECT\nTOP 1\n   s.\"Supplier Key\"\nFROM\n   Dimension.Supplier AS s\nWHERE\n   s.\"WWI Supplier ID\" = p.\"WWI Supplier ID\"\n   AND p.\"Last Modified When\" > s.\"Valid From\"\n   AND p.\"Last Modified When\" <= s.\"Valid To\"\nORDER BY s.\"Valid From\""
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 27,
+      "source_line_end": 32,
+      "source_text": "SELECT TOP(1) si.[Stock Item Key]\n                                           FROM Dimension.[Stock Item] AS si\n                                           WHERE si.[WWI Stock Item ID] = p.[WWI Stock Item ID]\n                                           AND p.[Last Modified When] > si.[Valid From]\n                                           AND p.[Last Modified When] <= si.[Valid To]\n\t\t\t\t\t\t\t\t\t       ORDER BY si.[Valid From]",
+      "targets": [
+        "SELECT\nTOP 1\n   si.\"Stock Item Key\"\nFROM\n   Dimension.\"Stock Item\" AS si\nWHERE\n   si.\"WWI Stock Item ID\" = p.\"WWI Stock Item ID\"\n   AND p.\"Last Modified When\" > si.\"Valid From\"\n   AND p.\"Last Modified When\" <= si.\"Valid To\"\nORDER BY si.\"Valid From\""
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 37,
+      "source_line_end": 39,
+      "source_text": "\n    -- Remove any existing entries for any of these purchase orders\n\n    DELETE p\n    FROM Fact.Purchase AS p\n    WHERE p.[WWI Purchase Order ID] IN (SELECT [WWI Purchase Order ID] FROM Integration.Purchase_Staging);",
+      "targets": [
+        "\n-- Remove any existing entries for any of these purchase orders\nDELETE FROM\n   Fact.Purchase AS p\nWHERE\n   p.\"WWI Purchase Order ID\" IN (SELECT\n         \"WWI Purchase Order ID\"\n      FROM\n         Integration.Purchase_Staging\n   );"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 39,
+      "source_line_end": 39,
+      "source_text": "SELECT [WWI Purchase Order ID] FROM Integration.Purchase_Staging",
+      "targets": [
+        "SELECT\n   \"WWI Purchase Order ID\"\nFROM\n   Integration.Purchase_Staging"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 43,
+      "source_line_end": 48,
+      "source_text": "\n    -- Insert all current details for these purchase orders\n\n    INSERT Fact.Purchase\n        ([Date Key], [Supplier Key], [Stock Item Key], [WWI Purchase Order ID], [Ordered Outers], [Ordered Quantity],\n         [Received Outers], Package, [Is Order Finalized], [Lineage Key])\n    SELECT [Date Key], [Supplier Key], [Stock Item Key], [WWI Purchase Order ID], [Ordered Outers], [Ordered Quantity],\n           [Received Outers], Package, [Is Order Finalized], @LineageKey\n    FROM Integration.Purchase_Staging;",
+      "targets": [
+        "\n    -- Insert all current details for these purchase orders\n\n    INSERT INTO Fact.Purchase\n    (\"Date Key\", \"Supplier Key\", \"Stock Item Key\", \"WWI Purchase Order ID\", \"Ordered Outers\", \"Ordered Quantity\", \"Received Outers\", Package, \"Is Order Finalized\", \"Lineage Key\")\n    SELECT\n       \"Date Key\",\n       \"Supplier Key\",\n       \"Stock Item Key\",\n       \"WWI Purchase Order ID\",\n       \"Ordered Outers\",\n       \"Ordered Quantity\",\n       \"Received Outers\",\n       Package,\n       \"Is Order Finalized\",\n       :LINEAGEKEY\n    FROM\n       Integration.Purchase_Staging;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 46,
+      "source_line_end": 48,
+      "source_text": "    SELECT [Date Key], [Supplier Key], [Stock Item Key], [WWI Purchase Order ID], [Ordered Outers], [Ordered Quantity],\n           [Received Outers], Package, [Is Order Finalized], @LineageKey\n    FROM Integration.Purchase_Staging",
+      "targets": [
+        "    SELECT\n       \"Date Key\",\n       \"Supplier Key\",\n       \"Stock Item Key\",\n       \"WWI Purchase Order ID\",\n       \"Ordered Outers\",\n       \"Ordered Quantity\",\n       \"Received Outers\",\n       Package,\n       \"Is Order Finalized\",\n       :LINEAGEKEY\n    FROM\n       Integration.Purchase_Staging"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 50,
+      "source_line_end": 53,
+      "source_text": "\n    UPDATE Integration.Lineage\n        SET [Data Load Completed] = SYSDATETIME(),\n            [Was Successful] = 1\n    WHERE [Lineage Key] = @LineageKey;",
+      "targets": [
+        "\n    UPDATE Integration.Lineage\n       SET\n          \"Data Load Completed\" = CURRENT_TIMESTAMP(),\n          \"Was Successful\" = 1\n    WHERE\n          \"Lineage Key\" = :LINEAGEKEY;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 55,
+      "source_line_end": 60,
+      "source_text": "\n    UPDATE Integration.[ETL Cutoff]\n        SET [Cutoff Time] = (SELECT [Source System Cutoff Time]\n                             FROM Integration.Lineage\n                             WHERE [Lineage Key] = @LineageKey)\n    FROM Integration.[ETL Cutoff]\n    WHERE [Table Name] = N'Purchase';",
+      "targets": [
+        "\n    UPDATE Integration.\"ETL Cutoff\"\n       SET\n          \"Cutoff Time\" = (SELECT\n                \"Source System Cutoff Time\"\n             FROM\n                Integration.Lineage\n             WHERE\n                \"Lineage Key\" = :LINEAGEKEY\n          )\n    FROM\n          Integration.\"ETL Cutoff\"\n    WHERE\n          \"Table Name\" = 'Purchase';"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 56,
+      "source_line_end": 58,
+      "source_text": "SELECT [Source System Cutoff Time]\n                             FROM Integration.Lineage\n                             WHERE [Lineage Key] = @LineageKey",
+      "targets": [
+        "SELECT\n   \"Source System Cutoff Time\"\nFROM\n   Integration.Lineage\nWHERE\n   \"Lineage Key\" = :LINEAGEKEY"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 62,
+      "source_line_end": 62,
+      "source_text": "\n    COMMIT;",
+      "targets": [
+        "COMMIT;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 64,
+      "source_line_end": 64,
+      "source_text": "\n    RETURN 0;",
+      "targets": [
+        "RETURN 0;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql"
+    }
+  ]
+}

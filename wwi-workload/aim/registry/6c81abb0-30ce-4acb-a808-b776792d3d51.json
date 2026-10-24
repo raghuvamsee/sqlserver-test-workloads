@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -40,6 +41,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/integration/procedure/populatedatedimensionforyear"
+    },
+    "converted": {
+      "checksum": "b3728afa865ec46afbe35007766f8b79",
+      "path": "snowflake/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    },
     "source": {
       "checksum": "7a112e4c49f469cc342b44e732249258",
       "path": "source/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
@@ -48,6 +56,17 @@
   "id": "6c81abb0-30ce-4acb-a808-b776792d3d51",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-EWI-TS0089",
+      "count": 1,
+      "severity": "low"
+    },
+    {
+      "code": "SSC-FDM-TS0029",
+      "count": 1
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 1
@@ -62,6 +81,8 @@
           "isCursor": false,
           "name": "@YearNumber",
           "required": true,
+          "targetName": "YEARNUMBER",
+          "targetType": "INT",
           "type": "INT"
         }
       ],
@@ -69,13 +90,21 @@
     }
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Integration.PopulateDateDimensionForYear(INT)",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Integration.PopulateDateDimensionForYear(INT)",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "PopulateDateDimensionForYear",
     "objectType": "procedure",
     "platform": "sqlServer",
     "schema": "Integration"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Integration.PopulateDateDimensionForYear(INT)",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "PopulateDateDimensionForYear",
+    "objectType": "procedure",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

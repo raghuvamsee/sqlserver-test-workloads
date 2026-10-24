@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -63,6 +64,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/fact/table/sale"
+    },
+    "converted": {
+      "checksum": "ca91a2042e5c6ee4fe2305833bb40048",
+      "path": "snowflake/wideworldimportersdw/fact/table/sale.sql"
+    },
     "source": {
       "checksum": "e79d19cca692ad6b0c79facabd12be27",
       "path": "source/wideworldimportersdw/fact/table/sale.sql"
@@ -71,6 +79,16 @@
   "id": "ad0a1a25-10bb-422a-91be-929f5d2732b9",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0002",
+      "count": 2
+    },
+    {
+      "code": "SSC-PRF-0002",
+      "count": 2
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 2
@@ -83,6 +101,8 @@
         "isPrimaryKey": true,
         "name": "\"Sale Key\"",
         "nullable": false,
+        "targetName": "\"Sale Key\"",
+        "targetType": "BIGINT",
         "type": "BIGINT"
       },
       {
@@ -90,6 +110,8 @@
         "isPrimaryKey": false,
         "name": "\"City Key\"",
         "nullable": false,
+        "targetName": "\"City Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -97,6 +119,8 @@
         "isPrimaryKey": false,
         "name": "\"Customer Key\"",
         "nullable": false,
+        "targetName": "\"Customer Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -104,6 +128,8 @@
         "isPrimaryKey": false,
         "name": "\"Bill To Customer Key\"",
         "nullable": false,
+        "targetName": "\"Bill To Customer Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -111,6 +137,8 @@
         "isPrimaryKey": false,
         "name": "\"Stock Item Key\"",
         "nullable": false,
+        "targetName": "\"Stock Item Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -118,6 +146,8 @@
         "isPrimaryKey": true,
         "name": "\"Invoice Date Key\"",
         "nullable": false,
+        "targetName": "\"Invoice Date Key\"",
+        "targetType": "DATE",
         "type": "DATE"
       },
       {
@@ -125,6 +155,8 @@
         "isPrimaryKey": false,
         "name": "\"Delivery Date Key\"",
         "nullable": true,
+        "targetName": "\"Delivery Date Key\"",
+        "targetType": "DATE",
         "type": "DATE"
       },
       {
@@ -132,6 +164,8 @@
         "isPrimaryKey": false,
         "name": "\"Salesperson Key\"",
         "nullable": false,
+        "targetName": "\"Salesperson Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -139,6 +173,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Invoice ID\"",
         "nullable": false,
+        "targetName": "\"WWI Invoice ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -146,6 +182,8 @@
         "isPrimaryKey": false,
         "name": "Description",
         "nullable": false,
+        "targetName": "Description",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -153,6 +191,8 @@
         "isPrimaryKey": false,
         "name": "Package",
         "nullable": false,
+        "targetName": "Package",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -160,6 +200,8 @@
         "isPrimaryKey": false,
         "name": "Quantity",
         "nullable": false,
+        "targetName": "Quantity",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -167,6 +209,8 @@
         "isPrimaryKey": false,
         "name": "\"Unit Price\"",
         "nullable": false,
+        "targetName": "\"Unit Price\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -174,6 +218,8 @@
         "isPrimaryKey": false,
         "name": "\"Tax Rate\"",
         "nullable": false,
+        "targetName": "\"Tax Rate\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -181,6 +227,8 @@
         "isPrimaryKey": false,
         "name": "\"Total Excluding Tax\"",
         "nullable": false,
+        "targetName": "\"Total Excluding Tax\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -188,6 +236,8 @@
         "isPrimaryKey": false,
         "name": "\"Tax Amount\"",
         "nullable": false,
+        "targetName": "\"Tax Amount\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -195,6 +245,8 @@
         "isPrimaryKey": false,
         "name": "Profit",
         "nullable": false,
+        "targetName": "Profit",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -202,6 +254,8 @@
         "isPrimaryKey": false,
         "name": "\"Total Including Tax\"",
         "nullable": false,
+        "targetName": "\"Total Including Tax\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -209,6 +263,8 @@
         "isPrimaryKey": false,
         "name": "\"Total Dry Items\"",
         "nullable": false,
+        "targetName": "\"Total Dry Items\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -216,6 +272,8 @@
         "isPrimaryKey": false,
         "name": "\"Total Chiller Items\"",
         "nullable": false,
+        "targetName": "\"Total Chiller Items\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -223,6 +281,8 @@
         "isPrimaryKey": false,
         "name": "\"Lineage Key\"",
         "nullable": false,
+        "targetName": "\"Lineage Key\"",
+        "targetType": "INT",
         "type": "INT"
       }
     ],
@@ -232,13 +292,21 @@
     }
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Fact.Sale",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Fact.Sale",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "Sale",
     "objectType": "table",
     "platform": "sqlServer",
     "schema": "Fact"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Fact.Sale",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Sale",
+    "objectType": "table",
+    "schema": "Fact"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }

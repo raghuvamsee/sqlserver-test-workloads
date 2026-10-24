@@ -1,0 +1,44 @@
+{
+  "codeStatus": {
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "1c09d28e-0eba-40b5-986f-febe7ac7dfbd"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "converted": {
+      "checksum": "807b624e4588d4ab2e78ccbc6c6cd676",
+      "path": "snowflake/UDF Helpers/THROW_UDP.sql"
+    }
+  },
+  "id": "8c5ef6e6-94ee-483e-b9b9-16303903422f",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0
+  },
+  "schemaVersion": 1,
+  "target": {
+    "canonicalName": "<%AIM_DB%>.PUBLIC.THROW_UDP",
+    "database": "<%AIM_DB%>",
+    "name": "THROW_UDP",
+    "objectType": "procedure",
+    "schema": "PUBLIC"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
+}

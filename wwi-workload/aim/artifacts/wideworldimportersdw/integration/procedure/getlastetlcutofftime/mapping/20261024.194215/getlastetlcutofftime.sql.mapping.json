@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "source_system": "sql",
+  "engine_version": "2.51.3",
+  "source_file": "wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql",
+  "source_checksum": "db01129d1bba17f42e1f7d3bd460d04524ba729611e03f8703bf18bb452e60ad",
+  "pairs": [
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlUseStatement",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "source_text": "USE WideWorldImportersDW",
+      "targets": [
+        "USE DATABASE <%wideworldimportersdw%>"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 7,
+      "source_line_end": 23,
+      "source_text": "BEGIN\n--    SET NOCOUNT ON;\n--    SET XACT_ABORT ON;\n\n    SELECT [Cutoff Time] AS CutoffTime\n    FROM Integration.[ETL Cutoff]\n    WHERE [Table Name] = @TableName;\n\n    IF @@ROWCOUNT = 0\n    BEGIN\n        PRINT N'Invalid ETL table name';\n        THROW 51000, N'Invalid ETL table name', 1;\n        RETURN -1;\n    END;\n\n    RETURN 0;\nEND;",
+      "targets": [],
+      "target_file": "wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 8,
+      "source_line_end": 8,
+      "source_text": "--    SET NOCOUNT ON;",
+      "targets": [
+        "--    SET NOCOUNT ON;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 9,
+      "source_line_end": 9,
+      "source_text": "--    SET XACT_ABORT ON;",
+      "targets": [
+        "--    SET XACT_ABORT ON;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 11,
+      "source_line_end": 13,
+      "source_text": "\n    SELECT [Cutoff Time] AS CutoffTime\n    FROM Integration.[ETL Cutoff]\n    WHERE [Table Name] = @TableName;",
+      "targets": [],
+      "target_file": "wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 15,
+      "source_line_end": 20,
+      "source_text": "\n    IF @@ROWCOUNT = 0\n    BEGIN\n        PRINT N'Invalid ETL table name';\n        THROW 51000, N'Invalid ETL table name', 1;\n        RETURN -1;\n    END;",
+      "targets": [
+        "IF (SQLROWCOUNT = 0) THEN\n   BEGIN\n      SYSTEM$LOG_INFO('Invalid ETL table name');\n      CALL <%AIM_DB%>.PUBLIC.THROW_UDP(51000, 'Invalid ETL table name', 1);\n      RETURN TABLE(ProcedureResultSet);\n   END;\nEND IF;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 16,
+      "source_line_end": 20,
+      "source_text": "    BEGIN\n        PRINT N'Invalid ETL table name';\n        THROW 51000, N'Invalid ETL table name', 1;\n        RETURN -1;\n    END;",
+      "targets": [
+        "    BEGIN\n       SYSTEM$LOG_INFO('Invalid ETL table name');\n       CALL <%AIM_DB%>.PUBLIC.THROW_UDP(51000, 'Invalid ETL table name', 1);\n       RETURN TABLE(ProcedureResultSet);\n    END;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 17,
+      "source_line_end": 17,
+      "source_text": "        PRINT N'Invalid ETL table name';",
+      "targets": [
+        "SYSTEM$LOG_INFO('Invalid ETL table name');"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 18,
+      "source_line_end": 18,
+      "source_text": "        THROW 51000, N'Invalid ETL table name', 1;",
+      "targets": [
+        "CALL <%AIM_DB%>.PUBLIC.THROW_UDP(51000, 'Invalid ETL table name', 1);"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 19,
+      "source_line_end": 19,
+      "source_text": "        RETURN -1;",
+      "targets": [
+        "RETURN TABLE(ProcedureResultSet);"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 22,
+      "source_line_end": 22,
+      "source_text": "\n    RETURN 0;",
+      "targets": [
+        "RETURN TABLE(ProcedureResultSet);"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql"
+    }
+  ]
+}

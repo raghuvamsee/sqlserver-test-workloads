@@ -1,0 +1,44 @@
+{
+  "codeStatus": {
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "75c9ae4f-76fa-4fcf-ae0a-08acbecb8530"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "converted": {
+      "checksum": "cfce13889c294418c202d5c5003aefa9",
+      "path": "snowflake/UDF Helpers/QUOTENAME_UDF.sql"
+    }
+  },
+  "id": "d8abb9f6-88d9-42f9-94ed-31d00cec402f",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0
+  },
+  "schemaVersion": 1,
+  "target": {
+    "canonicalName": "<%AIM_DB%>.PUBLIC.QUOTENAME_UDF",
+    "database": "<%AIM_DB%>",
+    "name": "QUOTENAME_UDF",
+    "objectType": "function",
+    "schema": "PUBLIC"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
+}

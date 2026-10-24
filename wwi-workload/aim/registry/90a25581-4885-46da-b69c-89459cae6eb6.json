@@ -6,13 +6,14 @@
       "status": "inProgress"
     },
     "conversion": {
-      "status": "pending",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
     },
     "registration": {
-      "sourceId": "localhost",
+      "sourceId": "",
       "status": "completed",
-      "updatedAt": "2026-10-24T19:41:50Z"
+      "updatedAt": "2026-10-24T19:42:27Z"
     }
   },
   "dependencies": {
@@ -25,6 +26,13 @@
   },
   "extensions": {},
   "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/integration/table/transaction_staging"
+    },
+    "converted": {
+      "checksum": "c5a2bc4991ef51fe9f0ed03ffc4afd7a",
+      "path": "snowflake/wideworldimportersdw/integration/table/transaction_staging.sql"
+    },
     "source": {
       "checksum": "ec0045967412a8f263808fa8d8310156",
       "path": "source/wideworldimportersdw/integration/table/transaction_staging.sql"
@@ -33,6 +41,16 @@
   "id": "90a25581-4885-46da-b69c-89459cae6eb6",
   "inScope": true,
   "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0002",
+      "count": 1
+    },
+    {
+      "code": "SSC-PRF-0002",
+      "count": 1
+    }
+  ],
   "kind": "databaseObject",
   "planning": {
     "topologicalRank": 0
@@ -45,6 +63,8 @@
         "isPrimaryKey": true,
         "name": "\"Transaction Staging Key\"",
         "nullable": false,
+        "targetName": "\"Transaction Staging Key\"",
+        "targetType": "BIGINT",
         "type": "BIGINT"
       },
       {
@@ -52,6 +72,8 @@
         "isPrimaryKey": false,
         "name": "\"Date Key\"",
         "nullable": true,
+        "targetName": "\"Date Key\"",
+        "targetType": "DATE",
         "type": "DATE"
       },
       {
@@ -59,6 +81,8 @@
         "isPrimaryKey": false,
         "name": "\"Customer Key\"",
         "nullable": true,
+        "targetName": "\"Customer Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -66,6 +90,8 @@
         "isPrimaryKey": false,
         "name": "\"Bill To Customer Key\"",
         "nullable": true,
+        "targetName": "\"Bill To Customer Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -73,6 +99,8 @@
         "isPrimaryKey": false,
         "name": "\"Supplier Key\"",
         "nullable": true,
+        "targetName": "\"Supplier Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -80,6 +108,8 @@
         "isPrimaryKey": false,
         "name": "\"Transaction Type Key\"",
         "nullable": true,
+        "targetName": "\"Transaction Type Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -87,6 +117,8 @@
         "isPrimaryKey": false,
         "name": "\"Payment Method Key\"",
         "nullable": true,
+        "targetName": "\"Payment Method Key\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -94,6 +126,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Customer Transaction ID\"",
         "nullable": true,
+        "targetName": "\"WWI Customer Transaction ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -101,6 +135,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Supplier Transaction ID\"",
         "nullable": true,
+        "targetName": "\"WWI Supplier Transaction ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -108,6 +144,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Invoice ID\"",
         "nullable": true,
+        "targetName": "\"WWI Invoice ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -115,6 +153,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Purchase Order ID\"",
         "nullable": true,
+        "targetName": "\"WWI Purchase Order ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -122,6 +162,8 @@
         "isPrimaryKey": false,
         "name": "\"Supplier Invoice Number\"",
         "nullable": true,
+        "targetName": "\"Supplier Invoice Number\"",
+        "targetType": "NVARCHAR",
         "type": "NVARCHAR"
       },
       {
@@ -129,6 +171,8 @@
         "isPrimaryKey": false,
         "name": "\"Total Excluding Tax\"",
         "nullable": true,
+        "targetName": "\"Total Excluding Tax\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -136,6 +180,8 @@
         "isPrimaryKey": false,
         "name": "\"Tax Amount\"",
         "nullable": true,
+        "targetName": "\"Tax Amount\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -143,6 +189,8 @@
         "isPrimaryKey": false,
         "name": "\"Total Including Tax\"",
         "nullable": true,
+        "targetName": "\"Total Including Tax\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -150,6 +198,8 @@
         "isPrimaryKey": false,
         "name": "\"Outstanding Balance\"",
         "nullable": true,
+        "targetName": "\"Outstanding Balance\"",
+        "targetType": "DECIMAL",
         "type": "DECIMAL"
       },
       {
@@ -157,6 +207,8 @@
         "isPrimaryKey": false,
         "name": "\"Is Finalized\"",
         "nullable": true,
+        "targetName": "\"Is Finalized\"",
+        "targetType": "BOOLEAN",
         "type": "BIT"
       },
       {
@@ -164,6 +216,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Customer ID\"",
         "nullable": true,
+        "targetName": "\"WWI Customer ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -171,6 +225,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Bill To Customer ID\"",
         "nullable": true,
+        "targetName": "\"WWI Bill To Customer ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -178,6 +234,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Supplier ID\"",
         "nullable": true,
+        "targetName": "\"WWI Supplier ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -185,6 +243,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Transaction Type ID\"",
         "nullable": true,
+        "targetName": "\"WWI Transaction Type ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -192,6 +252,8 @@
         "isPrimaryKey": false,
         "name": "\"WWI Payment Method ID\"",
         "nullable": true,
+        "targetName": "\"WWI Payment Method ID\"",
+        "targetType": "INT",
         "type": "INT"
       },
       {
@@ -199,6 +261,8 @@
         "isPrimaryKey": false,
         "name": "\"Last Modified When\"",
         "nullable": true,
+        "targetName": "\"Last Modified When\"",
+        "targetType": "",
         "type": "DATETIME2"
       }
     ],
@@ -208,13 +272,21 @@
     }
   },
   "source": {
-    "canonicalName": "WideWorldImportersDW.Integration.Transaction_Staging",
-    "database": "WideWorldImportersDW",
+    "canonicalName": "${wideworldimportersdw}.Integration.Transaction_Staging",
+    "database": "${wideworldimportersdw}",
     "format": "sql",
     "name": "Transaction_Staging",
     "objectType": "table",
     "platform": "sqlServer",
     "schema": "Integration"
   },
-  "updatedAt": "2026-10-24T19:41:50Z"
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Integration.Transaction_Staging",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Transaction_Staging",
+    "objectType": "table",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T19:42:27Z"
 }
