@@ -30,3 +30,4 @@ Thumbs.db
 # Local scai run logs
 /logs/
 /.scai/tmp/
+/.scai/logs/
