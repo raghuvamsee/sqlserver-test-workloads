@@ -1,4 +1,15 @@
 {
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:38:59Z"
+    }
+  },
   "codeStatus": {
     "assessment": {
       "containsCommit": false,
@@ -61,7 +72,9 @@
       "e246ca55-9881-4ecd-8b71-f32f3f898ece"
     ]
   },
-  "extensions": {},
+  "extensions": {
+    "isDone": true
+  },
   "files": {
     "artifacts": {
       "path": "artifacts/wideworldimportersdw/fact/table/transaction"
@@ -99,7 +112,7 @@
       {
         "isCaseSpecific": false,
         "isPrimaryKey": true,
-        "name": "\"Transaction Key\"",
+        "name": "Transaction Key",
         "nullable": false,
         "targetName": "\"Transaction Key\"",
         "targetType": "BIGINT",
@@ -108,7 +121,7 @@
       {
         "isCaseSpecific": false,
         "isPrimaryKey": true,
-        "name": "\"Date Key\"",
+        "name": "Date Key",
         "nullable": false,
         "targetName": "\"Date Key\"",
         "targetType": "DATE",
@@ -281,5 +294,5 @@
     "objectType": "table",
     "schema": "Fact"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-24T23:46:37Z"
 }
