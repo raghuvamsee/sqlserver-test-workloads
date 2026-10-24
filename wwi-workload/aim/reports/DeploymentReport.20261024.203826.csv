@@ -1,0 +1,9 @@
+OBJECT_NAME,OBJECT_TYPE,STATUS,ERROR_MESSAGE,DATABASE,SCHEMA,FQN,SNOWSIGHT_URL
+"<%wideworldimportersdw%>.Dimension.""Payment Method""",Table,Deployed,,WWI_AIM,PUBLIC,"WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Dimension.""Payment Method""",https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Dimension.Supplier,Table,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Dimension.Supplier,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Dimension.Customer,Table,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Dimension.Customer,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+"<%wideworldimportersdw%>.Dimension.""Transaction Type""",Table,Deployed,,WWI_AIM,PUBLIC,"WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Dimension.""Transaction Type""",https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Integration.Lineage,Table,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Integration.Lineage,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Dimension.Employee,Table,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Dimension.Employee,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+"<%wideworldimportersdw%>.Dimension.""Stock Item""",Table,Deployed,,WWI_AIM,PUBLIC,"WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Dimension.""Stock Item""",https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Dimension.City,Table,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Dimension.City,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
