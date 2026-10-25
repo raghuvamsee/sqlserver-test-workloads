@@ -1,4 +1,15 @@
 {
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T23:35:54Z"
+    }
+  },
   "codeStatus": {
     "assessment": {
       "containsCommit": false,
@@ -23,13 +34,26 @@
       "1149b4a9-3513-4cfd-b0f1-f6cbd6547470"
     ]
   },
-  "extensions": {},
+  "extensions": {
+    "isDone": true,
+    "tasks": {
+      "captureBaseline": {
+        "details": {
+          "error": null,
+          "verifiedBy": "status"
+        },
+        "error": null,
+        "status": "completed",
+        "updatedAt": "2026-10-24T23:35:05.531447942+00:00"
+      }
+    }
+  },
   "files": {
     "artifacts": {
       "path": "artifacts/wideworldimportersdw/application/procedure/configuration_applypolybase"
     },
     "converted": {
-      "checksum": "6667f60dcc6e44d206c619a7567c4d4b",
+      "checksum": "0adc61038f5116d9667073e15ca11a64",
       "path": "snowflake/wideworldimportersdw/application/procedure/configuration_applypolybase.sql"
     },
     "source": {
@@ -100,5 +124,5 @@
     "objectType": "procedure",
     "schema": "dbo"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-25T00:44:48Z"
 }

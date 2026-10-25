@@ -1,4 +1,15 @@
 {
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-25T00:31:54Z"
+    }
+  },
   "codeStatus": {
     "assessment": {
       "containsCommit": true,
@@ -73,13 +84,26 @@
       "9b231eeb-3339-4b1d-8cd4-c6f5ebf1d321"
     ]
   },
-  "extensions": {},
+  "extensions": {
+    "isDone": true,
+    "tasks": {
+      "captureBaseline": {
+        "details": {
+          "error": null,
+          "verifiedBy": "status"
+        },
+        "error": null,
+        "status": "completed",
+        "updatedAt": "2026-10-25T00:31:17.061982912+00:00"
+      }
+    }
+  },
   "files": {
     "artifacts": {
       "path": "artifacts/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing"
     },
     "converted": {
-      "checksum": "a9c8ce5563137f40d51b6494583c4849",
+      "checksum": "7f612306c69c602e147a042b230252c0",
       "path": "snowflake/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql"
     },
     "source": {
@@ -144,5 +168,5 @@
     "objectType": "procedure",
     "schema": "Application"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-25T00:44:48Z"
 }
