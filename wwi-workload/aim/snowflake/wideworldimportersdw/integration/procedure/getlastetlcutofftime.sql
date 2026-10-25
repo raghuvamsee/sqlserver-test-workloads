@@ -1,4 +1,4 @@
-﻿USE DATABASE <%wideworldimportersdw%>;
+USE DATABASE <%wideworldimportersdw%>;
 
 CREATE OR REPLACE PROCEDURE Integration.GetLastETLCutoffTime (TABLENAME VARCHAR(128))
 RETURNS TABLE()
@@ -20,11 +20,12 @@ $$
         FROM
             Integration."ETL Cutoff"
         WHERE
-            "Table Name" = :TABLENAME);
+            -- SQL Server compares [Table Name] under a case-insensitive collation
+            UPPER("Table Name") = UPPER(:TABLENAME));
         IF (SQLROWCOUNT = 0) THEN
             BEGIN
                 SYSTEM$LOG_INFO('Invalid ETL table name');
-                CALL <%AIM_DB%>.PUBLIC.THROW_UDP(51000, 'Invalid ETL table name', 1);
+                CALL <%wideworldimportersdw%>.PUBLIC.THROW_UDP(51000, 'Invalid ETL table name', 1);
                 --** SSC-FDM-TS0144 - THE PROCEDURE RETURNED RESULT SETS THROUGH SNOWFLAKE'S SINGLE RETURN CHANNEL. THE SOURCE INTEGER STATUS WAS NOT RETURNED. **
                 RETURN TABLE(ProcedureResultSet);
             END;

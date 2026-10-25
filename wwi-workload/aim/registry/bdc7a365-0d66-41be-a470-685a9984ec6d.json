@@ -1,4 +1,12 @@
 {
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {},
+      "status": "completed",
+      "updatedAt": "2026-10-25T17:37:08Z"
+    }
+  },
   "codeStatus": {
     "assessment": {
       "containsCommit": false,
@@ -29,7 +37,9 @@
     "hasTransitiveMissingDependencies": false,
     "requiredBy": []
   },
-  "extensions": {},
+  "extensions": {
+    "isDone": true
+  },
   "files": {
     "artifacts": {
       "path": "artifacts/wideworldimportersdw/sequences/procedure/reseedallsequences"
@@ -78,5 +88,5 @@
     "objectType": "procedure",
     "schema": "Sequences"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-25T17:37:58Z"
 }
