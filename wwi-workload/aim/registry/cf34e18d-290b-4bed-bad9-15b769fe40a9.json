@@ -96,7 +96,7 @@
       {
         "isCaseSpecific": false,
         "isPrimaryKey": true,
-        "name": "\"Customer Key\"",
+        "name": "Customer Key",
         "nullable": false,
         "targetName": "\"Customer Key\"",
         "targetType": "INT",
@@ -215,5 +215,5 @@
     "objectType": "table",
     "schema": "Dimension"
   },
-  "updatedAt": "2026-10-24T21:20:44Z"
+  "updatedAt": "2026-10-24T23:35:08Z"
 }

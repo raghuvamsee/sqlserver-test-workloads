@@ -123,7 +123,7 @@
     }
   },
   "id": "16f90c39-8647-4c95-b5ec-126461ecb3ef",
-  "inScope": true,
+  "inScope": false,
   "isMissing": false,
   "issues": [
     {
@@ -190,5 +190,5 @@
     "objectType": "procedure",
     "schema": "Application"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-24T23:18:29Z"
 }

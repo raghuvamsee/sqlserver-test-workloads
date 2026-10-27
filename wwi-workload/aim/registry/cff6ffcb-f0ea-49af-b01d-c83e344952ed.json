@@ -98,7 +98,7 @@
       {
         "isCaseSpecific": false,
         "isPrimaryKey": true,
-        "name": "\"Purchase Key\"",
+        "name": "Purchase Key",
         "nullable": false,
         "targetName": "\"Purchase Key\"",
         "targetType": "BIGINT",
@@ -107,7 +107,7 @@
       {
         "isCaseSpecific": false,
         "isPrimaryKey": true,
-        "name": "\"Date Key\"",
+        "name": "Date Key",
         "nullable": false,
         "targetName": "\"Date Key\"",
         "targetType": "DATE",
@@ -217,5 +217,5 @@
     "objectType": "table",
     "schema": "Fact"
   },
-  "updatedAt": "2026-10-24T21:20:44Z"
+  "updatedAt": "2026-10-24T23:35:12Z"
 }

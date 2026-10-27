@@ -101,7 +101,18 @@
     "hasTransitiveMissingDependencies": false,
     "requiredBy": []
   },
-  "extensions": {},
+  "extensions": {
+    "tasks": {
+      "captureBaseline": {
+        "details": {
+          "error": "infra"
+        },
+        "error": "infra",
+        "status": "failed",
+        "updatedAt": "2026-10-25T00:44:38.748834879+00:00"
+      }
+    }
+  },
   "files": {
     "artifacts": {
       "path": "artifacts/wideworldimportersdw/application/procedure/configuration_populatelargesaletable"
@@ -194,5 +205,5 @@
     "objectType": "procedure",
     "schema": "Application"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-25T00:44:38Z"
 }

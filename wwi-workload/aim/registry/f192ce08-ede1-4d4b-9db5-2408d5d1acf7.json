@@ -1,4 +1,15 @@
 {
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:31:33Z"
+    }
+  },
   "codeStatus": {
     "assessment": {
       "containsCommit": false,
@@ -69,7 +80,7 @@
       {
         "isCaseSpecific": false,
         "isPrimaryKey": true,
-        "name": "\"Employee Staging Key\"",
+        "name": "Employee Staging Key",
         "nullable": false,
         "targetName": "\"Employee Staging Key\"",
         "targetType": "INT",
@@ -161,5 +172,5 @@
     "objectType": "table",
     "schema": "Integration"
   },
-  "updatedAt": "2026-10-24T19:43:26Z"
+  "updatedAt": "2026-10-24T23:35:34Z"
 }

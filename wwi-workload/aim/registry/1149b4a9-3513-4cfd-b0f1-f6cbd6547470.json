@@ -58,7 +58,7 @@
     }
   },
   "id": "1149b4a9-3513-4cfd-b0f1-f6cbd6547470",
-  "inScope": true,
+  "inScope": false,
   "isMissing": false,
   "kind": "databaseObject",
   "planning": {
@@ -86,5 +86,5 @@
     "objectType": "procedure",
     "schema": "Application"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-24T23:18:29Z"
 }

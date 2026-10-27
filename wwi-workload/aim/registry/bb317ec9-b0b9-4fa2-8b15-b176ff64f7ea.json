@@ -102,7 +102,7 @@
       {
         "isCaseSpecific": false,
         "isPrimaryKey": true,
-        "name": "\"Movement Key\"",
+        "name": "Movement Key",
         "nullable": false,
         "targetName": "\"Movement Key\"",
         "targetType": "BIGINT",
@@ -111,7 +111,7 @@
       {
         "isCaseSpecific": false,
         "isPrimaryKey": true,
-        "name": "\"Date Key\"",
+        "name": "Date Key",
         "nullable": false,
         "targetName": "\"Date Key\"",
         "targetType": "DATE",
@@ -221,5 +221,5 @@
     "objectType": "table",
     "schema": "Fact"
   },
-  "updatedAt": "2026-10-24T21:20:44Z"
+  "updatedAt": "2026-10-24T23:35:14Z"
 }

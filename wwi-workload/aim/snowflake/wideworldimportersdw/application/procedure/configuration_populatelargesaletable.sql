@@ -54,7 +54,7 @@ INSERT INTO Integration.Lineage
 			OUTPUTCOUNTER := LEFT(TO_VARCHAR(:DATECOUNTER, 'yyyymmdd'), 20);
 			--** SSC-FDM-TS0019 - RAISERROR ERROR MESSAGE MAY DIFFER BECAUSE OF THE SQL SERVER STRING FORMAT **
 			SELECT
-				<%AIM_DB%>.PUBLIC.RAISERROR_UDF(:OUTPUTCOUNTER, 0, 1, array_construct());
+				<%wideworldimportersdw%>.PUBLIC.RAISERROR_UDF(:OUTPUTCOUNTER, 0, 1, array_construct());
 			STARTINGSALEKEY := :MAXIMUMSALEKEY - :NUMBEROFSALESPERDAY - FLOOR(RANDOM() * 20000);
 			ORDERCOUNTER := 0;
 INSERT INTO Fact.Sale
@@ -91,7 +91,7 @@ ORDER BY "Sale Key";
 		END LOOP;
 		--** SSC-FDM-TS0019 - RAISERROR ERROR MESSAGE MAY DIFFER BECAUSE OF THE SQL SERVER STRING FORMAT **
 		SELECT
-			<%AIM_DB%>.PUBLIC.RAISERROR_UDF('Compressing all open Rowgroups', 0, 1, array_construct());
+			<%wideworldimportersdw%>.PUBLIC.RAISERROR_UDF('Compressing all open Rowgroups', 0, 1, array_construct());
 --		--** SSC-FDM-0055 - ALTER INDEX IS NOT APPLICABLE IN SNOWFLAKE. STANDARD TABLES DO NOT USE USER-MANAGED INDEXES. **
 
 --ALTER INDEX CCX_Fact_Sale
@@ -106,7 +106,7 @@ SET
 		-- Add back Constraints
 		--** SSC-FDM-TS0019 - RAISERROR ERROR MESSAGE MAY DIFFER BECAUSE OF THE SQL SERVER STRING FORMAT **
 		SELECT
-			<%AIM_DB%>.PUBLIC.RAISERROR_UDF('Adding Constraints', 0, 1, array_construct());
+			<%wideworldimportersdw%>.PUBLIC.RAISERROR_UDF('Adding Constraints', 0, 1, array_construct());
 
 ALTER TABLE Fact.Sale
 ADD CONSTRAINT PK_Fact_Sale PRIMARY KEY ("Sale Key", "Invoice Date Key");
@@ -183,7 +183,7 @@ REFERENCES Dimension.City ("City Key");
 		-- Recreate indexes
 		--** SSC-FDM-TS0019 - RAISERROR ERROR MESSAGE MAY DIFFER BECAUSE OF THE SQL SERVER STRING FORMAT **
 		SELECT
-			<%AIM_DB%>.PUBLIC.RAISERROR_UDF('Adding Non-clustered Indexes', 0, 1, array_construct());
+			<%wideworldimportersdw%>.PUBLIC.RAISERROR_UDF('Adding Non-clustered Indexes', 0, 1, array_construct());
 --		--** SSC-FDM-0021 - CREATE INDEX IS NOT SUPPORTED BY SNOWFLAKE **
 --CREATE NONCLUSTERED INDEX [FK_Fact_Sale_Salesperson_Key] ON [Fact].[Sale] ([Salesperson Key] ASC)
                                                                                                  ;
