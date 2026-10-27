@@ -1,4 +1,15 @@
 {
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-27T01:24:55Z"
+    }
+  },
   "codeStatus": {
     "assessment": {
       "containsCommit": true,
@@ -39,13 +50,26 @@
       "9b231eeb-3339-4b1d-8cd4-c6f5ebf1d321"
     ]
   },
-  "extensions": {},
+  "extensions": {
+    "isDone": true,
+    "tasks": {
+      "captureBaseline": {
+        "details": {
+          "error": null,
+          "verifiedBy": "status"
+        },
+        "error": null,
+        "status": "completed",
+        "updatedAt": "2026-10-27T01:24:39.419424608+00:00"
+      }
+    }
+  },
   "files": {
     "artifacts": {
       "path": "artifacts/wideworldimportersdw/integration/procedure/populatedatedimensionforyear"
     },
     "converted": {
-      "checksum": "b3728afa865ec46afbe35007766f8b79",
+      "checksum": "f30b570e940a8f2700be33243c3ed66a",
       "path": "snowflake/wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
     },
     "source": {
@@ -107,5 +131,5 @@
     "objectType": "procedure",
     "schema": "Integration"
   },
-  "updatedAt": "2026-10-24T19:43:23Z"
+  "updatedAt": "2026-10-27T01:27:25Z"
 }
