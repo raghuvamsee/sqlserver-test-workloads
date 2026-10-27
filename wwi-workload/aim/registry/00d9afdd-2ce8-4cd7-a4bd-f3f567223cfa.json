@@ -1,0 +1,149 @@
+{
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:31:33Z"
+    }
+  },
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [
+        {
+          "category": "temp_staging",
+          "matchedPatterns": [
+            "_staging$"
+          ]
+        }
+      ],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "16f90c39-8647-4c95-b5ec-126461ecb3ef",
+      "78b4c133-b88a-46fc-82b9-b15279a27f6e"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/integration/table/transactiontype_staging"
+    },
+    "converted": {
+      "checksum": "3f59fa9bd267e07ee80dd9b4765f34fc",
+      "path": "snowflake/wideworldimportersdw/integration/table/transactiontype_staging.sql"
+    },
+    "source": {
+      "checksum": "12c982640de2fea10431a1383ecb229a",
+      "path": "source/wideworldimportersdw/integration/table/transactiontype_staging.sql"
+    }
+  },
+  "id": "00d9afdd-2ce8-4cd7-a4bd-f3f567223cfa",
+  "inScope": true,
+  "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0002",
+      "count": 1
+    },
+    {
+      "code": "SSC-PRF-0002",
+      "count": 1
+    }
+  ],
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": true,
+        "name": "Transaction Type Staging Key",
+        "nullable": false,
+        "targetName": "\"Transaction Type Staging Key\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"WWI Transaction Type ID\"",
+        "nullable": false,
+        "targetName": "\"WWI Transaction Type ID\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Transaction Type\"",
+        "nullable": false,
+        "targetName": "\"Transaction Type\"",
+        "targetType": "NVARCHAR",
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Valid From\"",
+        "nullable": false,
+        "targetName": "\"Valid From\"",
+        "targetType": "",
+        "type": "DATETIME2"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Valid To\"",
+        "nullable": false,
+        "targetName": "\"Valid To\"",
+        "targetType": "",
+        "type": "DATETIME2"
+      }
+    ],
+    "parameters": {
+      "arguments": [],
+      "returns": []
+    }
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Integration.TransactionType_Staging",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "TransactionType_Staging",
+    "objectType": "table",
+    "platform": "sqlServer",
+    "schema": "Integration"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Integration.TransactionType_Staging",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "TransactionType_Staging",
+    "objectType": "table",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T23:35:33Z"
+}

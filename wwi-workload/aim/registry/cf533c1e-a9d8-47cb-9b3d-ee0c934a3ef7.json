@@ -1,0 +1,79 @@
+{
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:33:30Z"
+    }
+  },
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": []
+  },
+  "extensions": {
+    "isDone": true
+  },
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/schema/fact"
+    },
+    "converted": {
+      "checksum": "8c522109c9cecef23cc314eb47ff7671",
+      "path": "snowflake/wideworldimportersdw/schema/fact.sql"
+    },
+    "source": {
+      "checksum": "b5c5d39ccc392bff26e85f1cbcc4f938",
+      "path": "source/wideworldimportersdw/schema/fact.sql"
+    }
+  },
+  "id": "cf533c1e-a9d8-47cb-9b3d-ee0c934a3ef7",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": []
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Fact",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "Fact",
+    "objectType": "schema",
+    "platform": "sqlServer"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Fact",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Fact",
+    "objectType": "schema"
+  },
+  "updatedAt": "2026-10-24T20:37:52Z"
+}

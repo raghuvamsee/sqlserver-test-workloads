@@ -1,0 +1,131 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": true,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "1b58ff50-d8e2-484d-ab98-b5441845a8a7",
+        "isMissing": false,
+        "relationTypes": [
+          "UPDATE"
+        ]
+      },
+      {
+        "id": "64fd00bf-7950-477b-ba1a-16210cd0681c",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM",
+          "UPDATE"
+        ]
+      },
+      {
+        "id": "b14c3ce9-5ab2-4722-a296-ad040b1c379a",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM"
+        ]
+      },
+      {
+        "id": "9dbea1f6-5eb8-4044-b5e4-47770fdc7ef2",
+        "isMissing": false,
+        "relationTypes": [
+          "INSERT",
+          "UPDATE"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": []
+  },
+  "extensions": {
+    "tasks": {
+      "captureBaseline": {
+        "details": {
+          "error": "infra"
+        },
+        "error": "infra",
+        "status": "failed",
+        "updatedAt": "2026-10-25T00:44:38.748834879+00:00"
+      }
+    }
+  },
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/integration/procedure/migratestagedsupplierdata"
+    },
+    "converted": {
+      "checksum": "360e1a872595c0a9675d7cc31c4ed291",
+      "path": "snowflake/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql"
+    },
+    "source": {
+      "checksum": "05ef0954c684ce912144bfca28a6f40c",
+      "path": "source/wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql"
+    }
+  },
+  "id": "15f4538f-f470-41be-82a3-af4579497ee6",
+  "inScope": true,
+  "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0029",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0037",
+      "count": 1
+    }
+  ],
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 2,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [],
+    "parameters": {
+      "arguments": [],
+      "returns": [
+        {
+          "name": "[Lineage Key]",
+          "targetName": "\"Lineage Key\"",
+          "targetType": "INT",
+          "type": "INT"
+        }
+      ]
+    }
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Integration.MigrateStagedSupplierData",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "MigrateStagedSupplierData",
+    "objectType": "procedure",
+    "platform": "sqlServer",
+    "schema": "Integration"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Integration.MigrateStagedSupplierData",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "MigrateStagedSupplierData",
+    "objectType": "procedure",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-25T00:44:38Z"
+}

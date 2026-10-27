@@ -1,0 +1,140 @@
+{
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-25T00:05:04Z"
+    }
+  },
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "1b58ff50-d8e2-484d-ab98-b5441845a8a7",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM"
+        ]
+      },
+      {
+        "id": "8c5ef6e6-94ee-483e-b9b9-16303903422f",
+        "isMissing": false,
+        "relationTypes": []
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": []
+  },
+  "extensions": {
+    "isDone": true,
+    "tasks": {
+      "captureBaseline": {
+        "details": {
+          "error": null,
+          "verifiedBy": "status"
+        },
+        "error": null,
+        "status": "pending",
+        "updatedAt": "2026-10-25T17:23:42.660242298+00:00"
+      }
+    }
+  },
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/integration/procedure/getlastetlcutofftime"
+    },
+    "converted": {
+      "checksum": "3fa02d2146ff727a44d5051f40a2ea5d",
+      "path": "snowflake/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql"
+    },
+    "source": {
+      "checksum": "42b24465357ceb3ee13f97ac19c2f38b",
+      "path": "source/wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql"
+    }
+  },
+  "id": "1c09d28e-0eba-40b5-986f-febe7ac7dfbd",
+  "inScope": true,
+  "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0029",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0037",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0144",
+      "count": 2
+    }
+  ],
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 1,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [],
+    "parameters": {
+      "arguments": [
+        {
+          "direction": "in",
+          "isCursor": false,
+          "name": "@TableName",
+          "required": true,
+          "targetName": "TABLENAME",
+          "targetType": "VARCHAR",
+          "type": "SYSNAME"
+        }
+      ],
+      "returns": [
+        {
+          "name": "CutoffTime",
+          "targetName": "CutoffTime",
+          "targetType": "",
+          "type": "DATETIME2"
+        }
+      ]
+    }
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Integration.GetLastETLCutoffTime(SYSNAME)",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "GetLastETLCutoffTime",
+    "objectType": "procedure",
+    "platform": "sqlServer",
+    "schema": "Integration"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Integration.GetLastETLCutoffTime(VARCHAR)",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "GetLastETLCutoffTime",
+    "objectType": "procedure",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-25T17:37:58Z"
+}

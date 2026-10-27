@@ -1,0 +1,238 @@
+{
+  "schema_version": "1.0",
+  "source_system": "sql",
+  "engine_version": "2.51.3",
+  "source_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql",
+  "source_checksum": "a4a513c1d4f4761700121c31f036f8cb5c4987f975ce727720bd4196d0ce310b",
+  "pairs": [
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlUseStatement",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "source_text": "USE WideWorldImportersDW",
+      "targets": [
+        "USE DATABASE <%wideworldimportersdw%>"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 6,
+      "source_line_end": 85,
+      "source_text": "BEGIN\n--    SET NOCOUNT ON;\n--    SET XACT_ABORT ON;\n\n    BEGIN TRAN;\n\n    DECLARE @LineageKey int = (SELECT TOP(1) [Lineage Key]\n                               FROM Integration.Lineage\n                               WHERE [Table Name] = N'Sale'\n                               AND [Data Load Completed] IS NULL\n                               ORDER BY [Lineage Key] DESC);\n\n    -- Find the dimension keys required\n\n    UPDATE s\n        SET s.[City Key] = COALESCE((SELECT TOP(1) c.[City Key]\n                                     FROM Dimension.City AS c\n                                     WHERE c.[WWI City ID] = s.[WWI City ID]\n                                     AND s.[Last Modified When] > c.[Valid From]\n                                     AND s.[Last Modified When] <= c.[Valid To]\n\t\t\t\t\t\t\t\t\t ORDER BY c.[Valid From]), 0),\n            s.[Customer Key] = COALESCE((SELECT TOP(1) c.[Customer Key]\n                                           FROM Dimension.Customer AS c\n                                           WHERE c.[WWI Customer ID] = s.[WWI Customer ID]\n                                           AND s.[Last Modified When] > c.[Valid From]\n                                           AND s.[Last Modified When] <= c.[Valid To]\n\t\t\t\t\t\t\t\t\t       ORDER BY c.[Valid From]), 0),\n            s.[Bill To Customer Key] = COALESCE((SELECT TOP(1) c.[Customer Key]\n                                                 FROM Dimension.Customer AS c\n                                                 WHERE c.[WWI Customer ID] = s.[WWI Bill To Customer ID]\n                                                 AND s.[Last Modified When] > c.[Valid From]\n                                                 AND s.[Last Modified When] <= c.[Valid To]\n\t\t\t\t\t\t\t\t\t             ORDER BY c.[Valid From]), 0),\n            s.[Stock Item Key] = COALESCE((SELECT TOP(1) si.[Stock Item Key]\n                                           FROM Dimension.[Stock Item] AS si\n                                           WHERE si.[WWI Stock Item ID] = s.[WWI Stock Item ID]\n                                           AND s.[Last Modified When] > si.[Valid From]\n                                           AND s.[Last Modified When] <= si.[Valid To]\n\t\t\t\t\t\t\t\t\t       ORDER BY si.[Valid From]), 0),\n            s.[Salesperson Key] = COALESCE((SELECT TOP(1) e.[Employee Key]\n                                            FROM Dimension.Employee AS e\n                                            WHERE e.[WWI Employee ID] = s.[WWI Salesperson ID]\n                                            AND s.[Last Modified When] > e.[Valid From]\n                                            AND s.[Last Modified When] <= e.[Valid To]\n\t\t\t\t\t\t\t\t\t        ORDER BY e.[Valid From]), 0)\n    FROM Integration.Sale_Staging AS s;\n\n    -- Remove any existing entries for any of these invoices\n\n    DELETE s\n    FROM Fact.Sale AS s\n    WHERE s.[WWI Invoice ID] IN (SELECT [WWI Invoice ID] FROM Integration.Sale_Staging);\n\n    -- Insert all current details for these invoices\n\n    INSERT Fact.Sale\n        ([City Key], [Customer Key], [Bill To Customer Key], [Stock Item Key], [Invoice Date Key], [Delivery Date Key],\n         [Salesperson Key], [WWI Invoice ID], [Description], Package, Quantity, [Unit Price], [Tax Rate],\n         [Total Excluding Tax], [Tax Amount], Profit, [Total Including Tax], [Total Dry Items], [Total Chiller Items], [Lineage Key])\n    SELECT [City Key], [Customer Key], [Bill To Customer Key], [Stock Item Key], [Invoice Date Key], [Delivery Date Key],\n           [Salesperson Key], [WWI Invoice ID], [Description], Package, Quantity, [Unit Price], [Tax Rate],\n           [Total Excluding Tax], [Tax Amount], Profit, [Total Including Tax], [Total Dry Items], [Total Chiller Items], @LineageKey\n    FROM Integration.Sale_Staging;\n\n    UPDATE Integration.Lineage\n        SET [Data Load Completed] = SYSDATETIME(),\n            [Was Successful] = 1\n    WHERE [Lineage Key] = @LineageKey;\n\n    UPDATE Integration.[ETL Cutoff]\n        SET [Cutoff Time] = (SELECT [Source System Cutoff Time]\n                             FROM Integration.Lineage\n                             WHERE [Lineage Key] = @LineageKey)\n    FROM Integration.[ETL Cutoff]\n    WHERE [Table Name] = N'Sale';\n\n    COMMIT;\n\n    RETURN 0;\nEND;",
+      "targets": [],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 7,
+      "source_line_end": 7,
+      "source_text": "--    SET NOCOUNT ON;",
+      "targets": [
+        "--    SET NOCOUNT ON;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 8,
+      "source_line_end": 8,
+      "source_text": "--    SET XACT_ABORT ON;",
+      "targets": [
+        "--    SET XACT_ABORT ON;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 10,
+      "source_line_end": 10,
+      "source_text": "\n    BEGIN TRAN;",
+      "targets": [
+        "\n    BEGIN TRANSACTION;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 12,
+      "source_line_end": 16,
+      "source_text": "\n    DECLARE @LineageKey int = (SELECT TOP(1) [Lineage Key]\n                               FROM Integration.Lineage\n                               WHERE [Table Name] = N'Sale'\n                               AND [Data Load Completed] IS NULL\n                               ORDER BY [Lineage Key] DESC);",
+      "targets": [
+        "LINEAGEKEY := (SELECT\n   TOP 1\n      \"Lineage Key\"\n                                 FROM\n      Integration.Lineage\n                                 WHERE\n      \"Table Name\" = 'Sale'\n                                 AND \"Data Load Completed\" IS NULL\n                                 ORDER BY \"Lineage Key\" DESC);"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 20,
+      "source_line_end": 51,
+      "source_text": "\n    -- Find the dimension keys required\n\n    UPDATE s\n        SET s.[City Key] = COALESCE((SELECT TOP(1) c.[City Key]\n                                     FROM Dimension.City AS c\n                                     WHERE c.[WWI City ID] = s.[WWI City ID]\n                                     AND s.[Last Modified When] > c.[Valid From]\n                                     AND s.[Last Modified When] <= c.[Valid To]\n\t\t\t\t\t\t\t\t\t ORDER BY c.[Valid From]), 0),\n            s.[Customer Key] = COALESCE((SELECT TOP(1) c.[Customer Key]\n                                           FROM Dimension.Customer AS c\n                                           WHERE c.[WWI Customer ID] = s.[WWI Customer ID]\n                                           AND s.[Last Modified When] > c.[Valid From]\n                                           AND s.[Last Modified When] <= c.[Valid To]\n\t\t\t\t\t\t\t\t\t       ORDER BY c.[Valid From]), 0),\n            s.[Bill To Customer Key] = COALESCE((SELECT TOP(1) c.[Customer Key]\n                                                 FROM Dimension.Customer AS c\n                                                 WHERE c.[WWI Customer ID] = s.[WWI Bill To Customer ID]\n                                                 AND s.[Last Modified When] > c.[Valid From]\n                                                 AND s.[Last Modified When] <= c.[Valid To]\n\t\t\t\t\t\t\t\t\t             ORDER BY c.[Valid From]), 0),\n            s.[Stock Item Key] = COALESCE((SELECT TOP(1) si.[Stock Item Key]\n                                           FROM Dimension.[Stock Item] AS si\n                                           WHERE si.[WWI Stock Item ID] = s.[WWI Stock Item ID]\n                                           AND s.[Last Modified When] > si.[Valid From]\n                                           AND s.[Last Modified When] <= si.[Valid To]\n\t\t\t\t\t\t\t\t\t       ORDER BY si.[Valid From]), 0),\n            s.[Salesperson Key] = COALESCE((SELECT TOP(1) e.[Employee Key]\n                                            FROM Dimension.Employee AS e\n                                            WHERE e.[WWI Employee ID] = s.[WWI Salesperson ID]\n                                            AND s.[Last Modified When] > e.[Valid From]\n                                            AND s.[Last Modified When] <= e.[Valid To]\n\t\t\t\t\t\t\t\t\t        ORDER BY e.[Valid From]), 0)\n    FROM Integration.Sale_Staging AS s;",
+      "targets": [
+        "\n    -- Find the dimension keys required\n\n    UPDATE Integration.Sale_Staging s\n       SET\n          s.\"City Key\" = COALESCE((SELECT\n             TOP 1\n                c.\"City Key\"\n             FROM\n                Dimension.City AS c\n             WHERE\n                c.\"WWI City ID\" = s.\"WWI City ID\"\n                AND s.\"Last Modified When\" > c.\"Valid From\"\n                AND s.\"Last Modified When\" <= c.\"Valid To\"\n             ORDER BY c.\"Valid From\"\n          ), 0),\n          s.\"Customer Key\" = COALESCE((SELECT\n             TOP 1\n                c.\"Customer Key\"\n             FROM\n                Dimension.Customer AS c\n             WHERE\n                c.\"WWI Customer ID\" = s.\"WWI Customer ID\"\n                AND s.\"Last Modified When\" > c.\"Valid From\"\n                AND s.\"Last Modified When\" <= c.\"Valid To\"\n             ORDER BY c.\"Valid From\"\n          ), 0),\n          s.\"Bill To Customer Key\" = COALESCE((SELECT\n             TOP 1\n                c.\"Customer Key\"\n             FROM\n                Dimension.Customer AS c\n             WHERE\n                c.\"WWI Customer ID\" = s.\"WWI Bill To Customer ID\"\n                AND s.\"Last Modified When\" > c.\"Valid From\"\n                AND s.\"Last Modified When\" <= c.\"Valid To\"\n             ORDER BY c.\"Valid From\"\n          ), 0),\n          s.\"Stock Item Key\" = COALESCE((SELECT\n             TOP 1\n                si.\"Stock Item Key\"\n             FROM\n                Dimension.\"Stock Item\" AS si\n             WHERE\n                si.\"WWI Stock Item ID\" = s.\"WWI Stock Item ID\"\n                AND s.\"Last Modified When\" > si.\"Valid From\"\n                AND s.\"Last Modified When\" <= si.\"Valid To\"\n             ORDER BY si.\"Valid From\"\n          ), 0),\n          s.\"Salesperson Key\" = COALESCE((SELECT\n             TOP 1\n                e.\"Employee Key\"\n             FROM\n                Dimension.Employee AS e\n             WHERE\n                e.\"WWI Employee ID\" = s.\"WWI Salesperson ID\"\n                AND s.\"Last Modified When\" > e.\"Valid From\"\n                AND s.\"Last Modified When\" <= e.\"Valid To\"\n             ORDER BY e.\"Valid From\"\n          ), 0);"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 21,
+      "source_line_end": 26,
+      "source_text": "SELECT TOP(1) c.[City Key]\n                                     FROM Dimension.City AS c\n                                     WHERE c.[WWI City ID] = s.[WWI City ID]\n                                     AND s.[Last Modified When] > c.[Valid From]\n                                     AND s.[Last Modified When] <= c.[Valid To]\n\t\t\t\t\t\t\t\t\t ORDER BY c.[Valid From]",
+      "targets": [
+        "SELECT\nTOP 1\n   c.\"City Key\"\nFROM\n   Dimension.City AS c\nWHERE\n   c.\"WWI City ID\" = s.\"WWI City ID\"\n   AND s.\"Last Modified When\" > c.\"Valid From\"\n   AND s.\"Last Modified When\" <= c.\"Valid To\"\nORDER BY c.\"Valid From\""
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 27,
+      "source_line_end": 32,
+      "source_text": "SELECT TOP(1) c.[Customer Key]\n                                           FROM Dimension.Customer AS c\n                                           WHERE c.[WWI Customer ID] = s.[WWI Customer ID]\n                                           AND s.[Last Modified When] > c.[Valid From]\n                                           AND s.[Last Modified When] <= c.[Valid To]\n\t\t\t\t\t\t\t\t\t       ORDER BY c.[Valid From]",
+      "targets": [
+        "SELECT\nTOP 1\n   c.\"Customer Key\"\nFROM\n   Dimension.Customer AS c\nWHERE\n   c.\"WWI Customer ID\" = s.\"WWI Customer ID\"\n   AND s.\"Last Modified When\" > c.\"Valid From\"\n   AND s.\"Last Modified When\" <= c.\"Valid To\"\nORDER BY c.\"Valid From\""
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 33,
+      "source_line_end": 38,
+      "source_text": "SELECT TOP(1) c.[Customer Key]\n                                                 FROM Dimension.Customer AS c\n                                                 WHERE c.[WWI Customer ID] = s.[WWI Bill To Customer ID]\n                                                 AND s.[Last Modified When] > c.[Valid From]\n                                                 AND s.[Last Modified When] <= c.[Valid To]\n\t\t\t\t\t\t\t\t\t             ORDER BY c.[Valid From]",
+      "targets": [
+        "SELECT\nTOP 1\n   c.\"Customer Key\"\nFROM\n   Dimension.Customer AS c\nWHERE\n   c.\"WWI Customer ID\" = s.\"WWI Bill To Customer ID\"\n   AND s.\"Last Modified When\" > c.\"Valid From\"\n   AND s.\"Last Modified When\" <= c.\"Valid To\"\nORDER BY c.\"Valid From\""
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 39,
+      "source_line_end": 44,
+      "source_text": "SELECT TOP(1) si.[Stock Item Key]\n                                           FROM Dimension.[Stock Item] AS si\n                                           WHERE si.[WWI Stock Item ID] = s.[WWI Stock Item ID]\n                                           AND s.[Last Modified When] > si.[Valid From]\n                                           AND s.[Last Modified When] <= si.[Valid To]\n\t\t\t\t\t\t\t\t\t       ORDER BY si.[Valid From]",
+      "targets": [
+        "SELECT\nTOP 1\n   si.\"Stock Item Key\"\nFROM\n   Dimension.\"Stock Item\" AS si\nWHERE\n   si.\"WWI Stock Item ID\" = s.\"WWI Stock Item ID\"\n   AND s.\"Last Modified When\" > si.\"Valid From\"\n   AND s.\"Last Modified When\" <= si.\"Valid To\"\nORDER BY si.\"Valid From\""
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 45,
+      "source_line_end": 50,
+      "source_text": "SELECT TOP(1) e.[Employee Key]\n                                            FROM Dimension.Employee AS e\n                                            WHERE e.[WWI Employee ID] = s.[WWI Salesperson ID]\n                                            AND s.[Last Modified When] > e.[Valid From]\n                                            AND s.[Last Modified When] <= e.[Valid To]\n\t\t\t\t\t\t\t\t\t        ORDER BY e.[Valid From]",
+      "targets": [
+        "SELECT\nTOP 1\n   e.\"Employee Key\"\nFROM\n   Dimension.Employee AS e\nWHERE\n   e.\"WWI Employee ID\" = s.\"WWI Salesperson ID\"\n   AND s.\"Last Modified When\" > e.\"Valid From\"\n   AND s.\"Last Modified When\" <= e.\"Valid To\"\nORDER BY e.\"Valid From\""
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 55,
+      "source_line_end": 57,
+      "source_text": "\n    -- Remove any existing entries for any of these invoices\n\n    DELETE s\n    FROM Fact.Sale AS s\n    WHERE s.[WWI Invoice ID] IN (SELECT [WWI Invoice ID] FROM Integration.Sale_Staging);",
+      "targets": [
+        "\n-- Remove any existing entries for any of these invoices\nDELETE FROM\n   Fact.Sale AS s\nWHERE\n   s.\"WWI Invoice ID\" IN (SELECT\n         \"WWI Invoice ID\"\n      FROM\n         Integration.Sale_Staging\n   );"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 57,
+      "source_line_end": 57,
+      "source_text": "SELECT [WWI Invoice ID] FROM Integration.Sale_Staging",
+      "targets": [
+        "SELECT\n   \"WWI Invoice ID\"\nFROM\n   Integration.Sale_Staging"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 61,
+      "source_line_end": 68,
+      "source_text": "\n    -- Insert all current details for these invoices\n\n    INSERT Fact.Sale\n        ([City Key], [Customer Key], [Bill To Customer Key], [Stock Item Key], [Invoice Date Key], [Delivery Date Key],\n         [Salesperson Key], [WWI Invoice ID], [Description], Package, Quantity, [Unit Price], [Tax Rate],\n         [Total Excluding Tax], [Tax Amount], Profit, [Total Including Tax], [Total Dry Items], [Total Chiller Items], [Lineage Key])\n    SELECT [City Key], [Customer Key], [Bill To Customer Key], [Stock Item Key], [Invoice Date Key], [Delivery Date Key],\n           [Salesperson Key], [WWI Invoice ID], [Description], Package, Quantity, [Unit Price], [Tax Rate],\n           [Total Excluding Tax], [Tax Amount], Profit, [Total Including Tax], [Total Dry Items], [Total Chiller Items], @LineageKey\n    FROM Integration.Sale_Staging;",
+      "targets": [
+        "\n    -- Insert all current details for these invoices\n\n    INSERT INTO Fact.Sale\n    (\"City Key\", \"Customer Key\", \"Bill To Customer Key\", \"Stock Item Key\", \"Invoice Date Key\", \"Delivery Date Key\", \"Salesperson Key\", \"WWI Invoice ID\", Description, Package, Quantity, \"Unit Price\", \"Tax Rate\", \"Total Excluding Tax\", \"Tax Amount\", Profit, \"Total Including Tax\", \"Total Dry Items\", \"Total Chiller Items\", \"Lineage Key\")\n    SELECT\n       \"City Key\",\n       \"Customer Key\",\n       \"Bill To Customer Key\",\n       \"Stock Item Key\",\n       \"Invoice Date Key\",\n       \"Delivery Date Key\",\n       \"Salesperson Key\",\n       \"WWI Invoice ID\",\n       Description,\n       Package,\n       Quantity,\n       \"Unit Price\",\n       \"Tax Rate\",\n       \"Total Excluding Tax\",\n       \"Tax Amount\",\n       Profit,\n       \"Total Including Tax\",\n       \"Total Dry Items\",\n       \"Total Chiller Items\",\n       :LINEAGEKEY\n    FROM\n       Integration.Sale_Staging;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 65,
+      "source_line_end": 68,
+      "source_text": "    SELECT [City Key], [Customer Key], [Bill To Customer Key], [Stock Item Key], [Invoice Date Key], [Delivery Date Key],\n           [Salesperson Key], [WWI Invoice ID], [Description], Package, Quantity, [Unit Price], [Tax Rate],\n           [Total Excluding Tax], [Tax Amount], Profit, [Total Including Tax], [Total Dry Items], [Total Chiller Items], @LineageKey\n    FROM Integration.Sale_Staging",
+      "targets": [
+        "    SELECT\n       \"City Key\",\n       \"Customer Key\",\n       \"Bill To Customer Key\",\n       \"Stock Item Key\",\n       \"Invoice Date Key\",\n       \"Delivery Date Key\",\n       \"Salesperson Key\",\n       \"WWI Invoice ID\",\n       Description,\n       Package,\n       Quantity,\n       \"Unit Price\",\n       \"Tax Rate\",\n       \"Total Excluding Tax\",\n       \"Tax Amount\",\n       Profit,\n       \"Total Including Tax\",\n       \"Total Dry Items\",\n       \"Total Chiller Items\",\n       :LINEAGEKEY\n    FROM\n       Integration.Sale_Staging"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 70,
+      "source_line_end": 73,
+      "source_text": "\n    UPDATE Integration.Lineage\n        SET [Data Load Completed] = SYSDATETIME(),\n            [Was Successful] = 1\n    WHERE [Lineage Key] = @LineageKey;",
+      "targets": [
+        "\n    UPDATE Integration.Lineage\n       SET\n          \"Data Load Completed\" = CURRENT_TIMESTAMP(),\n          \"Was Successful\" = 1\n    WHERE\n          \"Lineage Key\" = :LINEAGEKEY;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 75,
+      "source_line_end": 80,
+      "source_text": "\n    UPDATE Integration.[ETL Cutoff]\n        SET [Cutoff Time] = (SELECT [Source System Cutoff Time]\n                             FROM Integration.Lineage\n                             WHERE [Lineage Key] = @LineageKey)\n    FROM Integration.[ETL Cutoff]\n    WHERE [Table Name] = N'Sale';",
+      "targets": [
+        "\n    UPDATE Integration.\"ETL Cutoff\"\n       SET\n          \"Cutoff Time\" = (SELECT\n                \"Source System Cutoff Time\"\n             FROM\n                Integration.Lineage\n             WHERE\n                \"Lineage Key\" = :LINEAGEKEY\n          )\n    FROM\n          Integration.\"ETL Cutoff\"\n    WHERE\n          \"Table Name\" = 'Sale';"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 76,
+      "source_line_end": 78,
+      "source_text": "SELECT [Source System Cutoff Time]\n                             FROM Integration.Lineage\n                             WHERE [Lineage Key] = @LineageKey",
+      "targets": [
+        "SELECT\n   \"Source System Cutoff Time\"\nFROM\n   Integration.Lineage\nWHERE\n   \"Lineage Key\" = :LINEAGEKEY"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 82,
+      "source_line_end": 82,
+      "source_text": "\n    COMMIT;",
+      "targets": [
+        "COMMIT;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 84,
+      "source_line_end": 84,
+      "source_text": "\n    RETURN 0;",
+      "targets": [
+        "RETURN 0;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedsaledata.sql"
+    }
+  ]
+}

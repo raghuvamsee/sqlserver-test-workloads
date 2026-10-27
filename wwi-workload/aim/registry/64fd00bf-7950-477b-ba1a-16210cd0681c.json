@@ -1,0 +1,170 @@
+{
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:38:29Z"
+    }
+  },
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "ec6d1d59-275d-4534-ac94-d38e8400544f",
+        "isMissing": false,
+        "relationTypes": [
+          "TABLE COLUMN"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "080cb1d3-1bc8-46bb-9158-7b75ccd8d610",
+      "15f4538f-f470-41be-82a3-af4579497ee6",
+      "502f33d6-5479-42c5-93c5-c7ab49887d89",
+      "61b177e5-22ae-4122-ad6d-d6d1b3294c2f",
+      "63d73798-b097-4e6e-9bad-ca1a0c797a2d",
+      "78b4c133-b88a-46fc-82b9-b15279a27f6e",
+      "8fb602a4-f637-4c3f-b8f0-7ff368017a53",
+      "94b27a11-90e9-4b1b-8f82-1112a998026c",
+      "9a3eb4a0-ce08-41f5-bbb4-dda3060b0afb",
+      "9b231eeb-3339-4b1d-8cd4-c6f5ebf1d321",
+      "a4d9e481-0fc3-4291-bc5d-cc9a9c2b6b43",
+      "bc70f733-1bf3-4137-87b5-69397ebb5877",
+      "c8533b70-579e-44b7-835f-1ea1a422b480",
+      "d0cef0ff-9761-4e20-9ce8-2980bb9aeabe",
+      "e246ca55-9881-4ecd-8b71-f32f3f898ece"
+    ]
+  },
+  "extensions": {
+    "isDone": true
+  },
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/integration/table/lineage"
+    },
+    "converted": {
+      "checksum": "8a162c6d6d04db6da861f9c6bb41ea0d",
+      "path": "snowflake/wideworldimportersdw/integration/table/lineage.sql"
+    },
+    "source": {
+      "checksum": "3c8c220d157021a04cc2c224ee8490e2",
+      "path": "source/wideworldimportersdw/integration/table/lineage.sql"
+    }
+  },
+  "id": "64fd00bf-7950-477b-ba1a-16210cd0681c",
+  "inScope": true,
+  "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-0012",
+      "count": 1
+    }
+  ],
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 1,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": true,
+        "name": "Lineage Key",
+        "nullable": false,
+        "targetName": "\"Lineage Key\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Data Load Started\"",
+        "nullable": false,
+        "targetName": "\"Data Load Started\"",
+        "targetType": "",
+        "type": "DATETIME2"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Table Name\"",
+        "nullable": false,
+        "targetName": "\"Table Name\"",
+        "targetType": "VARCHAR",
+        "type": "SYSNAME"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Data Load Completed\"",
+        "nullable": true,
+        "targetName": "\"Data Load Completed\"",
+        "targetType": "",
+        "type": "DATETIME2"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Was Successful\"",
+        "nullable": false,
+        "targetName": "\"Was Successful\"",
+        "targetType": "BOOLEAN",
+        "type": "BIT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Source System Cutoff Time\"",
+        "nullable": false,
+        "targetName": "\"Source System Cutoff Time\"",
+        "targetType": "",
+        "type": "DATETIME2"
+      }
+    ],
+    "parameters": {
+      "arguments": [],
+      "returns": []
+    }
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Integration.Lineage",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "Lineage",
+    "objectType": "table",
+    "platform": "sqlServer",
+    "schema": "Integration"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Integration.Lineage",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Lineage",
+    "objectType": "table",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T23:35:33Z"
+}

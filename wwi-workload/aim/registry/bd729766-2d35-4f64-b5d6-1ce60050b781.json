@@ -1,0 +1,105 @@
+{
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": "Error: SQL compilation error:\nsyntax error line 4 at position 0 unexpected '!'. SqlState: 42000, VendorCode: 1003, QueryId: 01c7f392-0109-47d7-0012-43a20003e006"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:36:41Z"
+    }
+  },
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "06c1a86c-68de-47cb-8638-c5a6f62ae020"
+    ]
+  },
+  "extensions": {
+    "isDone": true,
+    "tasks": {
+      "verify": {
+        "details": {
+          "error": null,
+          "verifiedBy": "agent"
+        },
+        "error": null,
+        "status": "completed",
+        "updatedAt": "2026-10-24T20:37:07.476983161+00:00"
+      }
+    }
+  },
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/sequences/sequence/employeekey"
+    },
+    "converted": {
+      "checksum": "4d45d3b5076aa2ba050c191c6975b0af",
+      "path": "snowflake/wideworldimportersdw/sequences/sequence/employeekey.sql"
+    },
+    "source": {
+      "checksum": "c1b62565b94cf7242df5aacfcf99d0e4",
+      "path": "source/wideworldimportersdw/sequences/sequence/employeekey.sql"
+    }
+  },
+  "id": "bd729766-2d35-4f64-b5d6-1ce60050b781",
+  "inScope": true,
+  "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-EWI-0001",
+      "count": 1,
+      "severity": "critical"
+    },
+    {
+      "code": "SSC-EWI-0120",
+      "count": 1,
+      "severity": "low"
+    }
+  ],
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": []
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Sequences.EmployeeKey",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "EmployeeKey",
+    "objectType": "sequence",
+    "platform": "sqlServer",
+    "schema": "Sequences"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Sequences.EmployeeKey",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "EmployeeKey",
+    "objectType": "sequence",
+    "schema": "Sequences"
+  },
+  "updatedAt": "2026-10-24T20:37:52Z"
+}

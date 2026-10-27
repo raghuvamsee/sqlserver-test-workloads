@@ -1,0 +1,627 @@
+{
+  "object": "WideWorldImportersDW.Integration.MigrateStagedTransactionData()",
+  "object_type": "PROCEDURE",
+  "branches": [
+    {
+      "branch_id": 0,
+      "construct_kind": "WHERE_FILTER",
+      "line": 14,
+      "predicate_text": "[Table Name] = N'Transaction'\n                               AND [Data Load Completed] IS NULL",
+      "columns": [
+        {
+          "column": "\"Table Name\"",
+          "table": "WideWorldImportersDW.Integration.Lineage",
+          "type": "sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "\"Data Load Completed\"",
+          "table": "WideWorldImportersDW.Integration.Lineage",
+          "type": "DATETIME2",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": true,
+          "is_datetime": true,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "and",
+        "children": [
+          {
+            "kind": "atom",
+            "columns": [
+              "WideWorldImportersDW.Integration.Lineage.\"Table Name\""
+            ],
+            "operator": "=",
+            "values": [
+              "Transaction"
+            ],
+            "operands": [
+              {
+                "kind": "column",
+                "column": "WideWorldImportersDW.Integration.Lineage.\"Table Name\"",
+                "text": "[Table Name]"
+              },
+              {
+                "kind": "literal",
+                "literal": "Transaction",
+                "text": "N'Transaction'"
+              }
+            ]
+          },
+          {
+            "kind": "atom",
+            "columns": [
+              "WideWorldImportersDW.Integration.Lineage.\"Data Load Completed\""
+            ],
+            "operator": "IS NULL",
+            "values": [],
+            "operands": [
+              {
+                "kind": "column",
+                "column": "WideWorldImportersDW.Integration.Lineage.\"Data Load Completed\"",
+                "text": "[Data Load Completed]"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "branch_id": 1,
+      "construct_kind": "WHERE_FILTER",
+      "line": 76,
+      "predicate_text": "[Table Name] = N'Transaction'",
+      "columns": [
+        {
+          "column": "\"Table Name\"",
+          "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+          "type": "sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "atom",
+        "columns": [
+          "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\""
+        ],
+        "operator": "=",
+        "values": [
+          "Transaction"
+        ],
+        "operands": [
+          {
+            "kind": "column",
+            "column": "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\"",
+            "text": "[Table Name]"
+          },
+          {
+            "kind": "literal",
+            "literal": "Transaction",
+            "text": "N'Transaction'"
+          }
+        ]
+      }
+    }
+  ],
+  "predicates": [
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Data Load Completed\"",
+      "operator": "IS NULL",
+      "values": [],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Data Load Completed\"",
+          "text": "[Data Load Completed]"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Lineage Key\"",
+      "operator": "=",
+      "values": [
+        "@LineageKey"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Lineage Key\"",
+          "text": "[Lineage Key]"
+        },
+        {
+          "kind": "parameter",
+          "parameter": "@LineageKey",
+          "text": "@LineageKey"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Table Name\"",
+      "operator": "=",
+      "values": [
+        "Transaction"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Table Name\"",
+          "text": "[Table Name]"
+        },
+        {
+          "kind": "literal",
+          "literal": "Transaction",
+          "text": "N'Transaction'"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+      "column": "\"Table Name\"",
+      "operator": "=",
+      "values": [
+        "Transaction"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\"",
+          "text": "[Table Name]"
+        },
+        {
+          "kind": "literal",
+          "literal": "Transaction",
+          "text": "N'Transaction'"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "left_table": "WideWorldImportersDW.Dimension.Customer",
+      "left_columns": [
+        "\"WWI Customer ID\""
+      ],
+      "right_table": "WideWorldImportersDW.Integration.Transaction_Staging",
+      "right_columns": [
+        "\"WWI Bill To Customer ID\""
+      ],
+      "join_type": "inner",
+      "is_anti": false
+    },
+    {
+      "left_table": "WideWorldImportersDW.Dimension.Customer",
+      "left_columns": [
+        "\"WWI Customer ID\""
+      ],
+      "right_table": "WideWorldImportersDW.Integration.Transaction_Staging",
+      "right_columns": [
+        "\"WWI Customer ID\""
+      ],
+      "join_type": "inner",
+      "is_anti": false
+    },
+    {
+      "left_table": "WideWorldImportersDW.Dimension.Supplier",
+      "left_columns": [
+        "\"WWI Supplier ID\""
+      ],
+      "right_table": "WideWorldImportersDW.Integration.Transaction_Staging",
+      "right_columns": [
+        "\"WWI Supplier ID\""
+      ],
+      "join_type": "inner",
+      "is_anti": false
+    },
+    {
+      "left_table": "WideWorldImportersDW.Dimension.[Payment Method]",
+      "left_columns": [
+        "\"WWI Payment Method ID\""
+      ],
+      "right_table": "WideWorldImportersDW.Integration.Transaction_Staging",
+      "right_columns": [
+        "\"WWI Payment Method ID\""
+      ],
+      "join_type": "inner",
+      "is_anti": false
+    },
+    {
+      "left_table": "WideWorldImportersDW.Dimension.[Transaction Type]",
+      "left_columns": [
+        "\"WWI Transaction Type ID\""
+      ],
+      "right_table": "WideWorldImportersDW.Integration.Transaction_Staging",
+      "right_columns": [
+        "\"WWI Transaction Type ID\""
+      ],
+      "join_type": "inner",
+      "is_anti": false
+    }
+  ],
+  "assignments": [
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"WWI Customer ID\"",
+      "value": "t.[WWI Bill To Customer ID]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"WWI Customer ID\"",
+      "value": "t.[WWI Customer ID]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Supplier",
+      "column": "\"WWI Supplier ID\"",
+      "value": "t.[WWI Supplier ID]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Payment Method]",
+      "column": "\"WWI Payment Method ID\"",
+      "value": "t.[WWI Payment Method ID]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Transaction Type]",
+      "column": "\"WWI Transaction Type ID\"",
+      "value": "t.[WWI Transaction Type ID]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.[Transaction]",
+      "column": "\"Bill To Customer Key\"",
+      "value": "[Bill To Customer Key]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.[Transaction]",
+      "column": "\"Customer Key\"",
+      "value": "[Customer Key]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.[Transaction]",
+      "column": "\"Date Key\"",
+      "value": "[Date Key]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.[Transaction]",
+      "column": "\"Is Finalized\"",
+      "value": "[Is Finalized]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.[Transaction]",
+      "column": "\"Lineage Key\"",
+      "value": "@LineageKey"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.[Transaction]",
+      "column": "\"Outstanding Balance\"",
+      "value": "[Outstanding Balance]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.[Transaction]",
+      "column": "\"Payment Method Key\"",
+      "value": "[Payment Method Key]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.[Transaction]",
+      "column": "\"Supplier Invoice Number\"",
+      "value": "[Supplier Invoice Number]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.[Transaction]",
+      "column": "\"Supplier Key\"",
+      "value": "[Supplier Key]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.[Transaction]",
+      "column": "\"Tax Amount\"",
+      "value": "[Tax Amount]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.[Transaction]",
+      "column": "\"Total Excluding Tax\"",
+      "value": "[Total Excluding Tax]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.[Transaction]",
+      "column": "\"Total Including Tax\"",
+      "value": "[Total Including Tax]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.[Transaction]",
+      "column": "\"Transaction Type Key\"",
+      "value": "[Transaction Type Key]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.[Transaction]",
+      "column": "\"WWI Customer Transaction ID\"",
+      "value": "[WWI Customer Transaction ID]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.[Transaction]",
+      "column": "\"WWI Invoice ID\"",
+      "value": "[WWI Invoice ID]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.[Transaction]",
+      "column": "\"WWI Purchase Order ID\"",
+      "value": "[WWI Purchase Order ID]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.[Transaction]",
+      "column": "\"WWI Supplier Transaction ID\"",
+      "value": "[WWI Supplier Transaction ID]"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Data Load Completed\"",
+      "value": "SYSDATETIME()",
+      "value_kind": "nondeterministic",
+      "value_expression": {
+        "kind": "fn",
+        "fn": "SYSDATETIME",
+        "args": []
+      }
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Lineage Key\"",
+      "value": "@LineageKey"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Was Successful\"",
+      "value": "1",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Transaction_Staging",
+      "column": "\"Bill To Customer Key\"",
+      "value": "COALESCE((SELECT TOP(1) c.[Customer Key]\n                                                 FROM Dimension.Customer AS c\n                                                 WHERE c.[WWI Customer ID] = t.[WWI Bill To Customer ID]\n                                                 AND t.[Last Modified When] > c.[Valid From]\n                                                 AND t.[Last Modified When] <= c.[Valid To]\n\t\t\t\t\t\t\t\t\t             ORDER BY c.[Valid From]), 0)",
+      "value_kind": "opaque_expression",
+      "value_expression": {
+        "kind": "fn",
+        "fn": "COALESCE",
+        "args": [
+          {
+            "kind": "opaque",
+            "text": "(SELECT TOP(1) c.[Customer Key]\n                                                 FROM Dimension.Customer AS c\n                                                 WHERE c.[WWI Customer ID] = t.[WWI Bill To Customer ID]\n                                                 AND t.[Last Modified When] > c.[Valid From]\n                                                 AND t.[Last Modified When] <= c.[Valid To]\n\t\t\t\t\t\t\t\t\t             ORDER BY c.[Valid From])"
+          },
+          {
+            "kind": "literal",
+            "literal": "0"
+          }
+        ]
+      }
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Transaction_Staging",
+      "column": "\"Customer Key\"",
+      "value": "COALESCE((SELECT TOP(1) c.[Customer Key]\n                                         FROM Dimension.Customer AS c\n                                         WHERE c.[WWI Customer ID] = t.[WWI Customer ID]\n                                         AND t.[Last Modified When] > c.[Valid From]\n                                         AND t.[Last Modified When] <= c.[Valid To]\n\t\t\t\t\t\t\t\t\t     ORDER BY c.[Valid From]), 0)",
+      "value_kind": "opaque_expression",
+      "value_expression": {
+        "kind": "fn",
+        "fn": "COALESCE",
+        "args": [
+          {
+            "kind": "opaque",
+            "text": "(SELECT TOP(1) c.[Customer Key]\n                                         FROM Dimension.Customer AS c\n                                         WHERE c.[WWI Customer ID] = t.[WWI Customer ID]\n                                         AND t.[Last Modified When] > c.[Valid From]\n                                         AND t.[Last Modified When] <= c.[Valid To]\n\t\t\t\t\t\t\t\t\t     ORDER BY c.[Valid From])"
+          },
+          {
+            "kind": "literal",
+            "literal": "0"
+          }
+        ]
+      }
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Transaction_Staging",
+      "column": "\"Last Modified When\"",
+      "value": "c.[Valid From]"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Transaction_Staging",
+      "column": "\"Last Modified When\"",
+      "value": "c.[Valid To]"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Transaction_Staging",
+      "column": "\"Last Modified When\"",
+      "value": "pm.[Valid From]"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Transaction_Staging",
+      "column": "\"Last Modified When\"",
+      "value": "pm.[Valid To]"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Transaction_Staging",
+      "column": "\"Last Modified When\"",
+      "value": "s.[Valid From]"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Transaction_Staging",
+      "column": "\"Last Modified When\"",
+      "value": "s.[Valid To]"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Transaction_Staging",
+      "column": "\"Last Modified When\"",
+      "value": "tt.[Valid From]"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Transaction_Staging",
+      "column": "\"Last Modified When\"",
+      "value": "tt.[Valid To]"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Transaction_Staging",
+      "column": "\"Payment Method Key\"",
+      "value": "COALESCE((SELECT TOP(1) pm.[Payment Method Key]\n                                                 FROM Dimension.[Payment Method] AS pm\n                                                 WHERE pm.[WWI Payment Method ID] = t.[WWI Payment Method ID]\n                                                 AND t.[Last Modified When] > pm.[Valid From]\n                                                 AND t.[Last Modified When] <= pm.[Valid To]\n\t\t\t\t\t\t\t\t\t             ORDER BY pm.[Valid From]), 0)",
+      "value_kind": "opaque_expression",
+      "value_expression": {
+        "kind": "fn",
+        "fn": "COALESCE",
+        "args": [
+          {
+            "kind": "opaque",
+            "text": "(SELECT TOP(1) pm.[Payment Method Key]\n                                                 FROM Dimension.[Payment Method] AS pm\n                                                 WHERE pm.[WWI Payment Method ID] = t.[WWI Payment Method ID]\n                                                 AND t.[Last Modified When] > pm.[Valid From]\n                                                 AND t.[Last Modified When] <= pm.[Valid To]\n\t\t\t\t\t\t\t\t\t             ORDER BY pm.[Valid From])"
+          },
+          {
+            "kind": "literal",
+            "literal": "0"
+          }
+        ]
+      }
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Transaction_Staging",
+      "column": "\"Supplier Key\"",
+      "value": "COALESCE((SELECT TOP(1) s.[Supplier Key]\n                                         FROM Dimension.Supplier AS s\n                                         WHERE s.[WWI Supplier ID] = t.[WWI Supplier ID]\n                                         AND t.[Last Modified When] > s.[Valid From]\n                                         AND t.[Last Modified When] <= s.[Valid To]\n\t\t\t\t\t\t\t\t\t     ORDER BY s.[Valid From]), 0)",
+      "value_kind": "opaque_expression",
+      "value_expression": {
+        "kind": "fn",
+        "fn": "COALESCE",
+        "args": [
+          {
+            "kind": "opaque",
+            "text": "(SELECT TOP(1) s.[Supplier Key]\n                                         FROM Dimension.Supplier AS s\n                                         WHERE s.[WWI Supplier ID] = t.[WWI Supplier ID]\n                                         AND t.[Last Modified When] > s.[Valid From]\n                                         AND t.[Last Modified When] <= s.[Valid To]\n\t\t\t\t\t\t\t\t\t     ORDER BY s.[Valid From])"
+          },
+          {
+            "kind": "literal",
+            "literal": "0"
+          }
+        ]
+      }
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Transaction_Staging",
+      "column": "\"Transaction Type Key\"",
+      "value": "COALESCE((SELECT TOP(1) tt.[Transaction Type Key]\n                                                 FROM Dimension.[Transaction Type] AS tt\n                                                 WHERE tt.[WWI Transaction Type ID] = t.[WWI Transaction Type ID]\n                                                 AND t.[Last Modified When] > tt.[Valid From]\n                                                 AND t.[Last Modified When] <= tt.[Valid To]\n\t\t\t\t\t\t\t\t\t             ORDER BY tt.[Valid From]), 0)",
+      "value_kind": "opaque_expression",
+      "value_expression": {
+        "kind": "fn",
+        "fn": "COALESCE",
+        "args": [
+          {
+            "kind": "opaque",
+            "text": "(SELECT TOP(1) tt.[Transaction Type Key]\n                                                 FROM Dimension.[Transaction Type] AS tt\n                                                 WHERE tt.[WWI Transaction Type ID] = t.[WWI Transaction Type ID]\n                                                 AND t.[Last Modified When] > tt.[Valid From]\n                                                 AND t.[Last Modified When] <= tt.[Valid To]\n\t\t\t\t\t\t\t\t\t             ORDER BY tt.[Valid From])"
+          },
+          {
+            "kind": "literal",
+            "literal": "0"
+          }
+        ]
+      }
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+      "column": "\"Cutoff Time\"",
+      "value": "(SELECT [Source System Cutoff Time]\n                             FROM Integration.Lineage\n                             WHERE [Lineage Key] = @LineageKey)"
+    }
+  ],
+  "semi_anti": [],
+  "schema_version": 1,
+  "insert_targets": [
+    {
+      "target_table": "WideWorldImportersDW.Fact.[Transaction]",
+      "columns": [
+        {
+          "target_column": "\"Date Key\"",
+          "source_table": "WideWorldImportersDW.Integration.Transaction_Staging",
+          "source_column": "\"Date Key\""
+        },
+        {
+          "target_column": "\"Customer Key\"",
+          "source_table": "WideWorldImportersDW.Integration.Transaction_Staging",
+          "source_column": "\"Customer Key\""
+        },
+        {
+          "target_column": "\"Bill To Customer Key\"",
+          "source_table": "WideWorldImportersDW.Integration.Transaction_Staging",
+          "source_column": "\"Bill To Customer Key\""
+        },
+        {
+          "target_column": "\"Supplier Key\"",
+          "source_table": "WideWorldImportersDW.Integration.Transaction_Staging",
+          "source_column": "\"Supplier Key\""
+        },
+        {
+          "target_column": "\"Transaction Type Key\"",
+          "source_table": "WideWorldImportersDW.Integration.Transaction_Staging",
+          "source_column": "\"Transaction Type Key\""
+        },
+        {
+          "target_column": "\"Payment Method Key\"",
+          "source_table": "WideWorldImportersDW.Integration.Transaction_Staging",
+          "source_column": "\"Payment Method Key\""
+        },
+        {
+          "target_column": "\"WWI Customer Transaction ID\"",
+          "source_table": "WideWorldImportersDW.Integration.Transaction_Staging",
+          "source_column": "\"WWI Customer Transaction ID\""
+        },
+        {
+          "target_column": "\"WWI Supplier Transaction ID\"",
+          "source_table": "WideWorldImportersDW.Integration.Transaction_Staging",
+          "source_column": "\"WWI Supplier Transaction ID\""
+        },
+        {
+          "target_column": "\"WWI Invoice ID\"",
+          "source_table": "WideWorldImportersDW.Integration.Transaction_Staging",
+          "source_column": "\"WWI Invoice ID\""
+        },
+        {
+          "target_column": "\"WWI Purchase Order ID\"",
+          "source_table": "WideWorldImportersDW.Integration.Transaction_Staging",
+          "source_column": "\"WWI Purchase Order ID\""
+        },
+        {
+          "target_column": "\"Supplier Invoice Number\"",
+          "source_table": "WideWorldImportersDW.Integration.Transaction_Staging",
+          "source_column": "\"Supplier Invoice Number\""
+        },
+        {
+          "target_column": "\"Total Excluding Tax\"",
+          "source_table": "WideWorldImportersDW.Integration.Transaction_Staging",
+          "source_column": "\"Total Excluding Tax\""
+        },
+        {
+          "target_column": "\"Tax Amount\"",
+          "source_table": "WideWorldImportersDW.Integration.Transaction_Staging",
+          "source_column": "\"Tax Amount\""
+        },
+        {
+          "target_column": "\"Total Including Tax\"",
+          "source_table": "WideWorldImportersDW.Integration.Transaction_Staging",
+          "source_column": "\"Total Including Tax\""
+        },
+        {
+          "target_column": "\"Outstanding Balance\"",
+          "source_table": "WideWorldImportersDW.Integration.Transaction_Staging",
+          "source_column": "\"Outstanding Balance\""
+        },
+        {
+          "target_column": "\"Is Finalized\"",
+          "source_table": "WideWorldImportersDW.Integration.Transaction_Staging",
+          "source_column": "\"Is Finalized\""
+        }
+      ]
+    }
+  ]
+}

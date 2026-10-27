@@ -1,0 +1,10 @@
+schema_version: 1.0
+project_id: MIGRATION_PROJECT_25bfec2a_a662_4deb_9ff3_fc2c82b56737
+project_name: aim
+source_language: SqlServer
+created_by: ubuntu
+created_at: 2026-10-24T19:41:16.6705858Z
+cloud_project_id: MIGRATION_PROJECT_25bfec2a_a662_4deb_9ff3_fc2c82b56737
+default_affinity: aim-25bfec2a
+project_type: full_migration
+enable_cloud_status: true

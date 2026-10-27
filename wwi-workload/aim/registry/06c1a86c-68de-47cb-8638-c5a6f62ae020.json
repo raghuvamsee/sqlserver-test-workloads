@@ -1,0 +1,197 @@
+{
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:38:29Z"
+    }
+  },
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "bd729766-2d35-4f64-b5d6-1ce60050b781",
+        "isMissing": false,
+        "relationTypes": [
+          "TABLE COLUMN"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "3bfec749-680e-49b9-a41c-9974cbc5545d",
+      "63d73798-b097-4e6e-9bad-ca1a0c797a2d",
+      "9b231eeb-3339-4b1d-8cd4-c6f5ebf1d321",
+      "a4d9e481-0fc3-4291-bc5d-cc9a9c2b6b43",
+      "ad0a1a25-10bb-422a-91be-929f5d2732b9",
+      "ad69d741-caa8-4743-ab27-da074f87b678",
+      "d0cef0ff-9761-4e20-9ce8-2980bb9aeabe"
+    ]
+  },
+  "extensions": {
+    "isDone": true
+  },
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/dimension/table/employee"
+    },
+    "converted": {
+      "checksum": "33f5fc6a171ab424ce74ace9e031b980",
+      "path": "snowflake/wideworldimportersdw/dimension/table/employee.sql"
+    },
+    "source": {
+      "checksum": "f3ba860bd3cd13cfd910e0cc004193bf",
+      "path": "source/wideworldimportersdw/dimension/table/employee.sql"
+    }
+  },
+  "id": "06c1a86c-68de-47cb-8638-c5a6f62ae020",
+  "inScope": true,
+  "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-0012",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0002",
+      "count": 2
+    },
+    {
+      "code": "SSC-PRF-0002",
+      "count": 2
+    }
+  ],
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 1,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": true,
+        "name": "Employee Key",
+        "nullable": false,
+        "targetName": "\"Employee Key\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"WWI Employee ID\"",
+        "nullable": false,
+        "targetName": "\"WWI Employee ID\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "Employee",
+        "nullable": false,
+        "targetName": "Employee",
+        "targetType": "NVARCHAR",
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Preferred Name\"",
+        "nullable": false,
+        "targetName": "\"Preferred Name\"",
+        "targetType": "NVARCHAR",
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Is Salesperson\"",
+        "nullable": false,
+        "targetName": "\"Is Salesperson\"",
+        "targetType": "BOOLEAN",
+        "type": "BIT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "Photo",
+        "nullable": true,
+        "targetName": "Photo",
+        "targetType": "VARBINARY",
+        "type": "VARBINARY"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Valid From\"",
+        "nullable": false,
+        "targetName": "\"Valid From\"",
+        "targetType": "",
+        "type": "DATETIME2"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Valid To\"",
+        "nullable": false,
+        "targetName": "\"Valid To\"",
+        "targetType": "",
+        "type": "DATETIME2"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Lineage Key\"",
+        "nullable": false,
+        "targetName": "\"Lineage Key\"",
+        "targetType": "INT",
+        "type": "INT"
+      }
+    ],
+    "parameters": {
+      "arguments": [],
+      "returns": []
+    }
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Dimension.Employee",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "Employee",
+    "objectType": "table",
+    "platform": "sqlServer",
+    "schema": "Dimension"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Dimension.Employee",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Employee",
+    "objectType": "table",
+    "schema": "Dimension"
+  },
+  "updatedAt": "2026-10-24T23:46:43Z"
+}

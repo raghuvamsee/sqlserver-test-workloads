@@ -1,0 +1,10 @@
+OBJECT_NAME,OBJECT_TYPE,STATUS,ERROR_MESSAGE,DATABASE,SCHEMA,FQN,SNOWSIGHT_URL
+<%wideworldimportersdw%>.Sequences,Schema,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Sequences,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Website,Schema,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Website,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.PowerBI,Schema,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.PowerBI,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.dbo,Schema,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.dbo,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Integration,Schema,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Integration,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Application,Schema,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Application,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Dimension,Schema,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Dimension,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Reports,Schema,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Reports,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Fact,Schema,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Fact,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC

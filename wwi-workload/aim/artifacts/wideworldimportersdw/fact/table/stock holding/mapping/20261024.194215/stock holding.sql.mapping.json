@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "source_system": "sql",
+  "engine_version": "2.51.3",
+  "source_file": "wideworldimportersdw/fact/table/stock holding.sql",
+  "source_checksum": "cfaf7070eeb2bc2ad7128f1dd9c1c053a14f68190ecf1fe51ce10ab023f4a172",
+  "pairs": [
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlUseStatement",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "source_text": "USE WideWorldImportersDW",
+      "targets": [
+        "USE DATABASE <%wideworldimportersdw%>"
+      ],
+      "target_file": "wideworldimportersdw/fact/table/stock holding.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlAlterTableStatement",
+      "source_line_start": 17,
+      "source_line_end": 18,
+      "source_text": "\nALTER TABLE [Fact].[Stock Holding]\n    ADD CONSTRAINT [FK_Fact_Stock_Holding_Stock_Item_Key_Dimension_Stock Item] FOREIGN KEY ([Stock Item Key]) REFERENCES [Dimension].[Stock Item] ([Stock Item Key])",
+      "targets": [],
+      "target_file": "wideworldimportersdw/fact/table/stock holding.sql"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+sql_object_id,file_path,sql_object_type,presence,line_number,lines_of_code,deployment_order
+WideWorldImportersDW.Integration.MigrateStagedSupplierData(),wideworldimportersdw/integration/procedure/migratestagedsupplierdata.sql,PROCEDURE,BOTH,3,46,2
+WideWorldImportersDW.Integration.MigrateStagedTransactionData(),wideworldimportersdw/integration/procedure/migratestagedtransactiondata.sql,PROCEDURE,BOTH,3,69,2
+WideWorldImportersDW.Fact.Sale,wideworldimportersdw/fact/table/sale.sql,TABLE,BOTH,3,24,0
+WideWorldImportersDW.Dimension.[Date],wideworldimportersdw/dimension/table/date.sql,TABLE,BOTH,3,17,0
+WideWorldImportersDW.Sequences.PaymentMethodKey,wideworldimportersdw/sequences/sequence/paymentmethodkey.sql,SEQUENCE,BOTH,3,9,0
+WideWorldImportersDW.Dimension,wideworldimportersdw/schema/dimension.sql,SCHEMA,BOTH,3,1,0
+WideWorldImportersDW.Integration.MigrateStagedCityData(),wideworldimportersdw/integration/procedure/migratestagedcitydata.sql,PROCEDURE,BOTH,3,49,2
+WideWorldImportersDW.Integration.MigrateStagedStockHoldingData(),wideworldimportersdw/integration/procedure/migratestagedstockholdingdata.sql,PROCEDURE,BOTH,3,41,2
+WideWorldImportersDW.Integration.StockHolding_Staging,wideworldimportersdw/integration/table/stockholding_staging.sql,TABLE,BOTH,3,12,0
+WideWorldImportersDW.Integration.Transaction_Staging,wideworldimportersdw/integration/table/transaction_staging.sql,TABLE,BOTH,3,26,0
+WideWorldImportersDW.Integration.[ETL Cutoff],wideworldimportersdw/integration/table/etl cutoff.sql,TABLE,BOTH,3,5,0
+WideWorldImportersDW.Dimension.Employee,wideworldimportersdw/dimension/table/employee.sql,TABLE,BOTH,3,12,1
+WideWorldImportersDW.Sequences.EmployeeKey,wideworldimportersdw/sequences/sequence/employeekey.sql,SEQUENCE,BOTH,3,9,0
+WideWorldImportersDW.Application.Configuration_ConfigureForEnterpriseEdition(),wideworldimportersdw/application/procedure/configuration_configureforenterpriseedition.sql,PROCEDURE,BOTH,3,7,2
+WideWorldImportersDW.Application.Configuration_ReseedETL(),wideworldimportersdw/application/procedure/configuration_reseedetl.sql,PROCEDURE,BOTH,3,66,2
+WideWorldImportersDW.Website,wideworldimportersdw/schema/website.sql,SCHEMA,BOTH,3,1,0
+WideWorldImportersDW.dbo,wideworldimportersdw/schema/dbo.sql,SCHEMA,BOTH,3,1,0
+WideWorldImportersDW.Integration.MigrateStagedEmployeeData(),wideworldimportersdw/integration/procedure/migratestagedemployeedata.sql,PROCEDURE,BOTH,3,44,2
+WideWorldImportersDW.Integration.MigrateStagedTransactionTypeData(),wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql,PROCEDURE,BOTH,3,44,2
+WideWorldImportersDW.Integration.Order_Staging,wideworldimportersdw/integration/table/order_staging.sql,TABLE,BOTH,3,28,0
+WideWorldImportersDW.Integration.Movement_Staging,wideworldimportersdw/integration/table/movement_staging.sql,TABLE,BOTH,3,18,0
+WideWorldImportersDW.Integration.Purchase_Staging,wideworldimportersdw/integration/table/purchase_staging.sql,TABLE,BOTH,3,16,0
+WideWorldImportersDW.Fact.Purchase,wideworldimportersdw/fact/table/purchase.sql,TABLE,BOTH,3,14,0
+WideWorldImportersDW.Dimension.[Transaction Type],wideworldimportersdw/dimension/table/transaction type.sql,TABLE,BOTH,3,9,1
+"WideWorldImportersDW.Sequences.ReseedSequenceBeyondTableValues(sysname,sysname,sysname,sysname)",wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql,PROCEDURE,BOTH,3,32,1
+WideWorldImportersDW.PowerBI,wideworldimportersdw/schema/powerbi.sql,SCHEMA,BOTH,3,1,0
+WideWorldImportersDW.Integration.MigrateStagedPurchaseData(),wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql,PROCEDURE,BOTH,3,51,2
+WideWorldImportersDW.Integration.GetLastETLCutoffTime(sysname),wideworldimportersdw/integration/procedure/getlastetlcutofftime.sql,PROCEDURE,BOTH,3,18,1
+WideWorldImportersDW.Integration.Customer_Staging,wideworldimportersdw/integration/table/customer_staging.sql,TABLE,BOTH,3,13,0
+WideWorldImportersDW.Integration.Lineage,wideworldimportersdw/integration/table/lineage.sql,TABLE,BOTH,3,9,1
+WideWorldImportersDW.Integration.StockItem_Staging,wideworldimportersdw/integration/table/stockitem_staging.sql,TABLE,BOTH,3,22,0
+WideWorldImportersDW.Fact.[Stock Holding],wideworldimportersdw/fact/table/stock holding.sql,TABLE,BOTH,3,12,0
+WideWorldImportersDW.Dimension.Customer,wideworldimportersdw/dimension/table/customer.sql,TABLE,BOTH,3,14,1
+WideWorldImportersDW.Sequences.ReseedAllSequences(),wideworldimportersdw/sequences/procedure/reseedallsequences.sql,PROCEDURE,BOTH,3,13,2
+WideWorldImportersDW.Reports,wideworldimportersdw/schema/reports.sql,SCHEMA,BOTH,3,1,0
+WideWorldImportersDW.Integration.MigrateStagedOrderData(),wideworldimportersdw/integration/procedure/migratestagedorderdata.sql,PROCEDURE,BOTH,3,73,2
+WideWorldImportersDW.Integration.MigrateStagedSaleData(),wideworldimportersdw/integration/procedure/migratestagedsaledata.sql,PROCEDURE,BOTH,3,71,2
+WideWorldImportersDW.Dimension.Supplier,wideworldimportersdw/dimension/table/supplier.sql,TABLE,BOTH,3,14,1
+WideWorldImportersDW.Sequences.SupplierKey,wideworldimportersdw/sequences/sequence/supplierkey.sql,SEQUENCE,BOTH,3,9,0
+WideWorldImportersDW.Application.Configuration_ApplyPartitionedColumnstoreIndexing(),wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql,PROCEDURE,BOTH,3,420,1
+WideWorldImportersDW.Application,wideworldimportersdw/schema/application.sql,SCHEMA,BOTH,3,1,0
+WideWorldImportersDW.Integration.PopulateDateDimensionForYear(INT),wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql,PROCEDURE,BOTH,3,37,1
+"WideWorldImportersDW.Integration.GetLineageKey(sysname,DATETIME2)",wideworldimportersdw/integration/procedure/getlineagekey.sql,PROCEDURE,BOTH,3,22,2
+WideWorldImportersDW.Integration.GenerateDateDimensionColumns(DATE),wideworldimportersdw/integration/function/generatedatedimensioncolumns.sql,FUNCTION,BOTH,3,29,0
+WideWorldImportersDW.Fact.[Transaction],wideworldimportersdw/fact/table/transaction.sql,TABLE,BOTH,3,21,0
+WideWorldImportersDW.Dimension.[Stock Item],wideworldimportersdw/dimension/table/stock item.sql,TABLE,BOTH,3,23,1
+WideWorldImportersDW.Sequences.TransactionTypeKey,wideworldimportersdw/sequences/sequence/transactiontypekey.sql,SEQUENCE,BOTH,3,9,0
+WideWorldImportersDW.Application.Configuration_PopulateLargeSaleTable(BIGINT),wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql,PROCEDURE,BOTH,3,128,2
+WideWorldImportersDW,database/wideworldimportersdw.sql,DATABASE,BOTH,1,1,0
+WideWorldImportersDW.Integration,wideworldimportersdw/schema/integration.sql,SCHEMA,BOTH,3,1,0
+WideWorldImportersDW.Sequences,wideworldimportersdw/schema/sequences.sql,SCHEMA,BOTH,3,1,0
+WideWorldImportersDW.Integration.MigrateStagedCustomerData(),wideworldimportersdw/integration/procedure/migratestagedcustomerdata.sql,PROCEDURE,BOTH,3,47,2
+WideWorldImportersDW.Integration.MigrateStagedStockItemData(),wideworldimportersdw/integration/procedure/migratestagedstockitemdata.sql,PROCEDURE,BOTH,3,50,2
+WideWorldImportersDW.Integration.Employee_Staging,wideworldimportersdw/integration/table/employee_staging.sql,TABLE,BOTH,3,11,0
+WideWorldImportersDW.Integration.Sale_Staging,wideworldimportersdw/integration/table/sale_staging.sql,TABLE,BOTH,3,29,0
+WideWorldImportersDW.Fact.[Order],wideworldimportersdw/fact/table/order.sql,TABLE,BOTH,3,22,0
+WideWorldImportersDW.Dimension.[Payment Method],wideworldimportersdw/dimension/table/payment method.sql,TABLE,BOTH,3,9,1
+WideWorldImportersDW.Sequences.CustomerKey,wideworldimportersdw/sequences/sequence/customerkey.sql,SEQUENCE,BOTH,3,9,0
+WideWorldImportersDW.Sequences.CityKey,wideworldimportersdw/sequences/sequence/citykey.sql,SEQUENCE,BOTH,3,9,0
+WideWorldImportersDW.Sequences.StockItemKey,wideworldimportersdw/sequences/sequence/stockitemkey.sql,SEQUENCE,BOTH,3,9,0
+WideWorldImportersDW.Application.Configuration_EnableInMemory(),wideworldimportersdw/application/procedure/configuration_enableinmemory.sql,PROCEDURE,BOTH,3,380,1
+WideWorldImportersDW.Fact,wideworldimportersdw/schema/fact.sql,SCHEMA,BOTH,3,1,0
+WideWorldImportersDW.Integration.MigrateStagedMovementData(),wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql,PROCEDURE,BOTH,3,71,2
+WideWorldImportersDW.Integration.MigrateStagedPaymentMethodData(),wideworldimportersdw/integration/procedure/migratestagedpaymentmethoddata.sql,PROCEDURE,BOTH,3,44,2
+WideWorldImportersDW.Integration.TransactionType_Staging,wideworldimportersdw/integration/table/transactiontype_staging.sql,TABLE,BOTH,3,8,0
+WideWorldImportersDW.Integration.City_Staging,wideworldimportersdw/integration/table/city_staging.sql,TABLE,BOTH,3,16,0
+WideWorldImportersDW.Integration.PaymentMethod_Staging,wideworldimportersdw/integration/table/paymentmethod_staging.sql,TABLE,BOTH,3,8,0
+WideWorldImportersDW.Integration.Supplier_Staging,wideworldimportersdw/integration/table/supplier_staging.sql,TABLE,BOTH,3,13,0
+WideWorldImportersDW.Fact.Movement,wideworldimportersdw/fact/table/movement.sql,TABLE,BOTH,3,14,0
+WideWorldImportersDW.Dimension.City,wideworldimportersdw/dimension/table/city.sql,TABLE,BOTH,3,17,1
+WideWorldImportersDW.Sequences.LineageKey,wideworldimportersdw/sequences/sequence/lineagekey.sql,SEQUENCE,BOTH,3,9,0
+WideWorldImportersDW.Application.Configuration_ApplyPolybase(),wideworldimportersdw/application/procedure/configuration_applypolybase.sql,PROCEDURE,BOTH,3,62,0
+PUBLIC.QUOTENAME_UDF(),UDF Helpers/QUOTENAME_UDF.sql,FUNCTION,SNOWFLAKE_ONLY,,,0
+PUBLIC.RAISERROR_UDF(),UDF Helpers/RAISERROR_UDF.sql,FUNCTION,SNOWFLAKE_ONLY,,,0
+PUBLIC.THROW_UDP(),UDF Helpers/THROW_UDP.sql,PROCEDURE,SNOWFLAKE_ONLY,,,0

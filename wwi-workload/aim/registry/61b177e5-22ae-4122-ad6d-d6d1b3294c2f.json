@@ -1,0 +1,159 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": true,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "1b58ff50-d8e2-484d-ab98-b5441845a8a7",
+        "isMissing": false,
+        "relationTypes": [
+          "UPDATE"
+        ]
+      },
+      {
+        "id": "64fd00bf-7950-477b-ba1a-16210cd0681c",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM",
+          "UPDATE"
+        ]
+      },
+      {
+        "id": "1eb656c0-0351-4ad2-a718-c095fc3e3137",
+        "isMissing": false,
+        "relationTypes": [
+          "MERGE",
+          "UPDATE"
+        ]
+      },
+      {
+        "id": "bb317ec9-b0b9-4fa2-8b15-b176ff64f7ea",
+        "isMissing": false,
+        "relationTypes": [
+          "MERGE"
+        ]
+      },
+      {
+        "id": "d8b668f7-6c45-4a16-a99b-971a55353911",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM"
+        ]
+      },
+      {
+        "id": "9dbea1f6-5eb8-4044-b5e4-47770fdc7ef2",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM"
+        ]
+      },
+      {
+        "id": "cf34e18d-290b-4bed-bad9-15b769fe40a9",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM"
+        ]
+      },
+      {
+        "id": "172e8c9d-5d97-43b1-ba0d-8b2de51fa3ca",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": []
+  },
+  "extensions": {
+    "tasks": {
+      "captureBaseline": {
+        "details": {
+          "error": "infra"
+        },
+        "error": "infra",
+        "status": "failed",
+        "updatedAt": "2026-10-25T00:44:38.748834879+00:00"
+      }
+    }
+  },
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/integration/procedure/migratestagedmovementdata"
+    },
+    "converted": {
+      "checksum": "44eb46da8401b896ab707319014b311e",
+      "path": "snowflake/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql"
+    },
+    "source": {
+      "checksum": "67679d74e5d16d0844a07fff61335f6e",
+      "path": "source/wideworldimportersdw/integration/procedure/migratestagedmovementdata.sql"
+    }
+  },
+  "id": "61b177e5-22ae-4122-ad6d-d6d1b3294c2f",
+  "inScope": true,
+  "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0029",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0037",
+      "count": 1
+    }
+  ],
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 3,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [],
+    "parameters": {
+      "arguments": [],
+      "returns": [
+        {
+          "name": "[Lineage Key]",
+          "targetName": "\"Lineage Key\"",
+          "targetType": "INT",
+          "type": "INT"
+        }
+      ]
+    }
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Integration.MigrateStagedMovementData",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "MigrateStagedMovementData",
+    "objectType": "procedure",
+    "platform": "sqlServer",
+    "schema": "Integration"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Integration.MigrateStagedMovementData",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "MigrateStagedMovementData",
+    "objectType": "procedure",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-25T00:44:38Z"
+}

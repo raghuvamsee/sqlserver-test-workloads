@@ -1,0 +1,106 @@
+{
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": "Error: SQL compilation error:\nsyntax error line 4 at position 0 unexpected '!'. SqlState: 42000, VendorCode: 1003, QueryId: 01c7f392-0109-47d7-0012-43a200030002"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:36:41Z"
+    }
+  },
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "64fd00bf-7950-477b-ba1a-16210cd0681c",
+      "9b231eeb-3339-4b1d-8cd4-c6f5ebf1d321"
+    ]
+  },
+  "extensions": {
+    "isDone": true,
+    "tasks": {
+      "verify": {
+        "details": {
+          "error": null,
+          "verifiedBy": "agent"
+        },
+        "error": null,
+        "status": "completed",
+        "updatedAt": "2026-10-24T20:37:07.476983161+00:00"
+      }
+    }
+  },
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/sequences/sequence/lineagekey"
+    },
+    "converted": {
+      "checksum": "a50bd9e39ef72153ef65a217ce324469",
+      "path": "snowflake/wideworldimportersdw/sequences/sequence/lineagekey.sql"
+    },
+    "source": {
+      "checksum": "d2d2e3a1382714cf8530d01131f005f7",
+      "path": "source/wideworldimportersdw/sequences/sequence/lineagekey.sql"
+    }
+  },
+  "id": "ec6d1d59-275d-4534-ac94-d38e8400544f",
+  "inScope": true,
+  "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-EWI-0001",
+      "count": 1,
+      "severity": "critical"
+    },
+    {
+      "code": "SSC-EWI-0120",
+      "count": 1,
+      "severity": "low"
+    }
+  ],
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": []
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Sequences.LineageKey",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "LineageKey",
+    "objectType": "sequence",
+    "platform": "sqlServer",
+    "schema": "Sequences"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Sequences.LineageKey",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "LineageKey",
+    "objectType": "sequence",
+    "schema": "Sequences"
+  },
+  "updatedAt": "2026-10-24T20:37:52Z"
+}

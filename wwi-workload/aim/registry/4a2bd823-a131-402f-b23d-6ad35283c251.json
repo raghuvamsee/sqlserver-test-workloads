@@ -1,0 +1,221 @@
+{
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:31:33Z"
+    }
+  },
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [
+        {
+          "category": "temp_staging",
+          "matchedPatterns": [
+            "_staging$"
+          ]
+        }
+      ],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "16f90c39-8647-4c95-b5ec-126461ecb3ef",
+      "bc70f733-1bf3-4137-87b5-69397ebb5877"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/integration/table/purchase_staging"
+    },
+    "converted": {
+      "checksum": "136da37b9998d5a700380455ec27d690",
+      "path": "snowflake/wideworldimportersdw/integration/table/purchase_staging.sql"
+    },
+    "source": {
+      "checksum": "7d906d8464456c51e7181424aad6801e",
+      "path": "source/wideworldimportersdw/integration/table/purchase_staging.sql"
+    }
+  },
+  "id": "4a2bd823-a131-402f-b23d-6ad35283c251",
+  "inScope": true,
+  "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0002",
+      "count": 1
+    },
+    {
+      "code": "SSC-PRF-0002",
+      "count": 1
+    }
+  ],
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": true,
+        "name": "Purchase Staging Key",
+        "nullable": false,
+        "targetName": "\"Purchase Staging Key\"",
+        "targetType": "BIGINT",
+        "type": "BIGINT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Date Key\"",
+        "nullable": true,
+        "targetName": "\"Date Key\"",
+        "targetType": "DATE",
+        "type": "DATE"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Supplier Key\"",
+        "nullable": true,
+        "targetName": "\"Supplier Key\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Stock Item Key\"",
+        "nullable": true,
+        "targetName": "\"Stock Item Key\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"WWI Purchase Order ID\"",
+        "nullable": true,
+        "targetName": "\"WWI Purchase Order ID\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Ordered Outers\"",
+        "nullable": true,
+        "targetName": "\"Ordered Outers\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Ordered Quantity\"",
+        "nullable": true,
+        "targetName": "\"Ordered Quantity\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Received Outers\"",
+        "nullable": true,
+        "targetName": "\"Received Outers\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "Package",
+        "nullable": true,
+        "targetName": "Package",
+        "targetType": "NVARCHAR",
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Is Order Finalized\"",
+        "nullable": true,
+        "targetName": "\"Is Order Finalized\"",
+        "targetType": "BOOLEAN",
+        "type": "BIT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"WWI Supplier ID\"",
+        "nullable": true,
+        "targetName": "\"WWI Supplier ID\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"WWI Stock Item ID\"",
+        "nullable": true,
+        "targetName": "\"WWI Stock Item ID\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Last Modified When\"",
+        "nullable": true,
+        "targetName": "\"Last Modified When\"",
+        "targetType": "",
+        "type": "DATETIME2"
+      }
+    ],
+    "parameters": {
+      "arguments": [],
+      "returns": []
+    }
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Integration.Purchase_Staging",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "Purchase_Staging",
+    "objectType": "table",
+    "platform": "sqlServer",
+    "schema": "Integration"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Integration.Purchase_Staging",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Purchase_Staging",
+    "objectType": "table",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T23:35:37Z"
+}

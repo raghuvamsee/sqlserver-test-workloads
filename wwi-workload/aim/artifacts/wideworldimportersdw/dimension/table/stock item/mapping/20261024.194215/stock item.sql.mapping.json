@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "source_system": "sql",
+  "engine_version": "2.51.3",
+  "source_file": "wideworldimportersdw/dimension/table/stock item.sql",
+  "source_checksum": "74439003c71e4d6973c3e9d915f100d45fecd4e6446f52df02efbbe7511d69e2",
+  "pairs": [
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlUseStatement",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "source_text": "USE WideWorldImportersDW",
+      "targets": [
+        "USE DATABASE <%wideworldimportersdw%>"
+      ],
+      "target_file": "wideworldimportersdw/dimension/table/stock item.sql"
+    }
+  ]
+}

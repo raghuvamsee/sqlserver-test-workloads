@@ -1,0 +1,105 @@
+{
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": "Error: SQL compilation error:\nsyntax error line 4 at position 0 unexpected '!'. SqlState: 42000, VendorCode: 1003, QueryId: 01c7f392-0109-4316-0012-43a20003c05a"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:36:41Z"
+    }
+  },
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "06b7ad8e-ddf7-4b9d-9064-17b60587e404"
+    ]
+  },
+  "extensions": {
+    "isDone": true,
+    "tasks": {
+      "verify": {
+        "details": {
+          "error": null,
+          "verifiedBy": "agent"
+        },
+        "error": null,
+        "status": "completed",
+        "updatedAt": "2026-10-24T20:37:07.476983161+00:00"
+      }
+    }
+  },
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/sequences/sequence/paymentmethodkey"
+    },
+    "converted": {
+      "checksum": "f5e8a576b1360df10f2f44cca019de2f",
+      "path": "snowflake/wideworldimportersdw/sequences/sequence/paymentmethodkey.sql"
+    },
+    "source": {
+      "checksum": "906eeb91ec158369e7d5db91630d9db0",
+      "path": "source/wideworldimportersdw/sequences/sequence/paymentmethodkey.sql"
+    }
+  },
+  "id": "28fbee9c-cc76-4a29-af86-84cece5155b7",
+  "inScope": true,
+  "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-EWI-0001",
+      "count": 1,
+      "severity": "critical"
+    },
+    {
+      "code": "SSC-EWI-0120",
+      "count": 1,
+      "severity": "low"
+    }
+  ],
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": []
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Sequences.PaymentMethodKey",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "PaymentMethodKey",
+    "objectType": "sequence",
+    "platform": "sqlServer",
+    "schema": "Sequences"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Sequences.PaymentMethodKey",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "PaymentMethodKey",
+    "objectType": "sequence",
+    "schema": "Sequences"
+  },
+  "updatedAt": "2026-10-24T20:37:52Z"
+}

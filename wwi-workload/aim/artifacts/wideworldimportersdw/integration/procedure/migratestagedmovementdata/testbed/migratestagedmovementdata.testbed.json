@@ -1,0 +1,544 @@
+{
+  "object": "WideWorldImportersDW.Integration.MigrateStagedMovementData()",
+  "object_type": "PROCEDURE",
+  "branches": [
+    {
+      "branch_id": 0,
+      "construct_kind": "WHERE_FILTER",
+      "line": 14,
+      "predicate_text": "[Table Name] = N'Movement'\n                               AND [Data Load Completed] IS NULL",
+      "columns": [
+        {
+          "column": "\"Table Name\"",
+          "table": "WideWorldImportersDW.Integration.Lineage",
+          "type": "sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "\"Data Load Completed\"",
+          "table": "WideWorldImportersDW.Integration.Lineage",
+          "type": "DATETIME2",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": true,
+          "is_datetime": true,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "and",
+        "children": [
+          {
+            "kind": "atom",
+            "columns": [
+              "WideWorldImportersDW.Integration.Lineage.\"Table Name\""
+            ],
+            "operator": "=",
+            "values": [
+              "Movement"
+            ],
+            "operands": [
+              {
+                "kind": "column",
+                "column": "WideWorldImportersDW.Integration.Lineage.\"Table Name\"",
+                "text": "[Table Name]"
+              },
+              {
+                "kind": "literal",
+                "literal": "Movement",
+                "text": "N'Movement'"
+              }
+            ]
+          },
+          {
+            "kind": "atom",
+            "columns": [
+              "WideWorldImportersDW.Integration.Lineage.\"Data Load Completed\""
+            ],
+            "operator": "IS NULL",
+            "values": [],
+            "operands": [
+              {
+                "kind": "column",
+                "column": "WideWorldImportersDW.Integration.Lineage.\"Data Load Completed\"",
+                "text": "[Data Load Completed]"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "branch_id": 1,
+      "construct_kind": "MERGE",
+      "line": 51,
+      "predicate_text": "m.[WWI Stock Item Transaction ID] = ms.[WWI Stock Item Transaction ID]",
+      "columns": [
+        {
+          "column": "\"WWI Stock Item Transaction ID\"",
+          "table": "WideWorldImportersDW.Fact.Movement",
+          "type": "INT",
+          "is_integer": true,
+          "is_number": true,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "\"WWI Stock Item Transaction ID\"",
+          "table": "WideWorldImportersDW.Integration.Movement_Staging",
+          "type": "INT",
+          "is_integer": true,
+          "is_number": true,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "atom",
+        "columns": [
+          "WideWorldImportersDW.Fact.Movement.\"WWI Stock Item Transaction ID\"",
+          "WideWorldImportersDW.Integration.Movement_Staging.\"WWI Stock Item Transaction ID\""
+        ],
+        "operator": "=",
+        "values": [],
+        "operands": [
+          {
+            "kind": "column",
+            "column": "WideWorldImportersDW.Fact.Movement.\"WWI Stock Item Transaction ID\"",
+            "text": "m.[WWI Stock Item Transaction ID]"
+          },
+          {
+            "kind": "column",
+            "column": "WideWorldImportersDW.Integration.Movement_Staging.\"WWI Stock Item Transaction ID\"",
+            "text": "ms.[WWI Stock Item Transaction ID]"
+          }
+        ]
+      }
+    },
+    {
+      "branch_id": 2,
+      "construct_kind": "MERGE_WHEN_MATCHED",
+      "line": 52,
+      "predicate_text": "TRUE",
+      "columns": [],
+      "construct_sub_kind": "trivial"
+    },
+    {
+      "branch_id": 3,
+      "construct_kind": "MERGE_WHEN_NOT_MATCHED_BY_TARGET",
+      "line": 62,
+      "predicate_text": "TRUE",
+      "columns": [],
+      "construct_sub_kind": "trivial"
+    },
+    {
+      "branch_id": 4,
+      "construct_kind": "WHERE_FILTER",
+      "line": 78,
+      "predicate_text": "[Table Name] = N'Movement'",
+      "columns": [
+        {
+          "column": "\"Table Name\"",
+          "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+          "type": "sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "atom",
+        "columns": [
+          "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\""
+        ],
+        "operator": "=",
+        "values": [
+          "Movement"
+        ],
+        "operands": [
+          {
+            "kind": "column",
+            "column": "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\"",
+            "text": "[Table Name]"
+          },
+          {
+            "kind": "literal",
+            "literal": "Movement",
+            "text": "N'Movement'"
+          }
+        ]
+      }
+    }
+  ],
+  "predicates": [
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Data Load Completed\"",
+      "operator": "IS NULL",
+      "values": [],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Data Load Completed\"",
+          "text": "[Data Load Completed]"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Lineage Key\"",
+      "operator": "=",
+      "values": [
+        "@LineageKey"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Lineage Key\"",
+          "text": "[Lineage Key]"
+        },
+        {
+          "kind": "parameter",
+          "parameter": "@LineageKey",
+          "text": "@LineageKey"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Table Name\"",
+      "operator": "=",
+      "values": [
+        "Movement"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Table Name\"",
+          "text": "[Table Name]"
+        },
+        {
+          "kind": "literal",
+          "literal": "Movement",
+          "text": "N'Movement'"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+      "column": "\"Table Name\"",
+      "operator": "=",
+      "values": [
+        "Movement"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\"",
+          "text": "[Table Name]"
+        },
+        {
+          "kind": "literal",
+          "literal": "Movement",
+          "text": "N'Movement'"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "left_table": "WideWorldImportersDW.Dimension.Customer",
+      "left_columns": [
+        "\"WWI Customer ID\""
+      ],
+      "right_table": "WideWorldImportersDW.Integration.Movement_Staging",
+      "right_columns": [
+        "\"WWI Customer ID\""
+      ],
+      "join_type": "inner",
+      "is_anti": false
+    },
+    {
+      "left_table": "WideWorldImportersDW.Dimension.Supplier",
+      "left_columns": [
+        "\"WWI Supplier ID\""
+      ],
+      "right_table": "WideWorldImportersDW.Integration.Movement_Staging",
+      "right_columns": [
+        "\"WWI Supplier ID\""
+      ],
+      "join_type": "inner",
+      "is_anti": false
+    },
+    {
+      "left_table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "left_columns": [
+        "\"WWI Stock Item ID\""
+      ],
+      "right_table": "WideWorldImportersDW.Integration.Movement_Staging",
+      "right_columns": [
+        "\"WWI Stock Item ID\""
+      ],
+      "join_type": "inner",
+      "is_anti": false
+    },
+    {
+      "left_table": "WideWorldImportersDW.Dimension.[Transaction Type]",
+      "left_columns": [
+        "\"WWI Transaction Type ID\""
+      ],
+      "right_table": "WideWorldImportersDW.Integration.Movement_Staging",
+      "right_columns": [
+        "\"WWI Transaction Type ID\""
+      ],
+      "join_type": "inner",
+      "is_anti": false
+    },
+    {
+      "left_table": "WideWorldImportersDW.Fact.Movement",
+      "left_columns": [
+        "\"WWI Stock Item Transaction ID\""
+      ],
+      "right_table": "WideWorldImportersDW.Integration.Movement_Staging",
+      "right_columns": [
+        "\"WWI Stock Item Transaction ID\""
+      ],
+      "join_type": "inner",
+      "is_anti": false
+    }
+  ],
+  "assignments": [
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"WWI Customer ID\"",
+      "value": "m.[WWI Customer ID]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Supplier",
+      "column": "\"WWI Supplier ID\"",
+      "value": "m.[WWI Supplier ID]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"WWI Stock Item ID\"",
+      "value": "m.[WWI Stock Item ID]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Transaction Type]",
+      "column": "\"WWI Transaction Type ID\"",
+      "value": "m.[WWI Transaction Type ID]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Movement",
+      "column": "\"Customer Key\"",
+      "value": "ms.[Customer Key]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Movement",
+      "column": "\"Date Key\"",
+      "value": "ms.[Date Key]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Movement",
+      "column": "\"Lineage Key\"",
+      "value": "@LineageKey"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Movement",
+      "column": "\"Stock Item Key\"",
+      "value": "ms.[Stock Item Key]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Movement",
+      "column": "\"Supplier Key\"",
+      "value": "ms.[Supplier Key]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Movement",
+      "column": "\"Transaction Type Key\"",
+      "value": "ms.[Transaction Type Key]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Movement",
+      "column": "\"WWI Invoice ID\"",
+      "value": "ms.[WWI Invoice ID]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Movement",
+      "column": "\"WWI Purchase Order ID\"",
+      "value": "ms.[WWI Purchase Order ID]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Movement",
+      "column": "Quantity",
+      "value": "ms.Quantity"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Data Load Completed\"",
+      "value": "SYSDATETIME()",
+      "value_kind": "nondeterministic",
+      "value_expression": {
+        "kind": "fn",
+        "fn": "SYSDATETIME",
+        "args": []
+      }
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Lineage Key\"",
+      "value": "@LineageKey"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Was Successful\"",
+      "value": "1",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Movement_Staging",
+      "column": "\"Customer Key\"",
+      "value": "COALESCE((SELECT TOP(1) c.[Customer Key]\n                                         FROM Dimension.Customer AS c\n                                         WHERE c.[WWI Customer ID] = m.[WWI Customer ID]\n                                         AND m.[Last Modifed When] > c.[Valid From]\n                                         AND m.[Last Modifed When] <= c.[Valid To]\n\t\t\t\t\t\t\t\t\t     ORDER BY c.[Valid From]), 0)",
+      "value_kind": "opaque_expression",
+      "value_expression": {
+        "kind": "fn",
+        "fn": "COALESCE",
+        "args": [
+          {
+            "kind": "opaque",
+            "text": "(SELECT TOP(1) c.[Customer Key]\n                                         FROM Dimension.Customer AS c\n                                         WHERE c.[WWI Customer ID] = m.[WWI Customer ID]\n                                         AND m.[Last Modifed When] > c.[Valid From]\n                                         AND m.[Last Modifed When] <= c.[Valid To]\n\t\t\t\t\t\t\t\t\t     ORDER BY c.[Valid From])"
+          },
+          {
+            "kind": "literal",
+            "literal": "0"
+          }
+        ]
+      }
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Movement_Staging",
+      "column": "\"Last Modifed When\"",
+      "value": "c.[Valid From]"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Movement_Staging",
+      "column": "\"Last Modifed When\"",
+      "value": "c.[Valid To]"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Movement_Staging",
+      "column": "\"Last Modifed When\"",
+      "value": "s.[Valid From]"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Movement_Staging",
+      "column": "\"Last Modifed When\"",
+      "value": "s.[Valid To]"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Movement_Staging",
+      "column": "\"Last Modifed When\"",
+      "value": "si.[Valid From]"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Movement_Staging",
+      "column": "\"Last Modifed When\"",
+      "value": "si.[Valid To]"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Movement_Staging",
+      "column": "\"Last Modifed When\"",
+      "value": "tt.[Valid From]"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Movement_Staging",
+      "column": "\"Last Modifed When\"",
+      "value": "tt.[Valid To]"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Movement_Staging",
+      "column": "\"Stock Item Key\"",
+      "value": "COALESCE((SELECT TOP(1) si.[Stock Item Key]\n                                           FROM Dimension.[Stock Item] AS si\n                                           WHERE si.[WWI Stock Item ID] = m.[WWI Stock Item ID]\n                                           AND m.[Last Modifed When] > si.[Valid From]\n                                           AND m.[Last Modifed When] <= si.[Valid To]\n\t\t\t\t\t\t\t\t\t       ORDER BY si.[Valid From]), 0)",
+      "value_kind": "opaque_expression",
+      "value_expression": {
+        "kind": "fn",
+        "fn": "COALESCE",
+        "args": [
+          {
+            "kind": "opaque",
+            "text": "(SELECT TOP(1) si.[Stock Item Key]\n                                           FROM Dimension.[Stock Item] AS si\n                                           WHERE si.[WWI Stock Item ID] = m.[WWI Stock Item ID]\n                                           AND m.[Last Modifed When] > si.[Valid From]\n                                           AND m.[Last Modifed When] <= si.[Valid To]\n\t\t\t\t\t\t\t\t\t       ORDER BY si.[Valid From])"
+          },
+          {
+            "kind": "literal",
+            "literal": "0"
+          }
+        ]
+      }
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Movement_Staging",
+      "column": "\"Supplier Key\"",
+      "value": "COALESCE((SELECT TOP(1) s.[Supplier Key]\n                                         FROM Dimension.Supplier AS s\n                                         WHERE s.[WWI Supplier ID] = m.[WWI Supplier ID]\n                                         AND m.[Last Modifed When] > s.[Valid From]\n                                         AND m.[Last Modifed When] <= s.[Valid To]\n\t\t\t\t\t\t\t\t\t     ORDER BY s.[Valid From]), 0)",
+      "value_kind": "opaque_expression",
+      "value_expression": {
+        "kind": "fn",
+        "fn": "COALESCE",
+        "args": [
+          {
+            "kind": "opaque",
+            "text": "(SELECT TOP(1) s.[Supplier Key]\n                                         FROM Dimension.Supplier AS s\n                                         WHERE s.[WWI Supplier ID] = m.[WWI Supplier ID]\n                                         AND m.[Last Modifed When] > s.[Valid From]\n                                         AND m.[Last Modifed When] <= s.[Valid To]\n\t\t\t\t\t\t\t\t\t     ORDER BY s.[Valid From])"
+          },
+          {
+            "kind": "literal",
+            "literal": "0"
+          }
+        ]
+      }
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Movement_Staging",
+      "column": "\"Transaction Type Key\"",
+      "value": "COALESCE((SELECT TOP(1) tt.[Transaction Type Key]\n                                                 FROM Dimension.[Transaction Type] AS tt\n                                                 WHERE tt.[WWI Transaction Type ID] = m.[WWI Transaction Type ID]\n                                                 AND m.[Last Modifed When] > tt.[Valid From]\n                                                 AND m.[Last Modifed When] <= tt.[Valid To]\n\t\t\t\t\t\t\t\t\t             ORDER BY tt.[Valid From]), 0)",
+      "value_kind": "opaque_expression",
+      "value_expression": {
+        "kind": "fn",
+        "fn": "COALESCE",
+        "args": [
+          {
+            "kind": "opaque",
+            "text": "(SELECT TOP(1) tt.[Transaction Type Key]\n                                                 FROM Dimension.[Transaction Type] AS tt\n                                                 WHERE tt.[WWI Transaction Type ID] = m.[WWI Transaction Type ID]\n                                                 AND m.[Last Modifed When] > tt.[Valid From]\n                                                 AND m.[Last Modifed When] <= tt.[Valid To]\n\t\t\t\t\t\t\t\t\t             ORDER BY tt.[Valid From])"
+          },
+          {
+            "kind": "literal",
+            "literal": "0"
+          }
+        ]
+      }
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+      "column": "\"Cutoff Time\"",
+      "value": "(SELECT [Source System Cutoff Time]\n                             FROM Integration.Lineage\n                             WHERE [Lineage Key] = @LineageKey)"
+    }
+  ],
+  "semi_anti": [],
+  "schema_version": 1
+}

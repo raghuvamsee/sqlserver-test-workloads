@@ -1,0 +1,53 @@
+{
+  "object": "WideWorldImportersDW.Application.Configuration_ApplyPolybase()",
+  "object_type": "PROCEDURE",
+  "branches": [
+    {
+      "branch_id": 2,
+      "construct_kind": "IF",
+      "line": 9,
+      "predicate_text": "SERVERPROPERTY(N'IsPolybaseInstalled') = 0",
+      "columns": [],
+      "diagnostics": [
+        {
+          "reason": "non_algebraic_comparison",
+          "expression": "SqlEql"
+        }
+      ]
+    },
+    {
+      "branch_id": 3,
+      "construct_kind": "ELSE",
+      "line": 12,
+      "predicate_text": "TRUE",
+      "columns": [],
+      "construct_sub_kind": "trivial"
+    },
+    {
+      "branch_id": 0,
+      "construct_kind": "IF",
+      "line": 13,
+      "predicate_text": "(SELECT value FROM sys.configurations WHERE name = 'hadoop connectivity') NOT IN (1, 4, 7)",
+      "columns": [],
+      "diagnostics": [
+        {
+          "reason": "in_non_column",
+          "expression": "SqlInPredicate"
+        }
+      ]
+    },
+    {
+      "branch_id": 1,
+      "construct_kind": "ELSE",
+      "line": 16,
+      "predicate_text": "TRUE",
+      "columns": [],
+      "construct_sub_kind": "trivial"
+    }
+  ],
+  "predicates": [],
+  "edges": [],
+  "assignments": [],
+  "semi_anti": [],
+  "schema_version": 1
+}

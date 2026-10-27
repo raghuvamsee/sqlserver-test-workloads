@@ -1,0 +1,168 @@
+{
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": "Error: JavaScript execution error: Uncaught Execution of multiple statements failed on statement \"CREATE OR REPLACE PROCEDURE Re...\" (at line 4, position 0).\nSQL compilation error:\nsyntax error line 11 at position 67 unexpected '!'.\nsyntax error line 11 at position 66 unexpected '!'.\nsyntax error line 11 at position 77 unexpected 'EWI'.\nsyntax error line 11 at position 212 unexpected ')'. in SYSTEM$MULTISTMT at '    throw `Execution of multiple statements failed on statement {0} (at line {1}, position {2}).`.replace('{1}', LINES[i])' position 4\nstackstrace: \nSYSTEM$MULTISTMT line: 10 SqlState: P0000, VendorCode: 100132, QueryId: 01c7f87b-0109-3987-0012-43a20009e7aa"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-25T17:35:40Z"
+    }
+  },
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "d8abb9f6-88d9-42f9-94ed-31d00cec402f",
+        "isMissing": false,
+        "relationTypes": []
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "bdc7a365-0d66-41be-a470-685a9984ec6d"
+    ]
+  },
+  "extensions": {
+    "isDone": true,
+    "tasks": {
+      "captureBaseline": {
+        "details": {},
+        "error": null,
+        "status": "pending",
+        "updatedAt": "2026-10-25T17:23:42.660242298+00:00"
+      }
+    }
+  },
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues"
+    },
+    "converted": {
+      "checksum": "62286fed39e5adceed263b59bc278d99",
+      "path": "snowflake/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql"
+    },
+    "source": {
+      "checksum": "09ad8b4e882f7217746232594538c8d1",
+      "path": "source/wideworldimportersdw/sequences/procedure/reseedsequencebeyondtablevalues.sql"
+    }
+  },
+  "id": "75c9ae4f-76fa-4fcf-ae0a-08acbecb8530",
+  "inScope": true,
+  "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-EWI-0003",
+      "count": 1,
+      "severity": "medium"
+    },
+    {
+      "code": "SSC-EWI-0073",
+      "count": 1,
+      "severity": "medium"
+    },
+    {
+      "code": "SSC-FDM-TS0029",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0157",
+      "count": 4
+    },
+    {
+      "code": "SSC-FDM-0131",
+      "count": 2
+    }
+  ],
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 1,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [],
+    "parameters": {
+      "arguments": [
+        {
+          "direction": "in",
+          "isCursor": false,
+          "name": "@SequenceName",
+          "required": true,
+          "targetName": "SEQUENCENAME",
+          "targetType": "VARCHAR",
+          "type": "SYSNAME"
+        },
+        {
+          "direction": "in",
+          "isCursor": false,
+          "name": "@SchemaName",
+          "required": true,
+          "targetName": "SCHEMANAME",
+          "targetType": "VARCHAR",
+          "type": "SYSNAME"
+        },
+        {
+          "direction": "in",
+          "isCursor": false,
+          "name": "@TableName",
+          "required": true,
+          "targetName": "TABLENAME",
+          "targetType": "VARCHAR",
+          "type": "SYSNAME"
+        },
+        {
+          "direction": "in",
+          "isCursor": false,
+          "name": "@ColumnName",
+          "required": true,
+          "targetName": "COLUMNNAME",
+          "targetType": "VARCHAR",
+          "type": "SYSNAME"
+        }
+      ],
+      "returns": [
+        {
+          "name": "CurrentValue",
+          "targetName": "CurrentValue",
+          "targetType": "BIGINT",
+          "type": "BIGINT"
+        }
+      ]
+    }
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Sequences.ReseedSequenceBeyondTableValues(SYSNAME,SYSNAME,SYSNAME,SYSNAME)",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "ReseedSequenceBeyondTableValues",
+    "objectType": "procedure",
+    "platform": "sqlServer",
+    "schema": "Sequences"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Sequences.ReseedSequenceBeyondTableValues(VARCHAR,VARCHAR,VARCHAR,VARCHAR)",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "ReseedSequenceBeyondTableValues",
+    "objectType": "procedure",
+    "schema": "Sequences"
+  },
+  "updatedAt": "2026-10-25T17:37:58Z"
+}

@@ -1,0 +1,1407 @@
+{
+  "object": "WideWorldImportersDW.Application.Configuration_EnableInMemory()",
+  "object_type": "PROCEDURE",
+  "branches": [
+    {
+      "branch_id": 14,
+      "construct_kind": "IF",
+      "line": 9,
+      "predicate_text": "SERVERPROPERTY(N'IsXTPSupported') = 0",
+      "columns": [],
+      "diagnostics": [
+        {
+          "reason": "non_algebraic_comparison",
+          "expression": "SqlEql"
+        }
+      ]
+    },
+    {
+      "branch_id": 15,
+      "construct_kind": "ELSE",
+      "line": 12,
+      "predicate_text": "TRUE",
+      "columns": [],
+      "construct_sub_kind": "trivial"
+    },
+    {
+      "branch_id": 1,
+      "construct_kind": "IF",
+      "line": 17,
+      "predicate_text": "CAST(SERVERPROPERTY(N'EngineEdition') AS int) <> 5   -- Not an Azure SQL DB",
+      "columns": [],
+      "diagnostics": [
+        {
+          "reason": "non_algebraic_comparison",
+          "expression": "SqlDifferent"
+        }
+      ]
+    },
+    {
+      "branch_id": 0,
+      "construct_kind": "IF",
+      "line": 24,
+      "predicate_text": "NOT EXISTS (SELECT 1 FROM sys.filegroups WHERE name = N'WWIDW_InMemory_Data')",
+      "columns": [],
+      "predicate": {
+        "kind": "cardinality",
+        "operator": "=",
+        "table": "sys.filegroups",
+        "aggregate": "count",
+        "operand": 0,
+        "filter": {
+          "kind": "atom",
+          "operator": "=",
+          "values": [
+            "WWIDW_InMemory_Data"
+          ],
+          "parameter": "name",
+          "operands": [
+            {
+              "kind": "parameter",
+              "parameter": "name",
+              "text": "name"
+            },
+            {
+              "kind": "literal",
+              "literal": "WWIDW_InMemory_Data",
+              "text": "N'WWIDW_InMemory_Data'"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "branch_id": 2,
+      "construct_kind": "IF",
+      "line": 46,
+      "predicate_text": "NOT EXISTS (SELECT 1 FROM sys.tables WHERE name = N'Customer_Staging' AND is_memory_optimized <> 0)",
+      "columns": [
+        {
+          "column": "name",
+          "table": "SYS.TABLES",
+          "type": "Sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "is_memory_optimized",
+          "table": "SYS.TABLES",
+          "type": "Int",
+          "is_integer": true,
+          "is_number": true,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "cardinality",
+        "operator": "=",
+        "table": "SYS.TABLES",
+        "aggregate": "count",
+        "operand": 0,
+        "filter": {
+          "kind": "and",
+          "children": [
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.name"
+              ],
+              "operator": "=",
+              "values": [
+                "Customer_Staging"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.name",
+                  "text": "name"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "Customer_Staging",
+                  "text": "N'Customer_Staging'"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.is_memory_optimized"
+              ],
+              "operator": "<>",
+              "values": [
+                "0"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.is_memory_optimized",
+                  "text": "is_memory_optimized"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "0",
+                  "text": "0"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "branch_id": 3,
+      "construct_kind": "IF",
+      "line": 71,
+      "predicate_text": "NOT EXISTS (SELECT 1 FROM sys.tables WHERE name = N'Employee_Staging' AND is_memory_optimized <> 0)",
+      "columns": [
+        {
+          "column": "name",
+          "table": "SYS.TABLES",
+          "type": "Sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "is_memory_optimized",
+          "table": "SYS.TABLES",
+          "type": "Int",
+          "is_integer": true,
+          "is_number": true,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "cardinality",
+        "operator": "=",
+        "table": "SYS.TABLES",
+        "aggregate": "count",
+        "operand": 0,
+        "filter": {
+          "kind": "and",
+          "children": [
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.name"
+              ],
+              "operator": "=",
+              "values": [
+                "Employee_Staging"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.name",
+                  "text": "name"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "Employee_Staging",
+                  "text": "N'Employee_Staging'"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.is_memory_optimized"
+              ],
+              "operator": "<>",
+              "values": [
+                "0"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.is_memory_optimized",
+                  "text": "is_memory_optimized"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "0",
+                  "text": "0"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "branch_id": 4,
+      "construct_kind": "IF",
+      "line": 94,
+      "predicate_text": "NOT EXISTS (SELECT 1 FROM sys.tables WHERE name = N'Movement_Staging' AND is_memory_optimized <> 0)",
+      "columns": [
+        {
+          "column": "name",
+          "table": "SYS.TABLES",
+          "type": "Sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "is_memory_optimized",
+          "table": "SYS.TABLES",
+          "type": "Int",
+          "is_integer": true,
+          "is_number": true,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "cardinality",
+        "operator": "=",
+        "table": "SYS.TABLES",
+        "aggregate": "count",
+        "operand": 0,
+        "filter": {
+          "kind": "and",
+          "children": [
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.name"
+              ],
+              "operator": "=",
+              "values": [
+                "Movement_Staging"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.name",
+                  "text": "name"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "Movement_Staging",
+                  "text": "N'Movement_Staging'"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.is_memory_optimized"
+              ],
+              "operator": "<>",
+              "values": [
+                "0"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.is_memory_optimized",
+                  "text": "is_memory_optimized"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "0",
+                  "text": "0"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "branch_id": 5,
+      "construct_kind": "IF",
+      "line": 124,
+      "predicate_text": "NOT EXISTS (SELECT 1 FROM sys.tables WHERE name = N'Order_Staging' AND is_memory_optimized <> 0)",
+      "columns": [
+        {
+          "column": "name",
+          "table": "SYS.TABLES",
+          "type": "Sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "is_memory_optimized",
+          "table": "SYS.TABLES",
+          "type": "Int",
+          "is_integer": true,
+          "is_number": true,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "cardinality",
+        "operator": "=",
+        "table": "SYS.TABLES",
+        "aggregate": "count",
+        "operand": 0,
+        "filter": {
+          "kind": "and",
+          "children": [
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.name"
+              ],
+              "operator": "=",
+              "values": [
+                "Order_Staging"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.name",
+                  "text": "name"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "Order_Staging",
+                  "text": "N'Order_Staging'"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.is_memory_optimized"
+              ],
+              "operator": "<>",
+              "values": [
+                "0"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.is_memory_optimized",
+                  "text": "is_memory_optimized"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "0",
+                  "text": "0"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "branch_id": 6,
+      "construct_kind": "IF",
+      "line": 163,
+      "predicate_text": "NOT EXISTS (SELECT 1 FROM sys.tables WHERE name = N'PaymentMethod_Staging' AND is_memory_optimized <> 0)",
+      "columns": [
+        {
+          "column": "name",
+          "table": "SYS.TABLES",
+          "type": "Sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "is_memory_optimized",
+          "table": "SYS.TABLES",
+          "type": "Int",
+          "is_integer": true,
+          "is_number": true,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "cardinality",
+        "operator": "=",
+        "table": "SYS.TABLES",
+        "aggregate": "count",
+        "operand": 0,
+        "filter": {
+          "kind": "and",
+          "children": [
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.name"
+              ],
+              "operator": "=",
+              "values": [
+                "PaymentMethod_Staging"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.name",
+                  "text": "name"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "PaymentMethod_Staging",
+                  "text": "N'PaymentMethod_Staging'"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.is_memory_optimized"
+              ],
+              "operator": "<>",
+              "values": [
+                "0"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.is_memory_optimized",
+                  "text": "is_memory_optimized"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "0",
+                  "text": "0"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "branch_id": 7,
+      "construct_kind": "IF",
+      "line": 183,
+      "predicate_text": "NOT EXISTS (SELECT 1 FROM sys.tables WHERE name = N'Purchase_Staging' AND is_memory_optimized <> 0)",
+      "columns": [
+        {
+          "column": "name",
+          "table": "SYS.TABLES",
+          "type": "Sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "is_memory_optimized",
+          "table": "SYS.TABLES",
+          "type": "Int",
+          "is_integer": true,
+          "is_number": true,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "cardinality",
+        "operator": "=",
+        "table": "SYS.TABLES",
+        "aggregate": "count",
+        "operand": 0,
+        "filter": {
+          "kind": "and",
+          "children": [
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.name"
+              ],
+              "operator": "=",
+              "values": [
+                "Purchase_Staging"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.name",
+                  "text": "name"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "Purchase_Staging",
+                  "text": "N'Purchase_Staging'"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.is_memory_optimized"
+              ],
+              "operator": "<>",
+              "values": [
+                "0"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.is_memory_optimized",
+                  "text": "is_memory_optimized"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "0",
+                  "text": "0"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "branch_id": 8,
+      "construct_kind": "IF",
+      "line": 211,
+      "predicate_text": "NOT EXISTS (SELECT 1 FROM sys.tables WHERE name = N'Sale_Staging' AND is_memory_optimized <> 0)",
+      "columns": [
+        {
+          "column": "name",
+          "table": "SYS.TABLES",
+          "type": "Sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "is_memory_optimized",
+          "table": "SYS.TABLES",
+          "type": "Int",
+          "is_integer": true,
+          "is_number": true,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "cardinality",
+        "operator": "=",
+        "table": "SYS.TABLES",
+        "aggregate": "count",
+        "operand": 0,
+        "filter": {
+          "kind": "and",
+          "children": [
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.name"
+              ],
+              "operator": "=",
+              "values": [
+                "Sale_Staging"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.name",
+                  "text": "name"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "Sale_Staging",
+                  "text": "N'Sale_Staging'"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.is_memory_optimized"
+              ],
+              "operator": "<>",
+              "values": [
+                "0"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.is_memory_optimized",
+                  "text": "is_memory_optimized"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "0",
+                  "text": "0"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "branch_id": 9,
+      "construct_kind": "IF",
+      "line": 252,
+      "predicate_text": "NOT EXISTS (SELECT 1 FROM sys.tables WHERE name = N'StockHolding_Staging' AND is_memory_optimized <> 0)",
+      "columns": [
+        {
+          "column": "name",
+          "table": "SYS.TABLES",
+          "type": "Sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "is_memory_optimized",
+          "table": "SYS.TABLES",
+          "type": "Int",
+          "is_integer": true,
+          "is_number": true,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "cardinality",
+        "operator": "=",
+        "table": "SYS.TABLES",
+        "aggregate": "count",
+        "operand": 0,
+        "filter": {
+          "kind": "and",
+          "children": [
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.name"
+              ],
+              "operator": "=",
+              "values": [
+                "StockHolding_Staging"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.name",
+                  "text": "name"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "StockHolding_Staging",
+                  "text": "N'StockHolding_Staging'"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.is_memory_optimized"
+              ],
+              "operator": "<>",
+              "values": [
+                "0"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.is_memory_optimized",
+                  "text": "is_memory_optimized"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "0",
+                  "text": "0"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "branch_id": 10,
+      "construct_kind": "IF",
+      "line": 276,
+      "predicate_text": "NOT EXISTS (SELECT 1 FROM sys.tables WHERE name = N'StockItem_Staging' AND is_memory_optimized <> 0)",
+      "columns": [
+        {
+          "column": "name",
+          "table": "SYS.TABLES",
+          "type": "Sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "is_memory_optimized",
+          "table": "SYS.TABLES",
+          "type": "Int",
+          "is_integer": true,
+          "is_number": true,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "cardinality",
+        "operator": "=",
+        "table": "SYS.TABLES",
+        "aggregate": "count",
+        "operand": 0,
+        "filter": {
+          "kind": "and",
+          "children": [
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.name"
+              ],
+              "operator": "=",
+              "values": [
+                "StockItem_Staging"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.name",
+                  "text": "name"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "StockItem_Staging",
+                  "text": "N'StockItem_Staging'"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.is_memory_optimized"
+              ],
+              "operator": "<>",
+              "values": [
+                "0"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.is_memory_optimized",
+                  "text": "is_memory_optimized"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "0",
+                  "text": "0"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "branch_id": 11,
+      "construct_kind": "IF",
+      "line": 310,
+      "predicate_text": "NOT EXISTS (SELECT 1 FROM sys.tables WHERE name = N'Supplier_Staging' AND is_memory_optimized <> 0)",
+      "columns": [
+        {
+          "column": "name",
+          "table": "SYS.TABLES",
+          "type": "Sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "is_memory_optimized",
+          "table": "SYS.TABLES",
+          "type": "Int",
+          "is_integer": true,
+          "is_number": true,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "cardinality",
+        "operator": "=",
+        "table": "SYS.TABLES",
+        "aggregate": "count",
+        "operand": 0,
+        "filter": {
+          "kind": "and",
+          "children": [
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.name"
+              ],
+              "operator": "=",
+              "values": [
+                "Supplier_Staging"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.name",
+                  "text": "name"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "Supplier_Staging",
+                  "text": "N'Supplier_Staging'"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.is_memory_optimized"
+              ],
+              "operator": "<>",
+              "values": [
+                "0"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.is_memory_optimized",
+                  "text": "is_memory_optimized"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "0",
+                  "text": "0"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "branch_id": 12,
+      "construct_kind": "IF",
+      "line": 335,
+      "predicate_text": "NOT EXISTS (SELECT 1 FROM sys.tables WHERE name = N'Transaction_Staging' AND is_memory_optimized <> 0)",
+      "columns": [
+        {
+          "column": "name",
+          "table": "SYS.TABLES",
+          "type": "Sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "is_memory_optimized",
+          "table": "SYS.TABLES",
+          "type": "Int",
+          "is_integer": true,
+          "is_number": true,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "cardinality",
+        "operator": "=",
+        "table": "SYS.TABLES",
+        "aggregate": "count",
+        "operand": 0,
+        "filter": {
+          "kind": "and",
+          "children": [
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.name"
+              ],
+              "operator": "=",
+              "values": [
+                "Transaction_Staging"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.name",
+                  "text": "name"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "Transaction_Staging",
+                  "text": "N'Transaction_Staging'"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.is_memory_optimized"
+              ],
+              "operator": "<>",
+              "values": [
+                "0"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.is_memory_optimized",
+                  "text": "is_memory_optimized"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "0",
+                  "text": "0"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "branch_id": 13,
+      "construct_kind": "IF",
+      "line": 373,
+      "predicate_text": "NOT EXISTS (SELECT 1 FROM sys.tables WHERE name = N'TransactionType_Staging' AND is_memory_optimized <> 0)",
+      "columns": [
+        {
+          "column": "name",
+          "table": "SYS.TABLES",
+          "type": "Sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "is_memory_optimized",
+          "table": "SYS.TABLES",
+          "type": "Int",
+          "is_integer": true,
+          "is_number": true,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "cardinality",
+        "operator": "=",
+        "table": "SYS.TABLES",
+        "aggregate": "count",
+        "operand": 0,
+        "filter": {
+          "kind": "and",
+          "children": [
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.name"
+              ],
+              "operator": "=",
+              "values": [
+                "TransactionType_Staging"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.name",
+                  "text": "name"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "TransactionType_Staging",
+                  "text": "N'TransactionType_Staging'"
+                }
+              ]
+            },
+            {
+              "kind": "atom",
+              "columns": [
+                "SYS.TABLES.is_memory_optimized"
+              ],
+              "operator": "<>",
+              "values": [
+                "0"
+              ],
+              "operands": [
+                {
+                  "kind": "column",
+                  "column": "SYS.TABLES.is_memory_optimized",
+                  "text": "is_memory_optimized"
+                },
+                {
+                  "kind": "literal",
+                  "literal": "0",
+                  "text": "0"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "predicates": [
+    {
+      "table": "SYS.TABLES",
+      "column": "is_memory_optimized",
+      "operator": "<>",
+      "values": [
+        "0"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "SYS.TABLES.is_memory_optimized",
+          "text": "is_memory_optimized"
+        },
+        {
+          "kind": "literal",
+          "literal": "0",
+          "text": "0"
+        }
+      ]
+    },
+    {
+      "table": "SYS.TABLES",
+      "column": "name",
+      "operator": "=",
+      "values": [
+        "Customer_Staging"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "SYS.TABLES.name",
+          "text": "name"
+        },
+        {
+          "kind": "literal",
+          "literal": "Customer_Staging",
+          "text": "N'Customer_Staging'"
+        }
+      ]
+    },
+    {
+      "table": "SYS.TABLES",
+      "column": "name",
+      "operator": "=",
+      "values": [
+        "Employee_Staging"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "SYS.TABLES.name",
+          "text": "name"
+        },
+        {
+          "kind": "literal",
+          "literal": "Employee_Staging",
+          "text": "N'Employee_Staging'"
+        }
+      ]
+    },
+    {
+      "table": "SYS.TABLES",
+      "column": "name",
+      "operator": "=",
+      "values": [
+        "Movement_Staging"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "SYS.TABLES.name",
+          "text": "name"
+        },
+        {
+          "kind": "literal",
+          "literal": "Movement_Staging",
+          "text": "N'Movement_Staging'"
+        }
+      ]
+    },
+    {
+      "table": "SYS.TABLES",
+      "column": "name",
+      "operator": "=",
+      "values": [
+        "Order_Staging"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "SYS.TABLES.name",
+          "text": "name"
+        },
+        {
+          "kind": "literal",
+          "literal": "Order_Staging",
+          "text": "N'Order_Staging'"
+        }
+      ]
+    },
+    {
+      "table": "SYS.TABLES",
+      "column": "name",
+      "operator": "=",
+      "values": [
+        "PaymentMethod_Staging"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "SYS.TABLES.name",
+          "text": "name"
+        },
+        {
+          "kind": "literal",
+          "literal": "PaymentMethod_Staging",
+          "text": "N'PaymentMethod_Staging'"
+        }
+      ]
+    },
+    {
+      "table": "SYS.TABLES",
+      "column": "name",
+      "operator": "=",
+      "values": [
+        "Purchase_Staging"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "SYS.TABLES.name",
+          "text": "name"
+        },
+        {
+          "kind": "literal",
+          "literal": "Purchase_Staging",
+          "text": "N'Purchase_Staging'"
+        }
+      ]
+    },
+    {
+      "table": "SYS.TABLES",
+      "column": "name",
+      "operator": "=",
+      "values": [
+        "Sale_Staging"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "SYS.TABLES.name",
+          "text": "name"
+        },
+        {
+          "kind": "literal",
+          "literal": "Sale_Staging",
+          "text": "N'Sale_Staging'"
+        }
+      ]
+    },
+    {
+      "table": "SYS.TABLES",
+      "column": "name",
+      "operator": "=",
+      "values": [
+        "StockHolding_Staging"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "SYS.TABLES.name",
+          "text": "name"
+        },
+        {
+          "kind": "literal",
+          "literal": "StockHolding_Staging",
+          "text": "N'StockHolding_Staging'"
+        }
+      ]
+    },
+    {
+      "table": "SYS.TABLES",
+      "column": "name",
+      "operator": "=",
+      "values": [
+        "StockItem_Staging"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "SYS.TABLES.name",
+          "text": "name"
+        },
+        {
+          "kind": "literal",
+          "literal": "StockItem_Staging",
+          "text": "N'StockItem_Staging'"
+        }
+      ]
+    },
+    {
+      "table": "SYS.TABLES",
+      "column": "name",
+      "operator": "=",
+      "values": [
+        "Supplier_Staging"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "SYS.TABLES.name",
+          "text": "name"
+        },
+        {
+          "kind": "literal",
+          "literal": "Supplier_Staging",
+          "text": "N'Supplier_Staging'"
+        }
+      ]
+    },
+    {
+      "table": "SYS.TABLES",
+      "column": "name",
+      "operator": "=",
+      "values": [
+        "TransactionType_Staging"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "SYS.TABLES.name",
+          "text": "name"
+        },
+        {
+          "kind": "literal",
+          "literal": "TransactionType_Staging",
+          "text": "N'TransactionType_Staging'"
+        }
+      ]
+    },
+    {
+      "table": "SYS.TABLES",
+      "column": "name",
+      "operator": "=",
+      "values": [
+        "Transaction_Staging"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "SYS.TABLES.name",
+          "text": "name"
+        },
+        {
+          "kind": "literal",
+          "literal": "Transaction_Staging",
+          "text": "N'Transaction_Staging'"
+        }
+      ]
+    }
+  ],
+  "edges": [],
+  "assignments": [],
+  "semi_anti": [
+    {
+      "kind": "ANTI",
+      "table": "SYS.TABLES",
+      "columns": []
+    },
+    {
+      "kind": "ANTI",
+      "table": "sys.filegroups",
+      "columns": []
+    }
+  ],
+  "schema_version": 1
+}

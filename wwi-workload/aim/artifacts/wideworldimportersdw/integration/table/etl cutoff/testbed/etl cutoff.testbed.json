@@ -1,0 +1,47 @@
+{
+  "object": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+  "object_type": "TABLE",
+  "columns": [
+    {
+      "name": "\"Table Name\"",
+      "type": "sysname",
+      "is_integer": false,
+      "is_number": false,
+      "is_string": true,
+      "is_date": false,
+      "is_datetime": false,
+      "is_boolean": false,
+      "is_binary": false,
+      "nullable": false,
+      "primary_key": true,
+      "foreign_key": false,
+      "unique": false,
+      "check": false,
+      "has_default": false,
+      "precision": 128,
+      "is_identity": false
+    },
+    {
+      "name": "\"Cutoff Time\"",
+      "type": "DATETIME2",
+      "is_integer": false,
+      "is_number": false,
+      "is_string": false,
+      "is_date": true,
+      "is_datetime": true,
+      "is_boolean": false,
+      "is_binary": false,
+      "nullable": false,
+      "primary_key": false,
+      "foreign_key": false,
+      "unique": false,
+      "check": false,
+      "has_default": false,
+      "is_identity": false
+    }
+  ],
+  "primary_key": [
+    "\"Table Name\""
+  ],
+  "schema_version": 1
+}

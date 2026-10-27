@@ -1,0 +1,146 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": true,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "1b58ff50-d8e2-484d-ab98-b5441845a8a7",
+        "isMissing": false,
+        "relationTypes": [
+          "UPDATE"
+        ]
+      },
+      {
+        "id": "64fd00bf-7950-477b-ba1a-16210cd0681c",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM",
+          "UPDATE"
+        ]
+      },
+      {
+        "id": "4a2bd823-a131-402f-b23d-6ad35283c251",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM",
+          "UPDATE"
+        ]
+      },
+      {
+        "id": "cff6ffcb-f0ea-49af-b01d-c83e344952ed",
+        "isMissing": false,
+        "relationTypes": [
+          "INSERT",
+          "DELETE"
+        ]
+      },
+      {
+        "id": "172e8c9d-5d97-43b1-ba0d-8b2de51fa3ca",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM"
+        ]
+      },
+      {
+        "id": "9dbea1f6-5eb8-4044-b5e4-47770fdc7ef2",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": []
+  },
+  "extensions": {
+    "tasks": {
+      "captureBaseline": {
+        "details": {
+          "error": "infra"
+        },
+        "error": "infra",
+        "status": "failed",
+        "updatedAt": "2026-10-25T00:44:38.748834879+00:00"
+      }
+    }
+  },
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/integration/procedure/migratestagedpurchasedata"
+    },
+    "converted": {
+      "checksum": "0507023e3ca559fe83aaa81c9c3983bd",
+      "path": "snowflake/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql"
+    },
+    "source": {
+      "checksum": "c38995399707c67740243ac5cf0e04aa",
+      "path": "source/wideworldimportersdw/integration/procedure/migratestagedpurchasedata.sql"
+    }
+  },
+  "id": "bc70f733-1bf3-4137-87b5-69397ebb5877",
+  "inScope": true,
+  "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0029",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0037",
+      "count": 1
+    }
+  ],
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 3,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [],
+    "parameters": {
+      "arguments": [],
+      "returns": [
+        {
+          "name": "[Lineage Key]",
+          "targetName": "\"Lineage Key\"",
+          "targetType": "INT",
+          "type": "INT"
+        }
+      ]
+    }
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Integration.MigrateStagedPurchaseData",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "MigrateStagedPurchaseData",
+    "objectType": "procedure",
+    "platform": "sqlServer",
+    "schema": "Integration"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Integration.MigrateStagedPurchaseData",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "MigrateStagedPurchaseData",
+    "objectType": "procedure",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-25T00:44:38Z"
+}

@@ -1,0 +1,234 @@
+{
+  "schema_version": "1.0",
+  "source_system": "sql",
+  "engine_version": "2.51.3",
+  "source_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql",
+  "source_checksum": "ceb62eccdfc8e630009a6513cb5c2f00df47db75642c4d22eb4db3fbfd896488",
+  "pairs": [
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlUseStatement",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "source_text": "USE WideWorldImportersDW",
+      "targets": [
+        "USE DATABASE <%wideworldimportersdw%>"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 7,
+      "source_line_end": 45,
+      "source_text": "BEGIN\n--    SET NOCOUNT ON;\n    SET XACT_ABORT ON;\n\n    DECLARE @DateCounter date = DATEFROMPARTS(@YearNumber, 1, 1);\n\n    BEGIN TRY;\n\n        BEGIN TRAN;\n\n        WHILE YEAR(@DateCounter) = @YearNumber\n        BEGIN\n            IF NOT EXISTS (SELECT 1 FROM Dimension.[Date] WHERE [Date] = @DateCounter)\n            BEGIN\n                INSERT Dimension.[Date]\n                    ([Date], [Day Number], [Day], [Month], [Short Month],\n                     [Calendar Month Number], [Calendar Month Label], [Calendar Year], [Calendar Year Label],\n                     [Fiscal Month Number], [Fiscal Month Label], [Fiscal Year], [Fiscal Year Label],\n                     [ISO Week Number])\n                SELECT [Date], [Day Number], [Day], [Month], [Short Month],\n                       [Calendar Month Number], [Calendar Month Label], [Calendar Year], [Calendar Year Label],\n                       [Fiscal Month Number], [Fiscal Month Label], [Fiscal Year], [Fiscal Year Label],\n                       [ISO Week Number]\n                FROM Integration.GenerateDateDimensionColumns(@DateCounter);\n            END;\n            SET @DateCounter = DATEADD(day, 1, @DateCounter);\n        END;\n\n        COMMIT;\n    END TRY\n    BEGIN CATCH\n        IF XACT_STATE() <> 0 ROLLBACK;\n        PRINT N'Unable to populate dates for the year';\n        THROW;\n        RETURN -1;\n    END CATCH;\n\n    RETURN 0;\nEND;",
+      "targets": [],
+      "target_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 8,
+      "source_line_end": 8,
+      "source_text": "--    SET NOCOUNT ON;",
+      "targets": [
+        "--    SET NOCOUNT ON;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    },
+    {
+      "pair_kind": "pass_through",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 9,
+      "source_line_end": 9,
+      "source_text": "    SET XACT_ABORT ON;",
+      "targets": [
+        "    SET XACT_ABORT ON;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 11,
+      "source_line_end": 11,
+      "source_text": "\n    DECLARE @DateCounter date = DATEFROMPARTS(@YearNumber, 1, 1);",
+      "targets": [],
+      "target_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlEmptyStat",
+      "source_line_start": 13,
+      "source_line_end": 13,
+      "source_text": ";",
+      "targets": [],
+      "target_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 13,
+      "source_line_end": 42,
+      "source_text": "\n    BEGIN TRY;\n\n        BEGIN TRAN;\n\n        WHILE YEAR(@DateCounter) = @YearNumber\n        BEGIN\n            IF NOT EXISTS (SELECT 1 FROM Dimension.[Date] WHERE [Date] = @DateCounter)\n            BEGIN\n                INSERT Dimension.[Date]\n                    ([Date], [Day Number], [Day], [Month], [Short Month],\n                     [Calendar Month Number], [Calendar Month Label], [Calendar Year], [Calendar Year Label],\n                     [Fiscal Month Number], [Fiscal Month Label], [Fiscal Year], [Fiscal Year Label],\n                     [ISO Week Number])\n                SELECT [Date], [Day Number], [Day], [Month], [Short Month],\n                       [Calendar Month Number], [Calendar Month Label], [Calendar Year], [Calendar Year Label],\n                       [Fiscal Month Number], [Fiscal Month Label], [Fiscal Year], [Fiscal Year Label],\n                       [ISO Week Number]\n                FROM Integration.GenerateDateDimensionColumns(@DateCounter);\n            END;\n            SET @DateCounter = DATEADD(day, 1, @DateCounter);\n        END;\n\n        COMMIT;\n    END TRY\n    BEGIN CATCH\n        IF XACT_STATE() <> 0 ROLLBACK;\n        PRINT N'Unable to populate dates for the year';\n        THROW;\n        RETURN -1;\n    END CATCH;",
+      "targets": [
+        "BEGIN\n\n   BEGIN TRANSACTION;\n   WHILE (YEAR(:DATECOUNTER :: TIMESTAMP) = :YEARNUMBER) LOOP\n      IF (NOT EXISTS (SELECT 1 FROM\n            Dimension.Date\n         WHERE\n            Date = :DATECOUNTER\n      )) THEN\n         BEGIN\n             INSERT INTO Dimension.Date\n                 (Date, \"Day Number\", Day, Month, \"Short Month\", \"Calendar Month Number\", \"Calendar Month Label\", \"Calendar Year\", \"Calendar Year Label\", \"Fiscal Month Number\", \"Fiscal Month Label\", \"Fiscal Year\", \"Fiscal Year Label\", \"ISO Week Number\")\n             SELECT\n               Date,\n               \"Day Number\",\n               Day,\n               Month,\n               \"Short Month\",\n               \"Calendar Month Number\",\n               \"Calendar Month Label\",\n               \"Calendar Year\",\n               \"Calendar Year Label\",\n               \"Fiscal Month Number\",\n               \"Fiscal Month Label\",\n               \"Fiscal Year\",\n               \"Fiscal Year Label\",\n               \"ISO Week Number\"\n             FROM\n               TABLE(Integration.GenerateDateDimensionColumns(:DATECOUNTER));\n         END;\n      END IF;\n      DATECOUNTER := DATEADD(day, 1, :DATECOUNTER);\n   END LOOP;\n   COMMIT;\nEXCEPTION\n   WHEN OTHER THEN\n      IF (CURRENT_TRANSACTION() IS NOT NULL) THEN\n         BEGIN\n             ROLLBACK;\n         EXCEPTION\n             WHEN OTHER THEN\n               NULL;\n         END;\n      END IF;\n      SYSTEM$LOG_INFO('Unable to populate dates for the year');\n      RAISE;\n      RETURN COALESCE(TRUNC( -1) :: INT, 0);\nEND;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 15,
+      "source_line_end": 15,
+      "source_text": "\n        BEGIN TRAN;",
+      "targets": [
+        "\n        BEGIN TRANSACTION;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 17,
+      "source_line_end": 33,
+      "source_text": "\n        WHILE YEAR(@DateCounter) = @YearNumber\n        BEGIN\n            IF NOT EXISTS (SELECT 1 FROM Dimension.[Date] WHERE [Date] = @DateCounter)\n            BEGIN\n                INSERT Dimension.[Date]\n                    ([Date], [Day Number], [Day], [Month], [Short Month],\n                     [Calendar Month Number], [Calendar Month Label], [Calendar Year], [Calendar Year Label],\n                     [Fiscal Month Number], [Fiscal Month Label], [Fiscal Year], [Fiscal Year Label],\n                     [ISO Week Number])\n                SELECT [Date], [Day Number], [Day], [Month], [Short Month],\n                       [Calendar Month Number], [Calendar Month Label], [Calendar Year], [Calendar Year Label],\n                       [Fiscal Month Number], [Fiscal Month Label], [Fiscal Year], [Fiscal Year Label],\n                       [ISO Week Number]\n                FROM Integration.GenerateDateDimensionColumns(@DateCounter);\n            END;\n            SET @DateCounter = DATEADD(day, 1, @DateCounter);\n        END;",
+      "targets": [
+        "WHILE (YEAR(:DATECOUNTER :: TIMESTAMP) = :YEARNUMBER) LOOP\n   IF (NOT EXISTS (SELECT 1 FROM\n         Dimension.Date\n      WHERE\n         Date = :DATECOUNTER\n   )) THEN\n      BEGIN\n          INSERT INTO Dimension.Date\n              (Date, \"Day Number\", Day, Month, \"Short Month\", \"Calendar Month Number\", \"Calendar Month Label\", \"Calendar Year\", \"Calendar Year Label\", \"Fiscal Month Number\", \"Fiscal Month Label\", \"Fiscal Year\", \"Fiscal Year Label\", \"ISO Week Number\")\n          SELECT\n                  Date,\n                  \"Day Number\",\n                  Day,\n                  Month,\n                  \"Short Month\",\n                  \"Calendar Month Number\",\n                  \"Calendar Month Label\",\n                  \"Calendar Year\",\n                  \"Calendar Year Label\",\n                  \"Fiscal Month Number\",\n                  \"Fiscal Month Label\",\n                  \"Fiscal Year\",\n                  \"Fiscal Year Label\",\n                  \"ISO Week Number\"\n          FROM\n                  TABLE(Integration.GenerateDateDimensionColumns(:DATECOUNTER));\n      END;\n         END IF;\n         DATECOUNTER := DATEADD(day, 1, :DATECOUNTER);\nEND LOOP;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 19,
+      "source_line_end": 19,
+      "source_text": "SELECT 1 FROM Dimension.[Date] WHERE [Date] = @DateCounter",
+      "targets": [
+        "SELECT 1 FROM\n   Dimension.Date\nWHERE\n   Date = :DATECOUNTER"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 19,
+      "source_line_end": 31,
+      "source_text": "            IF NOT EXISTS (SELECT 1 FROM Dimension.[Date] WHERE [Date] = @DateCounter)\n            BEGIN\n                INSERT Dimension.[Date]\n                    ([Date], [Day Number], [Day], [Month], [Short Month],\n                     [Calendar Month Number], [Calendar Month Label], [Calendar Year], [Calendar Year Label],\n                     [Fiscal Month Number], [Fiscal Month Label], [Fiscal Year], [Fiscal Year Label],\n                     [ISO Week Number])\n                SELECT [Date], [Day Number], [Day], [Month], [Short Month],\n                       [Calendar Month Number], [Calendar Month Label], [Calendar Year], [Calendar Year Label],\n                       [Fiscal Month Number], [Fiscal Month Label], [Fiscal Year], [Fiscal Year Label],\n                       [ISO Week Number]\n                FROM Integration.GenerateDateDimensionColumns(@DateCounter);\n            END;",
+      "targets": [
+        "IF (NOT EXISTS (SELECT 1 FROM\n      Dimension.Date\n   WHERE\n      Date = :DATECOUNTER\n)) THEN\n   BEGIN\n       INSERT INTO Dimension.Date\n           (Date, \"Day Number\", Day, Month, \"Short Month\", \"Calendar Month Number\", \"Calendar Month Label\", \"Calendar Year\", \"Calendar Year Label\", \"Fiscal Month Number\", \"Fiscal Month Label\", \"Fiscal Year\", \"Fiscal Year Label\", \"ISO Week Number\")\n       SELECT\n               Date,\n               \"Day Number\",\n               Day,\n               Month,\n               \"Short Month\",\n               \"Calendar Month Number\",\n               \"Calendar Month Label\",\n               \"Calendar Year\",\n               \"Calendar Year Label\",\n               \"Fiscal Month Number\",\n               \"Fiscal Month Label\",\n               \"Fiscal Year\",\n               \"Fiscal Year Label\",\n               \"ISO Week Number\"\n       FROM\n               TABLE(Integration.GenerateDateDimensionColumns(:DATECOUNTER));\n   END;\n      END IF;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 20,
+      "source_line_end": 31,
+      "source_text": "            BEGIN\n                INSERT Dimension.[Date]\n                    ([Date], [Day Number], [Day], [Month], [Short Month],\n                     [Calendar Month Number], [Calendar Month Label], [Calendar Year], [Calendar Year Label],\n                     [Fiscal Month Number], [Fiscal Month Label], [Fiscal Year], [Fiscal Year Label],\n                     [ISO Week Number])\n                SELECT [Date], [Day Number], [Day], [Month], [Short Month],\n                       [Calendar Month Number], [Calendar Month Label], [Calendar Year], [Calendar Year Label],\n                       [Fiscal Month Number], [Fiscal Month Label], [Fiscal Year], [Fiscal Year Label],\n                       [ISO Week Number]\n                FROM Integration.GenerateDateDimensionColumns(@DateCounter);\n            END;",
+      "targets": [
+        "            BEGIN\n                INSERT INTO Dimension.Date\n                (Date, \"Day Number\", Day, Month, \"Short Month\", \"Calendar Month Number\", \"Calendar Month Label\", \"Calendar Year\", \"Calendar Year Label\", \"Fiscal Month Number\", \"Fiscal Month Label\", \"Fiscal Year\", \"Fiscal Year Label\", \"ISO Week Number\")\n                SELECT\n                   Date,\n                   \"Day Number\",\n                   Day,\n                   Month,\n                   \"Short Month\",\n                   \"Calendar Month Number\",\n                   \"Calendar Month Label\",\n                   \"Calendar Year\",\n                   \"Calendar Year Label\",\n                   \"Fiscal Month Number\",\n                   \"Fiscal Month Label\",\n                   \"Fiscal Year\",\n                   \"Fiscal Year Label\",\n                   \"ISO Week Number\"\n                FROM\n                   TABLE(Integration.GenerateDateDimensionColumns(:DATECOUNTER));\n            END;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 21,
+      "source_line_end": 30,
+      "source_text": "                INSERT Dimension.[Date]\n                    ([Date], [Day Number], [Day], [Month], [Short Month],\n                     [Calendar Month Number], [Calendar Month Label], [Calendar Year], [Calendar Year Label],\n                     [Fiscal Month Number], [Fiscal Month Label], [Fiscal Year], [Fiscal Year Label],\n                     [ISO Week Number])\n                SELECT [Date], [Day Number], [Day], [Month], [Short Month],\n                       [Calendar Month Number], [Calendar Month Label], [Calendar Year], [Calendar Year Label],\n                       [Fiscal Month Number], [Fiscal Month Label], [Fiscal Year], [Fiscal Year Label],\n                       [ISO Week Number]\n                FROM Integration.GenerateDateDimensionColumns(@DateCounter);",
+      "targets": [
+        "                INSERT INTO Dimension.Date\n                (Date, \"Day Number\", Day, Month, \"Short Month\", \"Calendar Month Number\", \"Calendar Month Label\", \"Calendar Year\", \"Calendar Year Label\", \"Fiscal Month Number\", \"Fiscal Month Label\", \"Fiscal Year\", \"Fiscal Year Label\", \"ISO Week Number\")\n                SELECT\n                   Date,\n                   \"Day Number\",\n                   Day,\n                   Month,\n                   \"Short Month\",\n                   \"Calendar Month Number\",\n                   \"Calendar Month Label\",\n                   \"Calendar Year\",\n                   \"Calendar Year Label\",\n                   \"Fiscal Month Number\",\n                   \"Fiscal Month Label\",\n                   \"Fiscal Year\",\n                   \"Fiscal Year Label\",\n                   \"ISO Week Number\"\n                FROM\n                   TABLE(Integration.GenerateDateDimensionColumns(:DATECOUNTER));"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 26,
+      "source_line_end": 30,
+      "source_text": "                SELECT [Date], [Day Number], [Day], [Month], [Short Month],\n                       [Calendar Month Number], [Calendar Month Label], [Calendar Year], [Calendar Year Label],\n                       [Fiscal Month Number], [Fiscal Month Label], [Fiscal Year], [Fiscal Year Label],\n                       [ISO Week Number]\n                FROM Integration.GenerateDateDimensionColumns(@DateCounter)",
+      "targets": [
+        "                SELECT\n                   Date,\n                   \"Day Number\",\n                   Day,\n                   Month,\n                   \"Short Month\",\n                   \"Calendar Month Number\",\n                   \"Calendar Month Label\",\n                   \"Calendar Year\",\n                   \"Calendar Year Label\",\n                   \"Fiscal Month Number\",\n                   \"Fiscal Month Label\",\n                   \"Fiscal Year\",\n                   \"Fiscal Year Label\",\n                   \"ISO Week Number\"\n                FROM\n                   TABLE(Integration.GenerateDateDimensionColumns(:DATECOUNTER))"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 32,
+      "source_line_end": 32,
+      "source_text": "            SET @DateCounter = DATEADD(day, 1, @DateCounter);",
+      "targets": [
+        "DATECOUNTER := DATEADD(day, 1, :DATECOUNTER);"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 35,
+      "source_line_end": 35,
+      "source_text": "\n        COMMIT;",
+      "targets": [
+        "COMMIT;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 38,
+      "source_line_end": 38,
+      "source_text": "        IF XACT_STATE() <> 0 ROLLBACK;",
+      "targets": [
+        "IF (CURRENT_TRANSACTION() IS NOT NULL) THEN\n   BEGIN\n      ROLLBACK;\n   EXCEPTION\n      WHEN OTHER THEN\n         NULL;\n   END;\nEND IF;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 39,
+      "source_line_end": 39,
+      "source_text": "        PRINT N'Unable to populate dates for the year';",
+      "targets": [
+        "SYSTEM$LOG_INFO('Unable to populate dates for the year');"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 40,
+      "source_line_end": 40,
+      "source_text": "        THROW;",
+      "targets": [
+        "RAISE;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 41,
+      "source_line_end": 41,
+      "source_text": "        RETURN -1;",
+      "targets": [
+        "        RETURN COALESCE(TRUNC( -1) :: INT, 0);"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 44,
+      "source_line_end": 44,
+      "source_text": "\n    RETURN 0;",
+      "targets": [
+        "RETURN 0;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/populatedatedimensionforyear.sql"
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:38:29Z"
+    }
+  },
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "58f3be9d-37bd-4913-822b-7a64d841fd85",
+        "isMissing": false,
+        "relationTypes": [
+          "TABLE COLUMN"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "15f4538f-f470-41be-82a3-af4579497ee6",
+      "3bfec749-680e-49b9-a41c-9974cbc5545d",
+      "61b177e5-22ae-4122-ad6d-d6d1b3294c2f",
+      "bb317ec9-b0b9-4fa2-8b15-b176ff64f7ea",
+      "bc70f733-1bf3-4137-87b5-69397ebb5877",
+      "cff6ffcb-f0ea-49af-b01d-c83e344952ed",
+      "d59fc930-9c64-4c66-91a3-823de6f37279",
+      "e246ca55-9881-4ecd-8b71-f32f3f898ece"
+    ]
+  },
+  "extensions": {
+    "isDone": true
+  },
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/dimension/table/supplier"
+    },
+    "converted": {
+      "checksum": "659c0f4c2e10bc3ced3b8e79f4544a61",
+      "path": "snowflake/wideworldimportersdw/dimension/table/supplier.sql"
+    },
+    "source": {
+      "checksum": "e1c3051893885d3028b9d0c97e64221f",
+      "path": "source/wideworldimportersdw/dimension/table/supplier.sql"
+    }
+  },
+  "id": "9dbea1f6-5eb8-4044-b5e4-47770fdc7ef2",
+  "inScope": true,
+  "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-0012",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0002",
+      "count": 5
+    },
+    {
+      "code": "SSC-PRF-0002",
+      "count": 5
+    }
+  ],
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 1,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": true,
+        "name": "Supplier Key",
+        "nullable": false,
+        "targetName": "\"Supplier Key\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"WWI Supplier ID\"",
+        "nullable": false,
+        "targetName": "\"WWI Supplier ID\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "Supplier",
+        "nullable": false,
+        "targetName": "Supplier",
+        "targetType": "NVARCHAR",
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "Category",
+        "nullable": false,
+        "targetName": "Category",
+        "targetType": "NVARCHAR",
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Primary Contact\"",
+        "nullable": false,
+        "targetName": "\"Primary Contact\"",
+        "targetType": "NVARCHAR",
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Supplier Reference\"",
+        "nullable": true,
+        "targetName": "\"Supplier Reference\"",
+        "targetType": "NVARCHAR",
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Payment Days\"",
+        "nullable": false,
+        "targetName": "\"Payment Days\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Postal Code\"",
+        "nullable": false,
+        "targetName": "\"Postal Code\"",
+        "targetType": "NVARCHAR",
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Valid From\"",
+        "nullable": false,
+        "targetName": "\"Valid From\"",
+        "targetType": "",
+        "type": "DATETIME2"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Valid To\"",
+        "nullable": false,
+        "targetName": "\"Valid To\"",
+        "targetType": "",
+        "type": "DATETIME2"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Lineage Key\"",
+        "nullable": false,
+        "targetName": "\"Lineage Key\"",
+        "targetType": "INT",
+        "type": "INT"
+      }
+    ],
+    "parameters": {
+      "arguments": [],
+      "returns": []
+    }
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Dimension.Supplier",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "Supplier",
+    "objectType": "table",
+    "platform": "sqlServer",
+    "schema": "Dimension"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Dimension.Supplier",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Supplier",
+    "objectType": "table",
+    "schema": "Dimension"
+  },
+  "updatedAt": "2026-10-24T23:35:09Z"
+}

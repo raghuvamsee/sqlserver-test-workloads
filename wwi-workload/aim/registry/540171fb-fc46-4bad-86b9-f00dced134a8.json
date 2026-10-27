@@ -1,0 +1,105 @@
+{
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": "Error: SQL compilation error:\nsyntax error line 4 at position 0 unexpected '!'. SqlState: 42000, VendorCode: 1003, QueryId: 01c7f392-0109-3987-0012-43a20003d04e"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:36:41Z"
+    }
+  },
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "d20973f5-32ac-4262-8c9e-24dc1f9cb864"
+    ]
+  },
+  "extensions": {
+    "isDone": true,
+    "tasks": {
+      "verify": {
+        "details": {
+          "error": null,
+          "verifiedBy": "agent"
+        },
+        "error": null,
+        "status": "completed",
+        "updatedAt": "2026-10-24T20:37:07.476983161+00:00"
+      }
+    }
+  },
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/sequences/sequence/citykey"
+    },
+    "converted": {
+      "checksum": "f4789249168c3993c7a65fc657daa085",
+      "path": "snowflake/wideworldimportersdw/sequences/sequence/citykey.sql"
+    },
+    "source": {
+      "checksum": "e1c922c02790c49bc96557c0efa853c7",
+      "path": "source/wideworldimportersdw/sequences/sequence/citykey.sql"
+    }
+  },
+  "id": "540171fb-fc46-4bad-86b9-f00dced134a8",
+  "inScope": true,
+  "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-EWI-0001",
+      "count": 1,
+      "severity": "critical"
+    },
+    {
+      "code": "SSC-EWI-0120",
+      "count": 1,
+      "severity": "low"
+    }
+  ],
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": []
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Sequences.CityKey",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "CityKey",
+    "objectType": "sequence",
+    "platform": "sqlServer",
+    "schema": "Sequences"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Sequences.CityKey",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "CityKey",
+    "objectType": "sequence",
+    "schema": "Sequences"
+  },
+  "updatedAt": "2026-10-24T20:37:52Z"
+}

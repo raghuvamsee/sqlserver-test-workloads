@@ -1,0 +1,9 @@
+OBJECT_NAME,OBJECT_TYPE,STATUS,ERROR_MESSAGE,DATABASE,SCHEMA,FQN,SNOWSIGHT_URL
+<%wideworldimportersdw%>.Sequences.CustomerKey,Sequence,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Sequences.CustomerKey,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Sequences.CityKey,Sequence,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Sequences.CityKey,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Sequences.SupplierKey,Sequence,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Sequences.SupplierKey,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Sequences.PaymentMethodKey,Sequence,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Sequences.PaymentMethodKey,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Sequences.TransactionTypeKey,Sequence,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Sequences.TransactionTypeKey,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Sequences.EmployeeKey,Sequence,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Sequences.EmployeeKey,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Sequences.LineageKey,Sequence,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Sequences.LineageKey,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Sequences.StockItemKey,Sequence,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Sequences.StockItemKey,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC

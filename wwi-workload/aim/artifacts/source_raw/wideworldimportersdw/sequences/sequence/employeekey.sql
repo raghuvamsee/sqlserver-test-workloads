@@ -1,0 +1,12 @@
+USE WideWorldImportersDW;
+GO
+CREATE SEQUENCE Sequences.EmployeeKey
+    AS int
+    START WITH 1
+    INCREMENT BY 1
+    MINVALUE -2147483648
+    MAXVALUE 2147483647
+    NO CYCLE
+    CACHE
+
+ALTER SEQUENCE [Sequences].[EmployeeKey] RESTART WITH 212

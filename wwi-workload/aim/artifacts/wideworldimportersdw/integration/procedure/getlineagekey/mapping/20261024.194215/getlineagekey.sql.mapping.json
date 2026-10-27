@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0",
+  "source_system": "sql",
+  "engine_version": "2.51.3",
+  "source_file": "wideworldimportersdw/integration/procedure/getlineagekey.sql",
+  "source_checksum": "cc9801dd7a75517c8a5e0cb138b67b7a555b664ec492d88e1398f0b82fa9d5ac",
+  "pairs": [
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlUseStatement",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "source_text": "USE WideWorldImportersDW",
+      "targets": [
+        "USE DATABASE <%wideworldimportersdw%>"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/getlineagekey.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 8,
+      "source_line_end": 28,
+      "source_text": "BEGIN\n--    SET NOCOUNT ON;\n--    SET XACT_ABORT ON;\n\n    DECLARE @DataLoadStartedWhen datetime2(7) = SYSDATETIME();\n\n    INSERT Integration.Lineage\n        ([Data Load Started], [Table Name], [Data Load Completed],\n         [Was Successful], [Source System Cutoff Time])\n    VALUES\n        (@DataLoadStartedWhen, @TableName, NULL,\n         0, @NewCutoffTime);\n\n    SELECT TOP(1) [Lineage Key] AS LineageKey\n    FROM Integration.Lineage\n    WHERE [Table Name] = @TableName\n    AND [Data Load Started] = @DataLoadStartedWhen\n    ORDER BY LineageKey DESC;\n\n    RETURN 0;\nEND;",
+      "targets": [],
+      "target_file": "wideworldimportersdw/integration/procedure/getlineagekey.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 9,
+      "source_line_end": 9,
+      "source_text": "--    SET NOCOUNT ON;",
+      "targets": [
+        "--    SET NOCOUNT ON;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/getlineagekey.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 10,
+      "source_line_end": 10,
+      "source_text": "--    SET XACT_ABORT ON;",
+      "targets": [
+        "--    SET XACT_ABORT ON;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/getlineagekey.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 12,
+      "source_line_end": 12,
+      "source_text": "\n    DECLARE @DataLoadStartedWhen datetime2(7) = SYSDATETIME();",
+      "targets": [],
+      "target_file": "wideworldimportersdw/integration/procedure/getlineagekey.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 14,
+      "source_line_end": 19,
+      "source_text": "\n    INSERT Integration.Lineage\n        ([Data Load Started], [Table Name], [Data Load Completed],\n         [Was Successful], [Source System Cutoff Time])\n    VALUES\n        (@DataLoadStartedWhen, @TableName, NULL,\n         0, @NewCutoffTime);",
+      "targets": [
+        "\n    INSERT INTO Integration.Lineage\n    (\"Data Load Started\", \"Table Name\", \"Data Load Completed\", \"Was Successful\", \"Source System Cutoff Time\") VALUES\n        (:DATALOADSTARTEDWHEN, :TABLENAME, NULL,\n         0, :NEWCUTOFFTIME);"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/getlineagekey.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 21,
+      "source_line_end": 25,
+      "source_text": "\n    SELECT TOP(1) [Lineage Key] AS LineageKey\n    FROM Integration.Lineage\n    WHERE [Table Name] = @TableName\n    AND [Data Load Started] = @DataLoadStartedWhen\n    ORDER BY LineageKey DESC;",
+      "targets": [],
+      "target_file": "wideworldimportersdw/integration/procedure/getlineagekey.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 27,
+      "source_line_end": 27,
+      "source_text": "\n    RETURN 0;",
+      "targets": [
+        "RETURN TABLE(ProcedureResultSet);"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/getlineagekey.sql"
+    }
+  ]
+}

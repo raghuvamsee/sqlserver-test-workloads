@@ -1,0 +1,77 @@
+tables:
+- source:
+    tableName: ETL Cutoff
+    schemaName: Integration
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: ETL Cutoff
+    schemaName: INTEGRATION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Table Name
+- source:
+    tableName: Transaction Type
+    schemaName: Dimension
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: Transaction Type
+    schemaName: DIMENSION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Transaction Type Key
+- source:
+    tableName: Payment Method
+    schemaName: Dimension
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: Payment Method
+    schemaName: DIMENSION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Payment Method Key
+- source:
+    tableName: Date
+    schemaName: Dimension
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: DATE
+    schemaName: DIMENSION
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Date
+- source:
+    tableName: Order
+    schemaName: Fact
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: '"Order"'
+    schemaName: FACT
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Order Key
+- source:
+    tableName: Stock Holding
+    schemaName: Fact
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: Stock Holding
+    schemaName: FACT
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Stock Holding Key
+- source:
+    tableName: Transaction
+    schemaName: Fact
+    databaseName: WideWorldImportersDW
+  target:
+    tableName: TRANSACTION
+    schemaName: FACT
+    databaseName: WWI_AIM
+  columnNamesToPartitionBy:
+  - Transaction Key
+defaultTableConfiguration:
+  synchronization:
+    strategy: none
+  extraction:
+    strategy: regular
+affinity: aim-25bfec2a

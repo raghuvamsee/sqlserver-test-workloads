@@ -1,0 +1,472 @@
+{
+  "object": "WideWorldImportersDW.Application.Configuration_PopulateLargeSaleTable(BIGINT)",
+  "object_type": "PROCEDURE",
+  "branches": [
+    {
+      "branch_id": 0,
+      "construct_kind": "IF",
+      "line": 30,
+      "predicate_text": "@NumberOfSalesPerDay > 50000",
+      "columns": [],
+      "predicate": {
+        "kind": "atom",
+        "operator": ">",
+        "values": [
+          "50000"
+        ],
+        "parameter": "@NumberOfSalesPerDay",
+        "operands": [
+          {
+            "kind": "parameter",
+            "parameter": "@NumberOfSalesPerDay",
+            "text": "@NumberOfSalesPerDay"
+          },
+          {
+            "kind": "literal",
+            "literal": "50000",
+            "text": "50000"
+          }
+        ]
+      }
+    },
+    {
+      "branch_id": 2,
+      "construct_kind": "WHILE",
+      "line": 56,
+      "predicate_text": "@DateCounter < '20121231'",
+      "columns": [],
+      "predicate": {
+        "kind": "atom",
+        "operator": "<",
+        "values": [
+          "20121231"
+        ],
+        "parameter": "@DateCounter",
+        "operands": [
+          {
+            "kind": "parameter",
+            "parameter": "@DateCounter",
+            "text": "@DateCounter"
+          },
+          {
+            "kind": "literal",
+            "literal": "20121231",
+            "text": "'20121231'"
+          }
+        ]
+      }
+    },
+    {
+      "branch_id": 1,
+      "construct_kind": "WHERE_FILTER",
+      "line": 77,
+      "predicate_text": "[Sale Key] > @StartingSaleKey\n\t\t\tand [Invoice Date Key] >='2013-01-01'",
+      "columns": [
+        {
+          "column": "\"Sale Key\"",
+          "table": "WideWorldImportersDW.Fact.Sale",
+          "type": "BIGINT",
+          "is_integer": true,
+          "is_number": true,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "\"Invoice Date Key\"",
+          "table": "WideWorldImportersDW.Fact.Sale",
+          "type": "DATE",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": true,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "and",
+        "children": [
+          {
+            "kind": "atom",
+            "columns": [
+              "WideWorldImportersDW.Fact.Sale.\"Sale Key\""
+            ],
+            "operator": ">",
+            "parameter": "@StartingSaleKey",
+            "operands": [
+              {
+                "kind": "column",
+                "column": "WideWorldImportersDW.Fact.Sale.\"Sale Key\"",
+                "text": "[Sale Key]"
+              },
+              {
+                "kind": "parameter",
+                "parameter": "@StartingSaleKey",
+                "text": "@StartingSaleKey"
+              }
+            ]
+          },
+          {
+            "kind": "atom",
+            "columns": [
+              "WideWorldImportersDW.Fact.Sale.\"Invoice Date Key\""
+            ],
+            "operator": ">=",
+            "values": [
+              "2013-01-01"
+            ],
+            "operands": [
+              {
+                "kind": "column",
+                "column": "WideWorldImportersDW.Fact.Sale.\"Invoice Date Key\"",
+                "text": "[Invoice Date Key]"
+              },
+              {
+                "kind": "literal",
+                "literal": "2013-01-01",
+                "text": "'2013-01-01'"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "predicates": [
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "\"Invoice Date Key\"",
+      "operator": ">=",
+      "values": [
+        "2013-01-01"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Fact.Sale.\"Invoice Date Key\"",
+          "text": "[Invoice Date Key]"
+        },
+        {
+          "kind": "literal",
+          "literal": "2013-01-01",
+          "text": "'2013-01-01'"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "\"Sale Key\"",
+      "operator": ">",
+      "values": [
+        "@StartingSaleKey"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Fact.Sale.\"Sale Key\"",
+          "text": "[Sale Key]"
+        },
+        {
+          "kind": "parameter",
+          "parameter": "@StartingSaleKey",
+          "text": "@StartingSaleKey"
+        }
+      ]
+    }
+  ],
+  "edges": [],
+  "assignments": [
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "\"Bill To Customer Key\"",
+      "value": "[Bill To Customer Key]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "\"City Key\"",
+      "value": "[City Key]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "\"Customer Key\"",
+      "value": "[Customer Key]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "\"Delivery Date Key\"",
+      "value": "DATEADD(day, 1, @DateCounter)",
+      "value_kind": "column_expression",
+      "value_expression": {
+        "kind": "fn",
+        "fn": "DATEADD",
+        "args": [
+          {
+            "kind": "parameter",
+            "parameter": "day"
+          },
+          {
+            "kind": "literal",
+            "literal": "1"
+          },
+          {
+            "kind": "column",
+            "column": "@DateCounter"
+          }
+        ]
+      },
+      "depends_on": [
+        "@DateCounter",
+        "day"
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "\"Invoice Date Key\"",
+      "value": "@DateCounter"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "\"Lineage Key\"",
+      "value": "@LineageKey"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "\"Salesperson Key\"",
+      "value": "[Salesperson Key]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "\"Stock Item Key\"",
+      "value": "[Stock Item Key]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "\"Tax Amount\"",
+      "value": "[Tax Amount]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "\"Tax Rate\"",
+      "value": "[Tax Rate]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "\"Total Chiller Items\"",
+      "value": "[Total Chiller Items]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "\"Total Dry Items\"",
+      "value": "[Total Dry Items]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "\"Total Excluding Tax\"",
+      "value": "[Total Excluding Tax]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "\"Total Including Tax\"",
+      "value": "[Total Including Tax]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "\"Unit Price\"",
+      "value": "[Unit Price]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "\"WWI Invoice ID\"",
+      "value": "[WWI Invoice ID]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "Description",
+      "value": "[Description]"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "Package",
+      "value": "Package"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "Profit",
+      "value": "Profit"
+    },
+    {
+      "table": "WideWorldImportersDW.Fact.Sale",
+      "column": "Quantity",
+      "value": "Quantity"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Data Load Completed\"",
+      "value": "NULL"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Data Load Completed\"",
+      "value": "SYSDATETIME()",
+      "value_kind": "nondeterministic",
+      "value_expression": {
+        "kind": "fn",
+        "fn": "SYSDATETIME",
+        "args": []
+      }
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Data Load Started\"",
+      "value": "SYSDATETIME()",
+      "value_kind": "nondeterministic",
+      "value_expression": {
+        "kind": "fn",
+        "fn": "SYSDATETIME",
+        "args": []
+      }
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Lineage Key\"",
+      "value": "@LineageKey"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Source System Cutoff Time\"",
+      "value": "20121231",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Table Name\"",
+      "value": "Sale",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Was Successful\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Was Successful\"",
+      "value": "1",
+      "value_kind": "literal"
+    }
+  ],
+  "semi_anti": [],
+  "schema_version": 1,
+  "insert_targets": [
+    {
+      "target_table": "WideWorldImportersDW.Fact.Sale",
+      "columns": [
+        {
+          "target_column": "\"City Key\"",
+          "source_table": "WideWorldImportersDW.Fact.Sale",
+          "source_column": "\"City Key\""
+        },
+        {
+          "target_column": "\"Customer Key\"",
+          "source_table": "WideWorldImportersDW.Fact.Sale",
+          "source_column": "\"Customer Key\""
+        },
+        {
+          "target_column": "\"Bill To Customer Key\"",
+          "source_table": "WideWorldImportersDW.Fact.Sale",
+          "source_column": "\"Bill To Customer Key\""
+        },
+        {
+          "target_column": "\"Stock Item Key\"",
+          "source_table": "WideWorldImportersDW.Fact.Sale",
+          "source_column": "\"Stock Item Key\""
+        },
+        {
+          "target_column": "\"Salesperson Key\"",
+          "source_table": "WideWorldImportersDW.Fact.Sale",
+          "source_column": "\"Salesperson Key\""
+        },
+        {
+          "target_column": "\"WWI Invoice ID\"",
+          "source_table": "WideWorldImportersDW.Fact.Sale",
+          "source_column": "\"WWI Invoice ID\""
+        },
+        {
+          "target_column": "Description",
+          "source_table": "WideWorldImportersDW.Fact.Sale",
+          "source_column": "Description"
+        },
+        {
+          "target_column": "Package",
+          "source_table": "WideWorldImportersDW.Fact.Sale",
+          "source_column": "Package"
+        },
+        {
+          "target_column": "Quantity",
+          "source_table": "WideWorldImportersDW.Fact.Sale",
+          "source_column": "Quantity"
+        },
+        {
+          "target_column": "\"Unit Price\"",
+          "source_table": "WideWorldImportersDW.Fact.Sale",
+          "source_column": "\"Unit Price\""
+        },
+        {
+          "target_column": "\"Tax Rate\"",
+          "source_table": "WideWorldImportersDW.Fact.Sale",
+          "source_column": "\"Tax Rate\""
+        },
+        {
+          "target_column": "\"Total Excluding Tax\"",
+          "source_table": "WideWorldImportersDW.Fact.Sale",
+          "source_column": "\"Total Excluding Tax\""
+        },
+        {
+          "target_column": "\"Tax Amount\"",
+          "source_table": "WideWorldImportersDW.Fact.Sale",
+          "source_column": "\"Tax Amount\""
+        },
+        {
+          "target_column": "Profit",
+          "source_table": "WideWorldImportersDW.Fact.Sale",
+          "source_column": "Profit"
+        },
+        {
+          "target_column": "\"Total Including Tax\"",
+          "source_table": "WideWorldImportersDW.Fact.Sale",
+          "source_column": "\"Total Including Tax\""
+        },
+        {
+          "target_column": "\"Total Dry Items\"",
+          "source_table": "WideWorldImportersDW.Fact.Sale",
+          "source_column": "\"Total Dry Items\""
+        },
+        {
+          "target_column": "\"Total Chiller Items\"",
+          "source_table": "WideWorldImportersDW.Fact.Sale",
+          "source_column": "\"Total Chiller Items\""
+        }
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "name": "@EstimatedRowsFor2012",
+      "type": "BIGINT",
+      "param_kind": "business_scalar",
+      "default": "12000000",
+      "is_integer": true,
+      "is_number": true,
+      "is_string": false,
+      "is_date": false,
+      "is_boolean": false,
+      "is_binary": false,
+      "default_kind": "literal"
+    }
+  ]
+}

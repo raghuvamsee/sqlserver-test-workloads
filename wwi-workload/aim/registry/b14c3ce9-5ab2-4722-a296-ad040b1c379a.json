@@ -1,0 +1,194 @@
+{
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:31:33Z"
+    }
+  },
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [
+        {
+          "category": "temp_staging",
+          "matchedPatterns": [
+            "_staging$"
+          ]
+        }
+      ],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "15f4538f-f470-41be-82a3-af4579497ee6",
+      "16f90c39-8647-4c95-b5ec-126461ecb3ef"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/integration/table/supplier_staging"
+    },
+    "converted": {
+      "checksum": "bb74746d3467c281fe4bf58ce06ba43b",
+      "path": "snowflake/wideworldimportersdw/integration/table/supplier_staging.sql"
+    },
+    "source": {
+      "checksum": "40c088efd6b0fcb9815f1f637c8beb82",
+      "path": "source/wideworldimportersdw/integration/table/supplier_staging.sql"
+    }
+  },
+  "id": "b14c3ce9-5ab2-4722-a296-ad040b1c379a",
+  "inScope": true,
+  "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0002",
+      "count": 5
+    },
+    {
+      "code": "SSC-PRF-0002",
+      "count": 5
+    }
+  ],
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": true,
+        "name": "Supplier Staging Key",
+        "nullable": false,
+        "targetName": "\"Supplier Staging Key\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"WWI Supplier ID\"",
+        "nullable": false,
+        "targetName": "\"WWI Supplier ID\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "Supplier",
+        "nullable": false,
+        "targetName": "Supplier",
+        "targetType": "NVARCHAR",
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "Category",
+        "nullable": false,
+        "targetName": "Category",
+        "targetType": "NVARCHAR",
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Primary Contact\"",
+        "nullable": false,
+        "targetName": "\"Primary Contact\"",
+        "targetType": "NVARCHAR",
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Supplier Reference\"",
+        "nullable": true,
+        "targetName": "\"Supplier Reference\"",
+        "targetType": "NVARCHAR",
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Payment Days\"",
+        "nullable": false,
+        "targetName": "\"Payment Days\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Postal Code\"",
+        "nullable": false,
+        "targetName": "\"Postal Code\"",
+        "targetType": "NVARCHAR",
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Valid From\"",
+        "nullable": false,
+        "targetName": "\"Valid From\"",
+        "targetType": "",
+        "type": "DATETIME2"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Valid To\"",
+        "nullable": false,
+        "targetName": "\"Valid To\"",
+        "targetType": "",
+        "type": "DATETIME2"
+      }
+    ],
+    "parameters": {
+      "arguments": [],
+      "returns": []
+    }
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Integration.Supplier_Staging",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "Supplier_Staging",
+    "objectType": "table",
+    "platform": "sqlServer",
+    "schema": "Integration"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Integration.Supplier_Staging",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Supplier_Staging",
+    "objectType": "table",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T23:35:35Z"
+}

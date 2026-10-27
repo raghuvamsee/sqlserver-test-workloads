@@ -1,0 +1,28 @@
+TableName,TotalChunks,MatchingChunks,DifferingChunks,TotalRowsCompared,RowsNotFoundInTarget,RowsNotFoundInSource,RowsWithDifferences,IsValid,CreatedAt
+WideWorldImportersDW.Fact.Order,1,1,0,462824,0,0,0,True,10/24/2026 13:51:51
+WideWorldImportersDW.Integration.Transaction_Staging,0,0,0,0,0,0,0,True,10/24/2026 20:49:54
+WideWorldImportersDW.Integration.City_Staging,0,0,0,0,0,0,0,True,10/24/2026 20:49:36
+WideWorldImportersDW.Integration.PaymentMethod_Staging,0,0,0,0,0,0,0,True,10/24/2026 20:49:36
+WideWorldImportersDW.Integration.Customer_Staging,0,0,0,0,0,0,0,True,10/24/2026 20:49:44
+WideWorldImportersDW.Integration.Employee_Staging,0,0,0,0,0,0,0,True,10/24/2026 20:49:53
+WideWorldImportersDW.Integration.Supplier_Staging,0,0,0,0,0,0,0,True,10/24/2026 20:49:53
+WideWorldImportersDW.Integration.Sale_Staging,0,0,0,0,0,0,0,True,10/24/2026 20:49:54
+WideWorldImportersDW.Integration.StockItem_Staging,0,0,0,0,0,0,0,True,10/24/2026 20:50:03
+WideWorldImportersDW.Integration.Movement_Staging,0,0,0,0,0,0,0,True,10/24/2026 20:50:03
+WideWorldImportersDW.Integration.Purchase_Staging,0,0,0,0,0,0,0,True,10/24/2026 20:50:07
+WideWorldImportersDW.Integration.Order_Staging,0,0,0,0,0,0,0,True,10/24/2026 20:50:08
+WideWorldImportersDW.Integration.TransactionType_Staging,0,0,0,0,0,0,0,True,10/24/2026 20:50:16
+WideWorldImportersDW.Dimension.Customer,1,1,0,806,0,0,0,True,10/24/2026 13:52:40
+WideWorldImportersDW.Fact.Transaction,1,1,0,199170,0,0,0,True,10/24/2026 13:52:04
+WideWorldImportersDW.Fact.Stock Holding,1,1,0,454,0,0,0,True,10/24/2026 13:52:06
+WideWorldImportersDW.Integration.Lineage,1,1,0,26,0,0,0,True,10/24/2026 13:51:53
+WideWorldImportersDW.Integration.StockHolding_Staging,0,0,0,0,0,0,0,True,10/24/2026 20:50:16
+WideWorldImportersDW.Dimension.Transaction Type,1,1,0,30,0,0,0,True,10/24/2026 13:52:32
+WideWorldImportersDW.Dimension.Payment Method,1,1,0,12,0,0,0,True,10/24/2026 13:51:49
+WideWorldImportersDW.Fact.Sale,1,1,0,456530,0,0,0,True,10/24/2026 13:53:09
+WideWorldImportersDW.Dimension.Supplier,1,1,0,56,0,0,0,True,10/24/2026 13:51:50
+WideWorldImportersDW.Dimension.City,1,0,1,232590,0,0,2568,False,10/24/2026 13:52:44
+WideWorldImportersDW.Fact.Purchase,1,1,0,16734,0,0,0,True,10/24/2026 13:52:04
+WideWorldImportersDW.Integration.ETL Cutoff,1,1,0,28,0,0,0,True,10/24/2026 13:53:12
+WideWorldImportersDW.Dimension.Date,1,1,0,2922,0,0,0,True,10/24/2026 13:52:34
+WideWorldImportersDW.Fact.Movement,1,1,0,473334,0,0,0,True,10/24/2026 13:52:38

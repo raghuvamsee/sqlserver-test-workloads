@@ -1,0 +1,158 @@
+{
+  "object": "WideWorldImportersDW.Sequences.ReseedSequenceBeyondTableValues(sysname,sysname,sysname,sysname)",
+  "object_type": "PROCEDURE",
+  "branches": [
+    {
+      "branch_id": 0,
+      "construct_kind": "IF",
+      "line": 29,
+      "predicate_text": "@CurrentTableMaximumValue >= @CurrentSequenceMaximumValue",
+      "columns": [
+        {
+          "column": "CurrentValue",
+          "table": "tempdb.dbo.#CurrentValue",
+          "type": "BIGINT",
+          "via_variable": "@CurrentTableMaximumValue",
+          "source": "assignment",
+          "is_integer": true,
+          "is_number": true,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "current_value",
+          "table": "sys.sequences",
+          "type": "Sql_variant",
+          "via_variable": "@CurrentSequenceMaximumValue",
+          "source": "assignment",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "atom",
+        "columns": [
+          "tempdb.dbo.#CurrentValue.CurrentValue",
+          "sys.sequences.current_value"
+        ],
+        "operator": ">=",
+        "values": [],
+        "operands": [
+          {
+            "kind": "column",
+            "column": "tempdb.dbo.#CurrentValue.CurrentValue",
+            "text": "@CurrentTableMaximumValue"
+          },
+          {
+            "kind": "column",
+            "column": "sys.sequences.current_value",
+            "text": "@CurrentSequenceMaximumValue"
+          }
+        ]
+      }
+    }
+  ],
+  "predicates": [
+    {
+      "table": "sys.sequences",
+      "column": "name",
+      "operator": "=",
+      "values": [
+        "@SequenceName"
+      ],
+      "branch_linked": false,
+      "operands": [
+        {
+          "kind": "column",
+          "column": "sys.sequences.name",
+          "text": "name"
+        },
+        {
+          "kind": "parameter",
+          "parameter": "@SequenceName",
+          "text": "@SequenceName"
+        }
+      ]
+    }
+  ],
+  "edges": [],
+  "assignments": [],
+  "semi_anti": [],
+  "schema_version": 1,
+  "parameters": [
+    {
+      "name": "@SequenceName",
+      "type": "sysname",
+      "param_kind": "business_scalar",
+      "precision": 128,
+      "is_integer": false,
+      "is_number": false,
+      "is_string": true,
+      "is_date": false,
+      "is_boolean": false,
+      "is_binary": false
+    },
+    {
+      "name": "@SchemaName",
+      "type": "sysname",
+      "param_kind": "business_scalar",
+      "precision": 128,
+      "is_integer": false,
+      "is_number": false,
+      "is_string": true,
+      "is_date": false,
+      "is_boolean": false,
+      "is_binary": false
+    },
+    {
+      "name": "@TableName",
+      "type": "sysname",
+      "param_kind": "business_scalar",
+      "precision": 128,
+      "is_integer": false,
+      "is_number": false,
+      "is_string": true,
+      "is_date": false,
+      "is_boolean": false,
+      "is_binary": false
+    },
+    {
+      "name": "@ColumnName",
+      "type": "sysname",
+      "param_kind": "business_scalar",
+      "precision": 128,
+      "is_integer": false,
+      "is_number": false,
+      "is_string": true,
+      "is_date": false,
+      "is_boolean": false,
+      "is_binary": false
+    }
+  ],
+  "parameter_bindings": [
+    {
+      "parameter": "@SequenceName",
+      "bindings": [
+        {
+          "table": "sys.sequences",
+          "column": "name",
+          "operator": "="
+        }
+      ],
+      "branch_linked": false
+    }
+  ],
+  "parameter_coverage": {
+    "total": 1,
+    "branch_linked": 0,
+    "argument_only": 1
+  }
+}

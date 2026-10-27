@@ -1,0 +1,190 @@
+{
+  "schema_version": "1.0",
+  "source_system": "sql",
+  "engine_version": "2.51.3",
+  "source_file": "wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql",
+  "source_checksum": "d9bdc4f0f2b718ac5eb6483f6fd0558c7255afb1aef5f909672f4f8ab1846b5f",
+  "pairs": [
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlUseStatement",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "source_text": "USE WideWorldImportersDW",
+      "targets": [
+        "USE DATABASE <%wideworldimportersdw%>"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 6,
+      "source_line_end": 55,
+      "source_text": "BEGIN\n--    SET NOCOUNT ON;\n--    SET XACT_ABORT ON;\n\n    DECLARE @EndOfTime datetime2(7) =  '99991231 23:59:59.9999999';\n\n    BEGIN TRAN;\n\n    DECLARE @LineageKey int = (SELECT TOP(1) [Lineage Key]\n                               FROM Integration.Lineage\n                               WHERE [Table Name] = N'Transaction Type'\n                               AND [Data Load Completed] IS NULL\n                               ORDER BY [Lineage Key] DESC);\n\n    WITH RowsToCloseOff\n    AS\n    (\n        SELECT pm.[WWI Transaction Type ID], MIN(pm.[Valid From]) AS [Valid From]\n        FROM Integration.TransactionType_Staging AS pm\n        GROUP BY pm.[WWI Transaction Type ID]\n    )\n    UPDATE pm\n        SET pm.[Valid To] = rtco.[Valid From]\n    FROM Dimension.[Transaction Type] AS pm\n    INNER JOIN RowsToCloseOff AS rtco\n    ON pm.[WWI Transaction Type ID] = rtco.[WWI Transaction Type ID]\n    WHERE pm.[Valid To] = @EndOfTime;\n\n    INSERT Dimension.[Transaction Type]\n        ([WWI Transaction Type ID], [Transaction Type], [Valid From], [Valid To], [Lineage Key])\n    SELECT [WWI Transaction Type ID], [Transaction Type], [Valid From], [Valid To],\n           @LineageKey\n    FROM Integration.TransactionType_Staging;\n\n    UPDATE Integration.Lineage\n        SET [Data Load Completed] = SYSDATETIME(),\n            [Was Successful] = 1\n    WHERE [Lineage Key] = @LineageKey;\n\n    UPDATE Integration.[ETL Cutoff]\n        SET [Cutoff Time] = (SELECT [Source System Cutoff Time]\n                             FROM Integration.Lineage\n                             WHERE [Lineage Key] = @LineageKey)\n    FROM Integration.[ETL Cutoff]\n    WHERE [Table Name] = N'Transaction Type';\n\n    COMMIT;\n\n    RETURN 0;\nEND;",
+      "targets": [],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 7,
+      "source_line_end": 7,
+      "source_text": "--    SET NOCOUNT ON;",
+      "targets": [
+        "--    SET NOCOUNT ON;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 8,
+      "source_line_end": 8,
+      "source_text": "--    SET XACT_ABORT ON;",
+      "targets": [
+        "--    SET XACT_ABORT ON;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 10,
+      "source_line_end": 10,
+      "source_text": "\n    DECLARE @EndOfTime datetime2(7) =  '99991231 23:59:59.9999999';",
+      "targets": [],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 12,
+      "source_line_end": 12,
+      "source_text": "\n    BEGIN TRAN;",
+      "targets": [
+        "\n    BEGIN TRANSACTION;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 14,
+      "source_line_end": 18,
+      "source_text": "\n    DECLARE @LineageKey int = (SELECT TOP(1) [Lineage Key]\n                               FROM Integration.Lineage\n                               WHERE [Table Name] = N'Transaction Type'\n                               AND [Data Load Completed] IS NULL\n                               ORDER BY [Lineage Key] DESC);",
+      "targets": [
+        "LINEAGEKEY := (SELECT\n   TOP 1\n      \"Lineage Key\"\n                                 FROM\n      Integration.Lineage\n                                 WHERE\n      \"Table Name\" = 'Transaction Type'\n                                 AND \"Data Load Completed\" IS NULL\n                                 ORDER BY \"Lineage Key\" DESC);"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 20,
+      "source_line_end": 32,
+      "source_text": "\n    WITH RowsToCloseOff\n    AS\n    (\n        SELECT pm.[WWI Transaction Type ID], MIN(pm.[Valid From]) AS [Valid From]\n        FROM Integration.TransactionType_Staging AS pm\n        GROUP BY pm.[WWI Transaction Type ID]\n    )\n    UPDATE pm\n        SET pm.[Valid To] = rtco.[Valid From]\n    FROM Dimension.[Transaction Type] AS pm\n    INNER JOIN RowsToCloseOff AS rtco\n    ON pm.[WWI Transaction Type ID] = rtco.[WWI Transaction Type ID]\n    WHERE pm.[Valid To] = @EndOfTime;",
+      "targets": [
+        "UPDATE Dimension.\"Transaction Type\" pm\n   SET\n      pm.\"Valid To\" = rtco.\"Valid From\"\n   FROM\n      (\n         WITH RowsToCloseOff\n         AS\n         (\n             SELECT\n                pm.\"WWI Transaction Type ID\",\n                MIN(pm.\"Valid From\") AS \"Valid From\"\n             FROM\n                Integration.TransactionType_Staging AS pm\n             GROUP BY\n                pm.\"WWI Transaction Type ID\"\n         )\n         SELECT\n             *\n         FROM\n             RowsToCloseOff\n      ) AS rtco\n   WHERE\n      pm.\"WWI Transaction Type ID\" = rtco.\"WWI Transaction Type ID\"\n      AND (pm.\"Valid To\" = :ENDOFTIME);"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 23,
+      "source_line_end": 25,
+      "source_text": "        SELECT pm.[WWI Transaction Type ID], MIN(pm.[Valid From]) AS [Valid From]\n        FROM Integration.TransactionType_Staging AS pm\n        GROUP BY pm.[WWI Transaction Type ID]",
+      "targets": [
+        "        SELECT\n           pm.\"WWI Transaction Type ID\",\n           MIN(pm.\"Valid From\") AS \"Valid From\"\n        FROM\n           Integration.TransactionType_Staging AS pm\n        GROUP BY\n           pm.\"WWI Transaction Type ID\""
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlUpdateStatement",
+      "source_line_start": 27,
+      "source_line_end": 32,
+      "source_text": "    UPDATE pm\n        SET pm.[Valid To] = rtco.[Valid From]\n    FROM Dimension.[Transaction Type] AS pm\n    INNER JOIN RowsToCloseOff AS rtco\n    ON pm.[WWI Transaction Type ID] = rtco.[WWI Transaction Type ID]\n    WHERE pm.[Valid To] = @EndOfTime",
+      "targets": [],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 34,
+      "source_line_end": 38,
+      "source_text": "\n    INSERT Dimension.[Transaction Type]\n        ([WWI Transaction Type ID], [Transaction Type], [Valid From], [Valid To], [Lineage Key])\n    SELECT [WWI Transaction Type ID], [Transaction Type], [Valid From], [Valid To],\n           @LineageKey\n    FROM Integration.TransactionType_Staging;",
+      "targets": [
+        "\n    INSERT INTO Dimension.\"Transaction Type\"\n    (\"WWI Transaction Type ID\", \"Transaction Type\", \"Valid From\", \"Valid To\", \"Lineage Key\")\n    SELECT\n       \"WWI Transaction Type ID\",\n       \"Transaction Type\",\n       \"Valid From\",\n       \"Valid To\",\n       :LINEAGEKEY\n    FROM\n       Integration.TransactionType_Staging;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 36,
+      "source_line_end": 38,
+      "source_text": "    SELECT [WWI Transaction Type ID], [Transaction Type], [Valid From], [Valid To],\n           @LineageKey\n    FROM Integration.TransactionType_Staging",
+      "targets": [
+        "    SELECT\n       \"WWI Transaction Type ID\",\n       \"Transaction Type\",\n       \"Valid From\",\n       \"Valid To\",\n       :LINEAGEKEY\n    FROM\n       Integration.TransactionType_Staging"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 40,
+      "source_line_end": 43,
+      "source_text": "\n    UPDATE Integration.Lineage\n        SET [Data Load Completed] = SYSDATETIME(),\n            [Was Successful] = 1\n    WHERE [Lineage Key] = @LineageKey;",
+      "targets": [
+        "\n    UPDATE Integration.Lineage\n       SET\n          \"Data Load Completed\" = CURRENT_TIMESTAMP(),\n          \"Was Successful\" = 1\n    WHERE\n          \"Lineage Key\" = :LINEAGEKEY;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 45,
+      "source_line_end": 50,
+      "source_text": "\n    UPDATE Integration.[ETL Cutoff]\n        SET [Cutoff Time] = (SELECT [Source System Cutoff Time]\n                             FROM Integration.Lineage\n                             WHERE [Lineage Key] = @LineageKey)\n    FROM Integration.[ETL Cutoff]\n    WHERE [Table Name] = N'Transaction Type';",
+      "targets": [
+        "\n    UPDATE Integration.\"ETL Cutoff\"\n       SET\n          \"Cutoff Time\" = (SELECT\n                \"Source System Cutoff Time\"\n             FROM\n                Integration.Lineage\n             WHERE\n                \"Lineage Key\" = :LINEAGEKEY\n          )\n    FROM\n          Integration.\"ETL Cutoff\"\n    WHERE\n          \"Table Name\" = 'Transaction Type';"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 46,
+      "source_line_end": 48,
+      "source_text": "SELECT [Source System Cutoff Time]\n                             FROM Integration.Lineage\n                             WHERE [Lineage Key] = @LineageKey",
+      "targets": [
+        "SELECT\n   \"Source System Cutoff Time\"\nFROM\n   Integration.Lineage\nWHERE\n   \"Lineage Key\" = :LINEAGEKEY"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 52,
+      "source_line_end": 52,
+      "source_text": "\n    COMMIT;",
+      "targets": [
+        "COMMIT;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 54,
+      "source_line_end": 54,
+      "source_text": "\n    RETURN 0;",
+      "targets": [
+        "RETURN 0;"
+      ],
+      "target_file": "wideworldimportersdw/integration/procedure/migratestagedtransactiontypedata.sql"
+    }
+  ]
+}

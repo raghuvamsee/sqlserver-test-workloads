@@ -1,0 +1,461 @@
+{
+  "object": "WideWorldImportersDW.Application.Configuration_ReseedETL()",
+  "object_type": "PROCEDURE",
+  "branches": [],
+  "predicates": [],
+  "edges": [],
+  "assignments": [
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "\"City Key\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "\"Latest Recorded Population\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "\"Lineage Key\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "\"Sales Territory\"",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "\"State Province\"",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "\"Valid From\"",
+      "value": "@StartOfTime"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "\"Valid To\"",
+      "value": "@EndOfTime"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "\"WWI City ID\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "City",
+      "value": "Unknown",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "Continent",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "Country",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "Location",
+      "value": "NULL"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "Region",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "Subregion",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"Bill To Customer\"",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"Buying Group\"",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"Customer Key\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"Lineage Key\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"Postal Code\"",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"Primary Contact\"",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"Valid From\"",
+      "value": "@StartOfTime"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"Valid To\"",
+      "value": "@EndOfTime"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "\"WWI Customer ID\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "Category",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Customer",
+      "column": "Customer",
+      "value": "Unknown",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Employee",
+      "column": "\"Employee Key\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Employee",
+      "column": "\"Is Salesperson\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Employee",
+      "column": "\"Lineage Key\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Employee",
+      "column": "\"Preferred Name\"",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Employee",
+      "column": "\"Valid From\"",
+      "value": "@StartOfTime"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Employee",
+      "column": "\"Valid To\"",
+      "value": "@EndOfTime"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Employee",
+      "column": "\"WWI Employee ID\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Employee",
+      "column": "Employee",
+      "value": "Unknown",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Employee",
+      "column": "Photo",
+      "value": "NULL"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Supplier",
+      "column": "\"Lineage Key\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Supplier",
+      "column": "\"Payment Days\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Supplier",
+      "column": "\"Postal Code\"",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Supplier",
+      "column": "\"Primary Contact\"",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Supplier",
+      "column": "\"Supplier Key\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Supplier",
+      "column": "\"Supplier Reference\"",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Supplier",
+      "column": "\"Valid From\"",
+      "value": "@StartOfTime"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Supplier",
+      "column": "\"Valid To\"",
+      "value": "@EndOfTime"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Supplier",
+      "column": "\"WWI Supplier ID\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Supplier",
+      "column": "Category",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.Supplier",
+      "column": "Supplier",
+      "value": "Unknown",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Payment Method]",
+      "column": "\"Lineage Key\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Payment Method]",
+      "column": "\"Payment Method Key\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Payment Method]",
+      "column": "\"Payment Method\"",
+      "value": "Unknown",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Payment Method]",
+      "column": "\"Valid From\"",
+      "value": "@StartOfTime"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Payment Method]",
+      "column": "\"Valid To\"",
+      "value": "@EndOfTime"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Payment Method]",
+      "column": "\"WWI Payment Method ID\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Buying Package\"",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Is Chiller Stock\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Lead Time Days\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Lineage Key\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Quantity Per Outer\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Recommended Retail Price\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Selling Package\"",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Stock Item Key\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Stock Item\"",
+      "value": "Unknown",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Tax Rate\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Typical Weight Per Unit\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Unit Price\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Valid From\"",
+      "value": "@StartOfTime"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"Valid To\"",
+      "value": "@EndOfTime"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "\"WWI Stock Item ID\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "Barcode",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "Brand",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "Color",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "Photo",
+      "value": "NULL"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Stock Item]",
+      "column": "Size",
+      "value": "N/A",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Transaction Type]",
+      "column": "\"Lineage Key\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Transaction Type]",
+      "column": "\"Transaction Type Key\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Transaction Type]",
+      "column": "\"Transaction Type\"",
+      "value": "Unknown",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Transaction Type]",
+      "column": "\"Valid From\"",
+      "value": "@StartOfTime"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Transaction Type]",
+      "column": "\"Valid To\"",
+      "value": "@EndOfTime"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Transaction Type]",
+      "column": "\"WWI Transaction Type ID\"",
+      "value": "0",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+      "column": "\"Cutoff Time\"",
+      "value": "@StartingETLCutoffTime"
+    }
+  ],
+  "semi_anti": [],
+  "schema_version": 1
+}

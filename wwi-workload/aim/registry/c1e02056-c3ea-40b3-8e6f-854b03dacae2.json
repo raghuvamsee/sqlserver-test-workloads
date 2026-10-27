@@ -1,0 +1,105 @@
+{
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": "Error: SQL compilation error:\nsyntax error line 4 at position 0 unexpected '!'. SqlState: 42000, VendorCode: 1003, QueryId: 01c7f392-0109-3987-0012-43a20003d042"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:36:41Z"
+    }
+  },
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "cf34e18d-290b-4bed-bad9-15b769fe40a9"
+    ]
+  },
+  "extensions": {
+    "isDone": true,
+    "tasks": {
+      "verify": {
+        "details": {
+          "error": null,
+          "verifiedBy": "agent"
+        },
+        "error": null,
+        "status": "completed",
+        "updatedAt": "2026-10-24T20:37:07.476983161+00:00"
+      }
+    }
+  },
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/sequences/sequence/customerkey"
+    },
+    "converted": {
+      "checksum": "5b325e009fd524ca999de3e3c6482337",
+      "path": "snowflake/wideworldimportersdw/sequences/sequence/customerkey.sql"
+    },
+    "source": {
+      "checksum": "ff53397bb94b31619b8cf165eabcb59b",
+      "path": "source/wideworldimportersdw/sequences/sequence/customerkey.sql"
+    }
+  },
+  "id": "c1e02056-c3ea-40b3-8e6f-854b03dacae2",
+  "inScope": true,
+  "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-EWI-0001",
+      "count": 1,
+      "severity": "critical"
+    },
+    {
+      "code": "SSC-EWI-0120",
+      "count": 1,
+      "severity": "low"
+    }
+  ],
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": []
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Sequences.CustomerKey",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "CustomerKey",
+    "objectType": "sequence",
+    "platform": "sqlServer",
+    "schema": "Sequences"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Sequences.CustomerKey",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "CustomerKey",
+    "objectType": "sequence",
+    "schema": "Sequences"
+  },
+  "updatedAt": "2026-10-24T20:37:52Z"
+}

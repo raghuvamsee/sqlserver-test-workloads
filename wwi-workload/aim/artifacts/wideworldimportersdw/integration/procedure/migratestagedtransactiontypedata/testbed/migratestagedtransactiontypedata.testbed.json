@@ -1,0 +1,319 @@
+{
+  "object": "WideWorldImportersDW.Integration.MigrateStagedTransactionTypeData()",
+  "object_type": "PROCEDURE",
+  "branches": [
+    {
+      "branch_id": 0,
+      "construct_kind": "WHERE_FILTER",
+      "line": 16,
+      "predicate_text": "[Table Name] = N'Transaction Type'\n                               AND [Data Load Completed] IS NULL",
+      "columns": [
+        {
+          "column": "\"Table Name\"",
+          "table": "WideWorldImportersDW.Integration.Lineage",
+          "type": "sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "\"Data Load Completed\"",
+          "table": "WideWorldImportersDW.Integration.Lineage",
+          "type": "DATETIME2",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": true,
+          "is_datetime": true,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "and",
+        "children": [
+          {
+            "kind": "atom",
+            "columns": [
+              "WideWorldImportersDW.Integration.Lineage.\"Table Name\""
+            ],
+            "operator": "=",
+            "values": [
+              "Transaction Type"
+            ],
+            "operands": [
+              {
+                "kind": "column",
+                "column": "WideWorldImportersDW.Integration.Lineage.\"Table Name\"",
+                "text": "[Table Name]"
+              },
+              {
+                "kind": "literal",
+                "literal": "Transaction Type",
+                "text": "N'Transaction Type'"
+              }
+            ]
+          },
+          {
+            "kind": "atom",
+            "columns": [
+              "WideWorldImportersDW.Integration.Lineage.\"Data Load Completed\""
+            ],
+            "operator": "IS NULL",
+            "values": [],
+            "operands": [
+              {
+                "kind": "column",
+                "column": "WideWorldImportersDW.Integration.Lineage.\"Data Load Completed\"",
+                "text": "[Data Load Completed]"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "branch_id": 1,
+      "construct_kind": "WHERE_FILTER",
+      "line": 50,
+      "predicate_text": "[Table Name] = N'Transaction Type'",
+      "columns": [
+        {
+          "column": "\"Table Name\"",
+          "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+          "type": "sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "atom",
+        "columns": [
+          "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\""
+        ],
+        "operator": "=",
+        "values": [
+          "Transaction Type"
+        ],
+        "operands": [
+          {
+            "kind": "column",
+            "column": "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\"",
+            "text": "[Table Name]"
+          },
+          {
+            "kind": "literal",
+            "literal": "Transaction Type",
+            "text": "N'Transaction Type'"
+          }
+        ]
+      }
+    }
+  ],
+  "predicates": [
+    {
+      "table": "WideWorldImportersDW.Dimension.[Transaction Type]",
+      "column": "\"Valid To\"",
+      "operator": "=",
+      "values": [
+        "@EndOfTime"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Dimension.[Transaction Type].\"Valid To\"",
+          "text": "pm.[Valid To]"
+        },
+        {
+          "kind": "parameter",
+          "parameter": "@EndOfTime",
+          "text": "@EndOfTime"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Data Load Completed\"",
+      "operator": "IS NULL",
+      "values": [],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Data Load Completed\"",
+          "text": "[Data Load Completed]"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Lineage Key\"",
+      "operator": "=",
+      "values": [
+        "@LineageKey"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Lineage Key\"",
+          "text": "[Lineage Key]"
+        },
+        {
+          "kind": "parameter",
+          "parameter": "@LineageKey",
+          "text": "@LineageKey"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Table Name\"",
+      "operator": "=",
+      "values": [
+        "Transaction Type"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Table Name\"",
+          "text": "[Table Name]"
+        },
+        {
+          "kind": "literal",
+          "literal": "Transaction Type",
+          "text": "N'Transaction Type'"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+      "column": "\"Table Name\"",
+      "operator": "=",
+      "values": [
+        "Transaction Type"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\"",
+          "text": "[Table Name]"
+        },
+        {
+          "kind": "literal",
+          "literal": "Transaction Type",
+          "text": "N'Transaction Type'"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "left_table": "RowsToCloseOff",
+      "left_columns": [
+        "[WWI Transaction Type ID]"
+      ],
+      "right_table": "WideWorldImportersDW.Dimension.[Transaction Type]",
+      "right_columns": [
+        "\"WWI Transaction Type ID\""
+      ],
+      "join_type": "inner",
+      "is_anti": false
+    }
+  ],
+  "assignments": [
+    {
+      "table": "WideWorldImportersDW.Dimension.[Transaction Type]",
+      "column": "\"Lineage Key\"",
+      "value": "@LineageKey"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Transaction Type]",
+      "column": "\"Transaction Type\"",
+      "value": "[Transaction Type]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Transaction Type]",
+      "column": "\"Valid From\"",
+      "value": "[Valid From]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Transaction Type]",
+      "column": "\"Valid To\"",
+      "value": "[Valid To]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Transaction Type]",
+      "column": "\"Valid To\"",
+      "value": "rtco.[Valid From]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.[Transaction Type]",
+      "column": "\"WWI Transaction Type ID\"",
+      "value": "[WWI Transaction Type ID]"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Data Load Completed\"",
+      "value": "SYSDATETIME()",
+      "value_kind": "nondeterministic",
+      "value_expression": {
+        "kind": "fn",
+        "fn": "SYSDATETIME",
+        "args": []
+      }
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Lineage Key\"",
+      "value": "@LineageKey"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Was Successful\"",
+      "value": "1",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+      "column": "\"Cutoff Time\"",
+      "value": "(SELECT [Source System Cutoff Time]\n                             FROM Integration.Lineage\n                             WHERE [Lineage Key] = @LineageKey)"
+    }
+  ],
+  "semi_anti": [],
+  "schema_version": 1,
+  "insert_targets": [
+    {
+      "target_table": "WideWorldImportersDW.Dimension.[Transaction Type]",
+      "columns": [
+        {
+          "target_column": "\"WWI Transaction Type ID\"",
+          "source_table": "WideWorldImportersDW.Integration.TransactionType_Staging",
+          "source_column": "\"WWI Transaction Type ID\""
+        },
+        {
+          "target_column": "\"Transaction Type\"",
+          "source_table": "WideWorldImportersDW.Integration.TransactionType_Staging",
+          "source_column": "\"Transaction Type\""
+        },
+        {
+          "target_column": "\"Valid From\"",
+          "source_table": "WideWorldImportersDW.Integration.TransactionType_Staging",
+          "source_column": "\"Valid From\""
+        },
+        {
+          "target_column": "\"Valid To\"",
+          "source_table": "WideWorldImportersDW.Integration.TransactionType_Staging",
+          "source_column": "\"Valid To\""
+        }
+      ]
+    }
+  ]
+}

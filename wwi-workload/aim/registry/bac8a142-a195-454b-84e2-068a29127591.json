@@ -1,0 +1,172 @@
+{
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-25T00:31:54Z"
+    }
+  },
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": true,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "d59fc930-9c64-4c66-91a3-823de6f37279",
+        "isMissing": false,
+        "relationTypes": [
+          "INDEX",
+          "ALTER"
+        ]
+      },
+      {
+        "id": "df33c519-db68-4b3b-9f03-726dababac27",
+        "isMissing": false,
+        "relationTypes": [
+          "INDEX",
+          "ALTER"
+        ]
+      },
+      {
+        "id": "ad0a1a25-10bb-422a-91be-929f5d2732b9",
+        "isMissing": false,
+        "relationTypes": [
+          "INDEX",
+          "ALTER"
+        ]
+      },
+      {
+        "id": "cff6ffcb-f0ea-49af-b01d-c83e344952ed",
+        "isMissing": false,
+        "relationTypes": [
+          "INDEX",
+          "ALTER"
+        ]
+      },
+      {
+        "id": "ad69d741-caa8-4743-ab27-da074f87b678",
+        "isMissing": false,
+        "relationTypes": [
+          "INDEX",
+          "ALTER"
+        ]
+      },
+      {
+        "id": "bb317ec9-b0b9-4fa2-8b15-b176ff64f7ea",
+        "isMissing": false,
+        "relationTypes": [
+          "INDEX",
+          "ALTER"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "1149b4a9-3513-4cfd-b0f1-f6cbd6547470",
+      "9b231eeb-3339-4b1d-8cd4-c6f5ebf1d321"
+    ]
+  },
+  "extensions": {
+    "isDone": true,
+    "tasks": {
+      "captureBaseline": {
+        "details": {
+          "error": null,
+          "verifiedBy": "status"
+        },
+        "error": null,
+        "status": "completed",
+        "updatedAt": "2026-10-25T00:31:17.061982912+00:00"
+      }
+    }
+  },
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing"
+    },
+    "converted": {
+      "checksum": "7f612306c69c602e147a042b230252c0",
+      "path": "snowflake/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql"
+    },
+    "source": {
+      "checksum": "6c4bc2d141b1e0fecf81c29f06c34991",
+      "path": "source/wideworldimportersdw/application/procedure/configuration_applypartitionedcolumnstoreindexing.sql"
+    }
+  },
+  "id": "bac8a142-a195-454b-84e2-068a29127591",
+  "inScope": true,
+  "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-EWI-TS0089",
+      "count": 1,
+      "severity": "low"
+    },
+    {
+      "code": "SSC-EWI-0073",
+      "count": 62,
+      "severity": "medium"
+    },
+    {
+      "code": "SSC-FDM-TS0029",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-0131",
+      "count": 4
+    },
+    {
+      "code": "SSC-FDM-TS0079",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-0021",
+      "count": 81
+    }
+  ],
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 3,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": []
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Application.Configuration_ApplyPartitionedColumnstoreIndexing",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "Configuration_ApplyPartitionedColumnstoreIndexing",
+    "objectType": "procedure",
+    "platform": "sqlServer",
+    "schema": "Application"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Application.Configuration_ApplyPartitionedColumnstoreIndexing",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Configuration_ApplyPartitionedColumnstoreIndexing",
+    "objectType": "procedure",
+    "schema": "Application"
+  },
+  "updatedAt": "2026-10-25T00:44:48Z"
+}

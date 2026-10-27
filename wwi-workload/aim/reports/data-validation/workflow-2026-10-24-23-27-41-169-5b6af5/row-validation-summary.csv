@@ -1,0 +1,10 @@
+TableName,TotalChunks,MatchingChunks,DifferingChunks,TotalRowsCompared,RowsNotFoundInTarget,RowsNotFoundInSource,RowsWithDifferences,IsValid,CreatedAt
+WideWorldImportersDW.Dimension.Stock Item,1,1,0,1344,0,0,0,True,10/24/2026 16:29:58
+WideWorldImportersDW.Dimension.Employee,1,1,0,426,0,0,0,True,10/24/2026 16:30:43
+WideWorldImportersDW.Fact.Order,1,1,0,462824,0,0,0,True,10/24/2026 16:30:09
+WideWorldImportersDW.Dimension.Transaction Type,1,1,0,30,0,0,0,True,10/24/2026 16:30:02
+WideWorldImportersDW.Fact.Stock Holding,1,1,0,454,0,0,0,True,10/24/2026 16:29:46
+WideWorldImportersDW.Fact.Transaction,1,1,0,199170,0,0,0,True,10/24/2026 16:30:41
+WideWorldImportersDW.Dimension.Date,1,1,0,2922,0,0,0,True,10/24/2026 16:29:47
+WideWorldImportersDW.Integration.ETL Cutoff,1,1,0,28,0,0,0,True,10/24/2026 16:30:04
+WideWorldImportersDW.Dimension.Payment Method,1,1,0,12,0,0,0,True,10/24/2026 16:30:10

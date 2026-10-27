@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "source_system": "sql",
+  "engine_version": "2.51.3",
+  "source_file": "wideworldimportersdw/dimension/table/date.sql",
+  "source_checksum": "0301d1bf1ca99f9c1858e822cac3090c36b2777ec26aab3b7e69a0dc269beb76",
+  "pairs": [
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlUseStatement",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "source_text": "USE WideWorldImportersDW",
+      "targets": [
+        "USE DATABASE <%wideworldimportersdw%>"
+      ],
+      "target_file": "wideworldimportersdw/dimension/table/date.sql"
+    }
+  ]
+}

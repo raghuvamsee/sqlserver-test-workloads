@@ -1,0 +1,92 @@
+{
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {},
+      "status": "completed",
+      "updatedAt": "2026-10-25T17:37:08Z"
+    }
+  },
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "75c9ae4f-76fa-4fcf-ae0a-08acbecb8530",
+        "isMissing": false,
+        "relationTypes": [
+          "EXECUTE"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": []
+  },
+  "extensions": {
+    "isDone": true
+  },
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/sequences/procedure/reseedallsequences"
+    },
+    "converted": {
+      "checksum": "d8d4cb6478ae29deda82d264b6f2065b",
+      "path": "snowflake/wideworldimportersdw/sequences/procedure/reseedallsequences.sql"
+    },
+    "source": {
+      "checksum": "6e1e1913d6f7520f0d9c7f53e86c069d",
+      "path": "source/wideworldimportersdw/sequences/procedure/reseedallsequences.sql"
+    }
+  },
+  "id": "bdc7a365-0d66-41be-a470-685a9984ec6d",
+  "inScope": true,
+  "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0029",
+      "count": 1
+    }
+  ],
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 2,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": []
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Sequences.ReseedAllSequences",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "ReseedAllSequences",
+    "objectType": "procedure",
+    "platform": "sqlServer",
+    "schema": "Sequences"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Sequences.ReseedAllSequences",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "ReseedAllSequences",
+    "objectType": "procedure",
+    "schema": "Sequences"
+  },
+  "updatedAt": "2026-10-25T17:37:58Z"
+}

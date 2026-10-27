@@ -1,0 +1,212 @@
+{
+  "object": "WideWorldImportersDW.Application.Configuration_ApplyPartitionedColumnstoreIndexing()",
+  "object_type": "PROCEDURE",
+  "branches": [
+    {
+      "branch_id": 5,
+      "construct_kind": "IF",
+      "line": 10,
+      "predicate_text": "SERVERPROPERTY(N'IsXTPSupported') = 0 -- TODO !! - currently no separate test for columnstore",
+      "columns": [],
+      "diagnostics": [
+        {
+          "reason": "non_algebraic_comparison",
+          "expression": "SqlEql"
+        }
+      ]
+    },
+    {
+      "branch_id": 6,
+      "construct_kind": "ELSE",
+      "line": 13,
+      "predicate_text": "TRUE",
+      "columns": [],
+      "construct_sub_kind": "trivial"
+    },
+    {
+      "branch_id": 0,
+      "construct_kind": "IF",
+      "line": 18,
+      "predicate_text": "NOT EXISTS (SELECT 1 FROM sys.partition_functions WHERE name = N'PF_Date')",
+      "columns": [],
+      "predicate": {
+        "kind": "cardinality",
+        "operator": "=",
+        "table": "sys.partition_functions",
+        "aggregate": "count",
+        "operand": 0,
+        "filter": {
+          "kind": "atom",
+          "operator": "=",
+          "values": [
+            "PF_Date"
+          ],
+          "parameter": "name",
+          "operands": [
+            {
+              "kind": "parameter",
+              "parameter": "name",
+              "text": "name"
+            },
+            {
+              "kind": "literal",
+              "literal": "PF_Date",
+              "text": "N'PF_Date'"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "branch_id": 3,
+      "construct_kind": "IF",
+      "line": 28,
+      "predicate_text": "NOT EXISTS (SELECT 1 FROM sys.partition_schemes WHERE name = N'PS_Date')",
+      "columns": [],
+      "predicate": {
+        "kind": "cardinality",
+        "operator": "=",
+        "table": "sys.partition_schemes",
+        "aggregate": "count",
+        "operand": 0,
+        "filter": {
+          "kind": "atom",
+          "operator": "=",
+          "values": [
+            "PS_Date"
+          ],
+          "parameter": "name",
+          "operands": [
+            {
+              "kind": "parameter",
+              "parameter": "name",
+              "text": "name"
+            },
+            {
+              "kind": "literal",
+              "literal": "PS_Date",
+              "text": "N'PS_Date'"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "branch_id": 1,
+      "construct_kind": "IF",
+      "line": 31,
+      "predicate_text": "SERVERPROPERTY('EngineEdition') = 5",
+      "columns": [],
+      "diagnostics": [
+        {
+          "reason": "non_algebraic_comparison",
+          "expression": "SqlEql"
+        }
+      ]
+    },
+    {
+      "branch_id": 2,
+      "construct_kind": "IF",
+      "line": 37,
+      "predicate_text": "SERVERPROPERTY('EngineEdition') != 5",
+      "columns": [],
+      "diagnostics": [
+        {
+          "reason": "non_algebraic_comparison",
+          "expression": "SqlNotEq"
+        }
+      ]
+    },
+    {
+      "branch_id": 4,
+      "construct_kind": "IF",
+      "line": 46,
+      "predicate_text": "NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name = N'CCX_Fact_Movement')",
+      "columns": [
+        {
+          "column": "name",
+          "table": "SYS.indexes",
+          "type": "Sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "cardinality",
+        "operator": "=",
+        "table": "SYS.indexes",
+        "aggregate": "count",
+        "operand": 0,
+        "filter": {
+          "kind": "atom",
+          "columns": [
+            "SYS.indexes.name"
+          ],
+          "operator": "=",
+          "values": [
+            "CCX_Fact_Movement"
+          ],
+          "operands": [
+            {
+              "kind": "column",
+              "column": "SYS.indexes.name",
+              "text": "name"
+            },
+            {
+              "kind": "literal",
+              "literal": "CCX_Fact_Movement",
+              "text": "N'CCX_Fact_Movement'"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "predicates": [
+    {
+      "table": "SYS.indexes",
+      "column": "name",
+      "operator": "=",
+      "values": [
+        "CCX_Fact_Movement"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "SYS.indexes.name",
+          "text": "name"
+        },
+        {
+          "kind": "literal",
+          "literal": "CCX_Fact_Movement",
+          "text": "N'CCX_Fact_Movement'"
+        }
+      ]
+    }
+  ],
+  "edges": [],
+  "assignments": [],
+  "semi_anti": [
+    {
+      "kind": "ANTI",
+      "table": "SYS.indexes",
+      "columns": []
+    },
+    {
+      "kind": "ANTI",
+      "table": "sys.partition_functions",
+      "columns": []
+    },
+    {
+      "kind": "ANTI",
+      "table": "sys.partition_schemes",
+      "columns": []
+    }
+  ],
+  "schema_version": 1
+}

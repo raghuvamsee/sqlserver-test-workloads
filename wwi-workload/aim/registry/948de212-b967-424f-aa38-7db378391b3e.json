@@ -1,0 +1,79 @@
+{
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:33:30Z"
+    }
+  },
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": []
+  },
+  "extensions": {
+    "isDone": true
+  },
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/schema/powerbi"
+    },
+    "converted": {
+      "checksum": "204e34112d94a331f481431bf5c8e9f5",
+      "path": "snowflake/wideworldimportersdw/schema/powerbi.sql"
+    },
+    "source": {
+      "checksum": "10bc2b8004c98c8c1ea6b779333662fa",
+      "path": "source/wideworldimportersdw/schema/powerbi.sql"
+    }
+  },
+  "id": "948de212-b967-424f-aa38-7db378391b3e",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": []
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.PowerBI",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "PowerBI",
+    "objectType": "schema",
+    "platform": "sqlServer"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.PowerBI",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "PowerBI",
+    "objectType": "schema"
+  },
+  "updatedAt": "2026-10-24T20:37:52Z"
+}

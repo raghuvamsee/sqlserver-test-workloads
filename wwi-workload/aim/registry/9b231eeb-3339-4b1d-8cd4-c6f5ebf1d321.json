@@ -1,0 +1,209 @@
+{
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "ad0a1a25-10bb-422a-91be-929f5d2732b9",
+        "isMissing": false,
+        "relationTypes": [
+          "INDEX",
+          "ALTER",
+          "SELECT - FROM",
+          "INSERT"
+        ]
+      },
+      {
+        "id": "d20973f5-32ac-4262-8c9e-24dc1f9cb864",
+        "isMissing": false,
+        "relationTypes": [
+          "FOREIGN KEY"
+        ]
+      },
+      {
+        "id": "cf34e18d-290b-4bed-bad9-15b769fe40a9",
+        "isMissing": false,
+        "relationTypes": [
+          "FOREIGN KEY"
+        ]
+      },
+      {
+        "id": "2685eca3-d88d-4aee-9354-8c62b9011b32",
+        "isMissing": false,
+        "relationTypes": [
+          "FOREIGN KEY"
+        ]
+      },
+      {
+        "id": "06c1a86c-68de-47cb-8638-c5a6f62ae020",
+        "isMissing": false,
+        "relationTypes": [
+          "FOREIGN KEY"
+        ]
+      },
+      {
+        "id": "172e8c9d-5d97-43b1-ba0d-8b2de51fa3ca",
+        "isMissing": false,
+        "relationTypes": [
+          "FOREIGN KEY"
+        ]
+      },
+      {
+        "id": "64fd00bf-7950-477b-ba1a-16210cd0681c",
+        "isMissing": false,
+        "relationTypes": [
+          "UPDATE",
+          "INSERT"
+        ]
+      },
+      {
+        "id": "ec6d1d59-275d-4534-ac94-d38e8400544f",
+        "isMissing": false,
+        "relationTypes": [
+          "SQL STATEMENT"
+        ]
+      },
+      {
+        "id": "bac8a142-a195-454b-84e2-068a29127591",
+        "isMissing": false,
+        "relationTypes": [
+          "EXECUTE"
+        ]
+      },
+      {
+        "id": "6c81abb0-30ce-4acb-a808-b776792d3d51",
+        "isMissing": false,
+        "relationTypes": [
+          "EXECUTE"
+        ]
+      },
+      {
+        "id": "30a8108a-0cb4-43c3-8dba-3a36b9d44c6f",
+        "isMissing": false,
+        "relationTypes": []
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": []
+  },
+  "extensions": {
+    "tasks": {
+      "captureBaseline": {
+        "details": {
+          "error": "infra"
+        },
+        "error": "infra",
+        "status": "failed",
+        "updatedAt": "2026-10-25T00:44:38.748834879+00:00"
+      }
+    }
+  },
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/application/procedure/configuration_populatelargesaletable"
+    },
+    "converted": {
+      "checksum": "a25db00b546cd9ad19ea328afa89e2a3",
+      "path": "snowflake/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    "source": {
+      "checksum": "5af975de7e731e4844a7564998fc6988",
+      "path": "source/wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    }
+  },
+  "id": "9b231eeb-3339-4b1d-8cd4-c6f5ebf1d321",
+  "inScope": true,
+  "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-EWI-0001",
+      "count": 1,
+      "severity": "critical"
+    },
+    {
+      "code": "SSC-EWI-0040",
+      "count": 1,
+      "severity": "low"
+    },
+    {
+      "code": "SSC-FDM-TS0029",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0037",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0019",
+      "count": 4
+    },
+    {
+      "code": "SSC-FDM-0055",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0054",
+      "count": 7
+    },
+    {
+      "code": "SSC-FDM-0021",
+      "count": 6
+    }
+  ],
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 4,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [],
+    "parameters": {
+      "arguments": [
+        {
+          "direction": "in",
+          "isCursor": false,
+          "name": "@EstimatedRowsFor2012",
+          "required": false,
+          "targetName": "ESTIMATEDROWSFOR2012",
+          "targetType": "BIGINT",
+          "type": "BIGINT"
+        }
+      ],
+      "returns": []
+    }
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Application.Configuration_PopulateLargeSaleTable(BIGINT)",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "Configuration_PopulateLargeSaleTable",
+    "objectType": "procedure",
+    "platform": "sqlServer",
+    "schema": "Application"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Application.Configuration_PopulateLargeSaleTable(BIGINT)",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "Configuration_PopulateLargeSaleTable",
+    "objectType": "procedure",
+    "schema": "Application"
+  },
+  "updatedAt": "2026-10-25T00:44:38Z"
+}

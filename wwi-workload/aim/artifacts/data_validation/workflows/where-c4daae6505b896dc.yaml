@@ -1,0 +1,235 @@
+sourcePlatform: sqlserver
+targetPlatform: Snowflake
+affinity: aim-25bfec2a
+validationConfiguration:
+  schemaValidation: true
+  metricsValidation: true
+  rowValidation: true
+  continueOnFailure: true
+  maxFailedRowsNumber: 1000
+  earlyStopCheckIntervalMinutes: 5
+tables:
+- fullyQualifiedName: WideWorldImportersDW.Integration.StockItem_Staging
+  targetDatabase: WWI_AIM
+  targetSchema: INTEGRATION
+  targetName: STOCKITEM_STAGING
+  indexColumnList:
+  - Stock Item Staging Key
+  columnNamesToPartitionBy:
+  - Stock Item Staging Key
+- fullyQualifiedName: WideWorldImportersDW.Integration.ETL Cutoff
+  targetDatabase: WWI_AIM
+  targetSchema: INTEGRATION
+  targetName: ETL Cutoff
+  indexColumnList:
+  - Table Name
+  columnNamesToPartitionBy:
+  - Table Name
+- fullyQualifiedName: WideWorldImportersDW.Integration.Movement_Staging
+  targetDatabase: WWI_AIM
+  targetSchema: INTEGRATION
+  targetName: MOVEMENT_STAGING
+  indexColumnList:
+  - Movement Staging Key
+  columnNamesToPartitionBy:
+  - Movement Staging Key
+- fullyQualifiedName: WideWorldImportersDW.Integration.StockHolding_Staging
+  targetDatabase: WWI_AIM
+  targetSchema: INTEGRATION
+  targetName: STOCKHOLDING_STAGING
+  indexColumnList:
+  - Stock Holding Staging Key
+  columnNamesToPartitionBy:
+  - Stock Holding Staging Key
+- fullyQualifiedName: WideWorldImportersDW.Dimension.Transaction Type
+  targetDatabase: WWI_AIM
+  targetSchema: DIMENSION
+  targetName: Transaction Type
+  indexColumnList:
+  - Transaction Type Key
+  columnNamesToPartitionBy:
+  - Transaction Type Key
+- fullyQualifiedName: WideWorldImportersDW.Dimension.Payment Method
+  targetDatabase: WWI_AIM
+  targetSchema: DIMENSION
+  targetName: Payment Method
+  indexColumnList:
+  - Payment Method Key
+  columnNamesToPartitionBy:
+  - Payment Method Key
+- fullyQualifiedName: WideWorldImportersDW.Integration.Sale_Staging
+  targetDatabase: WWI_AIM
+  targetSchema: INTEGRATION
+  targetName: SALE_STAGING
+  indexColumnList:
+  - Sale Staging Key
+  columnNamesToPartitionBy:
+  - Sale Staging Key
+- fullyQualifiedName: WideWorldImportersDW.Integration.Lineage
+  targetDatabase: WWI_AIM
+  targetSchema: INTEGRATION
+  targetName: LINEAGE
+  indexColumnList:
+  - Lineage Key
+  columnNamesToPartitionBy:
+  - Lineage Key
+- fullyQualifiedName: WideWorldImportersDW.Integration.TransactionType_Staging
+  targetDatabase: WWI_AIM
+  targetSchema: INTEGRATION
+  targetName: TRANSACTIONTYPE_STAGING
+  indexColumnList:
+  - Transaction Type Staging Key
+  columnNamesToPartitionBy:
+  - Transaction Type Staging Key
+- fullyQualifiedName: WideWorldImportersDW.Dimension.Customer
+  targetDatabase: WWI_AIM
+  targetSchema: DIMENSION
+  targetName: CUSTOMER
+  indexColumnList:
+  - Customer Key
+  columnNamesToPartitionBy:
+  - Customer Key
+- fullyQualifiedName: WideWorldImportersDW.Integration.Employee_Staging
+  targetDatabase: WWI_AIM
+  targetSchema: INTEGRATION
+  targetName: EMPLOYEE_STAGING
+  indexColumnList:
+  - Employee Staging Key
+  columnNamesToPartitionBy:
+  - Employee Staging Key
+- fullyQualifiedName: WideWorldImportersDW.Integration.Customer_Staging
+  targetDatabase: WWI_AIM
+  targetSchema: INTEGRATION
+  targetName: CUSTOMER_STAGING
+  indexColumnList:
+  - Customer Staging Key
+  columnNamesToPartitionBy:
+  - Customer Staging Key
+- fullyQualifiedName: WideWorldImportersDW.Integration.Order_Staging
+  targetDatabase: WWI_AIM
+  targetSchema: INTEGRATION
+  targetName: ORDER_STAGING
+  indexColumnList:
+  - Order Staging Key
+  columnNamesToPartitionBy:
+  - Order Staging Key
+- fullyQualifiedName: WideWorldImportersDW.Dimension.Date
+  targetDatabase: WWI_AIM
+  targetSchema: DIMENSION
+  targetName: DATE
+  indexColumnList:
+  - Date
+  columnNamesToPartitionBy:
+  - Date
+- fullyQualifiedName: WideWorldImportersDW.Fact.Sale
+  targetDatabase: WWI_AIM
+  targetSchema: FACT
+  targetName: SALE
+  indexColumnList:
+  - Sale Key
+  - Invoice Date Key
+  columnNamesToPartitionBy:
+  - Sale Key
+- fullyQualifiedName: WideWorldImportersDW.Fact.Order
+  targetDatabase: WWI_AIM
+  targetSchema: FACT
+  targetName: '"Order"'
+  indexColumnList:
+  - Order Key
+  - Order Date Key
+  columnNamesToPartitionBy:
+  - Order Key
+- fullyQualifiedName: WideWorldImportersDW.Fact.Purchase
+  targetDatabase: WWI_AIM
+  targetSchema: FACT
+  targetName: PURCHASE
+  indexColumnList:
+  - Purchase Key
+  - Date Key
+  columnNamesToPartitionBy:
+  - Purchase Key
+- fullyQualifiedName: WideWorldImportersDW.Integration.Supplier_Staging
+  targetDatabase: WWI_AIM
+  targetSchema: INTEGRATION
+  targetName: SUPPLIER_STAGING
+  indexColumnList:
+  - Supplier Staging Key
+  columnNamesToPartitionBy:
+  - Supplier Staging Key
+- fullyQualifiedName: WideWorldImportersDW.Integration.Transaction_Staging
+  targetDatabase: WWI_AIM
+  targetSchema: INTEGRATION
+  targetName: TRANSACTION_STAGING
+  indexColumnList:
+  - Transaction Staging Key
+  columnNamesToPartitionBy:
+  - Transaction Staging Key
+- fullyQualifiedName: WideWorldImportersDW.Fact.Stock Holding
+  targetDatabase: WWI_AIM
+  targetSchema: FACT
+  targetName: Stock Holding
+  indexColumnList:
+  - Stock Holding Key
+  columnNamesToPartitionBy:
+  - Stock Holding Key
+- fullyQualifiedName: WideWorldImportersDW.Integration.PaymentMethod_Staging
+  targetDatabase: WWI_AIM
+  targetSchema: INTEGRATION
+  targetName: PAYMENTMETHOD_STAGING
+  indexColumnList:
+  - Payment Method Staging Key
+  columnNamesToPartitionBy:
+  - Payment Method Staging Key
+- fullyQualifiedName: WideWorldImportersDW.Dimension.Supplier
+  targetDatabase: WWI_AIM
+  targetSchema: DIMENSION
+  targetName: SUPPLIER
+  indexColumnList:
+  - Supplier Key
+  columnNamesToPartitionBy:
+  - Supplier Key
+- fullyQualifiedName: WideWorldImportersDW.Fact.Movement
+  targetDatabase: WWI_AIM
+  targetSchema: FACT
+  targetName: MOVEMENT
+  indexColumnList:
+  - Movement Key
+  - Date Key
+  columnNamesToPartitionBy:
+  - Movement Key
+- fullyQualifiedName: WideWorldImportersDW.Integration.Purchase_Staging
+  targetDatabase: WWI_AIM
+  targetSchema: INTEGRATION
+  targetName: PURCHASE_STAGING
+  indexColumnList:
+  - Purchase Staging Key
+  columnNamesToPartitionBy:
+  - Purchase Staging Key
+- fullyQualifiedName: WideWorldImportersDW.Integration.City_Staging
+  targetDatabase: WWI_AIM
+  targetSchema: INTEGRATION
+  targetName: CITY_STAGING
+  indexColumnList:
+  - City Staging Key
+  columnNamesToPartitionBy:
+  - City Staging Key
+- fullyQualifiedName: WideWorldImportersDW.Dimension.City
+  targetDatabase: WWI_AIM
+  targetSchema: DIMENSION
+  targetName: CITY
+  indexColumnList:
+  - City Key
+  columnNamesToPartitionBy:
+  - City Key
+- fullyQualifiedName: WideWorldImportersDW.Fact.Transaction
+  targetDatabase: WWI_AIM
+  targetSchema: FACT
+  targetName: TRANSACTION
+  indexColumnList:
+  - Transaction Key
+  - Date Key
+  columnNamesToPartitionBy:
+  - Transaction Key
+defaultTableConfiguration:
+  synchronization:
+    strategy: none

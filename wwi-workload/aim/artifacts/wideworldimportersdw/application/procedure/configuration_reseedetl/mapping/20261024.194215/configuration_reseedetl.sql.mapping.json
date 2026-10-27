@@ -1,0 +1,298 @@
+{
+  "schema_version": "1.0",
+  "source_system": "sql",
+  "engine_version": "2.51.3",
+  "source_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql",
+  "source_checksum": "d95ccd6251f189790516a729d648110e79b89ce47d895c5f62deb2ae1db74a26",
+  "pairs": [
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlUseStatement",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "source_text": "USE WideWorldImportersDW",
+      "targets": [
+        "USE DATABASE <%wideworldimportersdw%>"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 6,
+      "source_line_end": 79,
+      "source_text": "BEGIN\n--\tSET NOCOUNT ON;\n\n\tDECLARE @StartingETLCutoffTime datetime2(7) = '20121231';\n\tDECLARE @StartOfTime datetime2(7) = '20130101';\n\tDECLARE @EndOfTime datetime2(7) =  '99991231 23:59:59.9999999';\n\n\tUPDATE Integration.[ETL Cutoff]\n\t\tSET [Cutoff Time] = @StartingETLCutoffTime;\n\n\tTRUNCATE TABLE Fact.Movement;\n\tTRUNCATE TABLE Fact.[Order];\n\tTRUNCATE TABLE Fact.Purchase;\n\tTRUNCATE TABLE Fact.Sale;\n\tTRUNCATE TABLE Fact.[Stock Holding];\n\tTRUNCATE TABLE Fact.[Transaction];\n\n\tDELETE Dimension.City;\n\tDELETE Dimension.Customer;\n\tDELETE Dimension.Employee;\n\tDELETE Dimension.[Payment Method];\n\tDELETE Dimension.[Stock Item];\n\tDELETE Dimension.Supplier;\n\tDELETE Dimension.[Transaction Type];\n\n    INSERT Dimension.City\n        ([City Key], [WWI City ID], City, [State Province], Country, Continent, [Sales Territory], Region, Subregion,\n         [Location], [Latest Recorded Population], [Valid From], [Valid To], [Lineage Key])\n    VALUES\n        (0, 0, N'Unknown', N'N/A', N'N/A', N'N/A', N'N/A', N'N/A', N'N/A',\n         NULL, 0, @StartOfTime, @EndOfTime, 0);\n\n    INSERT Dimension.Customer\n        ([Customer Key], [WWI Customer ID], [Customer], [Bill To Customer], Category, [Buying Group],\n         [Primary Contact], [Postal Code], [Valid From], [Valid To], [Lineage Key])\n    VALUES\n        (0, 0, N'Unknown', N'N/A', N'N/A', N'N/A',\n         N'N/A', N'N/A', @StartOfTime, @EndOfTime, 0);\n\n    INSERT Dimension.Employee\n        ([Employee Key], [WWI Employee ID], Employee, [Preferred Name],\n         [Is Salesperson], Photo, [Valid From], [Valid To], [Lineage Key])\n    VALUES\n        (0, 0, N'Unknown', N'N/A',\n         0, NULL, @StartOfTime, @EndOfTime, 0);\n\n    INSERT Dimension.[Payment Method]\n        ([Payment Method Key], [WWI Payment Method ID], [Payment Method], [Valid From], [Valid To], [Lineage Key])\n    VALUES\n        (0, 0, N'Unknown', @StartOfTime, @EndOfTime, 0);\n\n    INSERT Dimension.[Stock Item]\n        ([Stock Item Key], [WWI Stock Item ID], [Stock Item], Color, [Selling Package], [Buying Package],\n         Brand, Size, [Lead Time Days], [Quantity Per Outer], [Is Chiller Stock],\n         Barcode, [Tax Rate], [Unit Price], [Recommended Retail Price], [Typical Weight Per Unit],\n         Photo, [Valid From], [Valid To], [Lineage Key])\n    VALUES\n        (0, 0, N'Unknown', N'N/A', N'N/A', N'N/A',\n         N'N/A', N'N/A', 0, 0, 0,\n         N'N/A', 0, 0, 0, 0,\n         NULL, @StartOfTime, @EndOfTime, 0);\n\n    INSERT Dimension.[Supplier]\n        ([Supplier Key], [WWI Supplier ID], Supplier, Category, [Primary Contact], [Supplier Reference],\n         [Payment Days], [Postal Code], [Valid From], [Valid To], [Lineage Key])\n    VALUES\n        (0, 0, N'Unknown', N'N/A', N'N/A', N'N/A',\n         0, N'N/A', @StartOfTime, @EndOfTime, 0);\n\n    INSERT Dimension.[Transaction Type]\n        ([Transaction Type Key], [WWI Transaction Type ID], [Transaction Type], [Valid From], [Valid To], [Lineage Key])\n    VALUES\n        (0, 0, N'Unknown', @StartOfTime, @EndOfTime, 0);\nEND;",
+      "targets": [],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 7,
+      "source_line_end": 7,
+      "source_text": "--\tSET NOCOUNT ON;",
+      "targets": [
+        "--\tSET NOCOUNT ON;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 9,
+      "source_line_end": 9,
+      "source_text": "\n\tDECLARE @StartingETLCutoffTime datetime2(7) = '20121231';",
+      "targets": [],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 10,
+      "source_line_end": 10,
+      "source_text": "\tDECLARE @StartOfTime datetime2(7) = '20130101';",
+      "targets": [],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 11,
+      "source_line_end": 11,
+      "source_text": "\tDECLARE @EndOfTime datetime2(7) =  '99991231 23:59:59.9999999';",
+      "targets": [],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 13,
+      "source_line_end": 14,
+      "source_text": "\n\tUPDATE Integration.[ETL Cutoff]\n\t\tSET [Cutoff Time] = @StartingETLCutoffTime;",
+      "targets": [
+        "\n\tUPDATE Integration.\"ETL Cutoff\"\n\t   SET\n\t      \"Cutoff Time\" = :STARTINGETLCUTOFFTIME;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 16,
+      "source_line_end": 16,
+      "source_text": "\n\tTRUNCATE TABLE Fact.Movement;",
+      "targets": [
+        "\n\tTRUNCATE TABLE Fact.Movement;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 17,
+      "source_line_end": 17,
+      "source_text": "\tTRUNCATE TABLE Fact.[Order];",
+      "targets": [
+        "\tTRUNCATE TABLE Fact.\"Order\";"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 18,
+      "source_line_end": 18,
+      "source_text": "\tTRUNCATE TABLE Fact.Purchase;",
+      "targets": [
+        "\tTRUNCATE TABLE Fact.Purchase;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 19,
+      "source_line_end": 19,
+      "source_text": "\tTRUNCATE TABLE Fact.Sale;",
+      "targets": [
+        "\tTRUNCATE TABLE Fact.Sale;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 20,
+      "source_line_end": 20,
+      "source_text": "\tTRUNCATE TABLE Fact.[Stock Holding];",
+      "targets": [
+        "\tTRUNCATE TABLE Fact.\"Stock Holding\";"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 21,
+      "source_line_end": 21,
+      "source_text": "\tTRUNCATE TABLE Fact.[Transaction];",
+      "targets": [
+        "\tTRUNCATE TABLE Fact.Transaction;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 23,
+      "source_line_end": 23,
+      "source_text": "\n\tDELETE Dimension.City;",
+      "targets": [
+        "DELETE FROM\n   Dimension.City;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 24,
+      "source_line_end": 24,
+      "source_text": "\tDELETE Dimension.Customer;",
+      "targets": [
+        "DELETE FROM\n   Dimension.Customer;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 25,
+      "source_line_end": 25,
+      "source_text": "\tDELETE Dimension.Employee;",
+      "targets": [
+        "DELETE FROM\n   Dimension.Employee;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 26,
+      "source_line_end": 26,
+      "source_text": "\tDELETE Dimension.[Payment Method];",
+      "targets": [
+        "DELETE FROM\n   Dimension.\"Payment Method\";"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 27,
+      "source_line_end": 27,
+      "source_text": "\tDELETE Dimension.[Stock Item];",
+      "targets": [
+        "DELETE FROM\n   Dimension.\"Stock Item\";"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 28,
+      "source_line_end": 28,
+      "source_text": "\tDELETE Dimension.Supplier;",
+      "targets": [
+        "DELETE FROM\n   Dimension.Supplier;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 29,
+      "source_line_end": 29,
+      "source_text": "\tDELETE Dimension.[Transaction Type];",
+      "targets": [
+        "DELETE FROM\n   Dimension.\"Transaction Type\";"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 31,
+      "source_line_end": 36,
+      "source_text": "\n    INSERT Dimension.City\n        ([City Key], [WWI City ID], City, [State Province], Country, Continent, [Sales Territory], Region, Subregion,\n         [Location], [Latest Recorded Population], [Valid From], [Valid To], [Lineage Key])\n    VALUES\n        (0, 0, N'Unknown', N'N/A', N'N/A', N'N/A', N'N/A', N'N/A', N'N/A',\n         NULL, 0, @StartOfTime, @EndOfTime, 0);",
+      "targets": [
+        "\n    INSERT INTO Dimension.City\n    (\"City Key\", \"WWI City ID\", City, \"State Province\", Country, Continent, \"Sales Territory\", Region, Subregion, Location, \"Latest Recorded Population\", \"Valid From\", \"Valid To\", \"Lineage Key\") VALUES\n        (0, 0, 'Unknown', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A',\n         NULL, 0, :STARTOFTIME, :ENDOFTIME, 0);"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 38,
+      "source_line_end": 43,
+      "source_text": "\n    INSERT Dimension.Customer\n        ([Customer Key], [WWI Customer ID], [Customer], [Bill To Customer], Category, [Buying Group],\n         [Primary Contact], [Postal Code], [Valid From], [Valid To], [Lineage Key])\n    VALUES\n        (0, 0, N'Unknown', N'N/A', N'N/A', N'N/A',\n         N'N/A', N'N/A', @StartOfTime, @EndOfTime, 0);",
+      "targets": [
+        "\n    INSERT INTO Dimension.Customer\n    (\"Customer Key\", \"WWI Customer ID\", Customer, \"Bill To Customer\", Category, \"Buying Group\", \"Primary Contact\", \"Postal Code\", \"Valid From\", \"Valid To\", \"Lineage Key\") VALUES\n        (0, 0, 'Unknown', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', :STARTOFTIME, :ENDOFTIME, 0);"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 45,
+      "source_line_end": 50,
+      "source_text": "\n    INSERT Dimension.Employee\n        ([Employee Key], [WWI Employee ID], Employee, [Preferred Name],\n         [Is Salesperson], Photo, [Valid From], [Valid To], [Lineage Key])\n    VALUES\n        (0, 0, N'Unknown', N'N/A',\n         0, NULL, @StartOfTime, @EndOfTime, 0);",
+      "targets": [
+        "\n    INSERT INTO Dimension.Employee\n    (\"Employee Key\", \"WWI Employee ID\", Employee, \"Preferred Name\", \"Is Salesperson\", Photo, \"Valid From\", \"Valid To\", \"Lineage Key\") VALUES\n        (0, 0, 'Unknown', 'N/A',\n         0, NULL, :STARTOFTIME, :ENDOFTIME, 0);"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 52,
+      "source_line_end": 55,
+      "source_text": "\n    INSERT Dimension.[Payment Method]\n        ([Payment Method Key], [WWI Payment Method ID], [Payment Method], [Valid From], [Valid To], [Lineage Key])\n    VALUES\n        (0, 0, N'Unknown', @StartOfTime, @EndOfTime, 0);",
+      "targets": [
+        "\n    INSERT INTO Dimension.\"Payment Method\"\n    (\"Payment Method Key\", \"WWI Payment Method ID\", \"Payment Method\", \"Valid From\", \"Valid To\", \"Lineage Key\") VALUES\n        (0, 0, 'Unknown', :STARTOFTIME, :ENDOFTIME, 0);"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 57,
+      "source_line_end": 66,
+      "source_text": "\n    INSERT Dimension.[Stock Item]\n        ([Stock Item Key], [WWI Stock Item ID], [Stock Item], Color, [Selling Package], [Buying Package],\n         Brand, Size, [Lead Time Days], [Quantity Per Outer], [Is Chiller Stock],\n         Barcode, [Tax Rate], [Unit Price], [Recommended Retail Price], [Typical Weight Per Unit],\n         Photo, [Valid From], [Valid To], [Lineage Key])\n    VALUES\n        (0, 0, N'Unknown', N'N/A', N'N/A', N'N/A',\n         N'N/A', N'N/A', 0, 0, 0,\n         N'N/A', 0, 0, 0, 0,\n         NULL, @StartOfTime, @EndOfTime, 0);",
+      "targets": [
+        "\n    INSERT INTO Dimension.\"Stock Item\"\n    (\"Stock Item Key\", \"WWI Stock Item ID\", \"Stock Item\", Color, \"Selling Package\", \"Buying Package\", Brand, Size, \"Lead Time Days\", \"Quantity Per Outer\", \"Is Chiller Stock\", Barcode, \"Tax Rate\", \"Unit Price\", \"Recommended Retail Price\", \"Typical Weight Per Unit\", Photo, \"Valid From\", \"Valid To\", \"Lineage Key\") VALUES\n        (0, 0, 'Unknown', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 0, 0, 0, 'N/A', 0, 0, 0, 0,\n         NULL, :STARTOFTIME, :ENDOFTIME, 0);"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 68,
+      "source_line_end": 73,
+      "source_text": "\n    INSERT Dimension.[Supplier]\n        ([Supplier Key], [WWI Supplier ID], Supplier, Category, [Primary Contact], [Supplier Reference],\n         [Payment Days], [Postal Code], [Valid From], [Valid To], [Lineage Key])\n    VALUES\n        (0, 0, N'Unknown', N'N/A', N'N/A', N'N/A',\n         0, N'N/A', @StartOfTime, @EndOfTime, 0);",
+      "targets": [
+        "\n    INSERT INTO Dimension.Supplier\n    (\"Supplier Key\", \"WWI Supplier ID\", Supplier, Category, \"Primary Contact\", \"Supplier Reference\", \"Payment Days\", \"Postal Code\", \"Valid From\", \"Valid To\", \"Lineage Key\") VALUES\n        (0, 0, 'Unknown', 'N/A', 'N/A', 'N/A',\n         0, 'N/A', :STARTOFTIME, :ENDOFTIME, 0);"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 75,
+      "source_line_end": 78,
+      "source_text": "\n    INSERT Dimension.[Transaction Type]\n        ([Transaction Type Key], [WWI Transaction Type ID], [Transaction Type], [Valid From], [Valid To], [Lineage Key])\n    VALUES\n        (0, 0, N'Unknown', @StartOfTime, @EndOfTime, 0);",
+      "targets": [
+        "\n    INSERT INTO Dimension.\"Transaction Type\"\n    (\"Transaction Type Key\", \"WWI Transaction Type ID\", \"Transaction Type\", \"Valid From\", \"Valid To\", \"Lineage Key\") VALUES\n        (0, 0, 'Unknown', :STARTOFTIME, :ENDOFTIME, 0);"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_reseedetl.sql"
+    }
+  ]
+}

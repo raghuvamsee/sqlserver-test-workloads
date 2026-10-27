@@ -1,0 +1,88 @@
+sourcePlatform: sqlserver
+targetPlatform: Snowflake
+affinity: aim-25bfec2a
+validationConfiguration:
+  schemaValidation: true
+  metricsValidation: true
+  rowValidation: true
+  continueOnFailure: true
+  maxFailedRowsNumber: 1000
+  earlyStopCheckIntervalMinutes: 5
+tables:
+- fullyQualifiedName: WideWorldImportersDW.Integration.ETL Cutoff
+  targetDatabase: WWI_AIM
+  targetSchema: INTEGRATION
+  targetName: ETL Cutoff
+  indexColumnList:
+  - Table Name
+  columnNamesToPartitionBy:
+  - Table Name
+- fullyQualifiedName: WideWorldImportersDW.Dimension.Transaction Type
+  targetDatabase: WWI_AIM
+  targetSchema: DIMENSION
+  targetName: Transaction Type
+  indexColumnList:
+  - Transaction Type Key
+  columnNamesToPartitionBy:
+  - Transaction Type Key
+- fullyQualifiedName: WideWorldImportersDW.Dimension.Payment Method
+  targetDatabase: WWI_AIM
+  targetSchema: DIMENSION
+  targetName: Payment Method
+  indexColumnList:
+  - Payment Method Key
+  columnNamesToPartitionBy:
+  - Payment Method Key
+- fullyQualifiedName: WideWorldImportersDW.Dimension.Date
+  targetDatabase: WWI_AIM
+  targetSchema: DIMENSION
+  targetName: DATE
+  indexColumnList:
+  - Date
+  columnNamesToPartitionBy:
+  - Date
+- fullyQualifiedName: WideWorldImportersDW.Fact.Order
+  targetDatabase: WWI_AIM
+  targetSchema: FACT
+  targetName: '"Order"'
+  indexColumnList:
+  - Order Key
+  - Order Date Key
+  columnNamesToPartitionBy:
+  - Order Key
+- fullyQualifiedName: WideWorldImportersDW.Dimension.Employee
+  targetDatabase: WWI_AIM
+  targetSchema: DIMENSION
+  targetName: EMPLOYEE
+  indexColumnList:
+  - Employee Key
+  columnNamesToPartitionBy:
+  - Employee Key
+- fullyQualifiedName: WideWorldImportersDW.Fact.Stock Holding
+  targetDatabase: WWI_AIM
+  targetSchema: FACT
+  targetName: Stock Holding
+  indexColumnList:
+  - Stock Holding Key
+  columnNamesToPartitionBy:
+  - Stock Holding Key
+- fullyQualifiedName: WideWorldImportersDW.Fact.Transaction
+  targetDatabase: WWI_AIM
+  targetSchema: FACT
+  targetName: TRANSACTION
+  indexColumnList:
+  - Transaction Key
+  - Date Key
+  columnNamesToPartitionBy:
+  - Transaction Key
+- fullyQualifiedName: WideWorldImportersDW.Dimension.Stock Item
+  targetDatabase: WWI_AIM
+  targetSchema: DIMENSION
+  targetName: Stock Item
+  indexColumnList:
+  - Stock Item Key
+  columnNamesToPartitionBy:
+  - Stock Item Key
+defaultTableConfiguration:
+  synchronization:
+    strategy: none

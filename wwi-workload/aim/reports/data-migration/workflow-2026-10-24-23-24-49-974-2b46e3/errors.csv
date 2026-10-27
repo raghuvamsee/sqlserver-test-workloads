@@ -1,0 +1,1 @@
+TableName,PartitionNumber,PartitionMinValue,PartitionMaxValue,PartitionRows,TaskName,TaskStartTime,TaskEndTime,LastErrorMessage

@@ -1,0 +1,751 @@
+{
+  "schema_version": "1.0",
+  "source_system": "sql",
+  "engine_version": "2.51.3",
+  "source_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql",
+  "source_checksum": "0d434914a2b17055e919b70cac83f4d89664a8f4b477acad4933d5f161d07454",
+  "pairs": [
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlUseStatement",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "source_text": "USE WideWorldImportersDW",
+      "targets": [
+        "USE DATABASE <%wideworldimportersdw%>"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 7,
+      "source_line_end": 163,
+      "source_text": "BEGIN\n--    SET NOCOUNT ON;\n--    SET XACT_ABORT ON;\n\n\tEXEC Integration.PopulateDateDimensionForYear 2012;\n\tDECLARE @ReturnValue int;\n\n\tEXEC @ReturnValue = [Application].Configuration_ApplyPartitionedColumnstoreIndexing;\n\tDECLARE @LineageKey int = NEXT VALUE FOR Sequences.LineageKey;\n\n\tINSERT Integration.Lineage\n\t\t([Lineage Key], [Data Load Started], [Table Name], [Data Load Completed], [Was Successful],\n\t\t [Source System Cutoff Time])\n\tVALUES\n\t\t(@LineageKey, SYSDATETIME(), N'Sale', NULL, 0, '20121231')\n\n\tDECLARE @OrderCounter bigint = 0;\n\tDECLARE @NumberOfSalesPerDay bigint = @EstimatedRowsFor2012 / 365;\n\tDECLARE @DateCounter date = '20120101';\n\tDECLARE @StartingSaleKey bigint;\n\tDECLARE @MaximumSaleKey bigint = (SELECT MAX([Sale Key]) FROM Fact.Sale);\n\n\tPRINT 'Targeting ' + CAST(@NumberOfSalesPerDay AS varchar(20)) + ' sales per day.';\n\tIF @NumberOfSalesPerDay > 50000\n\tBEGIN\n\t\tPRINT 'WARNING: Limiting sales to 40000 per day';\n\t\tSET @NumberOfSalesPerDay = 50000;\n\tEND;\n\n\tDECLARE @OutputCounter varchar(20);\n\n\n-- DROP CONSTRAINTS\n\tALTER TABLE [Fact].[Sale] DROP CONSTRAINT [FK_Fact_Sale_City_Key_Dimension_City]\n\tALTER TABLE [Fact].[Sale] DROP CONSTRAINT [FK_Fact_Sale_Customer_Key_Dimension_Customer]\n\tALTER TABLE [Fact].[Sale] DROP CONSTRAINT [FK_Fact_Sale_Delivery_Date_Key_Dimension_Date]\n\tALTER TABLE [Fact].[Sale] DROP CONSTRAINT [FK_Fact_Sale_Invoice_Date_Key_Dimension_Date]\n\tALTER TABLE [Fact].[Sale] DROP CONSTRAINT [FK_Fact_Sale_Salesperson_Key_Dimension_Employee]\n\tALTER TABLE [Fact].[Sale] DROP CONSTRAINT [FK_Fact_Sale_Stock_Item_Key_Dimension_Stock Item]\n\tALTER TABLE [Fact].[Sale] DROP CONSTRAINT [FK_Fact_Sale_Bill_To_Customer_Key_Dimension_Customer]\n\tALTER TABLE [Fact].[Sale] DROP CONSTRAINT [PK_Fact_Sale]\n\tDROP INDEX\n--\t            IF EXISTS [FK_Fact_Sale_Bill_To_Customer_Key] ON [Fact].[Sale]\n\tDROP INDEX  IF EXISTS [FK_Fact_Sale_City_Key] ON [Fact].[Sale]\n\tDROP INDEX  IF EXISTS [FK_Fact_Sale_Customer_Key] ON [Fact].[Sale]\n\tDROP INDEX  IF EXISTS [FK_Fact_Sale_Delivery_Date_Key] ON [Fact].[Sale]\n\tDROP INDEX  IF EXISTS [FK_Fact_Sale_Invoice_Date_Key] ON [Fact].[Sale]\n\tDROP INDEX  IF EXISTS [FK_Fact_Sale_Salesperson_Key] ON [Fact].[Sale]\n\tDROP INDEX  IF EXISTS [FK_Fact_Sale_Stock_Item_Key] ON [Fact].[Sale]\n\n\tWHILE @DateCounter < '20121231'\n\tBEGIN\n\t\tSET @OutputCounter = CONVERT(varchar(20), @DateCounter, 112);\n\t\tRAISERROR(@OutputCounter, 0, 1) WITH NOWAIT;\n\n\t\tSET @StartingSaleKey = @MaximumSaleKey - @NumberOfSalesPerDay - FLOOR(RAND() * 20000);\n\t\tSET @OrderCounter = 0;\n\n\t\tINSERT Fact.Sale WITH (TABLOCK)\n\t\t\t([City Key], [Customer Key], [Bill To Customer Key], [Stock Item Key], [Invoice Date Key],\n\t\t\t [Delivery Date Key], [Salesperson Key], [WWI Invoice ID], [Description],\n\t\t\t Package, Quantity, [Unit Price], [Tax Rate], [Total Excluding Tax],\n\t\t\t [Tax Amount], Profit, [Total Including Tax], [Total Dry Items], [Total Chiller Items],\n\t\t\t [Lineage Key])\n\t\tSELECT TOP(@NumberOfSalesPerDay)\n\t\t\t   [City Key], [Customer Key], [Bill To Customer Key], [Stock Item Key], @DateCounter,\n\t\t\t   DATEADD(day, 1, @DateCounter), [Salesperson Key], [WWI Invoice ID], [Description],\n\t\t\t   Package, Quantity, [Unit Price], [Tax Rate], [Total Excluding Tax],\n\t\t\t   [Tax Amount], Profit, [Total Including Tax], [Total Dry Items], [Total Chiller Items],\n\t\t\t   @LineageKey\n\t\tFROM Fact.Sale\n\t\tWHERE [Sale Key] > @StartingSaleKey\n\t\t\tand [Invoice Date Key] >='2013-01-01'\n\t\tORDER BY [Sale Key];\n\n\t\tSET @DateCounter = DATEADD(day, 1, @DateCounter);\n\tEND;\n\n\tRAISERROR('Compressing all open Rowgroups', 0, 1) WITH NOWAIT;\n\n--\tALTER INDEX CCX_Fact_Sale\n--\tON Fact.Sale\n--\tREORGANIZE WITH (COMPRESS_ALL_ROW_GROUPS = ON)\n\t                                              ;\n\n\tUPDATE Integration.Lineage\n\t\tSET [Data Load Completed] = SYSDATETIME(),\n\t\t    [Was Successful] = 1;\n\n\t-- Add back Constraints\n\tRAISERROR('Adding Constraints', 0, 1) WITH NOWAIT;\n\n\tALTER TABLE [Fact].[Sale]\n\tADD CONSTRAINT [PK_Fact_Sale] PRIMARY KEY NONCLUSTERED\n\t(\n\t\t[Sale Key] ASC,\n\t\t[Invoice Date Key] ASC\n\t);\n\n\tALTER TABLE [Fact].[Sale]\n\tWITH CHECK ADD CONSTRAINT [FK_Fact_Sale_Bill_To_Customer_Key_Dimension_Customer]\n\tFOREIGN KEY([Bill To Customer Key])\n\tREFERENCES [Dimension].[Customer] ([Customer Key]);\n\n--\tALTER TABLE [Fact].[Sale] CHECK CONSTRAINT [FK_Fact_Sale_Bill_To_Customer_Key_Dimension_Customer]\n\t                                                                                                 ;\n\n\tALTER TABLE [Fact].[Sale]\n\tWITH CHECK ADD CONSTRAINT [FK_Fact_Sale_Stock_Item_Key_Dimension_Stock Item]\n\tFOREIGN KEY([Stock Item Key])\n\tREFERENCES [Dimension].[Stock Item] ([Stock Item Key]);\n\n--\tALTER TABLE [Fact].[Sale] CHECK CONSTRAINT [FK_Fact_Sale_Stock_Item_Key_Dimension_Stock Item]\n\t                                                                                             ;\n\n\tALTER TABLE [Fact].[Sale]\n\tWITH CHECK ADD  CONSTRAINT [FK_Fact_Sale_Salesperson_Key_Dimension_Employee]\n\tFOREIGN KEY([Salesperson Key])\n\tREFERENCES [Dimension].[Employee] ([Employee Key]);\n\n--\tALTER TABLE [Fact].[Sale] CHECK CONSTRAINT [FK_Fact_Sale_Salesperson_Key_Dimension_Employee]\n\t                                                                                            ;\n\n\tALTER TABLE [Fact].[Sale]\n\tWITH CHECK ADD  CONSTRAINT [FK_Fact_Sale_Invoice_Date_Key_Dimension_Date]\n\tFOREIGN KEY([Invoice Date Key])\n\tREFERENCES [Dimension].[Date] ([Date]);\n\n--\tALTER TABLE [Fact].[Sale] CHECK CONSTRAINT [FK_Fact_Sale_Invoice_Date_Key_Dimension_Date]\n\t                                                                                         ;\n\n\tALTER TABLE [Fact].[Sale]\n\tWITH CHECK ADD CONSTRAINT [FK_Fact_Sale_Delivery_Date_Key_Dimension_Date]\n\tFOREIGN KEY([Delivery Date Key])\n\tREFERENCES [Dimension].[Date] ([Date]);\n\n--\tALTER TABLE [Fact].[Sale] CHECK CONSTRAINT [FK_Fact_Sale_Delivery_Date_Key_Dimension_Date]\n\t                                                                                          ;\n\n\tALTER TABLE [Fact].[Sale]\n\tWITH CHECK ADD CONSTRAINT [FK_Fact_Sale_Customer_Key_Dimension_Customer]\n\tFOREIGN KEY([Customer Key])\n\tREFERENCES [Dimension].[Customer] ([Customer Key]);\n\n--\tALTER TABLE [Fact].[Sale] CHECK CONSTRAINT [FK_Fact_Sale_Customer_Key_Dimension_Customer]\n\t                                                                                         ;\n\n\tALTER TABLE [Fact].[Sale]\n\tWITH CHECK ADD  CONSTRAINT [FK_Fact_Sale_City_Key_Dimension_City]\n\tFOREIGN KEY([City Key])\n\tREFERENCES [Dimension].[City] ([City Key]);\n\n--\tALTER TABLE [Fact].[Sale] CHECK CONSTRAINT [FK_Fact_Sale_City_Key_Dimension_City]\n\t                                                                                 ;\n\n\t-- Recreate indexes\n\tRAISERROR('Adding Non-clustered Indexes', 0, 1) WITH NOWAIT;\n--\tCREATE NONCLUSTERED INDEX [FK_Fact_Sale_Salesperson_Key] ON [Fact].[Sale] ([Salesperson Key] ASC)\n\t                                                                                                 ;\n--\tCREATE NONCLUSTERED INDEX [FK_Fact_Sale_Invoice_Date_Key] ON [Fact].[Sale] ([Invoice Date Key] ASC)\n\t                                                                                                   ;\n--\tCREATE NONCLUSTERED INDEX [FK_Fact_Sale_Delivery_Date_Key] ON [Fact].[Sale] ([Delivery Date Key] ASC)\n\t                                                                                                     ;\n--\tCREATE NONCLUSTERED INDEX [FK_Fact_Sale_Bill_To_Customer_Key] ON [Fact].[Sale] ([Bill To Customer Key] ASC)\n\t                                                                                                           ;\n--\tCREATE NONCLUSTERED INDEX [FK_Fact_Sale_City_Key] ON [Fact].[Sale] ([City Key] ASC)\n\t                                                                                   ;\n--\tCREATE NONCLUSTERED INDEX [FK_Fact_Sale_Customer_Key] ON [Fact].[Sale] ([Customer Key] ASC)\n\t                                                                                           ;\n\n\tRETURN 0;\nEND;",
+      "targets": [],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 8,
+      "source_line_end": 8,
+      "source_text": "--    SET NOCOUNT ON;",
+      "targets": [
+        "--    SET NOCOUNT ON;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 9,
+      "source_line_end": 9,
+      "source_text": "--    SET XACT_ABORT ON;",
+      "targets": [
+        "--    SET XACT_ABORT ON;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 11,
+      "source_line_end": 11,
+      "source_text": "\n\tEXEC Integration.PopulateDateDimensionForYear 2012;",
+      "targets": [
+        "CALL Integration.PopulateDateDimensionForYear(2012);"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 12,
+      "source_line_end": 12,
+      "source_text": "\tDECLARE @ReturnValue int;",
+      "targets": [],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 14,
+      "source_line_end": 14,
+      "source_text": "\n\tEXEC @ReturnValue = [Application].Configuration_ApplyPartitionedColumnstoreIndexing;",
+      "targets": [
+        "CALL Application.Configuration_ApplyPartitionedColumnstoreIndexing();"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 15,
+      "source_line_end": 15,
+      "source_text": "\tDECLARE @LineageKey int = NEXT VALUE FOR Sequences.LineageKey;",
+      "targets": [],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 17,
+      "source_line_end": 21,
+      "source_text": "\n\tINSERT Integration.Lineage\n\t\t([Lineage Key], [Data Load Started], [Table Name], [Data Load Completed], [Was Successful],\n\t\t [Source System Cutoff Time])\n\tVALUES\n\t\t(@LineageKey, SYSDATETIME(), N'Sale', NULL, 0, '20121231')",
+      "targets": [
+        "\n\tINSERT INTO Integration.Lineage\n\t(\"Lineage Key\", \"Data Load Started\", \"Table Name\", \"Data Load Completed\", \"Was Successful\", \"Source System Cutoff Time\") VALUES\n\t\t(:LINEAGEKEY, CURRENT_TIMESTAMP(), 'Sale', NULL, 0, '20121231');"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 23,
+      "source_line_end": 23,
+      "source_text": "\n\tDECLARE @OrderCounter bigint = 0;",
+      "targets": [],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 24,
+      "source_line_end": 24,
+      "source_text": "\tDECLARE @NumberOfSalesPerDay bigint = @EstimatedRowsFor2012 / 365;",
+      "targets": [],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 25,
+      "source_line_end": 25,
+      "source_text": "\tDECLARE @DateCounter date = '20120101';",
+      "targets": [],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 26,
+      "source_line_end": 26,
+      "source_text": "\tDECLARE @StartingSaleKey bigint;",
+      "targets": [],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 27,
+      "source_line_end": 27,
+      "source_text": "\tDECLARE @MaximumSaleKey bigint = (SELECT MAX([Sale Key]) FROM Fact.Sale);",
+      "targets": [
+        "MAXIMUMSALEKEY := (SELECT\n      MAX(\"Sale Key\") FROM\n      Fact.Sale\n);"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 29,
+      "source_line_end": 29,
+      "source_text": "\n\tPRINT 'Targeting ' + CAST(@NumberOfSalesPerDay AS varchar(20)) + ' sales per day.';",
+      "targets": [
+        "SYSTEM$LOG_INFO('Targeting ' || CAST(:NUMBEROFSALESPERDAY AS VARCHAR(20)) || ' sales per day.');"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 30,
+      "source_line_end": 34,
+      "source_text": "\tIF @NumberOfSalesPerDay > 50000\n\tBEGIN\n\t\tPRINT 'WARNING: Limiting sales to 40000 per day';\n\t\tSET @NumberOfSalesPerDay = 50000;\n\tEND;",
+      "targets": [
+        "IF (:NUMBEROFSALESPERDAY > 50000) THEN\n   BEGIN\n      SYSTEM$LOG_INFO('WARNING: Limiting sales to 40000 per day');\n      NUMBEROFSALESPERDAY := 50000;\n   END;\nEND IF;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 31,
+      "source_line_end": 34,
+      "source_text": "\tBEGIN\n\t\tPRINT 'WARNING: Limiting sales to 40000 per day';\n\t\tSET @NumberOfSalesPerDay = 50000;\n\tEND;",
+      "targets": [
+        "\tBEGIN\n\t   SYSTEM$LOG_INFO('WARNING: Limiting sales to 40000 per day');\n\t   NUMBEROFSALESPERDAY := 50000;\n\tEND;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 32,
+      "source_line_end": 32,
+      "source_text": "\t\tPRINT 'WARNING: Limiting sales to 40000 per day';",
+      "targets": [
+        "SYSTEM$LOG_INFO('WARNING: Limiting sales to 40000 per day');"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 33,
+      "source_line_end": 33,
+      "source_text": "\t\tSET @NumberOfSalesPerDay = 50000;",
+      "targets": [
+        "NUMBEROFSALESPERDAY := 50000;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 36,
+      "source_line_end": 36,
+      "source_text": "\n\tDECLARE @OutputCounter varchar(20);",
+      "targets": [],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 40,
+      "source_line_end": 40,
+      "source_text": "\n\n-- DROP CONSTRAINTS\n\tALTER TABLE [Fact].[Sale] DROP CONSTRAINT [FK_Fact_Sale_City_Key_Dimension_City]",
+      "targets": [
+        "\n-- DROP CONSTRAINTS\nALTER TABLE IF EXISTS Fact.Sale DROP CONSTRAINT FK_Fact_Sale_City_Key_Dimension_City;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 41,
+      "source_line_end": 41,
+      "source_text": "\tALTER TABLE [Fact].[Sale] DROP CONSTRAINT [FK_Fact_Sale_Customer_Key_Dimension_Customer]",
+      "targets": [
+        "ALTER TABLE IF EXISTS Fact.Sale DROP CONSTRAINT FK_Fact_Sale_Customer_Key_Dimension_Customer;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 42,
+      "source_line_end": 42,
+      "source_text": "\tALTER TABLE [Fact].[Sale] DROP CONSTRAINT [FK_Fact_Sale_Delivery_Date_Key_Dimension_Date]",
+      "targets": [
+        "ALTER TABLE IF EXISTS Fact.Sale DROP CONSTRAINT FK_Fact_Sale_Delivery_Date_Key_Dimension_Date;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 43,
+      "source_line_end": 43,
+      "source_text": "\tALTER TABLE [Fact].[Sale] DROP CONSTRAINT [FK_Fact_Sale_Invoice_Date_Key_Dimension_Date]",
+      "targets": [
+        "ALTER TABLE IF EXISTS Fact.Sale DROP CONSTRAINT FK_Fact_Sale_Invoice_Date_Key_Dimension_Date;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 44,
+      "source_line_end": 44,
+      "source_text": "\tALTER TABLE [Fact].[Sale] DROP CONSTRAINT [FK_Fact_Sale_Salesperson_Key_Dimension_Employee]",
+      "targets": [
+        "ALTER TABLE IF EXISTS Fact.Sale DROP CONSTRAINT FK_Fact_Sale_Salesperson_Key_Dimension_Employee;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 45,
+      "source_line_end": 45,
+      "source_text": "\tALTER TABLE [Fact].[Sale] DROP CONSTRAINT [FK_Fact_Sale_Stock_Item_Key_Dimension_Stock Item]",
+      "targets": [
+        "ALTER TABLE IF EXISTS Fact.Sale DROP CONSTRAINT \"FK_Fact_Sale_Stock_Item_Key_Dimension_Stock Item\";"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 46,
+      "source_line_end": 46,
+      "source_text": "\tALTER TABLE [Fact].[Sale] DROP CONSTRAINT [FK_Fact_Sale_Bill_To_Customer_Key_Dimension_Customer]",
+      "targets": [
+        "ALTER TABLE IF EXISTS Fact.Sale DROP CONSTRAINT FK_Fact_Sale_Bill_To_Customer_Key_Dimension_Customer;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 47,
+      "source_line_end": 48,
+      "source_text": "\tALTER TABLE [Fact].[Sale] DROP CONSTRAINT [PK_Fact_Sale]\n\tDROP INDEX",
+      "targets": [
+        "ALTER TABLE IF EXISTS Fact.Sale DROP CONSTRAINT PK_Fact_Sale;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 48,
+      "source_line_end": 48,
+      "source_text": "--IF EXISTS [FK_Fact_Sale_Bill_To_Customer_Key] ON [Fact].[Sale]",
+      "targets": [
+        "--IF EXISTS [FK_Fact_Sale_Bill_To_Customer_Key] ON [Fact].[Sale]"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 49,
+      "source_line_end": 49,
+      "source_text": "\tDROP INDEX  IF EXISTS [FK_Fact_Sale_City_Key] ON [Fact].[Sale]",
+      "targets": [],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 50,
+      "source_line_end": 50,
+      "source_text": "\tDROP INDEX  IF EXISTS [FK_Fact_Sale_Customer_Key] ON [Fact].[Sale]",
+      "targets": [],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 51,
+      "source_line_end": 51,
+      "source_text": "\tDROP INDEX  IF EXISTS [FK_Fact_Sale_Delivery_Date_Key] ON [Fact].[Sale]",
+      "targets": [],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 52,
+      "source_line_end": 52,
+      "source_text": "\tDROP INDEX  IF EXISTS [FK_Fact_Sale_Invoice_Date_Key] ON [Fact].[Sale]",
+      "targets": [],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 53,
+      "source_line_end": 53,
+      "source_text": "\tDROP INDEX  IF EXISTS [FK_Fact_Sale_Salesperson_Key] ON [Fact].[Sale]",
+      "targets": [],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 54,
+      "source_line_end": 54,
+      "source_text": "\tDROP INDEX  IF EXISTS [FK_Fact_Sale_Stock_Item_Key] ON [Fact].[Sale]",
+      "targets": [],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 56,
+      "source_line_end": 82,
+      "source_text": "\n\tWHILE @DateCounter < '20121231'\n\tBEGIN\n\t\tSET @OutputCounter = CONVERT(varchar(20), @DateCounter, 112);\n\t\tRAISERROR(@OutputCounter, 0, 1) WITH NOWAIT;\n\n\t\tSET @StartingSaleKey = @MaximumSaleKey - @NumberOfSalesPerDay - FLOOR(RAND() * 20000);\n\t\tSET @OrderCounter = 0;\n\n\t\tINSERT Fact.Sale WITH (TABLOCK)\n\t\t\t([City Key], [Customer Key], [Bill To Customer Key], [Stock Item Key], [Invoice Date Key],\n\t\t\t [Delivery Date Key], [Salesperson Key], [WWI Invoice ID], [Description],\n\t\t\t Package, Quantity, [Unit Price], [Tax Rate], [Total Excluding Tax],\n\t\t\t [Tax Amount], Profit, [Total Including Tax], [Total Dry Items], [Total Chiller Items],\n\t\t\t [Lineage Key])\n\t\tSELECT TOP(@NumberOfSalesPerDay)\n\t\t\t   [City Key], [Customer Key], [Bill To Customer Key], [Stock Item Key], @DateCounter,\n\t\t\t   DATEADD(day, 1, @DateCounter), [Salesperson Key], [WWI Invoice ID], [Description],\n\t\t\t   Package, Quantity, [Unit Price], [Tax Rate], [Total Excluding Tax],\n\t\t\t   [Tax Amount], Profit, [Total Including Tax], [Total Dry Items], [Total Chiller Items],\n\t\t\t   @LineageKey\n\t\tFROM Fact.Sale\n\t\tWHERE [Sale Key] > @StartingSaleKey\n\t\t\tand [Invoice Date Key] >='2013-01-01'\n\t\tORDER BY [Sale Key];\n\n\t\tSET @DateCounter = DATEADD(day, 1, @DateCounter);\n\tEND;",
+      "targets": [
+        "WHILE (:DATECOUNTER < '2012-12-31') LOOP\n   OUTPUTCOUNTER := LEFT(TO_VARCHAR(:DATECOUNTER, 'yyyymmdd'), 20);\n   SELECT\n      <%AIM_DB%>.PUBLIC.RAISERROR_UDF(:OUTPUTCOUNTER, 0, 1, array_construct());\n      STARTINGSALEKEY := :MAXIMUMSALEKEY - :NUMBEROFSALESPERDAY - FLOOR(RANDOM() * 20000);\n      ORDERCOUNTER := 0;\n      INSERT INTO Fact.Sale\n      (\"City Key\", \"Customer Key\", \"Bill To Customer Key\", \"Stock Item Key\", \"Invoice Date Key\", \"Delivery Date Key\", \"Salesperson Key\", \"WWI Invoice ID\", Description, Package, Quantity, \"Unit Price\", \"Tax Rate\", \"Total Excluding Tax\", \"Tax Amount\", Profit, \"Total Including Tax\", \"Total Dry Items\", \"Total Chiller Items\", \"Lineage Key\")\n\t\tSELECT\n--\t\t       TOP(:NUMBEROFSALESPERDAY)\n      \"City Key\",\n      \"Customer Key\",\n      \"Bill To Customer Key\",\n      \"Stock Item Key\",\n      :DATECOUNTER,\n      DATEADD(day, 1, :DATECOUNTER),\n      \"Salesperson Key\",\n      \"WWI Invoice ID\",\n      Description,\n      Package,\n      Quantity,\n      \"Unit Price\",\n      \"Tax Rate\",\n      \"Total Excluding Tax\",\n      \"Tax Amount\",\n      Profit,\n      \"Total Including Tax\",\n      \"Total Dry Items\",\n      \"Total Chiller Items\",\n      :LINEAGEKEY\n      FROM\n      Fact.Sale\n      WHERE\n      \"Sale Key\" > :STARTINGSALEKEY\n      and \"Invoice Date Key\" >='2013-01-01'\n\t\tORDER BY \"Sale Key\";\n      DATECOUNTER := DATEADD(day, 1, :DATECOUNTER);\nEND LOOP;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 58,
+      "source_line_end": 58,
+      "source_text": "\t\tSET @OutputCounter = CONVERT(varchar(20), @DateCounter, 112);",
+      "targets": [
+        "OUTPUTCOUNTER := LEFT(TO_VARCHAR(:DATECOUNTER, 'yyyymmdd'), 20);"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 59,
+      "source_line_end": 59,
+      "source_text": "\t\tRAISERROR(@OutputCounter, 0, 1) WITH NOWAIT;",
+      "targets": [
+        "SELECT\n   <%AIM_DB%>.PUBLIC.RAISERROR_UDF(:OUTPUTCOUNTER, 0, 1, array_construct());"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 61,
+      "source_line_end": 61,
+      "source_text": "\n\t\tSET @StartingSaleKey = @MaximumSaleKey - @NumberOfSalesPerDay - FLOOR(RAND() * 20000);",
+      "targets": [
+        "STARTINGSALEKEY := :MAXIMUMSALEKEY - :NUMBEROFSALESPERDAY - FLOOR(RANDOM() * 20000);"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 62,
+      "source_line_end": 62,
+      "source_text": "\t\tSET @OrderCounter = 0;",
+      "targets": [
+        "ORDERCOUNTER := 0;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 64,
+      "source_line_end": 79,
+      "source_text": "\n\t\tINSERT Fact.Sale WITH (TABLOCK)\n\t\t\t([City Key], [Customer Key], [Bill To Customer Key], [Stock Item Key], [Invoice Date Key],\n\t\t\t [Delivery Date Key], [Salesperson Key], [WWI Invoice ID], [Description],\n\t\t\t Package, Quantity, [Unit Price], [Tax Rate], [Total Excluding Tax],\n\t\t\t [Tax Amount], Profit, [Total Including Tax], [Total Dry Items], [Total Chiller Items],\n\t\t\t [Lineage Key])\n\t\tSELECT TOP(@NumberOfSalesPerDay)\n\t\t\t   [City Key], [Customer Key], [Bill To Customer Key], [Stock Item Key], @DateCounter,\n\t\t\t   DATEADD(day, 1, @DateCounter), [Salesperson Key], [WWI Invoice ID], [Description],\n\t\t\t   Package, Quantity, [Unit Price], [Tax Rate], [Total Excluding Tax],\n\t\t\t   [Tax Amount], Profit, [Total Including Tax], [Total Dry Items], [Total Chiller Items],\n\t\t\t   @LineageKey\n\t\tFROM Fact.Sale\n\t\tWHERE [Sale Key] > @StartingSaleKey\n\t\t\tand [Invoice Date Key] >='2013-01-01'\n\t\tORDER BY [Sale Key];",
+      "targets": [
+        "\n\t\tINSERT INTO Fact.Sale\n\t\t(\"City Key\", \"Customer Key\", \"Bill To Customer Key\", \"Stock Item Key\", \"Invoice Date Key\", \"Delivery Date Key\", \"Salesperson Key\", \"WWI Invoice ID\", Description, Package, Quantity, \"Unit Price\", \"Tax Rate\", \"Total Excluding Tax\", \"Tax Amount\", Profit, \"Total Including Tax\", \"Total Dry Items\", \"Total Chiller Items\", \"Lineage Key\")\n\t\tSELECT\n--\t\t       TOP(:NUMBEROFSALESPERDAY)\n\t\t   \"City Key\",\n\t\t   \"Customer Key\",\n\t\t   \"Bill To Customer Key\",\n\t\t   \"Stock Item Key\",\n\t\t   :DATECOUNTER,\n\t\t   DATEADD(day, 1, :DATECOUNTER),\n\t\t   \"Salesperson Key\",\n\t\t   \"WWI Invoice ID\",\n\t\t   Description,\n\t\t   Package,\n\t\t   Quantity,\n\t\t   \"Unit Price\",\n\t\t   \"Tax Rate\",\n\t\t   \"Total Excluding Tax\",\n\t\t   \"Tax Amount\",\n\t\t   Profit,\n\t\t   \"Total Including Tax\",\n\t\t   \"Total Dry Items\",\n\t\t   \"Total Chiller Items\",\n\t\t   :LINEAGEKEY\n\t\tFROM\n\t\t   Fact.Sale\n\t\tWHERE\n\t\t   \"Sale Key\" > :STARTINGSALEKEY\n\t\t   and \"Invoice Date Key\" >='2013-01-01'\n\t\tORDER BY \"Sale Key\";"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlSelect",
+      "source_line_start": 70,
+      "source_line_end": 79,
+      "source_text": "\t\tSELECT TOP(@NumberOfSalesPerDay)\n\t\t\t   [City Key], [Customer Key], [Bill To Customer Key], [Stock Item Key], @DateCounter,\n\t\t\t   DATEADD(day, 1, @DateCounter), [Salesperson Key], [WWI Invoice ID], [Description],\n\t\t\t   Package, Quantity, [Unit Price], [Tax Rate], [Total Excluding Tax],\n\t\t\t   [Tax Amount], Profit, [Total Including Tax], [Total Dry Items], [Total Chiller Items],\n\t\t\t   @LineageKey\n\t\tFROM Fact.Sale\n\t\tWHERE [Sale Key] > @StartingSaleKey\n\t\t\tand [Invoice Date Key] >='2013-01-01'\n\t\tORDER BY [Sale Key]",
+      "targets": [
+        "\t\tSELECT\n--\t\t       TOP(:NUMBEROFSALESPERDAY)\n\t\t   \"City Key\",\n\t\t   \"Customer Key\",\n\t\t   \"Bill To Customer Key\",\n\t\t   \"Stock Item Key\",\n\t\t   :DATECOUNTER,\n\t\t   DATEADD(day, 1, :DATECOUNTER),\n\t\t   \"Salesperson Key\",\n\t\t   \"WWI Invoice ID\",\n\t\t   Description,\n\t\t   Package,\n\t\t   Quantity,\n\t\t   \"Unit Price\",\n\t\t   \"Tax Rate\",\n\t\t   \"Total Excluding Tax\",\n\t\t   \"Tax Amount\",\n\t\t   Profit,\n\t\t   \"Total Including Tax\",\n\t\t   \"Total Dry Items\",\n\t\t   \"Total Chiller Items\",\n\t\t   :LINEAGEKEY\n\t\tFROM\n\t\t   Fact.Sale\n\t\tWHERE\n\t\t   \"Sale Key\" > :STARTINGSALEKEY\n\t\t\tand \"Invoice Date Key\" >='2013-01-01'\n\t\tORDER BY \"Sale Key\""
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 81,
+      "source_line_end": 81,
+      "source_text": "\n\t\tSET @DateCounter = DATEADD(day, 1, @DateCounter);",
+      "targets": [
+        "DATECOUNTER := DATEADD(day, 1, :DATECOUNTER);"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 84,
+      "source_line_end": 84,
+      "source_text": "\n\tRAISERROR('Compressing all open Rowgroups', 0, 1) WITH NOWAIT;",
+      "targets": [
+        "SELECT\n   <%AIM_DB%>.PUBLIC.RAISERROR_UDF('Compressing all open Rowgroups', 0, 1, array_construct());"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 86,
+      "source_line_end": 88,
+      "source_text": "\n--\tALTER INDEX CCX_Fact_Sale\n--\tON Fact.Sale\n--\tREORGANIZE WITH (COMPRESS_ALL_ROW_GROUPS = ON)\n\t                                              ;",
+      "targets": [
+        "\n--\tALTER INDEX CCX_Fact_Sale\n--\tON Fact.Sale\n--\tREORGANIZE WITH (COMPRESS_ALL_ROW_GROUPS = ON)\n\t                                              ;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 90,
+      "source_line_end": 92,
+      "source_text": "\n\tUPDATE Integration.Lineage\n\t\tSET [Data Load Completed] = SYSDATETIME(),\n\t\t    [Was Successful] = 1;",
+      "targets": [
+        "\n\tUPDATE Integration.Lineage\n\t   SET\n\t      \"Data Load Completed\" = CURRENT_TIMESTAMP(),\n\t      \"Was Successful\" = 1;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 95,
+      "source_line_end": 95,
+      "source_text": "\n\t-- Add back Constraints\n\tRAISERROR('Adding Constraints', 0, 1) WITH NOWAIT;",
+      "targets": [
+        "\n-- Add back Constraints\nSELECT\n   <%AIM_DB%>.PUBLIC.RAISERROR_UDF('Adding Constraints', 0, 1, array_construct());"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 97,
+      "source_line_end": 102,
+      "source_text": "\n\tALTER TABLE [Fact].[Sale]\n\tADD CONSTRAINT [PK_Fact_Sale] PRIMARY KEY NONCLUSTERED\n\t(\n\t\t[Sale Key] ASC,\n\t\t[Invoice Date Key] ASC\n\t);",
+      "targets": [
+        "\n\tALTER TABLE Fact.Sale\n\tADD CONSTRAINT PK_Fact_Sale PRIMARY KEY (\"Sale Key\", \"Invoice Date Key\");"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 104,
+      "source_line_end": 107,
+      "source_text": "\n\tALTER TABLE [Fact].[Sale]\n\tWITH CHECK ADD CONSTRAINT [FK_Fact_Sale_Bill_To_Customer_Key_Dimension_Customer]\n\tFOREIGN KEY([Bill To Customer Key])\n\tREFERENCES [Dimension].[Customer] ([Customer Key]);",
+      "targets": [
+        "\n\tALTER TABLE Fact.Sale\n\tADD CONSTRAINT FK_Fact_Sale_Bill_To_Customer_Key_Dimension_Customer\n\tFOREIGN KEY(\"Bill To Customer Key\")\n\tREFERENCES Dimension.Customer (\"Customer Key\");"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 109,
+      "source_line_end": 109,
+      "source_text": "\n--\tALTER TABLE [Fact].[Sale] CHECK CONSTRAINT [FK_Fact_Sale_Bill_To_Customer_Key_Dimension_Customer]\n\t                                                                                                 ;",
+      "targets": [
+        "\n--\tALTER TABLE Fact.Sale\n--\tCHECK CONSTRAINT FK_Fact_Sale_Bill_To_Customer_Key_Dimension_Customer\n\t                                                                     ;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 111,
+      "source_line_end": 114,
+      "source_text": "\n\tALTER TABLE [Fact].[Sale]\n\tWITH CHECK ADD CONSTRAINT [FK_Fact_Sale_Stock_Item_Key_Dimension_Stock Item]\n\tFOREIGN KEY([Stock Item Key])\n\tREFERENCES [Dimension].[Stock Item] ([Stock Item Key]);",
+      "targets": [
+        "\n\tALTER TABLE Fact.Sale\n\tADD CONSTRAINT \"FK_Fact_Sale_Stock_Item_Key_Dimension_Stock Item\"\n\tFOREIGN KEY(\"Stock Item Key\")\n\tREFERENCES Dimension.\"Stock Item\" (\"Stock Item Key\");"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 116,
+      "source_line_end": 116,
+      "source_text": "\n--\tALTER TABLE [Fact].[Sale] CHECK CONSTRAINT [FK_Fact_Sale_Stock_Item_Key_Dimension_Stock Item]\n\t                                                                                             ;",
+      "targets": [
+        "\n--\tALTER TABLE Fact.Sale\n--\tCHECK CONSTRAINT \"FK_Fact_Sale_Stock_Item_Key_Dimension_Stock Item\"\n\t                                                                   ;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 118,
+      "source_line_end": 121,
+      "source_text": "\n\tALTER TABLE [Fact].[Sale]\n\tWITH CHECK ADD  CONSTRAINT [FK_Fact_Sale_Salesperson_Key_Dimension_Employee]\n\tFOREIGN KEY([Salesperson Key])\n\tREFERENCES [Dimension].[Employee] ([Employee Key]);",
+      "targets": [
+        "\n\tALTER TABLE Fact.Sale\n\tADD  CONSTRAINT FK_Fact_Sale_Salesperson_Key_Dimension_Employee\n\tFOREIGN KEY(\"Salesperson Key\")\n\tREFERENCES Dimension.Employee (\"Employee Key\");"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 123,
+      "source_line_end": 123,
+      "source_text": "\n--\tALTER TABLE [Fact].[Sale] CHECK CONSTRAINT [FK_Fact_Sale_Salesperson_Key_Dimension_Employee]\n\t                                                                                            ;",
+      "targets": [
+        "\n--\tALTER TABLE Fact.Sale\n--\tCHECK CONSTRAINT FK_Fact_Sale_Salesperson_Key_Dimension_Employee\n\t                                                                ;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 125,
+      "source_line_end": 128,
+      "source_text": "\n\tALTER TABLE [Fact].[Sale]\n\tWITH CHECK ADD  CONSTRAINT [FK_Fact_Sale_Invoice_Date_Key_Dimension_Date]\n\tFOREIGN KEY([Invoice Date Key])\n\tREFERENCES [Dimension].[Date] ([Date]);",
+      "targets": [
+        "\n\tALTER TABLE Fact.Sale\n\tADD  CONSTRAINT FK_Fact_Sale_Invoice_Date_Key_Dimension_Date\n\tFOREIGN KEY(\"Invoice Date Key\")\n\tREFERENCES Dimension.Date (Date);"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 130,
+      "source_line_end": 130,
+      "source_text": "\n--\tALTER TABLE [Fact].[Sale] CHECK CONSTRAINT [FK_Fact_Sale_Invoice_Date_Key_Dimension_Date]\n\t                                                                                         ;",
+      "targets": [
+        "\n--\tALTER TABLE Fact.Sale\n--\tCHECK CONSTRAINT FK_Fact_Sale_Invoice_Date_Key_Dimension_Date\n\t                                                             ;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 132,
+      "source_line_end": 135,
+      "source_text": "\n\tALTER TABLE [Fact].[Sale]\n\tWITH CHECK ADD CONSTRAINT [FK_Fact_Sale_Delivery_Date_Key_Dimension_Date]\n\tFOREIGN KEY([Delivery Date Key])\n\tREFERENCES [Dimension].[Date] ([Date]);",
+      "targets": [
+        "\n\tALTER TABLE Fact.Sale\n\tADD CONSTRAINT FK_Fact_Sale_Delivery_Date_Key_Dimension_Date\n\tFOREIGN KEY(\"Delivery Date Key\")\n\tREFERENCES Dimension.Date (Date);"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 137,
+      "source_line_end": 137,
+      "source_text": "\n--\tALTER TABLE [Fact].[Sale] CHECK CONSTRAINT [FK_Fact_Sale_Delivery_Date_Key_Dimension_Date]\n\t                                                                                          ;",
+      "targets": [
+        "\n--\tALTER TABLE Fact.Sale\n--\tCHECK CONSTRAINT FK_Fact_Sale_Delivery_Date_Key_Dimension_Date\n\t                                                              ;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 139,
+      "source_line_end": 142,
+      "source_text": "\n\tALTER TABLE [Fact].[Sale]\n\tWITH CHECK ADD CONSTRAINT [FK_Fact_Sale_Customer_Key_Dimension_Customer]\n\tFOREIGN KEY([Customer Key])\n\tREFERENCES [Dimension].[Customer] ([Customer Key]);",
+      "targets": [
+        "\n\tALTER TABLE Fact.Sale\n\tADD CONSTRAINT FK_Fact_Sale_Customer_Key_Dimension_Customer\n\tFOREIGN KEY(\"Customer Key\")\n\tREFERENCES Dimension.Customer (\"Customer Key\");"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 144,
+      "source_line_end": 144,
+      "source_text": "\n--\tALTER TABLE [Fact].[Sale] CHECK CONSTRAINT [FK_Fact_Sale_Customer_Key_Dimension_Customer]\n\t                                                                                         ;",
+      "targets": [
+        "\n--\tALTER TABLE Fact.Sale\n--\tCHECK CONSTRAINT FK_Fact_Sale_Customer_Key_Dimension_Customer\n\t                                                             ;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 146,
+      "source_line_end": 149,
+      "source_text": "\n\tALTER TABLE [Fact].[Sale]\n\tWITH CHECK ADD  CONSTRAINT [FK_Fact_Sale_City_Key_Dimension_City]\n\tFOREIGN KEY([City Key])\n\tREFERENCES [Dimension].[City] ([City Key]);",
+      "targets": [
+        "\n\tALTER TABLE Fact.Sale\n\tADD  CONSTRAINT FK_Fact_Sale_City_Key_Dimension_City\n\tFOREIGN KEY(\"City Key\")\n\tREFERENCES Dimension.City (\"City Key\");"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 151,
+      "source_line_end": 151,
+      "source_text": "\n--\tALTER TABLE [Fact].[Sale] CHECK CONSTRAINT [FK_Fact_Sale_City_Key_Dimension_City]\n\t                                                                                 ;",
+      "targets": [
+        "\n--\tALTER TABLE Fact.Sale\n--\tCHECK CONSTRAINT FK_Fact_Sale_City_Key_Dimension_City\n\t                                                     ;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 154,
+      "source_line_end": 154,
+      "source_text": "\n\t-- Recreate indexes\n\tRAISERROR('Adding Non-clustered Indexes', 0, 1) WITH NOWAIT;",
+      "targets": [
+        "\n-- Recreate indexes\nSELECT\n   <%AIM_DB%>.PUBLIC.RAISERROR_UDF('Adding Non-clustered Indexes', 0, 1, array_construct());"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 155,
+      "source_line_end": 155,
+      "source_text": "--\tCREATE NONCLUSTERED INDEX [FK_Fact_Sale_Salesperson_Key] ON [Fact].[Sale] ([Salesperson Key] ASC)\n\t                                                                                                 ;",
+      "targets": [
+        "--\tCREATE NONCLUSTERED INDEX [FK_Fact_Sale_Salesperson_Key] ON [Fact].[Sale] ([Salesperson Key] ASC)\n\t                                                                                                 ;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 156,
+      "source_line_end": 156,
+      "source_text": "--\tCREATE NONCLUSTERED INDEX [FK_Fact_Sale_Invoice_Date_Key] ON [Fact].[Sale] ([Invoice Date Key] ASC)\n\t                                                                                                   ;",
+      "targets": [
+        "--\tCREATE NONCLUSTERED INDEX [FK_Fact_Sale_Invoice_Date_Key] ON [Fact].[Sale] ([Invoice Date Key] ASC)\n\t                                                                                                   ;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 157,
+      "source_line_end": 157,
+      "source_text": "--\tCREATE NONCLUSTERED INDEX [FK_Fact_Sale_Delivery_Date_Key] ON [Fact].[Sale] ([Delivery Date Key] ASC)\n\t                                                                                                     ;",
+      "targets": [
+        "--\tCREATE NONCLUSTERED INDEX [FK_Fact_Sale_Delivery_Date_Key] ON [Fact].[Sale] ([Delivery Date Key] ASC)\n\t                                                                                                     ;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 158,
+      "source_line_end": 158,
+      "source_text": "--\tCREATE NONCLUSTERED INDEX [FK_Fact_Sale_Bill_To_Customer_Key] ON [Fact].[Sale] ([Bill To Customer Key] ASC)\n\t                                                                                                           ;",
+      "targets": [
+        "--\tCREATE NONCLUSTERED INDEX [FK_Fact_Sale_Bill_To_Customer_Key] ON [Fact].[Sale] ([Bill To Customer Key] ASC)\n\t                                                                                                           ;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 159,
+      "source_line_end": 159,
+      "source_text": "--\tCREATE NONCLUSTERED INDEX [FK_Fact_Sale_City_Key] ON [Fact].[Sale] ([City Key] ASC)\n\t                                                                                   ;",
+      "targets": [
+        "--\tCREATE NONCLUSTERED INDEX [FK_Fact_Sale_City_Key] ON [Fact].[Sale] ([City Key] ASC)\n\t                                                                                   ;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "unsupported",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 160,
+      "source_line_end": 160,
+      "source_text": "--\tCREATE NONCLUSTERED INDEX [FK_Fact_Sale_Customer_Key] ON [Fact].[Sale] ([Customer Key] ASC)\n\t                                                                                           ;",
+      "targets": [
+        "--\tCREATE NONCLUSTERED INDEX [FK_Fact_Sale_Customer_Key] ON [Fact].[Sale] ([Customer Key] ASC)\n\t                                                                                           ;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 162,
+      "source_line_end": 162,
+      "source_text": "\n\tRETURN 0;",
+      "targets": [
+        "RETURN 0;"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_populatelargesaletable.sql"
+    }
+  ]
+}

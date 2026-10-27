@@ -1,0 +1,185 @@
+{
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:31:33Z"
+    }
+  },
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [
+        {
+          "category": "temp_staging",
+          "matchedPatterns": [
+            "_staging$"
+          ]
+        }
+      ],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "16f90c39-8647-4c95-b5ec-126461ecb3ef",
+      "9a3eb4a0-ce08-41f5-bbb4-dda3060b0afb"
+    ]
+  },
+  "extensions": {},
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/integration/table/stockholding_staging"
+    },
+    "converted": {
+      "checksum": "238d6299ea4ae2be9a5184aaaa35e92d",
+      "path": "snowflake/wideworldimportersdw/integration/table/stockholding_staging.sql"
+    },
+    "source": {
+      "checksum": "39e1869de940a3a26c35e94f96c634e0",
+      "path": "source/wideworldimportersdw/integration/table/stockholding_staging.sql"
+    }
+  },
+  "id": "649d7396-fbbb-46c7-99a8-40f42fcdfa80",
+  "inScope": true,
+  "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0002",
+      "count": 1
+    },
+    {
+      "code": "SSC-PRF-0002",
+      "count": 1
+    }
+  ],
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": true,
+        "name": "Stock Holding Staging Key",
+        "nullable": false,
+        "targetName": "\"Stock Holding Staging Key\"",
+        "targetType": "BIGINT",
+        "type": "BIGINT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Stock Item Key\"",
+        "nullable": true,
+        "targetName": "\"Stock Item Key\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Quantity On Hand\"",
+        "nullable": true,
+        "targetName": "\"Quantity On Hand\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Bin Location\"",
+        "nullable": true,
+        "targetName": "\"Bin Location\"",
+        "targetType": "NVARCHAR",
+        "type": "NVARCHAR"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Last Stocktake Quantity\"",
+        "nullable": true,
+        "targetName": "\"Last Stocktake Quantity\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Last Cost Price\"",
+        "nullable": true,
+        "targetName": "\"Last Cost Price\"",
+        "targetType": "DECIMAL",
+        "type": "DECIMAL"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Reorder Level\"",
+        "nullable": true,
+        "targetName": "\"Reorder Level\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"Target Stock Level\"",
+        "nullable": true,
+        "targetName": "\"Target Stock Level\"",
+        "targetType": "INT",
+        "type": "INT"
+      },
+      {
+        "isCaseSpecific": false,
+        "isPrimaryKey": false,
+        "name": "\"WWI Stock Item ID\"",
+        "nullable": true,
+        "targetName": "\"WWI Stock Item ID\"",
+        "targetType": "INT",
+        "type": "INT"
+      }
+    ],
+    "parameters": {
+      "arguments": [],
+      "returns": []
+    }
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Integration.StockHolding_Staging",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "StockHolding_Staging",
+    "objectType": "table",
+    "platform": "sqlServer",
+    "schema": "Integration"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Integration.StockHolding_Staging",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "StockHolding_Staging",
+    "objectType": "table",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-24T23:35:16Z"
+}

@@ -1,0 +1,33 @@
+{
+  "SchemaVersion": 1,
+  "Metadata": {
+    "GeneratedAt": "2026-10-24T19:43:36.866352Z",
+    "Tool": {
+      "Name": "scai",
+      "Command": "assessment data-lineage"
+    },
+    "Inputs": {
+      "RegistryUsed": true,
+      "SnowConvertReportsUsed": false,
+      "ScanRoots": [
+        "source"
+      ]
+    }
+  },
+  "Summary": {
+    "Systems": 0,
+    "Pipelines": 0,
+    "Reports": 0,
+    "CodeUnits": 75,
+    "Edges": 156,
+    "UnresolvedSource": 0,
+    "UnresolvedTarget": 0
+  },
+  "Canvas": {
+    "Nodes": [],
+    "Edges": []
+  },
+  "MissingInputs": [],
+  "Narrative": null,
+  "Findings": []
+}

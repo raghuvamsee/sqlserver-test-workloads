@@ -1,0 +1,69 @@
+{
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-24T20:37:07Z"
+    }
+  },
+  "codeStatus": {
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": [
+      "1c09d28e-0eba-40b5-986f-febe7ac7dfbd"
+    ]
+  },
+  "extensions": {
+    "isDone": true,
+    "tasks": {
+      "verify": {
+        "details": {
+          "error": null,
+          "verifiedBy": "agent"
+        },
+        "error": null,
+        "status": "completed",
+        "updatedAt": "2026-10-24T20:37:24.723679781+00:00"
+      }
+    }
+  },
+  "files": {
+    "converted": {
+      "checksum": "1b5223f3af72b514f9c7ae034f8fd2d2",
+      "path": "snowflake/UDF Helpers/THROW_UDP.sql"
+    }
+  },
+  "id": "8c5ef6e6-94ee-483e-b9b9-16303903422f",
+  "inScope": true,
+  "isMissing": false,
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 0,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.PUBLIC.THROW_UDP",
+    "database": "<%wideworldimportersdw%>",
+    "name": "THROW_UDP",
+    "objectType": "procedure",
+    "schema": "PUBLIC"
+  },
+  "updatedAt": "2026-10-24T20:37:52Z"
+}

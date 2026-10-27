@@ -1,0 +1,4 @@
+OBJECT_NAME,OBJECT_TYPE,STATUS,ERROR_MESSAGE,DATABASE,SCHEMA,FQN,SNOWSIGHT_URL
+<%AIM_DB%>.PUBLIC.RAISERROR_UDF,Function,Failed,Database-name token(s) with no binding: AIM_DB,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%AIM_DB%>.PUBLIC.RAISERROR_UDF,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%AIM_DB%>.PUBLIC.THROW_UDP,Procedure,Failed,Database-name token(s) with no binding: AIM_DB,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%AIM_DB%>.PUBLIC.THROW_UDP,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%AIM_DB%>.PUBLIC.QUOTENAME_UDF,Function,Failed,Database-name token(s) with no binding: AIM_DB,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%AIM_DB%>.PUBLIC.QUOTENAME_UDF,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC

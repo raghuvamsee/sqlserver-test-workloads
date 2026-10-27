@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "source_system": "sql",
+  "engine_version": "2.51.3",
+  "source_file": "wideworldimportersdw/application/procedure/configuration_configureforenterpriseedition.sql",
+  "source_checksum": "78fec0853d69591028b3bfbe105ec2e5b16a64f6cbc3d5e0348a276abf032ccf",
+  "pairs": [
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlUseStatement",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "source_text": "USE WideWorldImportersDW",
+      "targets": [
+        "USE DATABASE <%wideworldimportersdw%>"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_configureforenterpriseedition.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 5,
+      "source_line_end": 13,
+      "source_text": "BEGIN\n\n    EXEC [Application].Configuration_ApplyPartitionedColumnstoreIndexing;\n\n    EXEC [Application].Configuration_EnableInMemory;\n\n\tEXEC [Application].Configuration_ApplyPolybase;\n\nEND;",
+      "targets": [],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_configureforenterpriseedition.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 7,
+      "source_line_end": 7,
+      "source_text": "\n    EXEC [Application].Configuration_ApplyPartitionedColumnstoreIndexing;",
+      "targets": [
+        "CALL Application.Configuration_ApplyPartitionedColumnstoreIndexing();"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_configureforenterpriseedition.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 9,
+      "source_line_end": 9,
+      "source_text": "\n    EXEC [Application].Configuration_EnableInMemory;",
+      "targets": [
+        "CALL Application.Configuration_EnableInMemory();"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_configureforenterpriseedition.sql"
+    },
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlStat",
+      "source_line_start": 11,
+      "source_line_end": 11,
+      "source_text": "\n\tEXEC [Application].Configuration_ApplyPolybase;",
+      "targets": [
+        "CALL Application.Configuration_ApplyPolybase();"
+      ],
+      "target_file": "wideworldimportersdw/application/procedure/configuration_configureforenterpriseedition.sql"
+    }
+  ]
+}

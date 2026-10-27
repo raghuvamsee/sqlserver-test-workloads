@@ -1,0 +1,4 @@
+OBJECT_NAME,OBJECT_TYPE,STATUS,ERROR_MESSAGE,DATABASE,SCHEMA,FQN,SNOWSIGHT_URL
+<%wideworldimportersdw%>.PUBLIC.QUOTENAME_UDF,Function,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.PUBLIC.QUOTENAME_UDF,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.PUBLIC.RAISERROR_UDF,Function,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.PUBLIC.RAISERROR_UDF,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.PUBLIC.THROW_UDP,Procedure,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.PUBLIC.THROW_UDP,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC

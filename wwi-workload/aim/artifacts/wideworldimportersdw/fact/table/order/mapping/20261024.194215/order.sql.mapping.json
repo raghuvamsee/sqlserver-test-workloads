@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "source_system": "sql",
+  "engine_version": "2.51.3",
+  "source_file": "wideworldimportersdw/fact/table/order.sql",
+  "source_checksum": "88d5f2a5bd9dbde619bb16e33856b8417a2e1a0530843bebc6653292a190bf7e",
+  "pairs": [
+    {
+      "pair_kind": "transformed",
+      "source_kind": "Mobilize.Transact.Sql.Ast.TSqlUseStatement",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "source_text": "USE WideWorldImportersDW",
+      "targets": [
+        "USE DATABASE <%wideworldimportersdw%>"
+      ],
+      "target_file": "wideworldimportersdw/fact/table/order.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlAlterTableStatement",
+      "source_line_start": 27,
+      "source_line_end": 28,
+      "source_text": "\nALTER TABLE [Fact].[Order]\n    ADD CONSTRAINT [FK_Fact_Order_City_Key_Dimension_City] FOREIGN KEY ([City Key]) REFERENCES [Dimension].[City] ([City Key])",
+      "targets": [],
+      "target_file": "wideworldimportersdw/fact/table/order.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlAlterTableStatement",
+      "source_line_start": 29,
+      "source_line_end": 30,
+      "source_text": "ALTER TABLE [Fact].[Order]\n    ADD CONSTRAINT [FK_Fact_Order_Customer_Key_Dimension_Customer] FOREIGN KEY ([Customer Key]) REFERENCES [Dimension].[Customer] ([Customer Key])",
+      "targets": [],
+      "target_file": "wideworldimportersdw/fact/table/order.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlAlterTableStatement",
+      "source_line_start": 31,
+      "source_line_end": 32,
+      "source_text": "ALTER TABLE [Fact].[Order]\n    ADD CONSTRAINT [FK_Fact_Order_Order_Date_Key_Dimension_Date] FOREIGN KEY ([Order Date Key]) REFERENCES [Dimension].[Date] ([Date])",
+      "targets": [],
+      "target_file": "wideworldimportersdw/fact/table/order.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlAlterTableStatement",
+      "source_line_start": 33,
+      "source_line_end": 34,
+      "source_text": "ALTER TABLE [Fact].[Order]\n    ADD CONSTRAINT [FK_Fact_Order_Picked_Date_Key_Dimension_Date] FOREIGN KEY ([Picked Date Key]) REFERENCES [Dimension].[Date] ([Date])",
+      "targets": [],
+      "target_file": "wideworldimportersdw/fact/table/order.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlAlterTableStatement",
+      "source_line_start": 35,
+      "source_line_end": 36,
+      "source_text": "ALTER TABLE [Fact].[Order]\n    ADD CONSTRAINT [FK_Fact_Order_Picker_Key_Dimension_Employee] FOREIGN KEY ([Picker Key]) REFERENCES [Dimension].[Employee] ([Employee Key])",
+      "targets": [],
+      "target_file": "wideworldimportersdw/fact/table/order.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlAlterTableStatement",
+      "source_line_start": 37,
+      "source_line_end": 38,
+      "source_text": "ALTER TABLE [Fact].[Order]\n    ADD CONSTRAINT [FK_Fact_Order_Salesperson_Key_Dimension_Employee] FOREIGN KEY ([Salesperson Key]) REFERENCES [Dimension].[Employee] ([Employee Key])",
+      "targets": [],
+      "target_file": "wideworldimportersdw/fact/table/order.sql"
+    },
+    {
+      "pair_kind": "absorbed",
+      "source_kind": "Mobilize.AnsiSql.AST.SqlAlterTableStatement",
+      "source_line_start": 39,
+      "source_line_end": 40,
+      "source_text": "ALTER TABLE [Fact].[Order]\n    ADD CONSTRAINT [FK_Fact_Order_Stock_Item_Key_Dimension_Stock Item] FOREIGN KEY ([Stock Item Key]) REFERENCES [Dimension].[Stock Item] ([Stock Item Key])",
+      "targets": [],
+      "target_file": "wideworldimportersdw/fact/table/order.sql"
+    }
+  ]
+}

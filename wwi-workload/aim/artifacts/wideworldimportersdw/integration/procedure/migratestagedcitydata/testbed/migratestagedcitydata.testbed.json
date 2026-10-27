@@ -1,0 +1,399 @@
+{
+  "object": "WideWorldImportersDW.Integration.MigrateStagedCityData()",
+  "object_type": "PROCEDURE",
+  "branches": [
+    {
+      "branch_id": 0,
+      "construct_kind": "WHERE_FILTER",
+      "line": 16,
+      "predicate_text": "[Table Name] = N'City'\n                               AND [Data Load Completed] IS NULL",
+      "columns": [
+        {
+          "column": "\"Table Name\"",
+          "table": "WideWorldImportersDW.Integration.Lineage",
+          "type": "sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        },
+        {
+          "column": "\"Data Load Completed\"",
+          "table": "WideWorldImportersDW.Integration.Lineage",
+          "type": "DATETIME2",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": true,
+          "is_datetime": true,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "and",
+        "children": [
+          {
+            "kind": "atom",
+            "columns": [
+              "WideWorldImportersDW.Integration.Lineage.\"Table Name\""
+            ],
+            "operator": "=",
+            "values": [
+              "City"
+            ],
+            "operands": [
+              {
+                "kind": "column",
+                "column": "WideWorldImportersDW.Integration.Lineage.\"Table Name\"",
+                "text": "[Table Name]"
+              },
+              {
+                "kind": "literal",
+                "literal": "City",
+                "text": "N'City'"
+              }
+            ]
+          },
+          {
+            "kind": "atom",
+            "columns": [
+              "WideWorldImportersDW.Integration.Lineage.\"Data Load Completed\""
+            ],
+            "operator": "IS NULL",
+            "values": [],
+            "operands": [
+              {
+                "kind": "column",
+                "column": "WideWorldImportersDW.Integration.Lineage.\"Data Load Completed\"",
+                "text": "[Data Load Completed]"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "branch_id": 1,
+      "construct_kind": "WHERE_FILTER",
+      "line": 55,
+      "predicate_text": "[Table Name] = N'City'",
+      "columns": [
+        {
+          "column": "\"Table Name\"",
+          "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+          "type": "sysname",
+          "is_integer": false,
+          "is_number": false,
+          "is_string": false,
+          "is_date": false,
+          "is_datetime": false,
+          "is_boolean": false,
+          "is_binary": false
+        }
+      ],
+      "predicate": {
+        "kind": "atom",
+        "columns": [
+          "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\""
+        ],
+        "operator": "=",
+        "values": [
+          "City"
+        ],
+        "operands": [
+          {
+            "kind": "column",
+            "column": "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\"",
+            "text": "[Table Name]"
+          },
+          {
+            "kind": "literal",
+            "literal": "City",
+            "text": "N'City'"
+          }
+        ]
+      }
+    }
+  ],
+  "predicates": [
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "\"Valid To\"",
+      "operator": "=",
+      "values": [
+        "@EndOfTime"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Dimension.City.\"Valid To\"",
+          "text": "c.[Valid To]"
+        },
+        {
+          "kind": "parameter",
+          "parameter": "@EndOfTime",
+          "text": "@EndOfTime"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Data Load Completed\"",
+      "operator": "IS NULL",
+      "values": [],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Data Load Completed\"",
+          "text": "[Data Load Completed]"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Lineage Key\"",
+      "operator": "=",
+      "values": [
+        "@LineageKey"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Lineage Key\"",
+          "text": "[Lineage Key]"
+        },
+        {
+          "kind": "parameter",
+          "parameter": "@LineageKey",
+          "text": "@LineageKey"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Table Name\"",
+      "operator": "=",
+      "values": [
+        "City"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.Lineage.\"Table Name\"",
+          "text": "[Table Name]"
+        },
+        {
+          "kind": "literal",
+          "literal": "City",
+          "text": "N'City'"
+        }
+      ]
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+      "column": "\"Table Name\"",
+      "operator": "=",
+      "values": [
+        "City"
+      ],
+      "operands": [
+        {
+          "kind": "column",
+          "column": "WideWorldImportersDW.Integration.[ETL Cutoff].\"Table Name\"",
+          "text": "[Table Name]"
+        },
+        {
+          "kind": "literal",
+          "literal": "City",
+          "text": "N'City'"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "left_table": "RowsToCloseOff",
+      "left_columns": [
+        "[WWI City ID]"
+      ],
+      "right_table": "WideWorldImportersDW.Dimension.City",
+      "right_columns": [
+        "\"WWI City ID\""
+      ],
+      "join_type": "inner",
+      "is_anti": false
+    }
+  ],
+  "assignments": [
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "\"Latest Recorded Population\"",
+      "value": "[Latest Recorded Population]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "\"Lineage Key\"",
+      "value": "@LineageKey"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "\"Sales Territory\"",
+      "value": "[Sales Territory]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "\"State Province\"",
+      "value": "[State Province]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "\"Valid From\"",
+      "value": "[Valid From]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "\"Valid To\"",
+      "value": "[Valid To]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "\"Valid To\"",
+      "value": "rtco.[Valid From]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "\"WWI City ID\"",
+      "value": "[WWI City ID]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "City",
+      "value": "City"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "Continent",
+      "value": "Continent"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "Country",
+      "value": "Country"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "Location",
+      "value": "[Location]"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "Region",
+      "value": "Region"
+    },
+    {
+      "table": "WideWorldImportersDW.Dimension.City",
+      "column": "Subregion",
+      "value": "Subregion"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Data Load Completed\"",
+      "value": "SYSDATETIME()",
+      "value_kind": "nondeterministic",
+      "value_expression": {
+        "kind": "fn",
+        "fn": "SYSDATETIME",
+        "args": []
+      }
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Lineage Key\"",
+      "value": "@LineageKey"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.Lineage",
+      "column": "\"Was Successful\"",
+      "value": "1",
+      "value_kind": "literal"
+    },
+    {
+      "table": "WideWorldImportersDW.Integration.[ETL Cutoff]",
+      "column": "\"Cutoff Time\"",
+      "value": "(SELECT [Source System Cutoff Time]\n                             FROM Integration.Lineage\n                             WHERE [Lineage Key] = @LineageKey)"
+    }
+  ],
+  "semi_anti": [],
+  "schema_version": 1,
+  "insert_targets": [
+    {
+      "target_table": "WideWorldImportersDW.Dimension.City",
+      "columns": [
+        {
+          "target_column": "\"WWI City ID\"",
+          "source_table": "WideWorldImportersDW.Integration.City_Staging",
+          "source_column": "\"WWI City ID\""
+        },
+        {
+          "target_column": "City",
+          "source_table": "WideWorldImportersDW.Integration.City_Staging",
+          "source_column": "City"
+        },
+        {
+          "target_column": "\"State Province\"",
+          "source_table": "WideWorldImportersDW.Integration.City_Staging",
+          "source_column": "\"State Province\""
+        },
+        {
+          "target_column": "Country",
+          "source_table": "WideWorldImportersDW.Integration.City_Staging",
+          "source_column": "Country"
+        },
+        {
+          "target_column": "Continent",
+          "source_table": "WideWorldImportersDW.Integration.City_Staging",
+          "source_column": "Continent"
+        },
+        {
+          "target_column": "\"Sales Territory\"",
+          "source_table": "WideWorldImportersDW.Integration.City_Staging",
+          "source_column": "\"Sales Territory\""
+        },
+        {
+          "target_column": "Region",
+          "source_table": "WideWorldImportersDW.Integration.City_Staging",
+          "source_column": "Region"
+        },
+        {
+          "target_column": "Subregion",
+          "source_table": "WideWorldImportersDW.Integration.City_Staging",
+          "source_column": "Subregion"
+        },
+        {
+          "target_column": "Location",
+          "source_table": "WideWorldImportersDW.Integration.City_Staging",
+          "source_column": "Location"
+        },
+        {
+          "target_column": "\"Latest Recorded Population\"",
+          "source_table": "WideWorldImportersDW.Integration.City_Staging",
+          "source_column": "\"Latest Recorded Population\""
+        },
+        {
+          "target_column": "\"Valid From\"",
+          "source_table": "WideWorldImportersDW.Integration.City_Staging",
+          "source_column": "\"Valid From\""
+        },
+        {
+          "target_column": "\"Valid To\"",
+          "source_table": "WideWorldImportersDW.Integration.City_Staging",
+          "source_column": "\"Valid To\""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "cloudStatus": {
+    "deployment": {
+      "deployedTo": "WWI_AIM",
+      "details": {
+        "error": null,
+        "verifiedBy": "status"
+      },
+      "status": "completed",
+      "updatedAt": "2026-10-25T17:28:31Z"
+    }
+  },
+  "codeStatus": {
+    "assessment": {
+      "containsCommit": false,
+      "exclusion": [],
+      "status": "inProgress"
+    },
+    "conversion": {
+      "converterVersion": "2.51.3",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    },
+    "registration": {
+      "sourceId": "",
+      "status": "completed",
+      "updatedAt": "2026-10-24T19:42:27Z"
+    }
+  },
+  "dependencies": {
+    "dependsOn": [
+      {
+        "id": "64fd00bf-7950-477b-ba1a-16210cd0681c",
+        "isMissing": false,
+        "relationTypes": [
+          "SELECT - FROM",
+          "INSERT"
+        ]
+      }
+    ],
+    "hasTransitiveMissingDependencies": false,
+    "requiredBy": []
+  },
+  "extensions": {
+    "tasks": {
+      "captureBaseline": {
+        "details": {
+          "error": null,
+          "verifiedBy": "status"
+        },
+        "error": null,
+        "status": "pending",
+        "updatedAt": "2026-10-25T17:23:42.660242298+00:00"
+      }
+    }
+  },
+  "files": {
+    "artifacts": {
+      "path": "artifacts/wideworldimportersdw/integration/procedure/getlineagekey"
+    },
+    "converted": {
+      "checksum": "04b7fd48693fc11ad4d33d9ec03845da",
+      "path": "snowflake/wideworldimportersdw/integration/procedure/getlineagekey.sql"
+    },
+    "source": {
+      "checksum": "1cbcf94bbf6a5425c8ec262cc3bc6f5e",
+      "path": "source/wideworldimportersdw/integration/procedure/getlineagekey.sql"
+    }
+  },
+  "id": "080cb1d3-1bc8-46bb-9158-7b75ccd8d610",
+  "inScope": true,
+  "isMissing": false,
+  "issues": [
+    {
+      "code": "SSC-FDM-TS0029",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0037",
+      "count": 1
+    },
+    {
+      "code": "SSC-FDM-TS0144",
+      "count": 1
+    }
+  ],
+  "kind": "databaseObject",
+  "planning": {
+    "topologicalRank": 2,
+    "wave": 1
+  },
+  "schemaVersion": 1,
+  "signature": {
+    "columns": [],
+    "parameters": {
+      "arguments": [
+        {
+          "direction": "in",
+          "isCursor": false,
+          "name": "@TableName",
+          "required": true,
+          "targetName": "TABLENAME",
+          "targetType": "VARCHAR",
+          "type": "SYSNAME"
+        },
+        {
+          "direction": "in",
+          "isCursor": false,
+          "name": "@NewCutoffTime",
+          "required": true,
+          "targetName": "NEWCUTOFFTIME",
+          "targetType": "",
+          "type": "DATETIME2"
+        }
+      ],
+      "returns": [
+        {
+          "name": "LineageKey",
+          "targetName": "LineageKey",
+          "targetType": "INT",
+          "type": "INT"
+        }
+      ]
+    }
+  },
+  "source": {
+    "canonicalName": "${wideworldimportersdw}.Integration.GetLineageKey(SYSNAME,DATETIME2)",
+    "database": "${wideworldimportersdw}",
+    "format": "sql",
+    "name": "GetLineageKey",
+    "objectType": "procedure",
+    "platform": "sqlServer",
+    "schema": "Integration"
+  },
+  "target": {
+    "canonicalName": "<%wideworldimportersdw%>.Integration.GetLineageKey(VARCHAR,)",
+    "database": "<%wideworldimportersdw%>",
+    "format": "snowflakeSQL",
+    "name": "GetLineageKey",
+    "objectType": "procedure",
+    "schema": "Integration"
+  },
+  "updatedAt": "2026-10-25T17:28:31Z"
+}

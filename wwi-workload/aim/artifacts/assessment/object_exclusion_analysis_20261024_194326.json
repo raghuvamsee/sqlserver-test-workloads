@@ -1,0 +1,51 @@
+{
+  "summary": {
+    "report_directory": "/home/ubuntu/repos/sqlserver-test-workloads/wwi-workload/aim",
+    "total_objects_found": 75,
+    "temp_staging_objects_count": 13,
+    "deprecated_legacy_objects_count": 0,
+    "testing_objects_count": 0,
+    "duplicate_objects_count": 0,
+    "unique_duplicate_objects_count": 0,
+    "objects_by_schema": [
+      {
+        "schema": "Integration",
+        "object_count": 32
+      },
+      {
+        "schema": "Sequences",
+        "object_count": 10
+      },
+      {
+        "schema": "",
+        "object_count": 10
+      },
+      {
+        "schema": "Dimension",
+        "object_count": 8
+      },
+      {
+        "schema": "Fact",
+        "object_count": 6
+      },
+      {
+        "schema": "Application",
+        "object_count": 5
+      },
+      {
+        "schema": "PUBLIC",
+        "object_count": 3
+      },
+      {
+        "schema": "dbo",
+        "object_count": 1
+      }
+    ],
+    "objects_with_multiple_versions": 0,
+    "potentially_normal_objects_count": 0,
+    "has_dependency_data": true
+  },
+  "detail_location": "registry",
+  "potentially_misclassified_objects": {},
+  "has_dependency_data": true
+}

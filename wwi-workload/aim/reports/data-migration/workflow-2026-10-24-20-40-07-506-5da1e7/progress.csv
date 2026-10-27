@@ -1,0 +1,36 @@
+TableName,HasBeenPreprocessed,TotalPartitions,PartitionsInExtractionPhase,PartitionsInLoadingPhase,LoadedPartitions,FailedPartitions,ExampleErrorMessage,ExampleWarningMessage
+WIDEWORLDIMPORTERSDW.DIMENSION.SUPPLIER,True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.DIMENSION.CUSTOMER,True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.FACT.TRANSACTION,True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.DIMENSION.DATE,True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.FACT.SALE,True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.INTEGRATION.LINEAGE,True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.FACT.ORDER,True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.INTEGRATION.SUPPLIER_STAGING,True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.INTEGRATION.PURCHASE_STAGING,True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.FACT.PURCHASE,True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.INTEGRATION.SALE_STAGING,True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.INTEGRATION.EMPLOYEE_STAGING,True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.INTEGRATION.ORDER_STAGING,True,1,0,0,1,0,,
+"WIDEWORLDIMPORTERSDW.FACT.""Stock Holding""",True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.DIMENSION.CITY,True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.INTEGRATION.PAYMENTMETHOD_STAGING,True,1,0,0,1,0,,
+"WIDEWORLDIMPORTERSDW.DIMENSION.""Payment Method""",True,1,0,0,1,0,,
+"WIDEWORLDIMPORTERSDW.DIMENSION.""Stock Item""",True,1,0,0,0,1,"100197: Cannot cast Parquet logical type: NIL, physical type: INT32 of node Photo to Snowflake type BINARY[LOB](67108864){nullable}
+  File 'task_results/workflows/1/tables/29/data/full_table/task_63_result_001.parquet'
+  Row 0 starts at line 0, column 
+  If you would like to continue loading when an error is encountered, use other values such as 'SKIP_FILE' or 'CONTINUE' for the ON_ERROR option. For more information on loading options, please run 'info loading_data' in a SQL client.",
+WIDEWORLDIMPORTERSDW.INTEGRATION.STOCKITEM_STAGING,True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.INTEGRATION.TRANSACTIONTYPE_STAGING,True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.DIMENSION.EMPLOYEE,True,1,0,0,0,1,"100197: Cannot cast Parquet logical type: NIL, physical type: INT32 of node Photo to Snowflake type BINARY[LOB](67108864){nullable}
+  File 'task_results/workflows/1/tables/20/data/full_table/task_188_result_001.parquet'
+  Row 0 starts at line 0, column 
+  If you would like to continue loading when an error is encountered, use other values such as 'SKIP_FILE' or 'CONTINUE' for the ON_ERROR option. For more information on loading options, please run 'info loading_data' in a SQL client.",
+"WIDEWORLDIMPORTERSDW.INTEGRATION.""ETL Cutoff""",True,1,0,0,1,0,,
+"WIDEWORLDIMPORTERSDW.DIMENSION.""Transaction Type""",True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.INTEGRATION.CUSTOMER_STAGING,True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.INTEGRATION.TRANSACTION_STAGING,True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.INTEGRATION.STOCKHOLDING_STAGING,True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.INTEGRATION.CITY_STAGING,True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.INTEGRATION.MOVEMENT_STAGING,True,1,0,0,1,0,,
+WIDEWORLDIMPORTERSDW.FACT.MOVEMENT,True,1,0,0,1,0,,

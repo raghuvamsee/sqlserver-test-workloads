@@ -1,0 +1,4 @@
+OBJECT_NAME,OBJECT_TYPE,STATUS,ERROR_MESSAGE,DATABASE,SCHEMA,FQN,SNOWSIGHT_URL
+<%wideworldimportersdw%>.Integration.GetLastETLCutoffTime,Procedure,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Integration.GetLastETLCutoffTime,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Integration.PopulateDateDimensionForYear,Procedure,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Integration.PopulateDateDimensionForYear,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
+<%wideworldimportersdw%>.Integration.GetLineageKey,Procedure,Deployed,,WWI_AIM,PUBLIC,WWI_AIM.PUBLIC.<%wideworldimportersdw%>.Integration.GetLineageKey,https://app.snowflake.com/ZAUQZME/PK24656/#/data/databases/WWI_AIM/schemas/PUBLIC
